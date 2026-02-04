@@ -76,7 +76,7 @@ public final class DropRateTable {
 				data.dropRate = rs.getDouble("drop_rate");
 				data.dropAmount = rs.getDouble("drop_amount");
 				data.uniqueRate = rs.getDouble("unique_rate");
-				dropItems.put(new Integer(itemId), data);
+				dropItems.put(Integer.valueOf(itemId), data);
 			}
 			_log.config("drop_rates " + dropItems.size());
 			System.out.println("loading drop rates...OK! " + timer.elapsedTimeMillis() + "ms");

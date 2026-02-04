@@ -148,7 +148,7 @@ public class SpawnTable {
 					spawnDat.init();
 					spawnCount += spawnDat.getAmount();
 				}
-				_spawntable.put(new Integer(spawnDat.getId()), spawnDat);
+				_spawntable.put(Integer.valueOf(spawnDat.getId()), spawnDat);
 				if (spawnDat.getId() > _highestId) {
 					_highestId = spawnDat.getId();
 				}
@@ -166,13 +166,13 @@ public class SpawnTable {
 	}
 
 	public L1Spawn getTemplate(int Id) {
-		return _spawntable.get(new Integer(Id));
+		return _spawntable.get(Integer.valueOf(Id));
 	}
 
 	public void addNewSpawn(L1Spawn spawn) {
 		_highestId++;
 		spawn.setId(_highestId);
-		_spawntable.put(new Integer(spawn.getId()), spawn);
+		_spawntable.put(Integer.valueOf(spawn.getId()), spawn);
 	}
 
 	public static void storeSpawn(L1PcInstance pc, L1Npc npc) {

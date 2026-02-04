@@ -1,0 +1,34 @@
+cd /Users/airtan/Documents/GitHub/jp
+ant clean compile
+./ReleaseBuild.sh
+cd release-build
+chmod +x /Users/airtan/Documents/GitHub/jp/release-build/ServerStart.sh
+
+
+或者重新打包（會自動設置權限）：
+cd /Users/airtan/Documents/GitHub/jp
+ant clean compile
+./ReleaseBuild.sh
+cd release-build
+./ServerDebug.sh
+
+
+
+現在可以啟動服務器
+cd /Users/airtan/Documents/GitHub/jp
+./ServerStart.sh
+
+
+debug
+cd /Users/airtan/Documents/GitHub/jp
+chmod +x ServerDebug.sh
+./ServerDebug.sh
+
+
+
+chmod +x /Users/airtan/Documents/GitHub/jp/ServerDebug.sh
+chmod +x /Users/airtan/Documents/GitHub/jp/ServerStart.sh
+
+
+cd /Users/airtan/Documents/GitHub/jp
+./ServerDebug.sh

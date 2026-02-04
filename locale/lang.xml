@@ -85,6 +85,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <entry key="ShutdownAfterFewMinutes">Server will be shutdown after %d minutes.</entry>
 <entry key="ShutdownAfterFewSeconds">Server will be shutdown after %d seconds. Please logout as soon as possible.</entry>
 <entry key="ShutdownAbort">Shutdown abort. The server is running normally.</entry>
+<entry key="AcceptedShutdownRequest">Accepted the your shutdown request.</entry>
+<entry key="ShutdownRequestMax">Shutdown request was reached a certain number. Start the shutdown.</entry>
 
 <!-- jp/l1j/server/ClientThread.java -->
 <entry key="ConnectedToTheServer">%s has connected to the server.</entry>

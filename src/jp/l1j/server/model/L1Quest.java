@@ -94,7 +94,7 @@ public class L1Quest {
 				rs = pstm.executeQuery();
 
 				while (rs.next()) {
-					_quest.put(new Integer(rs.getInt("quest_id")), new Integer(rs.getInt("quest_step")));
+					_quest.put(Integer.valueOf(rs.getInt("quest_id")), Integer.valueOf(rs.getInt("quest_step")));
 				}
 
 			} catch (SQLException e) {
@@ -105,7 +105,7 @@ public class L1Quest {
 				SqlUtil.close(con);
 			}
 		}
-		Integer step = _quest.get(new Integer(quest_id));
+		Integer step = _quest.get(Integer.valueOf(quest_id));
 		if (step == null) {
 			return 0;
 		} else {
@@ -120,7 +120,7 @@ public class L1Quest {
 		try {
 			con = L1DatabaseFactory.getInstance().getConnection();
 
-			if (_quest.get(new Integer(quest_id)) == null) {
+			if (_quest.get(Integer.valueOf(quest_id)) == null) {
 
 				pstm = con.prepareStatement("INSERT INTO character_quests "
 						+ "SET char_id = ?, quest_id = ?, quest_step = ?");
@@ -145,7 +145,7 @@ public class L1Quest {
 			SqlUtil.close(con);
 
 		}
-		_quest.put(new Integer(quest_id), new Integer(step));
+		_quest.put(Integer.valueOf(quest_id), Integer.valueOf(step));
 	}
 
 	public void addStep(int quest_id, int add) {

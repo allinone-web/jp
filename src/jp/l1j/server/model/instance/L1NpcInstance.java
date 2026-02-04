@@ -1365,7 +1365,7 @@ public class L1NpcInstance extends L1Character {
 	}
 
 	public void setDigestItem(L1ItemInstance item) {
-		_digestItems.put(new Integer(item.getId()), new Integer(
+		_digestItems.put(Integer.valueOf(item.getId()), new Integer(
 				getNpcTemplate().getDigestItem()));
 		if (!_digestItemRunning) {
 			DigestItemTimer digestItemTimer = new DigestItemTimer();

@@ -55,7 +55,7 @@ public class NpcTalkDataTable {
 				l1npctalkdata.setChaoticAction(rs.getString("chaotic_action"));
 				l1npctalkdata.setTeleportURL(rs.getString("teleport_url"));
 				l1npctalkdata.setTeleportURLA(rs.getString("teleport_urla"));
-				_datatable.put(new Integer(l1npctalkdata.getNpcID()), l1npctalkdata);
+				_datatable.put(Integer.valueOf(l1npctalkdata.getNpcID()), l1npctalkdata);
 			}
 			_log.fine("loaded npc action: " + _datatable.size() + " records");
 		} catch (SQLException e) {
@@ -68,6 +68,6 @@ public class NpcTalkDataTable {
 	}
 
 	public L1NpcTalkData getTemplate(int i) {
-		return _datatable.get(new Integer(i));
+		return _datatable.get(Integer.valueOf(i));
 	}
 }

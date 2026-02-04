@@ -65,14 +65,38 @@ public class XMLResourceBundleControl extends ResourceBundle.Control {
 					
 			// TODO start
 			File file = new File(resourceName.replace("//", "./"));
-			InputStream stream = new FileInputStream(file);
-			// TODO end
 			
-			if (stream != null) {
+			// 如果文件不存在，嘗試回退到默認的 lang.xml
+			if (!file.exists() || !file.isFile()) {
+				// 嘗試回退到默認的 baseName.xml
+				String defaultResourceName = toResourceName(baseName, format);
+				File defaultFile = new File(defaultResourceName.replace("//", "./"));
+				if (defaultFile.exists() && defaultFile.isFile()) {
+					file = defaultFile;
+				} else {
+					// 如果默認文件也不存在，返回 null（讓 ResourceBundle 處理回退）
+					return null;
+				}
+			}
+			
+			InputStream stream = null;
+			try {
+				stream = new FileInputStream(file);
 				BufferedInputStream bis = new BufferedInputStream(stream);
 				bundle = new XMLResourceBundle(bis);
 				bis.close();
+			} catch (IOException e) {
+				if (stream != null) {
+					try {
+						stream.close();
+					} catch (IOException e2) {
+						// 忽略關閉錯誤
+					}
+				}
+				// 如果讀取失敗，返回 null（讓 ResourceBundle 處理回退）
+				return null;
 			}
+			// TODO end
 		}
 		return bundle;
 	}

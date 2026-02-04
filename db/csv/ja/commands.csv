@@ -4,6 +4,7 @@ setting,200,L1Status
 summon,200,L1Summon
 cleaning,200,L1DeleteGroundItem
 addskill,200,L1AddSkill
+learn50,200,L1Learn50Spells
 level,200,L1Level
 loc,200,L1Loc
 desc,200,L1Describe

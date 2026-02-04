@@ -1,0 +1,45 @@
+先安裝數據庫。
+/db/OrbStack_L1J_Installer.sh
+
+在編譯服務器。
+在執行服務器。
+
+
+
+
+具體3步執行編譯與打包流程
+
+
+1，終端機執行以下連擊：
+
+cd /Users/airtan/Documents/GitHub/jp
+ant clean compile
+
+
+預期結果：終端機最後應顯示 BUILD SUCCESSFUL。
+
+
+
+2，執行打包腳本：
+
+
+cd /Users/airtan/Documents/GitHub/jp
+./ReleaseBuild.sh
+
+
+
+What: 這次腳本會成功將 l1jserver.jar 複製到發布目錄。
+Why: 之前報錯 Unable to access jarfile 是因為編譯失敗沒產生 JAR 檔。
+
+
+3，啟動伺服器：
+
+chmod +x /Users/airtan/Documents/GitHub/jp/ServerDebug.sh
+chmod +x /Users/airtan/Documents/GitHub/jp/ServerStart.sh
+
+
+cd /Users/airtan/Documents/GitHub/jp
+./ServerStart.sh
+
+cd /Users/airtan/Documents/GitHub/jp
+./ServerDebug.sh

@@ -189,6 +189,6 @@ public class SkillTable {
 	}
 
 	public L1Skill getTemplate(int i) {
-		return _skills.get(new Integer(i));
+		return _skills.get(Integer.valueOf(i));
 	}
 }

@@ -70,161 +70,161 @@ public class ItemTable {
 	private static Map<String, Integer> _allWithoutSpaceNames;
 
 	static {
-		_etcItemTypes.put("arrow", new Integer(0));
-		_etcItemTypes.put("wand", new Integer(1));
-		_etcItemTypes.put("light", new Integer(2));
-		_etcItemTypes.put("gem", new Integer(3));
-		_etcItemTypes.put("totem", new Integer(4));
-		_etcItemTypes.put("firecracker", new Integer(5));
-		_etcItemTypes.put("potion", new Integer(6));
-		_etcItemTypes.put("food", new Integer(7));
-		_etcItemTypes.put("scroll", new Integer(8));
-		_etcItemTypes.put("questitem", new Integer(9));
-		_etcItemTypes.put("spellbook", new Integer(10));
-		_etcItemTypes.put("petitem", new Integer(11));
-		_etcItemTypes.put("other", new Integer(12));
-		_etcItemTypes.put("material", new Integer(13));
-		_etcItemTypes.put("event", new Integer(14));
-		_etcItemTypes.put("sting", new Integer(15));
-		_etcItemTypes.put("treasure_box", new Integer(16));
-		_etcItemTypes.put("magic_doll", new Integer(17));
-		_etcItemTypes.put("spellscroll", new Integer(18));
-		_etcItemTypes.put("spellwand", new Integer(19));
-		_etcItemTypes.put("spellicon", new Integer(20));
-		_etcItemTypes.put("protect_scroll", new Integer(21));
-		_etcItemTypes.put("unique_scroll", new Integer(22));
+		_etcItemTypes.put("arrow", Integer.valueOf(0));
+		_etcItemTypes.put("wand", Integer.valueOf(1));
+		_etcItemTypes.put("light", Integer.valueOf(2));
+		_etcItemTypes.put("gem", Integer.valueOf(3));
+		_etcItemTypes.put("totem", Integer.valueOf(4));
+		_etcItemTypes.put("firecracker", Integer.valueOf(5));
+		_etcItemTypes.put("potion", Integer.valueOf(6));
+		_etcItemTypes.put("food", Integer.valueOf(7));
+		_etcItemTypes.put("scroll", Integer.valueOf(8));
+		_etcItemTypes.put("questitem", Integer.valueOf(9));
+		_etcItemTypes.put("spellbook", Integer.valueOf(10));
+		_etcItemTypes.put("petitem", Integer.valueOf(11));
+		_etcItemTypes.put("other", Integer.valueOf(12));
+		_etcItemTypes.put("material", Integer.valueOf(13));
+		_etcItemTypes.put("event", Integer.valueOf(14));
+		_etcItemTypes.put("sting", Integer.valueOf(15));
+		_etcItemTypes.put("treasure_box", Integer.valueOf(16));
+		_etcItemTypes.put("magic_doll", Integer.valueOf(17));
+		_etcItemTypes.put("spellscroll", Integer.valueOf(18));
+		_etcItemTypes.put("spellwand", Integer.valueOf(19));
+		_etcItemTypes.put("spellicon", Integer.valueOf(20));
+		_etcItemTypes.put("protect_scroll", Integer.valueOf(21));
+		_etcItemTypes.put("unique_scroll", Integer.valueOf(22));
 
-		_useTypes.put("none", new Integer(-1)); // 使用不可能
-		_useTypes.put("normal", new Integer(0));
-		_useTypes.put("weapon", new Integer(1));
-		_useTypes.put("armor", new Integer(2));
-		// _useTypes.put("wand1", new Integer(3));
-		// _useTypes.put("wand", new Integer(4));
+		_useTypes.put("none", Integer.valueOf(-1)); // 使用不可能
+		_useTypes.put("normal", Integer.valueOf(0));
+		_useTypes.put("weapon", Integer.valueOf(1));
+		_useTypes.put("armor", Integer.valueOf(2));
+		// _useTypes.put("wand1", Integer.valueOf(3));
+		// _useTypes.put("wand", Integer.valueOf(4));
 		// ワンドを振るアクションをとる(C_RequestExtraCommandが送られる)
-		_useTypes.put("spell_long", new Integer(5)); // 地面 / オブジェクト選択(遠距離)
-		_useTypes.put("ntele", new Integer(6));
-		_useTypes.put("identify", new Integer(7));
-		_useTypes.put("res", new Integer(8));
-		_useTypes.put("choice", new Integer(14));
-		_useTypes.put("instrument", new Integer(15));
-		_useTypes.put("sosc", new Integer(16));
-		_useTypes.put("spell_short", new Integer(17)); // 地面 / オブジェクト選択(近距離)
-		_useTypes.put("t_shirt", new Integer(18));
-		_useTypes.put("cloak", new Integer(19));
-		_useTypes.put("glove", new Integer(20));
-		_useTypes.put("boots", new Integer(21));
-		_useTypes.put("helm", new Integer(22));
-		_useTypes.put("ring", new Integer(23));
-		_useTypes.put("amulet", new Integer(24));
-		_useTypes.put("shield", new Integer(25));
-		_useTypes.put("guarder", new Integer(25));
-		_useTypes.put("dai", new Integer(26));
-		_useTypes.put("zel", new Integer(27));
-		_useTypes.put("blank", new Integer(28));
-		_useTypes.put("btele", new Integer(29));
-		_useTypes.put("spell_buff", new Integer(30)); // オブジェクト選択(遠距離)
-		_useTypes.put("belt", new Integer(37));
-		_useTypes.put("spell_point", new Integer(39)); // 地面選択
-		_useTypes.put("earring", new Integer(40));
-		_useTypes.put("fishing_rod", new Integer(42));
-		_useTypes.put("pattern_back", new Integer(45));
-		_useTypes.put("pattern_left", new Integer(44));
-		_useTypes.put("pattern_right", new Integer(43));
-		_useTypes.put("talisman_left", new Integer(47));
-		_useTypes.put("talisman_right", new Integer(48));
-		_useTypes.put("elixir", new Integer(58));
-		_useTypes.put("healing", new Integer(59));
-		_useTypes.put("cure", new Integer(60));
-		_useTypes.put("haste", new Integer(61));
-		_useTypes.put("brave", new Integer(62));
-		_useTypes.put("third_speed", new Integer(63));
-		_useTypes.put("magic_eye", new Integer(64));
-		_useTypes.put("magic_healing", new Integer(65));
-		_useTypes.put("bless_eva", new Integer(66));
-		_useTypes.put("magic_regeneration", new Integer(67));
-		_useTypes.put("wisdom", new Integer(68));
-		_useTypes.put("flora", new Integer(69));
-		_useTypes.put("poly", new Integer(70));
-		_useTypes.put("npc_talk", new Integer(71));
-		_useTypes.put("roulette", new Integer(72));
-		_useTypes.put("teleport", new Integer(73));
-		_useTypes.put("spawn", new Integer(74));
-		_useTypes.put("furniture", new Integer(75));
-		_useTypes.put("material", new Integer(77));
-		_useTypes.put("extra", new Integer(78));
+		_useTypes.put("spell_long", Integer.valueOf(5)); // 地面 / オブジェクト選択(遠距離)
+		_useTypes.put("ntele", Integer.valueOf(6));
+		_useTypes.put("identify", Integer.valueOf(7));
+		_useTypes.put("res", Integer.valueOf(8));
+		_useTypes.put("choice", Integer.valueOf(14));
+		_useTypes.put("instrument", Integer.valueOf(15));
+		_useTypes.put("sosc", Integer.valueOf(16));
+		_useTypes.put("spell_short", Integer.valueOf(17)); // 地面 / オブジェクト選択(近距離)
+		_useTypes.put("t_shirt", Integer.valueOf(18));
+		_useTypes.put("cloak", Integer.valueOf(19));
+		_useTypes.put("glove", Integer.valueOf(20));
+		_useTypes.put("boots", Integer.valueOf(21));
+		_useTypes.put("helm", Integer.valueOf(22));
+		_useTypes.put("ring", Integer.valueOf(23));
+		_useTypes.put("amulet", Integer.valueOf(24));
+		_useTypes.put("shield", Integer.valueOf(25));
+		_useTypes.put("guarder", Integer.valueOf(25));
+		_useTypes.put("dai", Integer.valueOf(26));
+		_useTypes.put("zel", Integer.valueOf(27));
+		_useTypes.put("blank", Integer.valueOf(28));
+		_useTypes.put("btele", Integer.valueOf(29));
+		_useTypes.put("spell_buff", Integer.valueOf(30)); // オブジェクト選択(遠距離)
+		_useTypes.put("belt", Integer.valueOf(37));
+		_useTypes.put("spell_point", Integer.valueOf(39)); // 地面選択
+		_useTypes.put("earring", Integer.valueOf(40));
+		_useTypes.put("fishing_rod", Integer.valueOf(42));
+		_useTypes.put("pattern_back", Integer.valueOf(45));
+		_useTypes.put("pattern_left", Integer.valueOf(44));
+		_useTypes.put("pattern_right", Integer.valueOf(43));
+		_useTypes.put("talisman_left", Integer.valueOf(47));
+		_useTypes.put("talisman_right", Integer.valueOf(48));
+		_useTypes.put("elixir", Integer.valueOf(58));
+		_useTypes.put("healing", Integer.valueOf(59));
+		_useTypes.put("cure", Integer.valueOf(60));
+		_useTypes.put("haste", Integer.valueOf(61));
+		_useTypes.put("brave", Integer.valueOf(62));
+		_useTypes.put("third_speed", Integer.valueOf(63));
+		_useTypes.put("magic_eye", Integer.valueOf(64));
+		_useTypes.put("magic_healing", Integer.valueOf(65));
+		_useTypes.put("bless_eva", Integer.valueOf(66));
+		_useTypes.put("magic_regeneration", Integer.valueOf(67));
+		_useTypes.put("wisdom", Integer.valueOf(68));
+		_useTypes.put("flora", Integer.valueOf(69));
+		_useTypes.put("poly", Integer.valueOf(70));
+		_useTypes.put("npc_talk", Integer.valueOf(71));
+		_useTypes.put("roulette", Integer.valueOf(72));
+		_useTypes.put("teleport", Integer.valueOf(73));
+		_useTypes.put("spawn", Integer.valueOf(74));
+		_useTypes.put("furniture", Integer.valueOf(75));
+		_useTypes.put("material", Integer.valueOf(77));
+		_useTypes.put("extra", Integer.valueOf(78));
 
-		_armorTypes.put("none", new Integer(0));
-		_armorTypes.put("helm", new Integer(1));
-		_armorTypes.put("armor", new Integer(2));
-		_armorTypes.put("t_shirt", new Integer(3));
-		_armorTypes.put("cloak", new Integer(4));
-		_armorTypes.put("glove", new Integer(5));
-		_armorTypes.put("boots", new Integer(6));
-		_armorTypes.put("shield", new Integer(7));
-		_armorTypes.put("guarder", new Integer(8));
-		_armorTypes.put("amulet", new Integer(10));
-		_armorTypes.put("ring", new Integer(11));
-		_armorTypes.put("earring", new Integer(12));
-		_armorTypes.put("belt", new Integer(13));
-		_armorTypes.put("pattern_back", new Integer(14));
-		_armorTypes.put("pattern_left", new Integer(15));
-		_armorTypes.put("pattern_right", new Integer(16));
-		_armorTypes.put("talisman_left", new Integer(17));
-		_armorTypes.put("talisman_right", new Integer(18));
+		_armorTypes.put("none", Integer.valueOf(0));
+		_armorTypes.put("helm", Integer.valueOf(1));
+		_armorTypes.put("armor", Integer.valueOf(2));
+		_armorTypes.put("t_shirt", Integer.valueOf(3));
+		_armorTypes.put("cloak", Integer.valueOf(4));
+		_armorTypes.put("glove", Integer.valueOf(5));
+		_armorTypes.put("boots", Integer.valueOf(6));
+		_armorTypes.put("shield", Integer.valueOf(7));
+		_armorTypes.put("guarder", Integer.valueOf(8));
+		_armorTypes.put("amulet", Integer.valueOf(10));
+		_armorTypes.put("ring", Integer.valueOf(11));
+		_armorTypes.put("earring", Integer.valueOf(12));
+		_armorTypes.put("belt", Integer.valueOf(13));
+		_armorTypes.put("pattern_back", Integer.valueOf(14));
+		_armorTypes.put("pattern_left", Integer.valueOf(15));
+		_armorTypes.put("pattern_right", Integer.valueOf(16));
+		_armorTypes.put("talisman_left", Integer.valueOf(17));
+		_armorTypes.put("talisman_right", Integer.valueOf(18));
 
-		_weaponTypes.put("sword", new Integer(1));
-		_weaponTypes.put("twohandsword", new Integer(2));
-		_weaponTypes.put("dagger", new Integer(3));
-		_weaponTypes.put("bow", new Integer(4));
-		_weaponTypes.put("arrow", new Integer(5));
-		_weaponTypes.put("spear", new Integer(6));
-		_weaponTypes.put("blunt", new Integer(7));
-		_weaponTypes.put("staff", new Integer(8));
-		_weaponTypes.put("claw", new Integer(9));
-		_weaponTypes.put("dualsword", new Integer(10));
-		_weaponTypes.put("gauntlet", new Integer(11));
-		_weaponTypes.put("sting", new Integer(12));
-		_weaponTypes.put("chainsword", new Integer(13));
-		_weaponTypes.put("kiringku", new Integer(14));
+		_weaponTypes.put("sword", Integer.valueOf(1));
+		_weaponTypes.put("twohandsword", Integer.valueOf(2));
+		_weaponTypes.put("dagger", Integer.valueOf(3));
+		_weaponTypes.put("bow", Integer.valueOf(4));
+		_weaponTypes.put("arrow", Integer.valueOf(5));
+		_weaponTypes.put("spear", Integer.valueOf(6));
+		_weaponTypes.put("blunt", Integer.valueOf(7));
+		_weaponTypes.put("staff", Integer.valueOf(8));
+		_weaponTypes.put("claw", Integer.valueOf(9));
+		_weaponTypes.put("dualsword", Integer.valueOf(10));
+		_weaponTypes.put("gauntlet", Integer.valueOf(11));
+		_weaponTypes.put("sting", Integer.valueOf(12));
+		_weaponTypes.put("chainsword", Integer.valueOf(13));
+		_weaponTypes.put("kiringku", Integer.valueOf(14));
 
-		_weaponId.put("sword", new Integer(4));
-		_weaponId.put("twohandsword", new Integer(50));
-		_weaponId.put("dagger", new Integer(46));
-		_weaponId.put("bow", new Integer(20));
-		_weaponId.put("arrow", new Integer(66));
-		_weaponId.put("spear", new Integer(24));
-		_weaponId.put("blunt", new Integer(11));
-		_weaponId.put("staff", new Integer(40));
-		_weaponId.put("claw", new Integer(58));
-		_weaponId.put("dualsword", new Integer(54));
-		_weaponId.put("gauntlet", new Integer(62));
-		_weaponId.put("sting", new Integer(2922));
-		_weaponId.put("chainsword", new Integer(24));
-		_weaponId.put("kiringku", new Integer(58));
+		_weaponId.put("sword", Integer.valueOf(4));
+		_weaponId.put("twohandsword", Integer.valueOf(50));
+		_weaponId.put("dagger", Integer.valueOf(46));
+		_weaponId.put("bow", Integer.valueOf(20));
+		_weaponId.put("arrow", Integer.valueOf(66));
+		_weaponId.put("spear", Integer.valueOf(24));
+		_weaponId.put("blunt", Integer.valueOf(11));
+		_weaponId.put("staff", Integer.valueOf(40));
+		_weaponId.put("claw", Integer.valueOf(58));
+		_weaponId.put("dualsword", Integer.valueOf(54));
+		_weaponId.put("gauntlet", Integer.valueOf(62));
+		_weaponId.put("sting", Integer.valueOf(2922));
+		_weaponId.put("chainsword", Integer.valueOf(24));
+		_weaponId.put("kiringku", Integer.valueOf(58));
 
-		_materialTypes.put("none", new Integer(0));
-		_materialTypes.put("liquid", new Integer(1));
-		_materialTypes.put("web", new Integer(2));
-		_materialTypes.put("vegetation", new Integer(3));
-		_materialTypes.put("animalmatter", new Integer(4));
-		_materialTypes.put("paper", new Integer(5));
-		_materialTypes.put("cloth", new Integer(6));
-		_materialTypes.put("leather", new Integer(7));
-		_materialTypes.put("wood", new Integer(8));
-		_materialTypes.put("bone", new Integer(9));
-		_materialTypes.put("dragonscale", new Integer(10));
-		_materialTypes.put("iron", new Integer(11));
-		_materialTypes.put("steel", new Integer(12));
-		_materialTypes.put("copper", new Integer(13));
-		_materialTypes.put("silver", new Integer(14));
-		_materialTypes.put("gold", new Integer(15));
-		_materialTypes.put("platinum", new Integer(16));
-		_materialTypes.put("mithril", new Integer(17));
-		_materialTypes.put("blackmithril", new Integer(18));
-		_materialTypes.put("glass", new Integer(19));
-		_materialTypes.put("gemstone", new Integer(20));
-		_materialTypes.put("mineral", new Integer(21));
-		_materialTypes.put("orichalcum", new Integer(22));
+		_materialTypes.put("none", Integer.valueOf(0));
+		_materialTypes.put("liquid", Integer.valueOf(1));
+		_materialTypes.put("web", Integer.valueOf(2));
+		_materialTypes.put("vegetation", Integer.valueOf(3));
+		_materialTypes.put("animalmatter", Integer.valueOf(4));
+		_materialTypes.put("paper", Integer.valueOf(5));
+		_materialTypes.put("cloth", Integer.valueOf(6));
+		_materialTypes.put("leather", Integer.valueOf(7));
+		_materialTypes.put("wood", Integer.valueOf(8));
+		_materialTypes.put("bone", Integer.valueOf(9));
+		_materialTypes.put("dragonscale", Integer.valueOf(10));
+		_materialTypes.put("iron", Integer.valueOf(11));
+		_materialTypes.put("steel", Integer.valueOf(12));
+		_materialTypes.put("copper", Integer.valueOf(13));
+		_materialTypes.put("silver", Integer.valueOf(14));
+		_materialTypes.put("gold", Integer.valueOf(15));
+		_materialTypes.put("platinum", Integer.valueOf(16));
+		_materialTypes.put("mithril", Integer.valueOf(17));
+		_materialTypes.put("blackmithril", Integer.valueOf(18));
+		_materialTypes.put("glass", Integer.valueOf(19));
+		_materialTypes.put("gemstone", Integer.valueOf(20));
+		_materialTypes.put("mineral", Integer.valueOf(21));
+		_materialTypes.put("orichalcum", Integer.valueOf(22));
 	}
 
 	public static ItemTable getInstance() {
@@ -283,7 +283,7 @@ public class ItemTable {
 				item.setToBeSavedAtOnce((rs.getInt("save_at_once") == 1) ? true : false);
 				item.setChargeTime(rs.getInt("charge_time"));
 				item.setExpirationTime(rs.getString("expiration_time"));
-				result.put(new Integer(item.getItemId()), item);
+				result.put(Integer.valueOf(item.getItemId()), item);
 			}
 		} catch (NullPointerException e) {
 			_log.log(Level.SEVERE, String.format(I18N_LOAD_ITEM_FAILED, item.getName(), item.getItemId()));
@@ -360,7 +360,7 @@ public class ItemTable {
 				weapon.setIsHaste(rs.getBoolean("is_haste"));
 				weapon.setChargeTime(rs.getInt("charge_time"));
 				weapon.setExpirationTime(rs.getString("expiration_time"));
-				result.put(new Integer(weapon.getItemId()), weapon);
+				result.put(Integer.valueOf(weapon.getItemId()), weapon);
 			}
 		} catch (NullPointerException e) {
 			_log.log(Level.SEVERE, String.format(I18N_LOAD_ITEM_FAILED, weapon.getName(), weapon.getItemId()));
@@ -448,7 +448,7 @@ public class ItemTable {
 				armor.setIsHaste(rs.getInt("is_haste") == 0 ? false : true);
 				armor.setExpBonus(rs.getInt("exp_bonus"));
 				armor.setPotionRecoveryRate(rs.getInt("potion_recovery_rate"));
-				result.put(new Integer(armor.getItemId()), armor);
+				result.put(Integer.valueOf(armor.getItemId()), armor);
 			}
 		} catch (NullPointerException e) {
 			_log.log(Level.SEVERE, String.format(I18N_LOAD_ITEM_FAILED, armor.getName(), armor.getItemId()));
@@ -503,23 +503,23 @@ public class ItemTable {
 		for (Iterator<Integer> iter = allEtcItems.keySet().iterator(); iter.hasNext();) {
 			Integer id = iter.next();
 			L1EtcItem item = allEtcItems.get(id);
-			allTemplates.put(new Integer(id.intValue()), item);
-			allNames.put(item.getName(), new Integer(id.intValue()));
-			allWithoutSpaceNames.put(item.getName().replace(" ", ""), new Integer(id.intValue()));
+			allTemplates.put(Integer.valueOf(id.intValue()), item);
+			allNames.put(item.getName(), Integer.valueOf(id.intValue()));
+			allWithoutSpaceNames.put(item.getName().replace(" ", ""), Integer.valueOf(id.intValue()));
 		}
 		for (Iterator<Integer> iter = allWeapons.keySet().iterator(); iter.hasNext();) {
 			Integer id = iter.next();
 			L1Weapon item = allWeapons.get(id);
-			allTemplates.put(new Integer(id.intValue()), item);
-			allNames.put(item.getName(), new Integer(id.intValue()));
-			allWithoutSpaceNames.put(item.getName().replace(" ", ""), new Integer(id.intValue()));
+			allTemplates.put(Integer.valueOf(id.intValue()), item);
+			allNames.put(item.getName(), Integer.valueOf(id.intValue()));
+			allWithoutSpaceNames.put(item.getName().replace(" ", ""), Integer.valueOf(id.intValue()));
 		}
 		for (Iterator<Integer> iter = allArmors.keySet().iterator(); iter.hasNext();) {
 			Integer id = iter.next();
 			L1Armor item = allArmors.get(id);
-			allTemplates.put(new Integer(id.intValue()), item);
-			allNames.put(item.getName(), new Integer(id.intValue()));
-			allWithoutSpaceNames.put(item.getName().replace(" ", ""), new Integer(id.intValue()));
+			allTemplates.put(Integer.valueOf(id.intValue()), item);
+			allNames.put(item.getName(), Integer.valueOf(id.intValue()));
+			allWithoutSpaceNames.put(item.getName().replace(" ", ""), Integer.valueOf(id.intValue()));
 		}
 	}
 

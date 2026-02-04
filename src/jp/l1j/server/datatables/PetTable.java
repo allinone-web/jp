@@ -72,7 +72,7 @@ public class PetTable {
 				pet.setExp(rs.getInt(8));
 				pet.setLawful(rs.getInt(9));
 				pet.setFood(rs.getInt(10));
-				_pets.put(new Integer(itemobjid), pet);
+				_pets.put(Integer.valueOf(itemobjid), pet);
 			}
 		} catch (SQLException e) {
 			_log.log(Level.SEVERE, e.getLocalizedMessage(), e);
@@ -96,7 +96,7 @@ public class PetTable {
 		l1pet.setExp(750); // Lv.5のEXP
 		l1pet.setLawful(0);
 		l1pet.setFood(50);
-		_pets.put(new Integer(itemobjid), l1pet);
+		_pets.put(Integer.valueOf(itemobjid), l1pet);
 		Connection con = null;
 		PreparedStatement pstm = null;
 		try {
@@ -230,7 +230,7 @@ public class PetTable {
 		l1pet.setMp(randommp);
 		l1pet.setExp(lvExp); // upLv EXP
 		l1pet.setLawful(0);
-		_pets.put(new Integer(itemobjid), l1pet);
+		_pets.put(Integer.valueOf(itemobjid), l1pet);
 		l1pet.setFood(50);
 		Connection con = null;
 		PreparedStatement pstm = null;

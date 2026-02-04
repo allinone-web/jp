@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <entry key="Driver">com.mysql.jdbc.Driver</entry>
 <entry key="URL">jdbc:mysql://localhost/l1jdb?useUnicode=true&amp;characterEncoding=utf8</entry>
 <entry key="Login">root</entry>
-<entry key="Password"></entry>
+<entry key="Password">7777</entry>
 
 <!-- 使用するスレッドプール(推奨=2) -->
 <!-- GeneralThreadPoolType: -->
@@ -47,7 +47,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <entry key="NpcAIImplType">2</entry>
 
 <!-- クライアントの言語 0.US 1.Korea 2.Unknown 3.Taiwan 4.Janpan 5.China ?.HongKong -->
-<entry key="ClientLanguage">4</entry>
+<!-- 【修改為 UTF-8】0 和 2 都是 UTF8，使用 0 (US) -->
+<entry key="ClientLanguage">0</entry>
 
 <!-- タイムゾーンの設定 JST:日本標準時 -->
 <entry key="TimeZone">JST</entry>
@@ -165,7 +166,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <!-- デバッグモード -->
 <!-- サーバーの負荷を度外視した詳細なログ等、デバッグに役立つオプションを提供する -->
-<entry key="DebugMode">false</entry>
+<entry key="DebugMode">true</entry>
 
 <!-- 定期実行アナウンス -->
 <!-- 単位：分間隔 -->

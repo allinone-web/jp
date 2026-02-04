@@ -77,7 +77,7 @@ public class RestartLocationTable {
 				gbr.setLocX(rs.getInt("loc_x"));
 				gbr.setLocY(rs.getInt("loc_y"));
 				gbr.setMapId(mapId);
-				restartLocations.put(new Integer(area), gbr);
+				restartLocations.put(Integer.valueOf(area), gbr);
 			}
 			System.out.println("loading restart locations...OK! " + timer.elapsedTimeMillis() + "ms");
 		} catch (SQLException e) {

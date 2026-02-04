@@ -46,16 +46,9 @@ public class S_CharPacks extends ServerBasePacket {
 		writeC(cha);
 		writeC(intel);
 
-		// is Administrator
-		// 0 = false
-		// 1 = true , can't attack
-		// > 1 true , can't attack
-		// can use Public GameMaster Command
-		// if (accessLevel == 200) {
-		// writeC(1);
-		// } else {
-		writeC(0);
-		// }
+		// is Administrator: 送信 accessLevel 以便客戶端選項選單顯示 GM 命令連結
+		// 0 = 一般玩家, 1 以上 = GM
+		writeC(accessLevel > 0 ? 1 : 0);
 		
 		writeD(birthday);
 		

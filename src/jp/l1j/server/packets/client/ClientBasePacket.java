@@ -86,11 +86,51 @@ public abstract class ClientBasePacket {
 	public String readS(int adjust) {
 		String s = null;
 		try {
-			s = new String(_decrypt, _off + adjust, _decrypt.length - _off, CLIENT_LANGUAGE_CODE);
-			s = s.substring(0, s.indexOf('\0'));
+			int startOffset = _off + adjust;
+			int remainingLength = _decrypt.length - startOffset;
+			
+			// 【調試日誌】打印讀取前的狀態
+			_log.finest("readS() - startOffset=" + startOffset + ", remainingLength=" + remainingLength);
+			
+			if (remainingLength <= 0) {
+				_log.warning("readS() - No remaining bytes to read!");
+				return null;
+			}
+			
+			// 【調試日誌】打印要讀取的字節（前32字節）
+			StringBuilder bytesHex = new StringBuilder();
+			for (int i = startOffset; i < _decrypt.length && i < startOffset + 32; i++) {
+				bytesHex.append(String.format("%02X ", _decrypt[i] & 0xFF));
+			}
+			_log.finest("readS() - Bytes to read (hex): " + bytesHex.toString());
+			
+			s = new String(_decrypt, startOffset, remainingLength, CLIENT_LANGUAGE_CODE);
+			
+			// 【調試日誌】打印解碼後的字符串（前100字符）
+			_log.finest("readS() - Decoded string (first 100 chars): " + (s.length() > 100 ? s.substring(0, 100) : s));
+			
+			int nullIndex = s.indexOf('\0');
+			_log.finest("readS() - Null terminator index: " + nullIndex);
+			
+			if (nullIndex < 0) {
+				_log.warning("readS() - Null terminator not found! String length: " + s.length());
+				// 【調試日誌】打印所有字節值，查找可能的 null terminator
+				StringBuilder allBytes = new StringBuilder();
+				for (int i = startOffset; i < _decrypt.length && i < startOffset + 64; i++) {
+					allBytes.append(String.format("%02X(%c) ", _decrypt[i] & 0xFF, 
+						(_decrypt[i] >= 32 && _decrypt[i] < 127) ? (char)_decrypt[i] : '.'));
+				}
+				_log.warning("readS() - All bytes: " + allBytes.toString());
+				return null;
+			}
+			
+			s = s.substring(0, nullIndex);
 			_off += s.getBytes(CLIENT_LANGUAGE_CODE).length + 1;
+			
+			_log.finest("readS() - Successfully read: '" + s + "', new _off=" + (_off - 1));
 		} catch (StringIndexOutOfBoundsException e) {
 			// TODO 生存の叫び(Ctrl+E)時、87行目でエラーが発生する。
+			_log.warning("readS() - StringIndexOutOfBoundsException: " + e.getMessage());
 		} catch (Exception e) {
 			_log.log(Level.SEVERE, "OpCode=" + (_decrypt[0] & 0xff), e);
 		}

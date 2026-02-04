@@ -36,6 +36,12 @@ public class GMCommands {
 
 	private static GMCommands _instance;
 
+	/** 指令別名：DB 無此 name 時用對應值查詢（例如 .skill -> addskill） */
+	private static final Map<String, String> COMMAND_ALIASES = new HashMap<String, String>();
+	static {
+		COMMAND_ALIASES.put("skill", "addskill");
+	}
+
 	private GMCommands() {
 	}
 
@@ -46,11 +52,19 @@ public class GMCommands {
 		return _instance;
 	}
 
+	/** 解析別名：若 name 在 COMMAND_ALIASES 中則回傳對應的 DB 指令名，否則回傳 name。 */
+	private String resolveCommandName(String name) {
+		String resolved = COMMAND_ALIASES.get(name.toLowerCase());
+		return resolved != null ? resolved : name;
+	}
+
 	private boolean executeDatabaseCommand(L1PcInstance pc, String name,
 			String arg) {
+		String nameToUse = resolveCommandName(name);
 		try {
-			L1Command command = L1Commands.get(name);
+			L1Command command = L1Commands.get(nameToUse);
 			if (command == null) {
+				_log.warning("GM command not found in DB: name=" + name + (nameToUse.equals(name) ? "" : " resolved=" + nameToUse));
 				return false;
 			}
 			if (pc.getAccessLevel() < command.getLevel()) {
@@ -61,8 +75,8 @@ public class GMCommands {
 
 			Class<?> cls = Class.forName(command.getExecutorClassFullName());
 			L1CommandExecutor exe = (L1CommandExecutor) cls.getMethod("getInstance").invoke(null);
-			exe.execute(pc, name, arg);
-			_log.info(String.format(I18N_USED_THE_COMMAND, pc.getName(), name, arg));
+			exe.execute(pc, nameToUse, arg);
+			_log.info(String.format(I18N_USED_THE_COMMAND, pc.getName(), nameToUse, arg));
 			// %s が .%s %s コマンドを使用しました。
 			return true;
 		} catch (Exception e) {
@@ -81,14 +95,17 @@ public class GMCommands {
 		}
 		param = param.trim();
 
+		// クライアントが ".learn50" のように先頭に . を付けて送る場合、DB の name は "learn50" なので . を除去して検索
+		String nameForDb = (cmd.length() > 1 && cmd.charAt(0) == '.') ? cmd.substring(1) : cmd;
+
 		// データベース化されたコマンド
-		if (executeDatabaseCommand(gm, cmd, param)) {
-			if (!cmd.equalsIgnoreCase("r")) {
+		if (executeDatabaseCommand(gm, nameForDb, param)) {
+			if (!nameForDb.equalsIgnoreCase("r")) {
 				_lastCommands.put(gm.getId(), cmdLine);
 			}
 			return;
 		}
-		if (cmd.equalsIgnoreCase("r")) {
+		if (nameForDb.equalsIgnoreCase("r")) {
 			if (!_lastCommands.containsKey(gm.getId())) {
 				gm.sendPackets(new S_SystemMessage(String.format(I18N_CANNOT_USE_THE_COMMAND, cmd)));
 				// コマンド %s は使用できません。

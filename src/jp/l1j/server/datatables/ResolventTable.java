@@ -66,7 +66,7 @@ public final class ResolventTable {
 					continue;
 				}
 				int crystalCount = rs.getInt("crystal_count");
-				resolvents.put(new Integer(itemId), crystalCount);
+				resolvents.put(Integer.valueOf(itemId), crystalCount);
 			}
 			_log.config("resolvent " + resolvents.size());
 			System.out.println("loading resolvents...OK! " + timer.elapsedTimeMillis() + "ms");

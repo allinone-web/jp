@@ -67,7 +67,7 @@ public class RaceTicketTable {
 				if(ticket.getRound()>temp){
 					temp=ticket.getRound();
 				}
-				_tickets.put(new Integer(itemobjid), ticket);
+				_tickets.put(Integer.valueOf(itemobjid), ticket);
 			}
 			_maxRoundNumber=temp;
 		} catch (SQLException e) {
@@ -83,7 +83,7 @@ public class RaceTicketTable {
 		//PCのインベントリーが増える場合に実行
 		// XXX 呼ばれる前と処理の重複
 		if(ticket.getItemObjId()!=0){
-			_tickets.put(new Integer(ticket.getItemObjId()), ticket);
+			_tickets.put(Integer.valueOf(ticket.getItemObjId()), ticket);
 		}
 		Connection con = null;
 		PreparedStatement pstm = null;

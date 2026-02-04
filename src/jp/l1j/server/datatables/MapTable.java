@@ -103,7 +103,7 @@ public final class MapTable {
 				data.isRecallPets = rs.getBoolean("recall_pets");
 				data.isUsableItem = rs.getBoolean("usable_item");
 				data.isUsableSkill = rs.getBoolean("usable_skill");
-				maps.put(new Integer(mapId), data);
+				maps.put(Integer.valueOf(mapId), data);
 			}
 			_log.config("Maps " + maps.size());
 			System.out.println("loading map ids...OK! " + timer.elapsedTimeMillis() + "ms");

@@ -26,6 +26,7 @@ import jp.l1j.server.exception.GameServerFullException;
 import jp.l1j.server.packets.server.S_CommonNews;
 import jp.l1j.server.packets.server.S_LoginResult;
 import jp.l1j.server.templates.L1Account;
+import jp.l1j.server.utils.ByteArrayUtil;
 
 public class C_AuthLogin extends ClientBasePacket {
 	private static final String C_AUTH_LOGIN = "[C] C_AuthLogin";
@@ -34,8 +35,43 @@ public class C_AuthLogin extends ClientBasePacket {
 
 	public C_AuthLogin(byte[] decrypt, ClientThread client) {
 		super(decrypt);
-		String accountName = readS().toLowerCase();
+		
+		// 【調試日誌】打印解密後的封包數據
+		_log.info("=== C_AuthLogin Debug ===");
+		_log.info("Decrypted packet length: " + decrypt.length);
+		_log.info("Decrypted packet data (hex):");
+		StringBuilder hexDump = new StringBuilder();
+		for (int i = 0; i < decrypt.length && i < 64; i++) {
+			hexDump.append(String.format("%02X ", decrypt[i] & 0xFF));
+			if ((i + 1) % 16 == 0) {
+				hexDump.append("\n");
+			}
+		}
+		if (decrypt.length > 64) {
+			hexDump.append("... (truncated)");
+		}
+		_log.info(hexDump.toString());
+		
+		// 【調試日誌】打印完整的封包轉儲
+		_log.info("Full packet dump:\n" + new ByteArrayUtil(decrypt).dumpToString());
+		
+		// 【調試日誌】打印字符串讀取前的狀態
+		_log.info("About to read account name...");
+		String accountName = readS();
+		if (accountName != null) {
+			accountName = accountName.toLowerCase();
+		}
+		
+		// 【調試日誌】打印讀取帳號後的狀態
+		_log.info("After readS() account - accountName='" + accountName + "'");
+		_log.info("About to read password...");
+		
 		String password = readS();
+		
+		// 【調試日誌】打印讀取密碼後的狀態
+		_log.info("After readS() password - password='" + (password != null ? password : "NULL") + "'");
+		_log.info("=== End C_AuthLogin Debug ===");
+		
 		String ip = client.getIp();
 		String host = client.getHostname();
 		_log.finest("Request AuthLogin from user : " + accountName);

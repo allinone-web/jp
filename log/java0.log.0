@@ -1,0 +1,270 @@
+Feb 04, 2026 5:18:12 PM jp.l1j.configure.L1Properties notifyLoadingDefault
+INFO: ShutdownDelay does not exists. Server use default value.
+Feb 04, 2026 5:18:13 PM jp.l1j.server.utils.IdFactory loadState
+INFO: 現在のオブジェクトID: 268740953
+Feb 04, 2026 5:21:05 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 5:21:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 5:21:18 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 5:21:33 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 256
+Feb 04, 2026 5:21:55 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 40088
+Feb 04, 2026 5:22:00 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 40088 200
+Feb 04, 2026 5:25:01 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 5:25:17 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 5:25:19 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 5:34:13 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 5:34:20 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 5:34:22 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 5:38:49 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 5:38:53 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 5:39:01 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 5:39:03 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 5:39:51 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 5:39:54 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 5:40:00 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 5:40:02 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 5:57:29 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 6:15:16 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 6:15:21 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 6:15:24 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 6:23:01 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 6:23:06 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 6:23:11 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 6:23:13 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 6:35:11 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 6:35:28 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 6:35:33 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 6:35:34 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 6:38:16 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 40079
+Feb 04, 2026 6:38:20 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 40079 100
+Feb 04, 2026 6:39:01 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 140100 100
+Feb 04, 2026 6:39:07 PM jp.l1j.server.command.GMCommands executeDatabaseCommand
+INFO: hhhhh has used .item 240100 100
+Feb 04, 2026 6:41:11 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 04, 2026 6:44:12 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 04, 2026 6:44:17 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 04, 2026 6:44:19 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
+Feb 04, 2026 6:45:24 PM jp.l1j.server.utils.StreamUtil close
+SEVERE: Broken pipe
+java.net.SocketException: Broken pipe
+	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:425)
+	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:445)
+	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:831)
+	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1045)
+	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
+	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
+	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:182)
+	at jp.l1j.server.utils.StreamUtil.close(StreamUtil.java:30)
+	at jp.l1j.server.ClientThread.run(ClientThread.java:351)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 04, 2026 6:45:24 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1

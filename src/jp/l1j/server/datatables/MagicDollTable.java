@@ -124,7 +124,7 @@ public class MagicDollTable {
 				doll.setSkillId(skillId);
 				doll.setSkillChance(rs.getByte("skill_chance"));
 				doll.setSummonTime(rs.getInt("summon_time"));
-				dolls.put(new Integer(itemId), doll);
+				dolls.put(Integer.valueOf(itemId), doll);
 			}
 			System.out.println("loading magic dolls...OK! " + timer.elapsedTimeMillis() + "ms");
 		} catch (SQLException e) {
