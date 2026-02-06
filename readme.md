@@ -49,7 +49,7 @@
 
 - 已刪除 JP 專用物品（不屬於 182）與所有關聯引用  
   - item_id：`20082, 21211, 21217, 40016, 41482, 49304-49309, 140016`
-  - 關聯表：`shops`, `drop_items`, `drop_rates`, `item_rates`, `resolvents`, `weapon_skills`, `pet_items`, `magic_dolls`, `cooking_ingredients`, `beginner_items`, `inventory_items`
+  - 關聯表：`shops`, `drop_items`, `drop_rates`, `item_rates`, `resolvents`, `weapon_skills`, `beginner_items`, `inventory_items`
   - 清理腳本：`jp/db/docs/remove_jp_only_items.sql`
 - 已刪除 `etc_items` 範圍 `40136-41382` 以及關聯引用（`shops`, `item_rates`, `inventory_items`）
 - `material` 統一：`oriharukon` -> `orichalcum`（避免 ItemTable 解析失敗）

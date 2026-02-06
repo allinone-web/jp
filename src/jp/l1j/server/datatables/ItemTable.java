@@ -87,7 +87,6 @@ public class ItemTable {
 		_etcItemTypes.put("event", Integer.valueOf(14));
 		_etcItemTypes.put("sting", Integer.valueOf(15));
 		_etcItemTypes.put("treasure_box", Integer.valueOf(16));
-		_etcItemTypes.put("magic_doll", Integer.valueOf(17));
 		_etcItemTypes.put("spellscroll", Integer.valueOf(18));
 		_etcItemTypes.put("spellwand", Integer.valueOf(19));
 		_etcItemTypes.put("spellicon", Integer.valueOf(20));
