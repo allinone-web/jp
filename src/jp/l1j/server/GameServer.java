@@ -45,7 +45,6 @@ import jp.l1j.server.datatables.CastleTable;
 import jp.l1j.server.datatables.CharacterTable;
 import jp.l1j.server.datatables.ChatLogTable;
 import jp.l1j.server.datatables.ClanTable;
-import jp.l1j.server.datatables.CookingRecipeTable;
 import jp.l1j.server.datatables.DoorTable;
 import jp.l1j.server.datatables.DropRateTable;
 import jp.l1j.server.datatables.DropTable;
@@ -120,11 +119,8 @@ import jp.l1j.server.model.item.executor.L1TeleportAmulet;
 import jp.l1j.server.model.item.executor.L1ThirdSpeedPotion;
 import jp.l1j.server.model.item.executor.L1TreasureBox;
 import jp.l1j.server.model.item.executor.L1UniqueEnchantScroll;
-import jp.l1j.server.model.item.executor.L1UnknownMaliceWeapon;
 import jp.l1j.server.model.item.executor.L1WisdomPotion;
 import jp.l1j.server.model.map.L1WorldMap;
-import jp.l1j.server.model.map.executor.L1MapLimiter;
-import jp.l1j.server.model.trap.L1WorldTraps;
 import jp.l1j.server.utils.IdFactory;
 import jp.l1j.server.utils.SystemUtil;
 
@@ -308,7 +304,6 @@ public class GameServer extends Thread {
 		ShopTable.getInstance();
 		NpcTalkDataTable.getInstance();
 		L1World.getInstance();
-		L1WorldTraps.getInstance();
 		DungeonTable.getInstance();
 		RandomDungeonTable.getInstance();
 		SpawnNpcTable.getInstance();
@@ -338,12 +333,10 @@ public class GameServer extends Thread {
 		L1BugBearRace.getInstance();
 		InnTable.getInstance();
 		MagicDollTable.getInstance();
-		CookingRecipeTable.getInstance();
 		ShutdownRequestTable.removeAll();
 		
 		// Loading the XML files
 		L1BossCycle.load();
-		L1BeginnerItem.load();
 		L1BlankScroll.load();
 		L1BlessOfEva.load();
 		L1BluePotion.load();
@@ -360,7 +353,6 @@ public class GameServer extends Thread {
 		L1HealingPotion.load();
 		L1MagicEye.load();
 		L1MagicPotion.load();
-		L1MapLimiter.load();
 		L1Material.load();
 		L1MaterialChoice.load();
 		L1PolyPotion.load();
@@ -376,7 +368,6 @@ public class GameServer extends Thread {
 		L1ThirdSpeedPotion.load();
 		L1TreasureBox.load();
 		L1UniqueEnchantScroll.load();
-		L1UnknownMaliceWeapon.load();
 		L1WisdomPotion.load();
 		
 		System.out.println(I18N_LOADING_COMPLETE);

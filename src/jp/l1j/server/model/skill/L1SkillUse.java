@@ -62,7 +62,6 @@ import jp.l1j.server.model.instance.L1TowerInstance;
 import jp.l1j.server.model.inventory.L1PcInventory;
 import jp.l1j.server.model.poison.L1DamagePoison;
 import static jp.l1j.server.model.skill.L1SkillId.*;
-import jp.l1j.server.model.trap.L1WorldTraps;
 import jp.l1j.server.packets.server.S_ChangeHeading;
 import jp.l1j.server.packets.server.S_ChangeName;
 import jp.l1j.server.packets.server.S_ChangeShape;
@@ -3351,7 +3350,6 @@ public class L1SkillUse {
 				tgt.delInvis();
 			}
 		}
-		L1WorldTraps.getInstance().onDetection(pc);
 	}
 
 	// ターゲットについて計算する必要があるか返す

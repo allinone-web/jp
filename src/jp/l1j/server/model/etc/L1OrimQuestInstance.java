@@ -22,7 +22,6 @@ import java.util.TimerTask;
 import jp.l1j.server.codes.ActionCodes;
 import jp.l1j.server.datatables.DoorTable;
 import jp.l1j.server.datatables.NpcTable;
-import jp.l1j.server.datatables.TrapTable;
 import jp.l1j.server.model.L1Location;
 import jp.l1j.server.model.L1Object;
 import jp.l1j.server.model.L1OrimQuest;
@@ -37,8 +36,6 @@ import jp.l1j.server.model.instance.L1NpcInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.instance.L1TrapInstance;
 import jp.l1j.server.model.inventory.L1Inventory;
-import jp.l1j.server.model.trap.L1Trap;
-import jp.l1j.server.model.trap.L1WorldTraps;
 import jp.l1j.server.packets.server.S_BlackWindow;
 import jp.l1j.server.packets.server.S_DisplayClack;
 import jp.l1j.server.packets.server.S_DoActionGFX;
@@ -926,7 +923,6 @@ public class L1OrimQuestInstance {
 									_portal_rune = null;
 								}
 								if(_moveTrap != null){
-									L1WorldTraps.getInstance().removeTrap(_moveTrap);
 									_moveTrap = null;
 								}
 								while (_ship.moveDirection(_ship.getX(),_ship.getY()+13) != -1) {
@@ -1414,17 +1410,7 @@ public class L1OrimQuestInstance {
 	 *            　トラップID
 	 */
 	private static L1TrapInstance setSwitch(L1Location loc, int id) {
-		final int trapId = id;
-		final L1Trap trapTemp = TrapTable.getInstance().getTemplate(trapId);
-		final Point rndPt = new Point();
-		rndPt.setX(0);
-		rndPt.setY(0);
-		final int span = 0;
-		final L1TrapInstance trap = new L1TrapInstance(IdFactory.getInstance()
-				.nextId(), trapTemp, loc, rndPt, span);
-		L1World.getInstance().addVisibleObject(trap);
-		L1WorldTraps.getInstance().addTrap(trap);
-		return trap;
+		return null;
 	}
 	private int checkAliveMonster(){
 		int count = 0;
@@ -1547,8 +1533,6 @@ public class L1OrimQuestInstance {
 						DoorTable.getInstance().deleteDoorByLocation(obj.getLocation());
 					} else if (obj instanceof L1NpcInstance) {
 						((L1NpcInstance) obj).deleteMe();
-					} else if (obj instanceof L1TrapInstance){
-						L1WorldTraps.getInstance().removeTrap((L1TrapInstance) obj);
 					}
 				}
 			}

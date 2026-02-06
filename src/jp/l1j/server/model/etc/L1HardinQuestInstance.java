@@ -23,7 +23,6 @@ import jp.l1j.server.GeneralThreadPool;
 import jp.l1j.server.datatables.DoorTable;
 import jp.l1j.server.datatables.MobGroupTable;
 import jp.l1j.server.datatables.NpcTable;
-import jp.l1j.server.datatables.TrapTable;
 import jp.l1j.server.model.instance.L1DoorInstance;
 import jp.l1j.server.model.instance.L1EffectInstance;
 import jp.l1j.server.model.instance.L1FieldObjectInstance;
@@ -41,8 +40,6 @@ import jp.l1j.server.model.L1World;
 import jp.l1j.server.model.inventory.L1Inventory;
 import jp.l1j.server.model.skill.L1SkillId;
 import jp.l1j.server.model.skill.L1SkillUse;
-import jp.l1j.server.model.trap.L1Trap;
-import jp.l1j.server.model.trap.L1WorldTraps;
 import jp.l1j.server.packets.server.S_GreenMessage;
 import jp.l1j.server.packets.server.S_NpcChatPacket;
 import jp.l1j.server.packets.server.S_NpcPack;
@@ -2259,12 +2256,6 @@ public class L1HardinQuestInstance {
 					}
 				}
 			}
-			for (final L1TrapInstance obj : this.getTrapList()) {
-				if (obj.getMapId() == getMapId()) {
-					// System.out.println("通過");
-					L1WorldTraps.getInstance().removeTrap(obj);
-				}
-			}
 		} catch (final Exception e) {
 			e.printStackTrace();
 		}
@@ -2827,19 +2818,6 @@ public class L1HardinQuestInstance {
 	 *            　トラップID
 	 */
 	private void setSwitch(L1Location loc, int id) {
-		final int trapId = id;
-		final L1Trap trapTemp = TrapTable.getInstance().getTemplate(trapId);
-		final Point rndPt = new Point();
-		rndPt.setX(0);
-		rndPt.setY(0);
-		final int span = 0;
-		final L1TrapInstance trap = new L1TrapInstance(IdFactory.getInstance().nextId(),
-				trapTemp, loc, rndPt, span);
-		L1World.getInstance().addVisibleObject(trap);
-
-		L1WorldTraps.getInstance().addTrap(trap);
-
-		this.addTrapList(trap);
 	}
 
 	/**

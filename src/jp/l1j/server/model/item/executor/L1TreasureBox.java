@@ -147,19 +147,20 @@ public class L1TreasureBox {
 
 	private boolean init() {
 		if (ItemTable.getInstance().getTemplate(getBoxId()) == null) {
-			System.out.println(String.format(I18N_DOES_NOT_EXIST_ITEM_LIST, getBoxId()));
-			// %s はアイテムリストに存在しません。
 			return false;
 		}
+		boolean hasMissing = false;
+		CopyOnWriteArrayList<Item> validItems = new CopyOnWriteArrayList<Item>();
 		for (Item each : getItems()) {
-			_totalChance += each.getChance();
 			if (ItemTable.getInstance().getTemplate(each.getItemId()) == null) {
-				_log.warning(String.format(I18N_DOES_NOT_EXIST_ITEM_LIST, each.getItemId()));
-				// %s はアイテムリストに存在しません。
-				return false;
+				hasMissing = true;
+				continue;
 			}
+			_totalChance += each.getChance();
+			validItems.add(each);
 		}
-		if (getTotalChance() != 0 && getTotalChance() != 1000000) {
+		_items = validItems;
+		if (!hasMissing && getTotalChance() != 0 && getTotalChance() != 1000000) {
 			_log.warning(String.format(I18N_PROBABILITIES_ERROR, getBoxId()));
 			// %s の確率が100%ではありません。
 			return false;

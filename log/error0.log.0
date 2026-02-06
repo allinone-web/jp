@@ -1,16 +1,9 @@
-Feb 04, 2026 6:45:24 PM jp.l1j.server.utils.StreamUtil close
-SEVERE: Broken pipe
-java.net.SocketException: Broken pipe
-	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:425)
-	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:445)
-	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:831)
-	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1045)
-	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
-	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
-	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:182)
-	at jp.l1j.server.utils.StreamUtil.close(StreamUtil.java:30)
-	at jp.l1j.server.ClientThread.run(ClientThread.java:351)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
+Feb 06, 2026 7:41:04 AM jp.l1j.server.model.item.executor.L1BlankScroll loadXml
+SEVERE: ./data/xml/Item/BlankScroll.xmlload failed.
+java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this._list" is null
+	at jp.l1j.server.model.item.executor.L1BlankScroll$ItemEffectList.iterator(L1BlankScroll.java:54)
+	at jp.l1j.server.model.item.executor.L1BlankScroll.loadXml(L1BlankScroll.java:142)
+	at jp.l1j.server.model.item.executor.L1BlankScroll.load(L1BlankScroll.java:155)
+	at jp.l1j.server.GameServer.initialize(GameServer.java:344)
+	at jp.l1j.Server.main(Server.java:91)
 

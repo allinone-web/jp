@@ -36,7 +36,6 @@ import jp.l1j.server.datatables.SkillTable;
 import jp.l1j.server.model.L1CastleLocation;
 import jp.l1j.server.model.L1Character;
 import jp.l1j.server.model.L1Clan;
-import jp.l1j.server.model.L1Cooking;
 import jp.l1j.server.model.L1DragonSlayer;
 import jp.l1j.server.model.L1HouseLocation;
 import jp.l1j.server.model.L1ItemDelay;
@@ -511,7 +510,8 @@ public class C_UseItem extends ClientBasePacket {
 					|| itemId >= 49244 && itemId <= 49259 // Lv3料理
 					|| itemId >= 50641 && itemId <= 50644 // 新料理
 					|| itemId == 50543) { // 象牙の塔の妙薬
-				L1Cooking.useCookingItem(pc, item);
+				pc.sendPackets(new S_SystemMessage("Cooking system is disabled."));
+				return;
 			} else if (itemId == 41315) { // 聖水
 				if (pc.hasSkillEffect(STATUS_HOLY_WATER_OF_EVA)) {
 					pc.sendPackets(new S_ServerMessage(79));

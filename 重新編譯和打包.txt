@@ -16,10 +16,12 @@ cd release-build
 
 現在可以啟動服務器
 cd /Users/airtan/Documents/GitHub/jp
+chmod +x ServerDebug.sh
 ./ServerStart.sh
 
 
 debug
+現在可以啟動服務器
 cd /Users/airtan/Documents/GitHub/jp
 chmod +x ServerDebug.sh
 ./ServerDebug.sh

@@ -1367,16 +1367,4 @@
 			<SetQuest Id="toscroll" Step="13"/>
 		</Succeed>
 	</MakeItem>
-	<!--トーキングスクロール クエスト / 沈黙の洞窟 ザルマン -->
-	<MakeItem Name="0" Class="PWEKDRI" NpcId="50115" AmountInputable="false" QuestId="toscroll" QuestStep="13">
-		<Item Amount="1" ItemId="20082"/>
-		<Item Amount="20" ItemId="40029"/>
-		<Item Amount="1" ItemId="40641"/>
-		<Material Amount="1" ItemId="40641"/>
-		<Succeed>
-			<ShowHtml HtmlId=""/>
-			<SetQuest Id="toscroll" Step="End"/>
-		</Succeed>
-	</MakeItem>
-
 </NpcActionList>

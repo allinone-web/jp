@@ -24,7 +24,6 @@ import jp.l1j.server.datatables.RandomDungeonTable;
 import jp.l1j.server.model.instance.L1PcInstance;
 import static jp.l1j.server.model.instance.L1PcInstance.REGENSTATE_MOVE;
 import static jp.l1j.server.model.skill.L1SkillId.*;
-import jp.l1j.server.model.trap.L1WorldTraps;
 import jp.l1j.server.packets.server.S_MoveCharPacket;
 import jp.l1j.server.packets.server.S_SystemMessage;
 
@@ -110,7 +109,6 @@ public class C_MoveChar extends ClientBasePacket {
 		// TODO ペットレース用　start
 				jp.l1j.server.model.L1PolyRace.getInstance().checkLapFinish(pc);
 		// TODO ペットレース用　end
-		L1WorldTraps.getInstance().onPlayerMoved(pc);
 
 		pc.getMap().setPassable(pc.getLocation(), false);
 		// user.UpdateObject(); // 可視範囲内の全オブジェクト更新

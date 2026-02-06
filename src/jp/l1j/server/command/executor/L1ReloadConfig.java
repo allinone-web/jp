@@ -21,7 +21,6 @@ import jp.l1j.server.command.GMCommandConfigs;
 import jp.l1j.server.controller.timer.MapTimeController;
 import jp.l1j.server.controller.timer.ShutdownTimeController;
 import jp.l1j.server.datatables.ArmorSetTable;
-import jp.l1j.server.datatables.CookingRecipeTable;
 import jp.l1j.server.datatables.DoorTable;
 import jp.l1j.server.datatables.DropRateTable;
 import jp.l1j.server.datatables.DropTable;
@@ -45,7 +44,6 @@ import jp.l1j.server.datatables.ReturnLocationTable;
 import jp.l1j.server.datatables.ShopTable;
 import jp.l1j.server.datatables.SkillTable;
 import jp.l1j.server.datatables.SprTable;
-import jp.l1j.server.datatables.TrapTable;
 import jp.l1j.server.datatables.WeaponSkillTable;
 import jp.l1j.server.model.L1BossCycle;
 import jp.l1j.server.model.instance.L1PcInstance;
@@ -81,9 +79,7 @@ import jp.l1j.server.model.item.executor.L1TeleportAmulet;
 import jp.l1j.server.model.item.executor.L1ThirdSpeedPotion;
 import jp.l1j.server.model.item.executor.L1TreasureBox;
 import jp.l1j.server.model.item.executor.L1UniqueEnchantScroll;
-import jp.l1j.server.model.item.executor.L1UnknownMaliceWeapon;
 import jp.l1j.server.model.item.executor.L1WisdomPotion;
-import jp.l1j.server.model.map.executor.L1MapLimiter;
 import jp.l1j.server.packets.server.S_SystemMessage;
 
 public class L1ReloadConfig implements L1CommandExecutor {
@@ -109,7 +105,6 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		}
 		// datatables
 		ArmorSetTable.getInstance().reload();
-		CookingRecipeTable.getInstance().reload();
 		DoorTable.getInstance().reload();
 		DropRateTable.getInstance().reload();
 		DropTable.getInstance().reload();
@@ -133,10 +128,8 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		ShopTable.getInstance().reload();
 		SkillTable.getInstance().reload();
 		SprTable.getInstance().reload();
-		TrapTable.getInstance().reload();
 		WeaponSkillTable.getInstance().reload();
 		// xml files
-		L1BeginnerItem.reload();
 		L1BlankScroll.reload();
 		L1BlessOfEva.reload();
 		L1BluePotion.reload();
@@ -153,7 +146,6 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		L1HealingPotion.reload();
 		L1MagicEye.reload();
 		L1MagicPotion.reload();
-		L1MapLimiter.reload();
 		L1Material.reload();
 		L1MaterialChoice.reload();
 		L1PolyPotion.reload();
@@ -169,7 +161,6 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		L1ThirdSpeedPotion.reload();
 		L1TreasureBox.reload();
 		L1UniqueEnchantScroll.reload();
-		L1UnknownMaliceWeapon.reload();
 		L1WisdomPotion.reload();
 		pc.sendPackets(new S_SystemMessage("reload the configs is complete."));
 	}

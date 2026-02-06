@@ -330,6 +330,17 @@ public class L1Spawn extends L1GameTimeAdapter {
 			int tryCount = 0;
 
 			mob = NpcTable.getInstance().newNpcInstance(_template);
+			if (mob == null) {
+				_log.warning("Spawn failed. npc_id=" + _template.getNpcId() + " map_id=" + getMapId() + " -> fallback npc_id=100003");
+				L1Npc fallbackTemplate = NpcTable.getInstance().getTemplate(100003);
+				if (fallbackTemplate != null) {
+					mob = NpcTable.getInstance().newNpcInstance(fallbackTemplate);
+				}
+			}
+			if (mob == null) {
+				_log.warning("Spawn failed. fallback npc_id=100003 is not available.");
+				return;
+			}
 			synchronized (_mobs) {
 				_mobs.add(mob);
 			}

@@ -32,6 +32,12 @@ public class L1TownAdvisorInstance extends L1NpcInstance {
 	private void createItem(L1PcInstance pc, int itemId, int amount, int price,
 			int needItemId, int needAmount) {
 		L1ItemInstance item = ItemTable.getInstance().createItem(itemId);
+		if (item == null) {
+			return;
+		}
+		if (needItemId > 0 && ItemTable.getInstance().getTemplate(needItemId) == null) {
+			return;
+		}
 		if (pc.getInventory().checkItem(40308, price)
 				&& (needItemId == 0 || (needItemId > 0 && pc.getInventory().checkItem(needItemId, needAmount)))) {
 			if (pc.getInventory().checkAddItem(item, amount, true) == L1Inventory.OK) {

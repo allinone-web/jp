@@ -29,6 +29,7 @@ import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
 import jp.l1j.server.packets.server.S_ServerMessage;
 import jp.l1j.server.packets.server.S_SkillSound;
+import jp.l1j.server.packets.server.S_SystemMessage;
 import jp.l1j.server.templates.L1CookingIngredient;
 import jp.l1j.server.templates.L1CookingRecipe;
 import jp.l1j.server.templates.L1Skill;
@@ -145,6 +146,9 @@ public class L1Cooking {
 	}
 
 	public static void useCookingItem(L1PcInstance pc, L1ItemInstance item) {
+		pc.sendPackets(new S_SystemMessage("Cooking system is disabled."));
+		return;
+
 		int itemId = item.getItem().getItemId();
 		if (isDessertItem(itemId) && pc.getFood() != 225) {
 			pc.sendPackets(new S_ServerMessage(L1MessageId.CANNOT_BE_USED, item

@@ -55,8 +55,14 @@ public class NpcTable {
 	private Constructor<?> getConstructor(String implName) {
 		try {
 			String implFullName = "jp.l1j.server.model.instance." + implName + "Instance";
-			Constructor<?> con = Class.forName(implFullName).getConstructors()[0];
-			return con;
+			Constructor<?>[] constructors = Class.forName(implFullName).getConstructors();
+			for (Constructor<?> con : constructors) {
+				Class<?>[] params = con.getParameterTypes();
+				if (params.length == 1 && params[0].equals(L1Npc.class)) {
+					return con;
+				}
+			}
+			_log.warning("Npc constructor not found for impl: " + implName);
 		} catch (ClassNotFoundException e) {
 			_log.log(Level.WARNING, e.getLocalizedMessage(), e);
 		}
@@ -191,6 +197,10 @@ public class NpcTable {
 	public L1NpcInstance newNpcInstance(L1Npc template) {
 		try {
 			Constructor<?> con = _constructorCache.get(template.getImpl());
+			if (con == null) {
+				_log.warning("NpcInstance constructor is null for impl: " + template.getImpl());
+				return null;
+			}
 			return (L1NpcInstance) con.newInstance(new Object[] { template });
 		} catch (Exception e) {
 			_log.log(Level.SEVERE, e.getLocalizedMessage(), e);

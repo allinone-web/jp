@@ -16,9 +16,7 @@
 package jp.l1j.server.command.executor;
 
 import java.util.logging.Logger;
-import static jp.l1j.locale.I18N.*;
 import jp.l1j.server.model.instance.L1PcInstance;
-import jp.l1j.server.model.trap.L1WorldTraps;
 import jp.l1j.server.packets.server.S_SystemMessage;
 
 public class L1ResetTrap implements L1CommandExecutor {
@@ -33,8 +31,6 @@ public class L1ResetTrap implements L1CommandExecutor {
 
 	@Override
 	public void execute(L1PcInstance pc, String cmdName, String arg) {
-		L1WorldTraps.getInstance().resetAllTraps();
-		pc.sendPackets(new S_SystemMessage(I18N_RELOADED_THE_TRAPS));
-		// トラップをリロードしました。
+		pc.sendPackets(new S_SystemMessage("Trap system is disabled."));
 	}
 }

@@ -105,13 +105,17 @@ public class L1BeginnerItem {
 	}
 	
 	private boolean init() {
+		CopyOnWriteArrayList<Item> validItems = new CopyOnWriteArrayList<Item>();
 		for (Item each : getItems()) {
 			if (ItemTable.getInstance().getTemplate(each.getItemId()) == null) {
-				System.out.println(String.format(I18N_DOES_NOT_EXIST_ITEM_LIST, each.getItemId()));
-				// %s はアイテムリストに存在しません。
-				return false;
+				continue;
 			}
+			validItems.add(each);
 		}
+		if (validItems.isEmpty()) {
+			return false;
+		}
+		_items = validItems;
 		return true;
 	}
 	

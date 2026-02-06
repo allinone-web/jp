@@ -259,9 +259,13 @@ public class L1BugBearRace {
 	}
 
 	private void sendMessage(String id) {
-		parkin.wideBroadcastPacket(new S_NpcChatPacket(parkin, id, 2));
+		if (parkin != null) {
+			parkin.wideBroadcastPacket(new S_NpcChatPacket(parkin, id, 2));
+		}
 		// cecile.broadcastPacket(new S_NpcChatPacket(cecile,id, 2));
-		pory.wideBroadcastPacket(new S_NpcChatPacket(pory, id, 2));
+		if (pory != null) {
+			pory.wideBroadcastPacket(new S_NpcChatPacket(pory, id, 2));
+		}
 	}
 
 	private class RaceTimer extends TimerTask {

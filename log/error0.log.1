@@ -1,0 +1,9 @@
+Feb 06, 2026 7:22:15 AM jp.l1j.server.model.item.executor.L1WisdomPotion loadXml
+SEVERE: ./data/xml/Item/WisdomPotion.xmlload failed.
+java.lang.NullPointerException: Cannot invoke "java.util.List.iterator()" because "this._list" is null
+	at jp.l1j.server.model.item.executor.L1WisdomPotion$ItemEffectList.iterator(L1WisdomPotion.java:54)
+	at jp.l1j.server.model.item.executor.L1WisdomPotion.loadXml(L1WisdomPotion.java:114)
+	at jp.l1j.server.model.item.executor.L1WisdomPotion.load(L1WisdomPotion.java:130)
+	at jp.l1j.server.GameServer.initialize(GameServer.java:375)
+	at jp.l1j.Server.main(Server.java:91)
+

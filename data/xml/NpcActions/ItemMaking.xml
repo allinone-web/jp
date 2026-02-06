@@ -1632,16 +1632,6 @@
 			<Material Amount="3" ItemId="40419"/>
 		</MakeItem>
 	</Action>
-	<!--ウィズダムポーション / 隠れ里の錬金術師-->
-	<Action Name="request potion of emotion：prudence">
-		<MakeItem>
-			<Item Amount="2" ItemId="40016"/>
-			<Material Amount="20" ItemId="40438"/>
-			<Material Amount="5" ItemId="40470"/>
-			<Material Amount="5" ItemId="40472"/>
-			<Material Amount="3" ItemId="40419"/>
-		</MakeItem>
-	</Action>
 	<!--レジスタンスの村帰還スクロール / レジスタンスの村の錬金術師-->
 	<Action Name="request resist teleport scroll">
 		<MakeItem>

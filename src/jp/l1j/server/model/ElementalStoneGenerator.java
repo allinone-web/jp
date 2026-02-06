@@ -42,7 +42,7 @@ public class ElementalStoneGenerator implements Runnable {
 	private static final int FIRST_Y = 32210;
 	private static final int LAST_X = 33141;
 	private static final int LAST_Y = 32500;
-	private static final int ELEMENTAL_STONE_ID = 40515; // 精霊の石
+	private static final int ELEMENTAL_STONE_ID = 141; // ダイヤモンド
 
 	private ArrayList<L1GroundInventory> _itemList = new ArrayList<L1GroundInventory>(
 			MAX_COUNT);
@@ -105,7 +105,6 @@ public class ElementalStoneGenerator implements Runnable {
 	 */
 	private void putElementalStone(L1Location loc) {
 		L1GroundInventory gInventory = L1World.getInstance().getInventory(loc);
-
 		L1ItemInstance item = ItemTable.getInstance().createItem(
 				ELEMENTAL_STONE_ID);
 		item.setEnchantLevel(0);

@@ -7345,11 +7345,21 @@ public class C_NpcAction extends ClientBasePacket {
 
 	private boolean giveBeginnerItems(L1PcInstance pc) {
 		boolean result = false;
-		L1BeginnerItem items = L1BeginnerItem.get("A");
-		result = items.storeToInventory(pc);
-		items = L1BeginnerItem.get(pc.getClassFeature().getClassNameInitial());
-		result = items.storeToInventory(pc);
-
+		try {
+			String classInitial = pc.getClassFeature().getClassNameInitial();
+			java.util.List<jp.l1j.server.templates.L1BeginnerItem> items = jp.l1j.server.templates.L1BeginnerItem.findByClass(classInitial);
+			if (items != null) {
+				for (jp.l1j.server.templates.L1BeginnerItem each : items) {
+					if (ItemTable.getInstance().getTemplate(each.getItemId()) == null) {
+						continue;
+					}
+					each.storeToInventory(pc);
+					result = true;
+				}
+			}
+		} catch (Exception e) {
+			_log.log(Level.SEVERE, "giveBeginnerItems (db) failed.", e);
+		}
 		return result;
 	}
 
