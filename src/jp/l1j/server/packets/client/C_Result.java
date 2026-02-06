@@ -21,7 +21,6 @@ import jp.l1j.server.ClientThread;
 import jp.l1j.server.datatables.NpcTable;
 import jp.l1j.server.datatables.PetTable;
 import jp.l1j.server.datatables.ShopTable;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1FurnitureInstance;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1NpcInstance;
@@ -120,17 +119,6 @@ public class C_Result extends ClientBasePacket {
 						}
 					}
 				}
-				Object[] dolllist = pc.getDollList().values().toArray();
-				for (Object dollObject : dolllist) {
-					if (dollObject instanceof L1DollInstance) {
-						L1DollInstance doll = (L1DollInstance) dollObject;
-						if (item.getId() == doll.getItemObjId()) {
-							tradable = false;
-							pc.sendPackets(new S_ServerMessage(1181)); // 該当のマジックドールは現在使用中です。
-							break;
-						}
-					}
-				}
 				if (pc.getWarehouseInventory().checkAddItemToWarehouse(item,
 						count, L1Inventory.WAREHOUSE_TYPE_PERSONAL) == L1Inventory.SIZE_OVER) {
 					pc.sendPackets(new S_ServerMessage(75)); // \f1これ以上ものを置く場所がありません。
@@ -192,17 +180,6 @@ public class C_Result extends ClientBasePacket {
 							tradable = false;
 							pc.sendPackets(new S_ServerMessage(210, item.getItem().getName()));
 							// \f1%0は捨てたりまたは他人に讓ることができません。
-							break;
-						}
-					}
-				}
-				Object[] dolllist = pc.getDollList().values().toArray();
-				for (Object dollObject : dolllist) {
-					if (dollObject instanceof L1DollInstance) {
-						L1DollInstance doll = (L1DollInstance) dollObject;
-						if (item.getId() == doll.getItemObjId()) {
-							tradable = false;
-							pc.sendPackets(new S_ServerMessage(1181)); // 該当のマジックドールは現在使用中です。
 							break;
 						}
 					}
@@ -273,17 +250,6 @@ public class C_Result extends ClientBasePacket {
 									// \f1%0は捨てたりまたは他人に讓ることができません。
 									pc.sendPackets(new S_ServerMessage(210,
 											item.getItem().getName()));
-									break;
-								}
-							}
-						}
-						Object[] dolllist = pc.getDollList().values().toArray();
-						for (Object dollObject : dolllist) {
-							if (dollObject instanceof L1DollInstance) {
-								L1DollInstance doll = (L1DollInstance) dollObject;
-								if (item.getId() == doll.getItemObjId()) {
-									tradable = false;
-									pc.sendPackets(new S_ServerMessage(1181)); // 該当のマジックドールは現在使用中です。
 									break;
 								}
 							}
@@ -364,17 +330,6 @@ public class C_Result extends ClientBasePacket {
 							// \f1%0は捨てたりまたは他人に讓ることができません。
 							pc.sendPackets(new S_ServerMessage(210, item
 									.getItem().getName()));
-							break;
-						}
-					}
-				}
-				Object[] dolllist = pc.getDollList().values().toArray();
-				for (Object dollObject : dolllist) {
-					if (dollObject instanceof L1DollInstance) {
-						L1DollInstance doll = (L1DollInstance) dollObject;
-						if (item.getId() == doll.getItemObjId()) {
-							tradable = false;
-							pc.sendPackets(new S_ServerMessage(1181)); // 該当のマジックドールは現在使用中です。
 							break;
 						}
 					}

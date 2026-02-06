@@ -42,7 +42,6 @@ import jp.l1j.server.model.instance.L1AddWarehouseInstance;
 import jp.l1j.server.model.instance.L1AuctionBoardInstance;
 import jp.l1j.server.model.instance.L1BoardInstance;
 import jp.l1j.server.model.instance.L1CrownInstance;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1DoorInstance;
 import jp.l1j.server.model.instance.L1DwarfInstance;
 import jp.l1j.server.model.instance.L1EffectInstance;
@@ -556,11 +555,6 @@ public class L1SkillUse {
 			if (cha.getMaxHp() == 0 || cha.getMaxHp() == 1) {
 				return false;
 			}
-		}
-
-		// マジックドールは対象外
-		if (cha instanceof L1DollInstance && _skillId != HASTE) {
-			return false;
 		}
 
 		// 元のターゲットがPet、Summon以外のNPCの場合、PC、Pet、Summonは対象外

@@ -26,8 +26,6 @@ public class L1AbsoluteBarrier extends L1BuffSkillExecutorImpl {
 			L1PcInstance pc = (L1PcInstance) target;
 			pc.stopHpRegeneration();
 			pc.stopMpRegeneration();
-			pc.stopHpRegenerationByDoll();
-			pc.stopMpRegenerationByDoll();
 		}
 	}
 
@@ -37,8 +35,6 @@ public class L1AbsoluteBarrier extends L1BuffSkillExecutorImpl {
 			L1PcInstance pc = (L1PcInstance) target;
 			pc.startHpRegeneration();
 			pc.startMpRegeneration();
-			pc.startHpRegenerationByDoll();
-			pc.startMpRegenerationByDoll();
 		}
 
 	}

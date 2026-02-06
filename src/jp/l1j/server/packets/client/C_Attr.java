@@ -331,8 +331,6 @@ public class C_Attr extends ClientBasePacket {
 					pc.setCurrentHp(pc.getMaxHp() / 2);
 					pc.startHpRegeneration();
 					pc.startMpRegeneration();
-					pc.startHpRegenerationByDoll();
-					pc.startMpRegenerationByDoll();
 					pc.stopPcDeleteTimer();
 					pc.sendPackets(new S_Resurrection(pc, resusepc1, 0));
 					pc.broadcastPacket(new S_Resurrection(pc, resusepc1, 0));
@@ -357,7 +355,6 @@ public class C_Attr extends ClientBasePacket {
 					pc.setCurrentHp(pc.getMaxHp());
 					pc.startHpRegeneration();
 					pc.startMpRegeneration();
-					pc.startMpRegenerationByDoll();
 					pc.stopPcDeleteTimer();
 					pc.sendPackets(new S_Resurrection(pc, resusepc2, 0));
 					pc.broadcastPacket(new S_Resurrection(pc, resusepc2, 0));

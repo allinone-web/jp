@@ -103,7 +103,6 @@ import jp.l1j.server.packets.client.C_TradeAddItem;
 import jp.l1j.server.packets.client.C_TradeCancel;
 import jp.l1j.server.packets.client.C_TradeOK;
 import jp.l1j.server.packets.client.C_UseItem;
-import jp.l1j.server.packets.client.C_UsePetItem;
 import jp.l1j.server.packets.client.C_UseSkill;
 import jp.l1j.server.packets.client.C_War;
 import jp.l1j.server.packets.client.C_Who;
@@ -366,9 +365,6 @@ public class PacketHandler {
 			break;
 		case C_OPCODE_PETMENU:
 			new C_PetMenu(abyte0, _client);
-			break;
-		case C_OPCODE_USEPETITEM:
-			new C_UsePetItem(abyte0, _client);
 			break;
 		case C_OPCODE_TELEPORT:
 			new C_Teleport(abyte0, _client);

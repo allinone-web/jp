@@ -16,9 +16,7 @@
 package jp.l1j.server.packets.client;
 
 import jp.l1j.server.ClientThread;
-import jp.l1j.server.datatables.PetItemTable;
 import jp.l1j.server.datatables.PetTypeTable;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1NpcInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
@@ -33,7 +31,6 @@ import jp.l1j.server.packets.server.S_ServerMessage;
 import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
 import jp.l1j.server.templates.L1Npc;
-import jp.l1j.server.templates.L1PetItem;
 import jp.l1j.server.templates.L1PetType;
 
 public class C_GiveItem extends ClientBasePacket {
@@ -98,17 +95,6 @@ public class C_GiveItem extends ClientBasePacket {
 				}
 			}
 		}
-		// マジックドール使用中
-		Object[] dollList = pc.getDollList().values().toArray();
-		for (Object dollObject : dollList) {
-			if (dollObject instanceof L1DollInstance) {
-				L1DollInstance doll = (L1DollInstance) dollObject;
-				if (doll.getItemObjId() == item.getId()) {
-					pc.sendPackets(new S_ServerMessage(1181)); // 該当のマジックドールは現在使用中です。
-					return;
-				}
-			}
-		}
 		// シェルマンに最高級サファイアを渡しhideを解除
 		if(item.getItemId() == 40054 && target.getNpcTemplate().getNpcId() == 46291) {
 			((L1NpcInstance)target).appearSwelmaen();
@@ -139,27 +125,6 @@ public class C_GiveItem extends ClientBasePacket {
 		// 　進化アイテム(デフォルト　進化の実・勝利の実)
 		if (item.getItemId() == petType.getTransformItemId() && petType.canEvolve()) {
 			evolvePet(pc, target, item.getItemId());
-		}
-		// ペット食物・装備
-		if (item.getItem().getType2() == 0) { // 道具類
-			// ペット装備類
-			if ((item.getItem().getType() == 11) && (petType.useEquipment())) { // ペット装備使用可能判定
-				usePetWeaponArmor(target, item);
-			}
-		}
-	}
-
-	private void usePetWeaponArmor(L1NpcInstance target, L1ItemInstance item) {
-		if (!(target instanceof L1PetInstance)) {
-			return;
-		}
-		L1PetInstance pet = (L1PetInstance) target;
-		L1PetItem petItem = PetItemTable.getInstance().getTemplate(
-				item.getItemId());
-		if (petItem.getUseType() == 1) { // 牙
-			pet.usePetWeapon(pet, item);
-		} else if (petItem.getUseType() == 0) { // アーマー
-			pet.usePetArmor(pet, item);
 		}
 	}
 

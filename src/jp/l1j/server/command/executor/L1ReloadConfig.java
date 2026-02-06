@@ -18,7 +18,6 @@ package jp.l1j.server.command.executor;
 import java.util.logging.Logger;
 import jp.l1j.configure.Config;
 import jp.l1j.server.command.GMCommandConfigs;
-import jp.l1j.server.controller.timer.MapTimeController;
 import jp.l1j.server.controller.timer.ShutdownTimeController;
 import jp.l1j.server.datatables.ArmorSetTable;
 import jp.l1j.server.datatables.DoorTable;
@@ -27,14 +26,12 @@ import jp.l1j.server.datatables.DropTable;
 import jp.l1j.server.datatables.DungeonTable;
 import jp.l1j.server.datatables.ItemRateTable;
 import jp.l1j.server.datatables.ItemTable;
-import jp.l1j.server.datatables.MagicDollTable;
 import jp.l1j.server.datatables.MapTable;
 import jp.l1j.server.datatables.MobGroupTable;
 import jp.l1j.server.datatables.MobSkillTable;
 import jp.l1j.server.datatables.NpcActionTable;
 import jp.l1j.server.datatables.NpcChatTable;
 import jp.l1j.server.datatables.NpcTable;
-import jp.l1j.server.datatables.PetItemTable;
 import jp.l1j.server.datatables.PetTypeTable;
 import jp.l1j.server.datatables.PolyTable;
 import jp.l1j.server.datatables.RandomDungeonTable;
@@ -48,7 +45,6 @@ import jp.l1j.server.datatables.WeaponSkillTable;
 import jp.l1j.server.model.L1BossCycle;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.item.executor.L1BeginnerItem;
-import jp.l1j.server.model.item.executor.L1BlankScroll;
 import jp.l1j.server.model.item.executor.L1BlessOfEva;
 import jp.l1j.server.model.item.executor.L1BluePotion;
 import jp.l1j.server.model.item.executor.L1BravePotion;
@@ -99,7 +95,6 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		Config.load();
 		GMCommandConfigs.getInstance().reload();
 		L1BossCycle.reload();
-		MapTimeController.getInstance().reload();
 		if (Config.AUTO_SHUTDOWN) {
 			ShutdownTimeController.getInstance().reload();
 		}
@@ -111,14 +106,12 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		DungeonTable.getInstance().reload();
 		ItemTable.getInstance().reload();
 		ItemRateTable.getInstance().reload();
-		MagicDollTable.getInstance().reload();
 		MapTable.getInstance().reload();
 		MobGroupTable.getInstance().reload();
 		MobSkillTable.getInstance().reload();
 		NpcActionTable.getInstance().reload();
 		NpcChatTable.getInstance().reload();
 		NpcTable.getInstance().reload();
-		PetItemTable.getInstance().reload();
 		PetTypeTable.getInstance().reload();
 		PolyTable.getInstance().reload();
 		RandomDungeonTable.getInstance().reload();
@@ -130,7 +123,6 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		SprTable.getInstance().reload();
 		WeaponSkillTable.getInstance().reload();
 		// xml files
-		L1BlankScroll.reload();
 		L1BlessOfEva.reload();
 		L1BluePotion.reload();
 		L1BravePotion.reload();

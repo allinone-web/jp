@@ -17,7 +17,6 @@ package jp.l1j.server.packets.client;
 
 import java.util.logging.Logger;
 import jp.l1j.server.ClientThread;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.instance.L1PetInstance;
@@ -74,18 +73,6 @@ public class C_DropItem extends ClientBasePacket {
 					}
 				}
 			}
-			// マジックドール使用中判定
-			Object[] dollList = pc.getDollList().values().toArray();
-			for (Object dollObject : dollList) {
-				if (dollObject instanceof L1DollInstance) {
-					L1DollInstance doll = (L1DollInstance) dollObject;
-					if (doll.getItemObjId() == item.getId()) {
-						pc.sendPackets(new S_ServerMessage(1181)); // 該当のマジックドールは現在使用中です。
-						return;
-					}
-				}
-			}
-
 			if (item.isEquipped()) {
 				// \f1削除できないアイテムや装備しているアイテムは捨てられません。
 				pc.sendPackets(new S_ServerMessage(125));

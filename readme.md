@@ -113,3 +113,37 @@
   - `GameServer` / `ReloadConfig` 不再載入 `CookingRecipeTable`  
   - 料理道具使用時回報「Cooking system is disabled.」  
   - 移除 DB 表：`cooking_recipes`, `cooking_ingredients`
+
+### 4.7 地圖限制 / 魔法娃娃 / 寵物道具 / 空白卷軸移除
+
+- `return_locations` 重新覆蓋  
+  - 來源：`jpdbbackup.return_locations`  
+  - 篩選：僅保留 **182 地圖集合** 的 `area_map_id` / `getback_map_id`
+- MapLimiter / MapTimeController 全套移除  
+  - 不再載入 MapLimiter / ResetMapTimeCycle  
+  - 關閉 `startMapLimiter/stopMapLimiter` 呼叫  
+  - 移除 DB 表：`map_timers`  
+  - 刪除檔案：`data/xml/etc/MapLimiter.xml`, `data/xml/Cycle/ResetMapTimeCycle.xml`
+- 魔法娃娃系統移除  
+  - 移除 DB 表：`magic_dolls`
+- 寵物道具系統移除（保留寵物功能）  
+  - 移除 DB 表：`pet_items`
+- BlankScroll 系統移除  
+  - 刪除 `L1BlankScroll`  
+  - 移除檔案：`data/xml/Item/BlankScroll.xml`
+
+### 4.8 MapLimiter / Magic Doll / Pet Items / Blank Scroll 代碼移除
+
+- MapLimiter 全套移除（代碼清理）  
+  - 刪除 `MapTimeController` / `MapTimerTable` / `L1MapLimiter`  
+  - 清理 `MapTable` / `L1PcInstance` 中所有 MapLimiter 引用
+- Magic Doll 全套移除（代碼清理）  
+  - 刪除 `L1MagicDoll` / `MagicDollTable` / `L1DollInstance` / `S_DollPack`  
+  - 刪除 `HpRegenerationByDoll` / `MpRegenerationByDoll` / `MakeItemByDoll`  
+  - 清理所有娃娃加成與召喚/傳送/倉庫/掉落等邏輯引用
+- Pet Items 全套移除（代碼清理）  
+  - 刪除 `PetItemTable` / `L1PetItem` / `C_UsePetItem`  
+  - `L1PetInstance` / `C_GiveItem` 移除寵物裝備邏輯（保留寵物功能）
+- Blank Scroll 全套移除（代碼清理）  
+  - 刪除 `L1BlankScroll`  
+  - `C_UseItem` 移除空白卷軸處理邏輯

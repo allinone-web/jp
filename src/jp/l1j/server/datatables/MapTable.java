@@ -25,7 +25,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import jp.l1j.server.model.map.executor.L1MapLimiter;
 import jp.l1j.server.utils.L1DatabaseFactory;
 import jp.l1j.server.utils.PerformanceTimer;
 import jp.l1j.server.utils.SqlUtil;
@@ -449,8 +448,4 @@ public final class MapTable {
 		return _maps.get(mapId).isUsableSkill;
 	}
 
-	public L1MapLimiter newMapTimeExecutor() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 }

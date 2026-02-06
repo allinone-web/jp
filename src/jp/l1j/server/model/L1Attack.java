@@ -46,7 +46,6 @@ import jp.l1j.server.packets.server.S_UseArrowSkill;
 import jp.l1j.server.packets.server.S_UseAttackSkill;
 import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.templates.L1Skill;
 import jp.l1j.server.types.Point;
 
@@ -429,12 +428,6 @@ public class L1Attack {
 			return false;
 		}
 
-		// マジックドール效果 - ダメージ回避
-		if (L1MagicDoll.getDamageEvasionByDoll(_targetPc) > 0) {
-			_hitRate = 0;
-			return false;
-		}
-
 		if (_weaponType2 == 14) {
 			_hitRate = 100; // キーリンクの命中率は100%
 			return true;
@@ -728,12 +721,6 @@ public class L1Attack {
 			}
 		}
 
-		// マジックドール効果 - ダメージ回避
-		if (L1MagicDoll.getDamageEvasionByDoll(_targetPc) > 0) {
-			_hitRate = 0;
-			return false;
-		}
-
 		_hitRate += _npc.getLevel();
 
 		if (_npc instanceof L1PetInstance) { // ペットの武器による追加命中
@@ -998,10 +985,6 @@ public class L1Attack {
 			dmg += _pc.getBowDmgModifierByArmor();
 		}
 
-		if (_weaponType != 20 && _weaponType != 62) { // マジックドール効果
-			L1MagicDoll.getDamageAddByDoll(_pc);
-		}
-
 		if (_pc.hasSkillEffect(COOKING_2_0_N) // 料理による追加ダメージ
 				|| _pc.hasSkillEffect(COOKING_2_0_S)
 				|| _pc.hasSkillEffect(COOKING_3_2_N)
@@ -1042,9 +1025,6 @@ public class L1Attack {
 
 		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ軽減
 
-		// マジックドール效果 - ダメージリダクション
-		dmg -= L1MagicDoll.getDamageReductionByDoll(_targetPc);
-
 		if (_targetPc.hasSkillEffect(COOKING_4_1) // 料理によるダメージ軽減
 				|| _targetPc.hasSkillEffect(COOKING_4_2)
 				|| _targetPc.hasSkillEffect(COOKING_4_3)
@@ -1084,36 +1064,6 @@ public class L1Attack {
 		if (dmg <= 0) {
 			_isHit = false;
 			_drainHp = 0; // ダメージ無しの場合は吸収による回復はしない
-		}
-
-		// マジックドールスキル
-		L1SkillUse l1skilluse = new L1SkillUse();
-		if (L1MagicDoll.getEffectByDoll(_pc, SLOW) == SLOW) {
-			l1skilluse.handleCommands(_pc,SLOW, // スロー
-				_targetPc.getId(), _targetPc.getX(), _targetPc.getY(), null, 0,L1SkillUse.TYPE_GMBUFF);
-		}
-		if (L1MagicDoll.getEffectByDoll(_pc, CURSE_PARALYZE) == CURSE_PARALYZE) {
-			l1skilluse.handleCommands(_pc,CURSE_PARALYZE, // カーズパラライズ
-				_targetPc.getId(), _targetPc.getX(), _targetPc.getY(), null, 0,L1SkillUse.TYPE_GMBUFF);
-		}
-		if (L1MagicDoll.getEffectByDoll(_pc, VAMPIRIC_TOUCH) == VAMPIRIC_TOUCH) {
-				L1Skill l1skills = SkillTable.getInstance().findBySkillId(
-						VAMPIRIC_TOUCH); // バンパイアリックタッチ
-				L1Magic magic = new L1Magic(_pc, _targetPc);
-
-				_pc.sendPackets(new S_SkillSound(_pc.getId(), l1skills
-						.getCastGfx()));
-				_pc.broadcastPacket(new S_SkillSound(_pc.getId(), l1skills
-						.getCastGfx()));
-
-				int damage = magic.calcMagicDamage(l1skills.getSkillId());
-				_targetPc.sendPackets(new S_DoActionGFX(_targetPc.getId(),
-						ActionCodes.ACTION_Damage));
-				_targetPc.broadcastPacket(new S_DoActionGFX(
-						_targetPc.getId(), ActionCodes.ACTION_Damage));
-				_targetPc.removeSkillEffect(ERASE_MAGIC); // イレースマジック中なら、攻撃魔法で解除
-				_targetPc.receiveDamage(_pc, damage, false);
-				_pc.setCurrentHp(_pc.getCurrentHp() + damage);
 		}
 
 		return (int) dmg;
@@ -1293,10 +1243,6 @@ public class L1Attack {
 			dmg += _pc.getBowDmgModifierByArmor();
 		}
 
-		if (_weaponType != 20 && _weaponType != 62) {// マジックドールによる追加ダメージ
-			dmg += L1MagicDoll.getDamageAddByDoll(_pc);
-		}
-
 		if (_pc.hasSkillEffect(COOKING_2_0_N) // 料理による追加ダメージ
 				|| _pc.hasSkillEffect(COOKING_2_0_S)
 				|| _pc.hasSkillEffect(COOKING_3_2_N)
@@ -1374,33 +1320,6 @@ public class L1Attack {
 			_drainHp = 0; // ダメージ無しの場合は吸収による回復はしない
 		}
 
-		// マジックドールスキル
-		L1SkillUse l1skilluse = new L1SkillUse();
-		if (L1MagicDoll.getEffectByDoll(_pc, SLOW) == SLOW) {
-			l1skilluse.handleCommands(_pc,SLOW, // スロー
-				_targetNpc.getId(), _targetNpc.getX(), _targetNpc.getY(), null, 0,L1SkillUse.TYPE_GMBUFF);
-		}
-		if (L1MagicDoll.getEffectByDoll(_pc, CURSE_PARALYZE) == CURSE_PARALYZE) {
-			l1skilluse.handleCommands(_pc,CURSE_PARALYZE, // カーズパラライズ
-				_targetNpc.getId(), _targetNpc.getX(), _targetNpc.getY(), null, 0,L1SkillUse.TYPE_GMBUFF);
-		}
-		if (L1MagicDoll.getEffectByDoll(_pc, VAMPIRIC_TOUCH) == VAMPIRIC_TOUCH) {
-				L1Skill l1skills = SkillTable.getInstance().findBySkillId(
-						VAMPIRIC_TOUCH); // バンパイアリックタッチ
-				L1Magic magic = new L1Magic(_pc, _targetNpc);
-
-				_pc.sendPackets(new S_SkillSound(_pc.getId(), l1skills
-						.getCastGfx()));
-				_pc.broadcastPacket(new S_SkillSound(_pc.getId(), l1skills
-						.getCastGfx()));
-
-				int damage = magic.calcMagicDamage(l1skills.getSkillId());
-				_targetNpc.broadcastPacket(new S_DoActionGFX(
-						_targetNpc.getId(), ActionCodes.ACTION_Damage));
-				_targetNpc.receiveDamage(_pc, damage);
-				_pc.setCurrentHp(_pc.getCurrentHp() + damage);
-		}
-
 
 		return (int) dmg;
 	}
@@ -1435,9 +1354,6 @@ public class L1Attack {
 		}
 
 		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ軽減
-
-		// マジックドール效果 - ダメージリダクション
-		dmg -= L1MagicDoll.getDamageReductionByDoll(_targetPc);
 
 		if (_targetPc.hasSkillEffect(COOKING_4_1) // 料理によるダメージ軽減
 				|| _targetPc.hasSkillEffect(COOKING_4_2)
@@ -1798,11 +1714,6 @@ public class L1Attack {
 				&& (chance <= 10)) {
 			// 通常毒、3秒周期、ダメージHP-5
 			L1DamagePoison.doInfection(attacker, target, 3000, 5);
-		} else {
-			// マジックドール：ラミア
-			if (L1MagicDoll.getEffectByDoll(attacker, ENCHANT_VENOM) == ENCHANT_VENOM) {
-				L1DamagePoison.doInfection(attacker, target, 3000, 5);
-			}
 		}
 	}
 

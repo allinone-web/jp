@@ -104,8 +104,6 @@ public class C_UseSkill extends ClientBasePacket {
 			pc.killSkillEffectTimer(ABSOLUTE_BARRIER);
 			pc.startHpRegeneration();
 			pc.startMpRegeneration();
-			pc.startHpRegenerationByDoll();
-			pc.startMpRegenerationByDoll();
 		}
 		pc.killSkillEffectTimer(MEDITATION);
 

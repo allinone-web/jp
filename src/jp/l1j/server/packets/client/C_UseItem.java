@@ -27,7 +27,6 @@ import jp.l1j.server.ClientThread;
 import jp.l1j.server.codes.ActionCodes;
 import jp.l1j.server.controller.timer.FishingTimeController;
 import jp.l1j.server.datatables.ItemTable;
-import jp.l1j.server.datatables.MagicDollTable;
 import jp.l1j.server.datatables.NpcTable;
 import jp.l1j.server.datatables.PetTable;
 import jp.l1j.server.datatables.ResolventTable;
@@ -47,7 +46,6 @@ import jp.l1j.server.model.L1SpellBook;
 import jp.l1j.server.model.L1Teleport;
 import jp.l1j.server.model.L1TownLocation;
 import jp.l1j.server.model.L1World;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1GuardianInstance;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1NpcInstance;
@@ -57,7 +55,6 @@ import jp.l1j.server.model.instance.L1TowerInstance;
 import jp.l1j.server.model.inventory.L1Inventory;
 import jp.l1j.server.model.inventory.L1PcInventory;
 import jp.l1j.server.model.item.L1ItemId;
-import jp.l1j.server.model.item.executor.L1BlankScroll;
 import jp.l1j.server.model.item.executor.L1BlessOfEva;
 import jp.l1j.server.model.item.executor.L1BluePotion;
 import jp.l1j.server.model.item.executor.L1BravePotion;
@@ -120,7 +117,6 @@ import jp.l1j.server.templates.L1Armor;
 import jp.l1j.server.templates.L1BookMark;
 import jp.l1j.server.templates.L1EtcItem;
 import jp.l1j.server.templates.L1Item;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.templates.L1Npc;
 import jp.l1j.server.templates.L1Pet;
 import jp.l1j.server.templates.L1Skill;
@@ -189,8 +185,6 @@ public class C_UseItem extends ClientBasePacket {
 			mapid = readH();
 			objid = readD();
 			pc.sendPackets(new S_Paralysis(S_Paralysis.TYPE_TELEPORT_UNLOCK, false));
-		} else if (use_type == 28 ) { // ブランクスクロール(blank)
-			skillid = readC();
 		} else if (use_type == 30) { // スペルスクロール(spell_buff)
 			objid = readD();
 		} else if (use_type == 5 || use_type == 17 || use_type == 39) {
@@ -697,24 +691,8 @@ public class C_UseItem extends ClientBasePacket {
 					pc.sendPackets(new S_ServerMessage(79));
 					// \f1何も起きませんでした。
 				}
-			} else if (itemId == 50539) { // ジェフの魔法薬
-				L1ItemInstance target = pc.getInventory().getItem(objid);
-				if (enchantMagicDoll(pc, target)) {
-					pc.getInventory().removeItem(item, 1);
-				}
 			} else if (itemId == 50547) { // おいしい飴
 				useMagicCandy(pc, itemId);
-			} else if (itemId == 50560 || itemId == 50561 || itemId == 50562
-					|| itemId == 50563) { // マジックチャージ
-				L1ItemInstance target = pc.getInventory().getItem(objid);
-				if (target != null) {
-					if (chargeMagicDoll(pc, item, target)) {
-						pc.getInventory().removeItem(item, 1);
-					}
-				} else {
-					pc.sendPackets(new S_ServerMessage(74, item.getLogName()));
-					// \f1%0は使用できません。
-				}
 			} else if (itemId == 50585 || itemId == 50586) {
 				// くるった時計：2時間、くるった時計：4時間
 				L1ItemInstance target = pc.getInventory().getItem(objid);
@@ -795,8 +773,6 @@ public class C_UseItem extends ClientBasePacket {
 					pc.sendPackets(new S_ServerMessage(74, item.getLogName()));
 					// \f1%0は使用できません。
 				}
-			} else if (item.getItem().getType() == 17) { // マジックドール類
-				useMagicDoll(pc, item);
 			} else if (item.getItem().getType() == 5) { // 花火(firecracker)
 				L1FireCracker fireCracker = L1FireCracker.get(itemId);
 				if (fireCracker != null) {
@@ -862,14 +838,6 @@ public class C_UseItem extends ClientBasePacket {
 				L1ItemInstance target = pc.getInventory().getItem(objid);
 				if (L1EnchantScroll.getInstance().use(pc, item, target)) {
 					pc.getInventory().removeItem(item, 1);
-				}
-			} else if (use_type == 28) { // ブランクスクロール(blank)
-				L1BlankScroll blanksc = L1BlankScroll.get(itemId);
-				if (blanksc != null) {
-					blanksc.use(pc, item, skillid);
-				} else {
-					pc.sendPackets(new S_ServerMessage(74, item.getLogName()));
-					// \f1%0は使用できません。
 				}
 			} else if (use_type == 42) { // 魔法の釣り竿(fishing_rod)
 				startFishing(pc, itemId, locx, locy);
@@ -1510,199 +1478,6 @@ public class C_UseItem extends ClientBasePacket {
 		}
 	}
 
-	private void useMagicDoll(L1PcInstance pc, L1ItemInstance item) {
-		int itemId = item.getItemId();
-		int itemObjectId = item.getId();
-		L1MagicDoll magic_doll = MagicDollTable.getInstance().getTemplate(
-				(itemId));
-		if (magic_doll != null) {
-
-			boolean isAppear = true;
-			L1DollInstance doll = null;
-			Object[] dollList = pc.getDollList().values().toArray();
-			for (Object dollObject : dollList) {
-				doll = (L1DollInstance) dollObject;
-				if (doll.getItemObjId() == itemObjectId) {
-					// 既に引き出しているマジックドール
-					isAppear = false;
-					break;
-				}
-			}
-
-			if (isAppear) {
-				if (!pc.getInventory().checkItem(41246, 50)) {
-					pc.sendPackets(new S_ServerMessage(337, "$5240"));
-					// \f1%0が不足しています。
-					return;
-				}
-				if (dollList.length >= Config.MAX_DOLL_COUNT) {
-					// \f1これ以上のモンスターを操ることはできません。
-					pc.sendPackets(new S_ServerMessage(319));
-					return;
-				}
-				if (item.isChargeDoll() && item.getChargeTime() <= 0) {
-					// キャラクター マジックドールの使用時間を使い切ったため、召還ができません。
-					pc.sendPackets(new S_ServerMessage(2788));
-					return;
-				}
-
-				int npcId = magic_doll.getDollId();
-				L1Npc template = NpcTable.getInstance().getTemplate(npcId);
-				doll = new L1DollInstance(template, pc, itemId, itemObjectId);
-				pc.sendPackets(new S_SkillSound(doll.getId(), 5935));
-				pc.broadcastPacket(new S_SkillSound(doll.getId(), 5935));
-				pc.sendPackets(new S_SkillIconGFX(56, 1800));
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.sendPackets(new S_SpMr(pc));
-				pc.getInventory().consumeItem(41246, 50);
-
-				if (L1MagicDoll.isHaste(pc)) {
-					pc.addHasteItemEquipped(1);
-					pc.removeHasteSkillEffect();
-					if (pc.getMoveSpeed() != 1) {
-						pc.setMoveSpeed(1);
-						pc.sendPackets(new S_SkillHaste(pc.getId(), 1, -1));
-						pc.broadcastPacket(new S_SkillHaste(pc.getId(), 1, 0));
-					}
-				}
-
-				if (item.isChargeDoll()) { // 課金マジックドール
-					item.startChargeTimer(pc);
-				}
-			} else {
-				pc.sendPackets(new S_SkillSound(doll.getId(), 5936));
-				pc.broadcastPacket(new S_SkillSound(doll.getId(), 5936));
-				if (doll.isChargeDoll()) { // 課金マジックドールのタイマーを停止
-					item.stopChargeTimer();
-				}
-				doll.deleteDoll();
-				pc.sendPackets(new S_SkillIconGFX(56, 0));
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.sendPackets(new S_SpMr(pc));
-			}
-
-		}
-	}
-
-	private boolean chargeMagicDoll(L1PcInstance pc, L1ItemInstance item, L1ItemInstance target) {
-		if (target == null || !target.isChargeDoll()) {
-			// 課金マジックドールではない
-			pc.sendPackets(new S_ServerMessage(2478));
-			// 残り30分以内のマジックドールにのみ、チャージが可能です。
-			return false;
-		}
-
-		int chargeTime = target.getChargeTime();
-		if (chargeTime > 1800) {
-			pc.sendPackets(new S_ServerMessage(2478));
-			// 残り30分以内のマジックドールにのみ、チャージが可能です。
-			return false;
-		}
-
-		int itemObjectId = target.getId();
-		L1DollInstance doll = null;
-		Object[] dollList = pc.getDollList().values().toArray();
-
-		for (Object dollObject : dollList) {
-			doll = (L1DollInstance) dollObject;
-			if (doll.getItemObjId() == itemObjectId) {
-				// 既に引き出しているマジックドール
-				pc.sendPackets(new S_SkillSound(doll.getId(), 5936));
-				pc.broadcastPacket(new S_SkillSound(doll.getId(), 5936));
-				if (doll.isChargeDoll()) { // 課金マジックドールのタイマーを停止
-					target.stopChargeTimer();
-				}
-				doll.deleteDoll();
-				pc.sendPackets(new S_SkillIconGFX(56, 0));
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.sendPackets(new S_SpMr(pc));
-				break;
-			}
-		}
-		target.setChargeTime(chargeTime + item.getItem().getChargeTime());
-		target.save();
-
-		return true;
-	}
-
-	private boolean enchantMagicDoll(L1PcInstance pc, L1ItemInstance target) {
-		int[] curDollId = new int[] { // 強化前のマジックドール
-				49320, 49321, 49322, 49323, 49324, // ジャイアント
-				49326, 49327, 49328, 49329, 49330, // サイクロプス
-				49332, 49333, 49334, 49335, 49336, // マーメイド
-				49338, 49339, 49340, 49341, 49342, // ブルート
-				49365, 49366, 49367, 49368, 49369, // ペンギン(兄)
-				49371, 49372, 49373, 49374, 49375  // ペンギン(妹)
-		};
-
-		int[] newDollId = new int[] { // 強化後のマジックドール
-				49321, 49322, 49323, 49324, 49325, // ジャイアント
-				49327, 49328, 49329, 49330, 49331, // サイクロプス
-				49333, 49334, 49335, 49336, 49337, // マーメイド
-				49339, 49340, 49341, 49342, 49343, // ブルート
-				49366, 49367, 49368, 49369, 49370, // ペンギン(兄)
-				49372, 49373, 49374, 49375, 49376  // ペンギン(妹)
-		};
-
-		int i = Arrays.binarySearch(curDollId, target.getItemId());
-
-		if (target == null || i < 0) {
-			pc.sendPackets(new S_ServerMessage(79)); // \f1何も起きませんでした。
-			return false;
-		}
-
-		int itemObjectId = target.getId();
-		L1DollInstance doll = null;
-		Object[] dollList = pc.getDollList().values().toArray();
-
-		for (Object dollObject : dollList) {
-			doll = (L1DollInstance) dollObject;
-			if (doll.getItemObjId() == itemObjectId) {
-				// 既に引き出しているマジックドール
-				pc.sendPackets(new S_SkillSound(doll.getId(), 5936));
-				pc.broadcastPacket(new S_SkillSound(doll.getId(), 5936));
-				if (doll.isChargeDoll()) { // 課金マジックドールのタイマーを停止
-					target.stopChargeTimer();
-				}
-				doll.deleteDoll();
-				pc.sendPackets(new S_SkillIconGFX(56, 0));
-				break;
-			}
-		}
-
-		int rnd = _random.nextInt(100) + 1;
-		int enchant_chance_doll = (100 + 3 * Config.ENCHANT_CHANCE_DOLL) / 3;
-		int enchant_level = target.getEnchantLevel();
-		boolean is_identified = target.isIdentified();
-		String item_name = (new StringBuilder()).append("+"
-				+ enchant_level).append(" ").append(target.getLogName()).toString();
-
-		if (rnd < enchant_chance_doll) {
-			// \f1%0が%2%1光ります。
-			pc.sendPackets(new S_ServerMessage(161, item_name, "$245", "$248"));
-			pc.getInventory().removeItem(target, 1);
-			target = pc.getInventory().storeItem(newDollId[i], 1);
-			target.setEnchantLevel(enchant_level + 1);
-			pc.getInventory().updateItem(target, L1PcInventory.COL_ENCHANTLVL);
-			pc.getInventory().saveItem(target);
-		} else if (rnd < (enchant_chance_doll * 2)) {
-			// \f1%0が%2と強烈に%1光りましたが、幸い無事にすみました。
-			pc.sendPackets(new S_ServerMessage(160, item_name, "$245", "$248"));
-		} else {
-			// TODO 本鯖のメッセージが不明
-			if (enchant_level > 0) {
-				pc.sendPackets(new S_ServerMessage(161, item_name, "$246", "$247"));
-				pc.getInventory().removeItem(target, 1);
-				L1ItemInstance item = pc.getInventory().storeItem(curDollId[i - 1], 1);
-				item.setEnchantLevel(enchant_level - 1);
-				pc.getInventory().updateItem(item, L1PcInventory.COL_ENCHANTLVL);
-				pc.getInventory().saveItem(item);
-			}
-		}
-		pc.sendPackets(new S_OwnCharStatus(pc));
-		pc.sendPackets(new S_SpMr(pc));
-		return true;
-	}
 
 	private boolean usePledgeScroll(L1PcInstance pc, L1ItemInstance item) {
 		if (pc.getMap().isEscapable() || pc.isGm()) {

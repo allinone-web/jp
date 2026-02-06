@@ -58,7 +58,6 @@ import jp.l1j.server.datatables.CharacterTable;
 import jp.l1j.server.datatables.DeathPenaltyTable;
 import jp.l1j.server.datatables.ExpTable;
 import jp.l1j.server.datatables.ItemTable;
-import jp.l1j.server.datatables.MapTimerTable;
 import jp.l1j.server.model.AcceleratorChecker;
 import jp.l1j.server.model.FafurionHydroEffect;
 import jp.l1j.server.model.HpRegeneration;
@@ -88,7 +87,6 @@ import jp.l1j.server.model.gametime.L1RealTimeCarrier;
 import jp.l1j.server.model.inventory.L1Inventory;
 import jp.l1j.server.model.inventory.L1PcInventory;
 import jp.l1j.server.model.inventory.L1WarehouseInventory;
-import jp.l1j.server.model.map.executor.L1MapLimiter;
 import jp.l1j.server.model.monitor.L1PcAutoUpdate;
 import jp.l1j.server.model.monitor.L1PcExpMonitor;
 import jp.l1j.server.model.monitor.L1PcGhostMonitor;
@@ -133,7 +131,6 @@ import jp.l1j.server.templates.L1Account;
 import jp.l1j.server.templates.L1BookMark;
 import jp.l1j.server.templates.L1InventoryItem;
 import jp.l1j.server.templates.L1Item;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.templates.L1PrivateShopBuyList;
 import jp.l1j.server.templates.L1PrivateShopSellList;
 import jp.l1j.server.utils.CalcStat;
@@ -161,17 +158,6 @@ public class L1PcInstance extends L1Character {
 	private short _hpr = 0;
 	private short _trueHpr = 0;
 
-	public short getHprByDoll() {
-		short hprByDoll = 0;
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableHpr(doll)) {
-				hprByDoll += L1MagicDoll.getHprByDoll(doll);
-			}
-		}
-		return hprByDoll;
-	}
-
 	public short getHpr() {
 		return (short) _hpr;
 	}
@@ -190,17 +176,6 @@ public class L1PcInstance extends L1Character {
 
 	private short _mpr = 0;
 	private short _trueMpr = 0;
-
-	public short getMprByDoll() {
-		short mprByDoll = 0;
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableMpr(doll)) {
-				mprByDoll += L1MagicDoll.getMprByDoll(doll);
-			}
-		}
-		return mprByDoll;
-	}
 
 	public short getMpr() {
 		return (short) _mpr;
@@ -268,66 +243,6 @@ public class L1PcInstance extends L1Character {
 						INTERVAL_AUTO_UPDATE);
 	}
 
-	// TODO マジックドールによるHP回復タイマーを開始
-	public void startHpRegenerationByDoll() {
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableHpr(doll)) {
-				doll.startHprTimer();
-			}
-		}
-	}
-
-	// TODO マジックドールによるHP回復タイマーを停止
-	public void stopHpRegenerationByDoll() {
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableHpr(doll)) {
-				doll.stopHprTimer();
-			}
-		}
-	}
-
-	// TODO マジックドールによるMP回復タイマーを開始
-	public void startMpRegenerationByDoll() {
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableMpr(doll)) {
-				doll.startMprTimer();
-			}
-		}
-	}
-
-	// TODO マジックドールによるMP回復タイマーを停止
-	public void stopMpRegenerationByDoll() {
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableMpr(doll)) {
-				doll.stopMprTimer();
-			}
-		}
-	}
-
-	// TODO マジックドールのアイテム生成タイマーを開始
-	public void startMakeItemByDoll() {
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableMakeItem(doll)) {
-				doll.startMakeTimer();
-			}
-		}
-	}
-
-	// TODO マジックドールのアイテム生成タイマーを停止
-	public void stopMakeItemByDoll() {
-		for (Object _doll : getDollList().values().toArray()) {
-			L1DollInstance doll = (L1DollInstance) _doll;
-			if (L1MagicDoll.enableMakeItem(doll)) {
-				doll.stopMakeTimer();
-			}
-		}
-	}
-
 	// TODO パプリオンハイドロエフェクト開始
 	public void startFafurionHydroEffect() {
 		if (!_fafurionHydroActiveEffect) {
@@ -377,63 +292,6 @@ public class L1PcInstance extends L1Character {
 				item.startExpirationTimer(this);
 			}
 		}
-	}
-
-	// 時間制限付きマップのタイマー
-	private static ScheduledFuture<?> _mapLimiterFuture;
-	private static L1MapLimiter _mapLimiter = null;
-	public L1MapLimiter getMapLimiter() {
-		return _mapLimiter;
-	}
-
-	public void setMapLimiter(L1MapLimiter mapLimiter) {
-		_mapLimiter = mapLimiter;
-	}
-
-	public void startMapLimiter() {
-		if (getMapLimiter() != null) {
-			stopMapLimiter();
-		}
-
-		setMapLimiter(L1MapLimiter.get(getMapId()));
-		if (isGm() == false && getMapLimiter() != null) {
-			getMapLimiter().execute(this);
-			ScheduledExecutorService schedule =
-					Executors.newSingleThreadScheduledExecutor();
-			_mapLimiterFuture = schedule.scheduleAtFixedRate(getMapLimiter(), 0,
-					1000, TimeUnit.MILLISECONDS);
-		}
-	}
-
-	public void stopMapLimiter() {
-		if (getMapLimiter() != null) {
-			getMapLimiter().save();
-			setMapLimiter(null);
-			if (_mapLimiterFuture != null) {
-				_mapLimiterFuture.cancel(true);
-				_mapLimiterFuture = null;
-			}
-		}
-	}
-
-	// 時間制限付きマップの残り時間を取得
-	public int getEnterTime(int areaId) {
-		int time = 0;
-		L1MapLimiter limiter = getMapLimiter();
-		if (limiter != null && limiter.getAreaId() == areaId) {
-			time = limiter.getEnterTime() / 60;
-		} else {
-			limiter = L1MapLimiter.get(areaId);
-			if (limiter != null) {
-				MapTimerTable timer = MapTimerTable.find(getId(), limiter.getAreaId());
-				if (timer != null) {
-					time = timer.getEnterTime() / 60;
-				} else {
-					time = limiter.getEffect().getTime() / 60;
-				}
-			}
-		}
-		return time;
 	}
 
 	private static final long INTERVAL_AUTO_UPDATE = 300;
@@ -1564,13 +1422,6 @@ public class L1PcInstance extends L1Character {
 
 			if (// getMap().getBaseMapId()==5153
 					getMapId() == 5153) {// デスマッチ
-				for (Object doll : getDollList().values().toArray()) {
-					if (((L1DollInstance) doll).isChargeDoll()) { // 課金マジックドールのタイマーを停止
-						L1ItemInstance item = getInventory().getItem(((L1DollInstance) doll).getItemObjId());
-						item.stopChargeTimer();
-					}
-					((L1DollInstance) doll).deleteDoll();
-				}
 				try {
 					Thread.sleep(2000);
 				} catch (Exception e) {
@@ -2748,10 +2599,6 @@ public class L1PcInstance extends L1Character {
 		double weightReductionByArmor = getWeightReduction(); // 防具による重量軽減
 		weightReductionByArmor /= 100;
 
-		double weightReductionByDoll = 0; // マジックドールによる重量軽減
-		weightReductionByDoll += L1MagicDoll.getWeightReductionByDoll(this);
-		weightReductionByDoll /= 100;
-
 		int weightReductionByMagic = 0;
 		if (hasSkillEffect(DECREASE_WEIGHT)) { // ディクリースウェイト
 			weightReductionByMagic = 180;
@@ -2761,7 +2608,7 @@ public class L1PcInstance extends L1Character {
 		originalWeightReduction += 0.04 * (getOriginalStrWeightReduction() + getOriginalConWeightReduction());
 
 		double weightReduction = 1 + weightReductionByArmor
-				+ weightReductionByDoll + originalWeightReduction;
+				+ originalWeightReduction;
 
 		maxWeight *= weightReduction;
 
@@ -3539,23 +3386,6 @@ public class L1PcInstance extends L1Character {
 	 * ステータスを初期化（希望のロウソク）
 	 */
 	public void resetStatus() {
-		// マジックドールを召喚解除
-		L1DollInstance doll = null;
-		Object[] dollList = getDollList().values().toArray();
-		for (Object dollObject : dollList) {
-			doll = (L1DollInstance) dollObject;
-			sendPackets(new S_SkillSound(doll.getId(), 5936));
-			broadcastPacket(new S_SkillSound(doll.getId(), 5936));
-			if (doll.isChargeDoll()) { // 課金マジックドールのタイマーを停止
-				L1ItemInstance item = getInventory().getItem(doll.getItemObjId());
-				item.stopChargeTimer();
-			}
-			doll.deleteDoll();
-			sendPackets(new S_SkillIconGFX(56, 0));
-			sendPackets(new S_OwnCharStatus(this));
-			break;
-		}
-
 		L1SkillUse l1skilluse = new L1SkillUse();
 		l1skilluse.handleCommands(this, CANCELLATION, getId(), getX(), getY(),
 				null, 0, L1SkillUse.TYPE_LOGIN);

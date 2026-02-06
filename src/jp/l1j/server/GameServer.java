@@ -34,7 +34,6 @@ import jp.l1j.server.controller.timer.FishingTimeController;
 import jp.l1j.server.controller.timer.HomeTownTimeController;
 import jp.l1j.server.controller.timer.HouseTaxTimeController;
 import jp.l1j.server.controller.timer.LightTimeController;
-import jp.l1j.server.controller.timer.MapTimeController;
 import jp.l1j.server.controller.timer.NpcChatTimeController;
 import jp.l1j.server.controller.timer.ShutdownTimeController;
 import jp.l1j.server.controller.timer.UbTimeController;
@@ -52,7 +51,6 @@ import jp.l1j.server.datatables.DungeonTable;
 import jp.l1j.server.datatables.InnTable;
 import jp.l1j.server.datatables.IpTable;
 import jp.l1j.server.datatables.ItemTable;
-import jp.l1j.server.datatables.MagicDollTable;
 import jp.l1j.server.datatables.MailTable;
 import jp.l1j.server.datatables.MapTable;
 import jp.l1j.server.datatables.MobGroupTable;
@@ -88,7 +86,6 @@ import jp.l1j.server.model.L1World;
 import jp.l1j.server.model.gametime.L1GameTimeClock;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.item.executor.L1BeginnerItem;
-import jp.l1j.server.model.item.executor.L1BlankScroll;
 import jp.l1j.server.model.item.executor.L1BlessOfEva;
 import jp.l1j.server.model.item.executor.L1BluePotion;
 import jp.l1j.server.model.item.executor.L1BravePotion;
@@ -274,11 +271,6 @@ public class GameServer extends Thread {
 		// アイテム削除コントローラー
 		new DeleteItemController().initialize();
 		
-		// マップタイムコントローラー
-		MapTimeController mapTimeController = MapTimeController.getInstance();
-		mapTimeController.load();
-		GeneralThreadPool.getInstance().execute(mapTimeController);
-
 		// 自動シャットダウンコントローラー
 		if (Config.AUTO_SHUTDOWN) {
 			ShutdownTimeController shutdownTimeController = ShutdownTimeController.getInstance();
@@ -332,12 +324,10 @@ public class GameServer extends Thread {
 		RaceTicketTable.getInstance();
 		L1BugBearRace.getInstance();
 		InnTable.getInstance();
-		MagicDollTable.getInstance();
 		ShutdownRequestTable.removeAll();
 		
 		// Loading the XML files
 		L1BossCycle.load();
-		L1BlankScroll.load();
 		L1BlessOfEva.load();
 		L1BluePotion.load();
 		L1BravePotion.load();

@@ -25,7 +25,6 @@ import jp.l1j.server.model.instance.L1EffectInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.types.Point;
 
 public class HpRegeneration extends TimerTask {
@@ -167,8 +166,6 @@ public class HpRegeneration extends TimerTask {
 		if (_pc.getOriginalHpr() > 0) { // オリジナルCON HPR補正
 			bonus += _pc.getOriginalHpr();
 		}
-		bonus += L1MagicDoll.getNatHprByDoll(_pc); // マジックドールによるHPR補正
-
 		boolean inLifeStream = false;
 		if (isPlayerInLifeStream(_pc)) {
 			inLifeStream = true;
@@ -245,11 +242,6 @@ public class HpRegeneration extends TimerTask {
 				&& pc.getInventory().checkEquipped(21050)) {
 			return false;
 		}
-		// マジックドール：マーメイド
-		if (L1MagicDoll.isBlessOfEva(pc)) {
-			return false;
-		}
-
 		return pc.getMap().isUnderwater();
 	}
 

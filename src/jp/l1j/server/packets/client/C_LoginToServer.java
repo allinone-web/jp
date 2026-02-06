@@ -306,7 +306,6 @@ public class C_LoginToServer extends ClientBasePacket {
 			pc.beginHell(false);
 		}
 		pc.startExpirationTimer(); // 有効期限付きアイテムのタイマーを開始
-		pc.startMapLimiter(); // マップリミッターを開始
 		pc.sendPackets(new S_PlayTime()); // プレイ時間を初期化
 	}
 

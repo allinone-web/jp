@@ -16,7 +16,6 @@
 package jp.l1j.server.utils;
 
 import java.util.HashSet;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1NpcInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.instance.L1PetInstance;
@@ -29,7 +28,6 @@ import jp.l1j.server.model.map.L1Map;
 import jp.l1j.server.model.map.L1WorldMap;
 import static jp.l1j.server.model.skill.L1SkillId.*;
 import jp.l1j.server.packets.server.S_CharVisualUpdate;
-import jp.l1j.server.packets.server.S_DollPack;
 import jp.l1j.server.packets.server.S_MapID;
 import jp.l1j.server.packets.server.S_OtherCharPacks;
 import jp.l1j.server.packets.server.S_OwnCharPack;
@@ -146,38 +144,6 @@ public class Teleportation {
 					}
 				}
 
-				// マジックドールも一緒に移動させる。
-				for (L1DollInstance doll : pc.getDollList().values()) {
-					// テレポート先の設定
-					L1Location loc = pc.getLocation().randomLocation(3, false);
-					int nx = loc.getX();
-					int ny = loc.getY();
-
-					teleport(doll, nx, ny, mapId, head);
-					pc.sendPackets(new S_DollPack(doll, pc));
-
-					for (L1PcInstance visiblePc : L1World.getInstance().getVisiblePlayer(doll)) {
-						// テレポート元と先に同じPCが居た場合、正しく更新されない為、一度removeする。
-						visiblePc.removeKnownObject(doll);
-						subjects.add(visiblePc);
-					}
-				}
-			} else {
-				for (L1DollInstance doll : pc.getDollList().values()) {
-					// テレポート先の設定
-					L1Location loc = pc.getLocation().randomLocation(3, false);
-					int nx = loc.getX();
-					int ny = loc.getY();
-
-					teleport(doll, nx, ny, mapId, head);
-					pc.sendPackets(new S_DollPack(doll, pc));
-
-					for (L1PcInstance visiblePc : L1World.getInstance().getVisiblePlayer(doll)) {
-						// テレポート元と先に同じPCが居た場合、正しく更新されない為、一度removeする。
-						visiblePc.removeKnownObject(doll);
-						subjects.add(visiblePc);
-					}
-				}
 			}
 		}
 
@@ -186,9 +152,6 @@ public class Teleportation {
 		}
 
 		pc.setTeleport(false);
-		
-		// マップリミッターを開始
-		pc.startMapLimiter();
 		
 		// TODO ブラッドラスト消失対応　start
 		if (pc.hasSkillEffect(BLOODLUST)) {

@@ -40,7 +40,6 @@ import jp.l1j.server.model.L1DragonSlayer;
 import jp.l1j.server.model.L1HardinQuest;
 import jp.l1j.server.model.L1Trade;
 import jp.l1j.server.model.L1World;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1FollowerInstance;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
@@ -579,17 +578,6 @@ public class ClientThread implements Runnable, PacketOutput {
 			}
 		}
 
-		// マジックドールをワールドマップ上から消す
-		Object[] dollList = pc.getDollList().values().toArray();
-		for (Object dollObject : dollList) {
-			L1DollInstance doll = (L1DollInstance) dollObject;
-			if (doll.isChargeDoll()) { // 課金マジックドールのタイマーを停止
-				L1ItemInstance item = pc.getInventory().getItem(doll.getItemObjId());
-				item.stopChargeTimer();
-			}
-			doll.deleteDoll();
-		}
-
 		// 従者をワールドマップ上から消し、同地点に再出現させる
 		Object[] followerList = pc.getFollowerList().values().toArray();
 		for (Object followerObject : followerList) {
@@ -616,9 +604,6 @@ public class ClientThread implements Runnable, PacketOutput {
 		CharBuffTable.delete(pc.getId());
 		CharBuffTable.save(pc);
 		pc.clearSkillEffectTimer();
-
-		// マップリミッターを停止する
-		pc.stopMapLimiter();
 
 		// pcのモニターをstopする。
 		pc.stopEtcMonitor();

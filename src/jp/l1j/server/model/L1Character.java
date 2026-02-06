@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.logging.Logger;
-import jp.l1j.server.model.instance.L1DollInstance;
 import jp.l1j.server.model.instance.L1FollowerInstance;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1NpcInstance;
@@ -39,7 +38,6 @@ import jp.l1j.server.packets.server.S_RemoveObject;
 import jp.l1j.server.packets.server.ServerBasePacket;
 import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.types.Point;
 import jp.l1j.server.utils.IntRange;
 
@@ -60,7 +58,6 @@ public class L1Character extends L1Object {
 	private boolean _sleeped;
 
 	private final Map<Integer, L1NpcInstance> _petlist = new HashMap<Integer, L1NpcInstance>();
-	private final Map<Integer, L1DollInstance> _dolllist = new HashMap<Integer, L1DollInstance>();
 	private final Map<Integer, L1SkillTimer> _skillEffect = new HashMap<Integer, L1SkillTimer>();
 	private final Map<Integer, L1ItemDelay.ItemDelayTimer> _itemdelay = new HashMap<Integer, L1ItemDelay.ItemDelayTimer>();
 	private final Map<Integer, L1FollowerInstance> _followerlist = new HashMap<Integer, L1FollowerInstance>();
@@ -684,36 +681,6 @@ public class L1Character extends L1Object {
 	}
 
 	/**
-	 * キャラクターへマジックドールを追加する。
-	 *
-	 * @param doll
-	 *            追加するdollを表す、L1DollInstanceオブジェクト。
-	 */
-	public void addDoll(L1DollInstance doll) {
-		_dolllist.put(doll.getId(), doll);
-	}
-
-	/**
-	 * キャラクターからマジックドールを削除する。
-	 *
-	 * @param doll
-	 *            削除するdollを表す、L1DollInstanceオブジェクト。
-	 */
-	public void removeDoll(L1DollInstance doll) {
-		_dolllist.remove(doll.getId());
-	}
-
-	/**
-	 * キャラクターのマジックドールリストを返す。
-	 *
-	 * @return キャラクターの魔法人形リストを表す、HashMapオブジェクト。このオブジェクトのKeyはオブジェクトID、
-	 *         ValueはL1DollInstance。
-	 */
-	public Map<Integer, L1DollInstance> getDollList() {
-		return _dolllist;
-	}
-
-	/**
 	 * キャラクターへ従者を追加する。
 	 *
 	 * @param follower
@@ -917,7 +884,7 @@ public class L1Character extends L1Object {
 	private int _trueMaxHp = 0; // ● 本当のＭＡＸＨＰ
 
 	public int getMaxHp() {
-		return _maxHp + L1MagicDoll.getHpByDoll(this); // TODO マジックドール效果 - HP増加
+		return _maxHp;
 	}
 
 	public void setMaxHp(int hp) {
@@ -934,7 +901,7 @@ public class L1Character extends L1Object {
 	private int _trueMaxMp = 0; // ● 本当のＭＡＸＭＰ
 
 	public int getMaxMp() {
-		return _maxMp + L1MagicDoll.getMpByDoll(this); // TODO マジックドール效果 - MP増加
+		return _maxMp;
 	}
 
 	public void setMaxMp(int mp) {
@@ -951,7 +918,7 @@ public class L1Character extends L1Object {
 	private int _trueAc = 0; // ● 本当のＡＣ
 
 	public int getAc() {
-		return _ac + L1MagicDoll.getAcByDoll(this); // TODO マジックドール效果 - AC増加
+		return _ac;
 	}
 
 	public void setAc(int i) {
@@ -967,7 +934,7 @@ public class L1Character extends L1Object {
 	private int _trueStr = 0; // ● 本当のＳＴＲ
 
 	public int getStr() {
-		return _str + L1MagicDoll.getStrByDoll(this); // TODO マジックドール效果 - STR増加
+		return _str;
 	}
 
 	public void setStr(int i) {
@@ -983,7 +950,7 @@ public class L1Character extends L1Object {
 	private int _trueCon = 0; // ● 本当のＣＯＮ
 
 	public int getCon() {
-		return _con + L1MagicDoll.getConByDoll(this); // TODO マジックドール效果 - CON増加
+		return _con;
 	}
 
 	public void setCon(int i) {
@@ -999,7 +966,7 @@ public class L1Character extends L1Object {
 	private int _trueDex = 0; // ● 本当のＤＥＸ
 
 	public int getDex() {
-		return _dex + L1MagicDoll.getDexByDoll(this); // TODO マジックドール效果 - DEX増加
+		return _dex;
 	}
 
 	public void setDex(int i) {
@@ -1015,7 +982,7 @@ public class L1Character extends L1Object {
 	private int _trueCha = 0; // ● 本当のＣＨＡ
 
 	public int getCha() {
-		return _cha + L1MagicDoll.getChaByDoll(this); // TODO マジックドール效果 - CHA増加
+		return _cha;
 	}
 
 	public void setCha(int i) {
@@ -1031,7 +998,7 @@ public class L1Character extends L1Object {
 	private int _trueInt = 0; // ● 本当のＩＮＴ
 
 	public int getInt() {
-		return _int + L1MagicDoll.getIntByDoll(this); // TODO マジックドール效果 - INT増加
+		return _int;
 	}
 
 	public void setInt(int i) {
@@ -1047,7 +1014,7 @@ public class L1Character extends L1Object {
 	private int _trueWis = 0; // ● 本当のＷＩＳ
 
 	public int getWis() {
-		return _wis + L1MagicDoll.getWisByDoll(this); // TODO マジックドール效果 - WIS増加
+		return _wis;
 	}
 
 	public void setWis(int i) {
@@ -1146,7 +1113,7 @@ public class L1Character extends L1Object {
 	private int _trueResistStun = 0;
 
 	public int getResistStun() {
-		return (_resistStun + L1MagicDoll.getResistStunByDoll(this));
+		return _resistStun;
 		// 　TODO　マジックドール効果　スタン耐性増加
 	}
 
@@ -1166,7 +1133,7 @@ public class L1Character extends L1Object {
 	private int _trueResistStone = 0;
 
 	public int getResistStone() {
-		return (_resistStone + L1MagicDoll.getResistStoneByDoll(this));
+		return _resistStone;
 		// 　TODO マジックドール効果　石化耐性増加
 	}
 
@@ -1186,7 +1153,7 @@ public class L1Character extends L1Object {
 	private int _trueResistSleep = 0;
 
 	public int getResistSleep() {
-		return (_resistSleep + L1MagicDoll.getResistSleepByDoll(this));
+		return _resistSleep;
 		// 　TODO マジックドール効果　睡眠耐性増加
 	}
 
@@ -1206,7 +1173,7 @@ public class L1Character extends L1Object {
 	private int _trueResistFreeze = 0;
 
 	public int getResistFreeze() {
-		return (_resistFreeze + L1MagicDoll.getResistFreezeByDoll(this));
+		return _resistFreeze;
 		// TODO　マジックドール效果　凍結耐性
 	}
 
@@ -1226,7 +1193,7 @@ public class L1Character extends L1Object {
 	private int _trueResistHold = 0;
 
 	public int getResistHold() {
-		return (_resistHold + L1MagicDoll.getResistHoldByDoll(this));
+		return _resistHold;
 		// TODO マジックドール效果 　ホールド耐性
 	}
 
@@ -1246,7 +1213,7 @@ public class L1Character extends L1Object {
 	private int _trueResistBlind = 0;
 
 	public int getResistBlind() {
-		return (_resistBlind + L1MagicDoll.getResistBlindByDoll(this));
+		return _resistBlind;
 		// TODO マジックドール效果 　暗闇耐性
 	}
 
@@ -1283,7 +1250,7 @@ public class L1Character extends L1Object {
 	private int _trueBowDmgup = 0; // ● 本当の弓ダメージ補正
 
 	public int getBowDmgup() {
-		return (_bowDmgup + L1MagicDoll.getBowDamageByDoll(this));
+		return _bowDmgup;
 		// TODO　マジックドール效果　弓攻撃ダメージ増加
 	}
 
@@ -1302,7 +1269,7 @@ public class L1Character extends L1Object {
 	private int _trueHitup = 0; // ● 本当の命中補正
 
 	public int getHitup() {
-		return (_hitup + L1MagicDoll.getHitAddByDoll(this));
+		return _hitup;
 		// TODO マジックドール效果　近距離攻撃命中率増加
 	}
 
@@ -1321,7 +1288,7 @@ public class L1Character extends L1Object {
 	private int _trueBowHitup = 0; // ● 本当の弓命中補正
 
 	public int getBowHitup() {
-		return (_bowHitup + L1MagicDoll.getBowHitAddByDoll(this));
+		return _bowHitup;
 		// TODO　マジックドール效果　弓命中力増加
 	}
 
@@ -1341,14 +1308,14 @@ public class L1Character extends L1Object {
 
 	public int getMr() {
 		if (hasSkillEffect(153) == true) {
-			return _mr / 4 + L1MagicDoll.getMrByDoll(this); // TODO マジックドール效果 - AC増加
+			return _mr / 4;
 		} else {
-			return _mr + L1MagicDoll.getMrByDoll(this); // TODO マジックドール效果 - AC増加
+			return _mr;
 		}
 	} // 使用するとき
 
 	public int getTrueMr() {
-		return _trueMr + L1MagicDoll.getMrByDoll(this);
+		return _trueMr;
 	} // セットするとき
 
 	public void addMr(int i) {

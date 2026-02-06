@@ -32,7 +32,6 @@ import static jp.l1j.server.model.skill.L1SkillId.*;
 import jp.l1j.server.packets.server.S_PacketBox;
 import jp.l1j.server.packets.server.S_PetPack;
 import jp.l1j.server.packets.server.S_ServerMessage;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.templates.L1Pet;
 
 // Referenced classes of package jp.l1j.server.utils:
@@ -364,8 +363,7 @@ public class CalcExp {
 			foodBonus = 1.04;
 		}
 		double bonus = (pc.getExpBonusPct()
-				+ ExpBonusTable.getExpBonusRate(pc.getLevel())
-				+ L1MagicDoll.getExpBonusByDoll(pc)) / 100.0 + 1.0;
+				+ ExpBonusTable.getExpBonusRate(pc.getLevel())) / 100.0 + 1.0;
 		return Config.RATE_XP * penalty * foodBonus * bonus;
 	}
 

@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Timer;
 import jp.l1j.server.codes.ActionCodes;
 import jp.l1j.server.datatables.ExpTable;
-import jp.l1j.server.datatables.PetItemTable;
 import jp.l1j.server.datatables.PetTable;
 import jp.l1j.server.datatables.PetTypeTable;
 import jp.l1j.server.model.L1Attack;
@@ -44,7 +43,6 @@ import jp.l1j.server.random.RandomGeneratorFactory;
 import jp.l1j.server.templates.L1Item;
 import jp.l1j.server.templates.L1Npc;
 import jp.l1j.server.templates.L1Pet;
-import jp.l1j.server.templates.L1PetItem;
 import jp.l1j.server.templates.L1PetType;
 import jp.l1j.server.utils.IdFactory;
 import jp.l1j.server.utils.Teleportation;
@@ -313,15 +311,6 @@ public class L1PetInstance extends L1NpcInstance {
 				}
 				if (item.isEquipped()) { // 裝備中
 					item.setEquipped(false);
-					L1PetItem petItem = PetItemTable.getInstance().getTemplate(
-							item.getItemId());
-					if (petItem.getUseType() == 1) { // 牙
-						setWeapon(null);
-						new_pet.usePetWeapon(this, item);
-					} else if (petItem.getUseType() == 0) { // アーマー
-						setArmor(null);
-						new_pet.usePetArmor(this, item);
-					}
 				}
 				if (new_pet.getInventory().checkAddItem(item, item.getCount()) == L1Inventory.OK) {
 					getInventory().tradeItem(item, item.getCount(),
@@ -406,22 +395,8 @@ public class L1PetInstance extends L1NpcInstance {
 			if (item.isEquipped()) { // 裝備中
 				if (!isDepositnpc) { // 装備品を収集しない場合
 					continue;
-				} else {
-					L1PetItem petItem = PetItemTable.getInstance().getTemplate(
-							item.getItemId());
-					if (petItem.getUseType() == 1) { // 牙
-						removePetWeapon(pet, item);
-					} else if (petItem.getUseType() == 0) { // アーマー
-						removePetArmor(pet, item);
-					}
-					L1Pet l1pet = PetTable.getInstance().getTemplate(_itemObjId);
-					if (l1pet != null) {
-						l1pet.setHp(getMaxHp());
-						l1pet.setMp(getMaxMp());
-						PetTable.getInstance().storePet(l1pet); // DBに書き込み
-					}
-					item.setEquipped(false);
 				}
+				item.setEquipped(false);
 			}
 			if (_petMaster.getInventory().checkAddItem( // オーナーのアイテム数確認
 					item, item.getCount()) == L1Inventory.OK) {
@@ -447,19 +422,6 @@ public class L1PetInstance extends L1NpcInstance {
 		for (int i = 0; i < size; i++) {
 			L1ItemInstance item = items.get(0);
 			if (item.isEquipped()) { // 裝備中
-				L1PetItem petItem = PetItemTable.getInstance().getTemplate(
-						item.getItemId());
-				if (petItem.getUseType() == 1) { // 牙
-					removePetWeapon(pet, item);
-				} else if (petItem.getUseType() == 0) { // アーマー
-					removePetArmor(pet, item);
-				}
-				L1Pet l1pet = PetTable.getInstance().getTemplate(_itemObjId);
-				if (l1pet != null) {
-					l1pet.setHp(getMaxHp());
-					l1pet.setMp(getMaxMp());
-					PetTable.getInstance().storePet(l1pet); // DBに書き込み
-				}
 				item.setEquipped(false);
 			}
 			_inventory.tradeItem(item, item.getCount(), targetInventory);
@@ -798,123 +760,6 @@ public class L1PetInstance extends L1NpcInstance {
 			_petFoodTimer.cancel();
 			_petFoodTimer = null;
 		}
-	}
-
-	// ペット装備アイテム
-	public void usePetWeapon(L1PetInstance pet, L1ItemInstance weapon) {
-		if (pet.getWeapon() == null) {
-			setPetWeapon(pet, weapon);
-		} else { // 既に何かを装備している場合、前の装備をはずす
-			if (pet.getWeapon().equals(weapon)) {
-				removePetWeapon(pet, pet.getWeapon());
-			} else {
-				removePetWeapon(pet, pet.getWeapon());
-				setPetWeapon(pet, weapon);
-			}
-		}
-	}
-
-	public void usePetArmor(L1PetInstance pet, L1ItemInstance armor) {
-		if (pet.getArmor() == null) {
-			setPetArmor(pet, armor);
-		} else { // 既に何かを装備している場合、前の装備をはずす
-			if (pet.getArmor().equals(armor)) {
-				removePetArmor(pet, pet.getArmor());
-			} else {
-				removePetArmor(pet, pet.getArmor());
-				setPetArmor(pet, armor);
-			}
-		}
-	}
-
-	private void setPetWeapon(L1PetInstance pet, L1ItemInstance weapon) {
-		int itemId = weapon.getItem().getItemId();
-		L1PetItem petItem = PetItemTable.getInstance().getTemplate(itemId);
-		if (petItem == null) {
-			return;
-		}
-
-		pet.setHitByWeapon(petItem.getHitModifier());
-		pet.setDamageByWeapon(petItem.getDamageModifier());
-		pet.addStr(petItem.getAddStr());
-		pet.addCon(petItem.getAddCon());
-		pet.addDex(petItem.getAddDex());
-		pet.addInt(petItem.getAddInt());
-		pet.addWis(petItem.getAddWis());
-		pet.addMaxHp(petItem.getAddHp());
-		pet.addMaxMp(petItem.getAddMp());
-		pet.addSp(petItem.getAddSp());
-		pet.addMr(petItem.getAddMr());
-
-		pet.setWeapon(weapon);
-		weapon.setEquipped(true);
-	}
-
-	private void removePetWeapon(L1PetInstance pet, L1ItemInstance weapon) {
-		int itemId = weapon.getItem().getItemId();
-		L1PetItem petItem = PetItemTable.getInstance().getTemplate(itemId);
-		if (petItem == null) {
-			return;
-		}
-
-		pet.setHitByWeapon(0);
-		pet.setDamageByWeapon(0);
-		pet.addStr(-petItem.getAddStr());
-		pet.addCon(-petItem.getAddCon());
-		pet.addDex(-petItem.getAddDex());
-		pet.addInt(-petItem.getAddInt());
-		pet.addWis(-petItem.getAddWis());
-		pet.addMaxHp(-petItem.getAddHp());
-		pet.addMaxMp(-petItem.getAddMp());
-		pet.addSp(-petItem.getAddSp());
-		pet.addMr(-petItem.getAddMr());
-
-		pet.setWeapon(null);
-		weapon.setEquipped(false);
-	}
-
-	private void setPetArmor(L1PetInstance pet, L1ItemInstance armor) {
-		int itemId = armor.getItem().getItemId();
-		L1PetItem petItem = PetItemTable.getInstance().getTemplate(itemId);
-		if (petItem == null) {
-			return;
-		}
-
-		pet.addAc(petItem.getAddAc());
-		pet.addStr(petItem.getAddStr());
-		pet.addCon(petItem.getAddCon());
-		pet.addDex(petItem.getAddDex());
-		pet.addInt(petItem.getAddInt());
-		pet.addWis(petItem.getAddWis());
-		pet.addMaxHp(petItem.getAddHp());
-		pet.addMaxMp(petItem.getAddMp());
-		pet.addSp(petItem.getAddSp());
-		pet.addMr(petItem.getAddMr());
-
-		pet.setArmor(armor);
-		armor.setEquipped(true);
-	}
-
-	private void removePetArmor(L1PetInstance pet, L1ItemInstance armor) {
-		int itemId = armor.getItem().getItemId();
-		L1PetItem petItem = PetItemTable.getInstance().getTemplate(itemId);
-		if (petItem == null) {
-			return;
-		}
-
-		pet.addAc(-petItem.getAddAc());
-		pet.addStr(-petItem.getAddStr());
-		pet.addCon(-petItem.getAddCon());
-		pet.addDex(-petItem.getAddDex());
-		pet.addInt(-petItem.getAddInt());
-		pet.addWis(-petItem.getAddWis());
-		pet.addMaxHp(-petItem.getAddHp());
-		pet.addMaxMp(-petItem.getAddMp());
-		pet.addSp(-petItem.getAddSp());
-		pet.addMr(-petItem.getAddMr());
-
-		pet.setArmor(null);
-		armor.setEquipped(false);
 	}
 
 	private void eatFood(L1ItemInstance item, int count) {

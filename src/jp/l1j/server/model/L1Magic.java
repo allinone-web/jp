@@ -33,7 +33,6 @@ import jp.l1j.server.packets.server.S_SkillSound;
 import jp.l1j.server.packets.server.S_SystemMessage;
 import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
-import jp.l1j.server.templates.L1MagicDoll;
 import jp.l1j.server.templates.L1Skill;
 
 public class L1Magic {
@@ -677,7 +676,6 @@ public class L1Magic {
 		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ軽減
 
 		// TODO マジックドール効果 　ダメージリダクション
-		dmg -= L1MagicDoll.getDamageReductionByDoll(_targetPc);
 
 
 		if (_targetPc.hasSkillEffect(COOKING_4_1) // 料理によるダメージ軽減

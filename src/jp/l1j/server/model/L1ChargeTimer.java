@@ -16,7 +16,6 @@ package jp.l1j.server.model;
 
 import java.util.logging.Logger;
 import java.util.TimerTask;
-import jp.l1j.server.model.instance.L1DollInstance;
 
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
@@ -47,21 +46,6 @@ public class L1ChargeTimer extends TimerTask {
 					&& _item.getItem().getType() == 2) { // light系アイテム
 				_item.setNowLighting(false); // ライトを消す
 				_pc.updateLight();
-			} else if (_item.getItem().getType2() == 0
-					&& _item.getItem().getType() == 17) { // 課金マジックドール
-				L1DollInstance doll = null;
-				Object[] dollList = _pc.getDollList().values().toArray();
-				for (Object dollObject : dollList) { // 召喚解除
-					doll = (L1DollInstance) dollObject;
-					if (doll.getItemObjId() == _item.getId()) {
-						_pc.sendPackets(new S_SkillSound(doll.getId(), 5936));
-						_pc.broadcastPacket(new S_SkillSound(doll.getId(), 5936));
-						doll.deleteDoll();
-						_pc.sendPackets(new S_SkillIconGFX(56, 0));
-						_pc.sendPackets(new S_OwnCharStatus(_pc));
-						break;
-					}
-				}
 			}
 			_item.setChargeTime(0);
 			_pc.getInventory().updateItem(_item, L1PcInventory.COL_CHARGE_TIME);
