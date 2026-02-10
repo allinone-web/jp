@@ -478,29 +478,6 @@ public class L1Attack {
 			_hitRate -= 5;
 		}
 
-		if (_pc.hasSkillEffect(COOKING_2_0_N) // 料理による追加命中
-				|| _pc.hasSkillEffect(COOKING_2_0_S)
-				|| _pc.hasSkillEffect(COOKING_4_1)) {
-			if (_weaponType != 20 && _weaponType != 62) {
-				_hitRate += 1;
-			}
-		}
-		if (_pc.hasSkillEffect(COOKING_3_2_N) // 料理による追加命中
-				|| _pc.hasSkillEffect(COOKING_3_2_S)) {
-			if (_weaponType != 20 && _weaponType != 62) {
-				_hitRate += 2;
-			}
-		}
-		if (_pc.hasSkillEffect(COOKING_2_3_N) // 料理による追加命中
-				|| _pc.hasSkillEffect(COOKING_2_3_S)
-				|| _pc.hasSkillEffect(COOKING_3_0_N)
-				|| _pc.hasSkillEffect(COOKING_3_0_S)
-				|| _pc.hasSkillEffect(COOKING_4_2)) {
-			if (_weaponType == 20 || _weaponType == 62) {
-				_hitRate += 1;
-			}
-		}
-
 		int attackerDice = _random.nextInt(20) + 1 + _hitRate - 10;
 
 		// 回避率
@@ -652,29 +629,6 @@ public class L1Attack {
 		} else if (161 <= _pc.getInventory().getWeight240()
 				&& 200 >= _pc.getInventory().getWeight240()) {
 			_hitRate -= 5;
-		}
-
-		if (_pc.hasSkillEffect(COOKING_2_0_N) // 料理による追加命中
-				|| _pc.hasSkillEffect(COOKING_2_0_S)
-				|| _pc.hasSkillEffect(COOKING_4_1)) {
-			if (_weaponType != 20 && _weaponType != 62) {
-				_hitRate += 1;
-			}
-		}
-		if (_pc.hasSkillEffect(COOKING_3_2_N) // 料理による追加命中
-				|| _pc.hasSkillEffect(COOKING_3_2_S)) {
-			if (_weaponType != 20 && _weaponType != 62) {
-				_hitRate += 2;
-			}
-		}
-		if (_pc.hasSkillEffect(COOKING_2_3_N) // 料理による追加命中
-				|| _pc.hasSkillEffect(COOKING_2_3_S)
-				|| _pc.hasSkillEffect(COOKING_3_0_N)
-				|| _pc.hasSkillEffect(COOKING_3_0_S)
-				|| _pc.hasSkillEffect(COOKING_4_2)) {
-			if (_weaponType == 20 || _weaponType == 62) {
-				_hitRate += 1;
-			}
 		}
 
 		int attackerDice = _random.nextInt(20) + 1 + _hitRate - 10;
@@ -998,6 +952,7 @@ public class L1Attack {
 			dmg += _pc.getBowDmgModifierByArmor();
 		}
 
+<<<<<<< Updated upstream
 		if (_weaponType != 20 && _weaponType != 62) { // マジックドール効果
 			L1MagicDoll.getDamageAddByDoll(_pc);
 		}
@@ -1037,11 +992,19 @@ public class L1Attack {
 			int _damageChance = _random.nextInt(100) + 1;
 			if (_damageChance <= 10) {
 				dmg += 2;
+=======
+		if (_pc.hasSkillEffect(MAGIC_EYE_OF_VALAKAS) // 魔眼による追加ダメージ
+				|| _pc.hasSkillEffect(MAGIC_EYE_OF_LIFE)) {
+			int _damageChance = _random.nextInt(100) + 1;
+			if (_damageChance <= 10) {
+				dmg += 2;
+>>>>>>> Stashed changes
 			}
 		}
 
 		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ軽減
 
+<<<<<<< Updated upstream
 		// マジックドール效果 - ダメージリダクション
 		dmg -= L1MagicDoll.getDamageReductionByDoll(_targetPc);
 
@@ -1065,6 +1028,11 @@ public class L1Attack {
 		if (_targetPc.hasSkillEffect(REDUCTION_ARMOR)) {
 			dmg -= _targetPc.getLevel() / 10;
 		}
+=======
+		if (_targetPc.hasSkillEffect(REDUCTION_ARMOR)) {
+			dmg -= _targetPc.getLevel() / 10;
+		}
+>>>>>>> Stashed changes
 		if (_targetPc.hasSkillEffect(ARMOR_BREAK)) {
 			dmg *= 1.58; // 対象の被ダメージ58%増加
 		}
@@ -1293,6 +1261,7 @@ public class L1Attack {
 			dmg += _pc.getBowDmgModifierByArmor();
 		}
 
+<<<<<<< Updated upstream
 		if (_weaponType != 20 && _weaponType != 62) {// マジックドールによる追加ダメージ
 			dmg += L1MagicDoll.getDamageAddByDoll(_pc);
 		}
@@ -1331,6 +1300,12 @@ public class L1Attack {
 				|| _pc.hasSkillEffect(MAGIC_EYE_OF_LIFE)) {
 			int _damageChance = _random.nextInt(100) + 1;
 			if (_damageChance <= 10) {
+=======
+		if (_pc.hasSkillEffect(MAGIC_EYE_OF_VALAKAS) // 魔眼による追加ダメージ
+				|| _pc.hasSkillEffect(MAGIC_EYE_OF_LIFE)) {
+			int _damageChance = _random.nextInt(100) + 1;
+			if (_damageChance <= 10) {
+>>>>>>> Stashed changes
 				dmg += 2;
 			}
 		}
@@ -1436,6 +1411,7 @@ public class L1Attack {
 
 		dmg -= _targetPc.getDamageReductionByArmor(); // 防具によるダメージ軽減
 
+<<<<<<< Updated upstream
 		// マジックドール效果 - ダメージリダクション
 		dmg -= L1MagicDoll.getDamageReductionByDoll(_targetPc);
 
@@ -1458,6 +1434,11 @@ public class L1Attack {
 		if (_targetPc.hasSkillEffect(REDUCTION_ARMOR)) {
 			dmg -= _targetPc.getLevel() / 10;
 		}
+=======
+		if (_targetPc.hasSkillEffect(REDUCTION_ARMOR)) {
+			dmg -= _targetPc.getLevel() / 10;
+		}
+>>>>>>> Stashed changes
 		if (_targetPc.hasSkillEffect(ARMOR_BREAK)) {
 			dmg *= 1.58; // 対象の被ダメージ58%増加
 		}

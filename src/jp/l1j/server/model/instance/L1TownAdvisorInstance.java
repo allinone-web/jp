@@ -32,10 +32,23 @@ public class L1TownAdvisorInstance extends L1NpcInstance {
 	private void createItem(L1PcInstance pc, int itemId, int amount, int price,
 			int needItemId, int needAmount) {
 		L1ItemInstance item = ItemTable.getInstance().createItem(itemId);
+<<<<<<< Updated upstream
 		if (pc.getInventory().checkItem(40308, price)
 				&& (needItemId == 0 || (needItemId > 0 && pc.getInventory().checkItem(needItemId, needAmount)))) {
 			if (pc.getInventory().checkAddItem(item, amount, true) == L1Inventory.OK) {
 				pc.getInventory().consumeItem(40308, price);
+=======
+		if (item == null) {
+			return;
+		}
+		if (needItemId > 0 && ItemTable.getInstance().getTemplate(needItemId) == null) {
+			return;
+		}
+		if (pc.getInventory().checkItem(5, price)
+				&& (needItemId == 0 || (needItemId > 0 && pc.getInventory().checkItem(needItemId, needAmount)))) {
+			if (pc.getInventory().checkAddItem(item, amount, true) == L1Inventory.OK) {
+				pc.getInventory().consumeItem(5, price);
+>>>>>>> Stashed changes
 				if (needItemId > 0) {
 					pc.getInventory().consumeItem(needItemId, needAmount);
 				}
@@ -51,35 +64,35 @@ public class L1TownAdvisorInstance extends L1NpcInstance {
 	public void create(L1PcInstance pc, String s) {
 		// 村人のブレイブポーションを作る
 		if (s.equals("NUL")) {
-			createItem(pc, 41480, 1, 1000, 40014, 3);
+			createItem(pc, 41480, 1, 1000, 253, 3);
 		} else if (s.equals("OUL")) {
-			createItem(pc, 41480, 2, 2000, 40014, 6);
+			createItem(pc, 41480, 2, 2000, 253, 6);
 		} else if (s.equals("PUL")) {
-			createItem(pc, 41480, 3, 3000, 40014, 9);
+			createItem(pc, 41480, 3, 3000, 253, 9);
 		} else if (s.equals("QUL")) {
-			createItem(pc, 41480, 4, 4000, 40014, 12);
+			createItem(pc, 41480, 4, 4000, 253, 12);
 		} else if (s.equals("RUL")) {
-			createItem(pc, 41480, 5, 5000, 40014, 15);
+			createItem(pc, 41480, 5, 5000, 253, 15);
 		} else if (s.equals("SUL")) {
-			createItem(pc, 41480, 6, 6000, 40014, 18);
+			createItem(pc, 41480, 6, 6000, 253, 18);
 		} else if (s.equals("TUL")) {
-			createItem(pc, 41480, 7, 7000, 40014, 21);
+			createItem(pc, 41480, 7, 7000, 253, 21);
 		} else if (s.equals("UUL")) {
-			createItem(pc, 41480, 8, 8000, 40014, 24);
+			createItem(pc, 41480, 8, 8000, 253, 24);
 		} else if (s.equals("VUL")) {
-			createItem(pc, 41480, 9, 9000, 40014, 27);
+			createItem(pc, 41480, 9, 9000, 253, 27);
 		} else if (s.equals("WUL")) {
-			createItem(pc, 41480, 10, 10000, 40014, 30);
+			createItem(pc, 41480, 10, 10000, 253, 30);
 		} else if (s.equals("XUL")) {
-			createItem(pc, 41480, 11, 11000, 40014, 33);
+			createItem(pc, 41480, 11, 11000, 253, 33);
 		} else if (s.equals("YUL")) {
-			createItem(pc, 41480, 12, 12000, 40014, 36);
+			createItem(pc, 41480, 12, 12000, 253, 36);
 		} else if (s.equals("ZUL")) {
-			createItem(pc, 41480, 13, 13000, 40014, 39);
+			createItem(pc, 41480, 13, 13000, 253, 39);
 		} else if (s.equals("[UL")) {
-			createItem(pc, 41480, 14, 14000, 40014, 42);
+			createItem(pc, 41480, 14, 14000, 253, 42);
 		} else if (s.equals("\\UL")) {
-			createItem(pc, 41480, 15, 15000, 40014, 45);
+			createItem(pc, 41480, 15, 15000, 253, 45);
 		// 村人の集中ポーションを作る
 		} else if (s.equals("SI")) {
 			createItem(pc, 41479, 1, 1000, 40068, 3);
@@ -113,97 +126,97 @@ public class L1TownAdvisorInstance extends L1NpcInstance {
 			createItem(pc, 41479, 15, 15000, 40068, 45);
 		// 村人のウィズダムポーションを作る
 		} else if (s.equals("RS")) {
-			createItem(pc, 41482, 1, 500, 40016, 3);
+			createItem(pc, 41482, 1, 500, 254, 3);
 		} else if (s.equals("SS")) {
-			createItem(pc, 41482, 2, 1000, 40016, 6);
+			createItem(pc, 41482, 2, 1000, 254, 6);
 		} else if (s.equals("TS")) {
-			createItem(pc, 41482, 3, 1500, 40016, 9);
+			createItem(pc, 41482, 3, 1500, 254, 9);
 		} else if (s.equals("US")) {
-			createItem(pc, 41482, 4, 2000, 40016, 12);
+			createItem(pc, 41482, 4, 2000, 254, 12);
 		} else if (s.equals("VS")) {
-			createItem(pc, 41482, 5, 2500, 40016, 15);
+			createItem(pc, 41482, 5, 2500, 254, 15);
 		} else if (s.equals("WS")) {
-			createItem(pc, 41482, 6, 3000, 40016, 18);
+			createItem(pc, 41482, 6, 3000, 254, 18);
 		} else if (s.equals("XS")) {
-			createItem(pc, 41482, 7, 3500, 40016, 21);
+			createItem(pc, 41482, 7, 3500, 254, 21);
 		} else if (s.equals("YS")) {
-			createItem(pc, 41482, 8, 4000, 40016, 24);
+			createItem(pc, 41482, 8, 4000, 254, 24);
 		} else if (s.equals("ZS")) {
-			createItem(pc, 41482, 9, 4500, 40016, 27);
+			createItem(pc, 41482, 9, 4500, 254, 27);
 		} else if (s.equals("[S")) {
-			createItem(pc, 41482, 10, 5000, 40016, 30);
+			createItem(pc, 41482, 10, 5000, 254, 30);
 		} else if (s.equals("\\S")) {
-			createItem(pc, 41482, 11, 5500, 40016, 33);
+			createItem(pc, 41482, 11, 5500, 254, 33);
 		} else if (s.equals("]S")) {
-			createItem(pc, 41482, 12, 6000, 40016, 36);
+			createItem(pc, 41482, 12, 6000, 254, 36);
 		} else if (s.equals("^S")) {
-			createItem(pc, 41482, 13, 6500, 40016, 39);
+			createItem(pc, 41482, 13, 6500, 254, 39);
 		} else if (s.equals("_S")) {
-			createItem(pc, 41482, 14, 7000, 40016, 42);
+			createItem(pc, 41482, 14, 7000, 254, 42);
 		} else if (s.equals("`S")) {
-			createItem(pc, 41482, 15, 7500, 40016, 45);
+			createItem(pc, 41482, 15, 7500, 254, 45);
 		// 村人の魔力ポーションを作る
 		} else if (s.equals("-")) {
-			createItem(pc, 41481, 1, 1000, 40015, 3);
+			createItem(pc, 41481, 1, 1000, 100, 3);
 		} else if (s.equals(".")) {
-			createItem(pc, 41481, 2, 2000, 40015, 6);
+			createItem(pc, 41481, 2, 2000, 100, 6);
 		} else if (s.equals("/")) {
-			createItem(pc, 41481, 3, 3000, 40015, 9);
+			createItem(pc, 41481, 3, 3000, 100, 9);
 		} else if (s.equals("0")) {
-			createItem(pc, 41481, 4, 4000, 40015, 12);
+			createItem(pc, 41481, 4, 4000, 100, 12);
 		} else if (s.equals("1")) {
-			createItem(pc, 41481, 5, 5000, 40015, 15);
+			createItem(pc, 41481, 5, 5000, 100, 15);
 		} else if (s.equals("2")) {
-			createItem(pc, 41481, 6, 6000, 40015, 18);
+			createItem(pc, 41481, 6, 6000, 100, 18);
 		} else if (s.equals("3")) {
-			createItem(pc, 41481, 7, 7000, 40015, 21);
+			createItem(pc, 41481, 7, 7000, 100, 21);
 		} else if (s.equals("4")) {
-			createItem(pc, 41481, 8, 8000, 40015, 24);
+			createItem(pc, 41481, 8, 8000, 100, 24);
 		} else if (s.equals("5")) {
-			createItem(pc, 41481, 9, 9000, 40015, 27);
+			createItem(pc, 41481, 9, 9000, 100, 27);
 		} else if (s.equals("6")) {
-			createItem(pc, 41481, 10, 10000, 40015, 30);
+			createItem(pc, 41481, 10, 10000, 100, 30);
 		} else if (s.equals("7")) {
-			createItem(pc, 41481, 11, 11000, 40015, 33);
+			createItem(pc, 41481, 11, 11000, 100, 33);
 		} else if (s.equals("8")) {
-			createItem(pc, 41481, 12, 12000, 40015, 36);
+			createItem(pc, 41481, 12, 12000, 100, 36);
 		} else if (s.equals("9")) {
-			createItem(pc, 41481, 13, 13000, 40015, 39);
+			createItem(pc, 41481, 13, 13000, 100, 39);
 		} else if (s.equals(":")) {
-			createItem(pc, 41481, 14, 14000, 40015, 42);
+			createItem(pc, 41481, 14, 14000, 100, 42);
 		} else if (s.equals(";")) {
-			createItem(pc, 41481, 15, 15000, 40015, 45);
+			createItem(pc, 41481, 15, 15000, 100, 45);
 		// 村人のヘイストポーションを作る
 		} else if (s.equals("<")) {
-			createItem(pc, 41477, 1, 500, 40013, 3);
+			createItem(pc, 41477, 1, 500, 102, 3);
 		} else if (s.equals("=")) {
-			createItem(pc, 41477, 2, 1000, 40013, 6);
+			createItem(pc, 41477, 2, 1000, 102, 6);
 		} else if (s.equals(">")) {
-			createItem(pc, 41477, 3, 1500, 40013, 9);
+			createItem(pc, 41477, 3, 1500, 102, 9);
 		} else if (s.equals("?")) {
-			createItem(pc, 41477, 4, 2000, 40013, 12);
+			createItem(pc, 41477, 4, 2000, 102, 12);
 		} else if (s.equals("@")) {
-			createItem(pc, 41477, 5, 2500, 40013, 15);
+			createItem(pc, 41477, 5, 2500, 102, 15);
 		} else if (s.equals("A")) {
-			createItem(pc, 41477, 6, 3000, 40013, 18);
+			createItem(pc, 41477, 6, 3000, 102, 18);
 		} else if (s.equals("B")) {
-			createItem(pc, 41477, 7, 3500, 40013, 21);
+			createItem(pc, 41477, 7, 3500, 102, 21);
 		} else if (s.equals("C")) {
-			createItem(pc, 41477, 8, 4000, 40013, 24);
+			createItem(pc, 41477, 8, 4000, 102, 24);
 		} else if (s.equals("D")) {
-			createItem(pc, 41477, 9, 4500, 40013, 27);
+			createItem(pc, 41477, 9, 4500, 102, 27);
 		} else if (s.equals("E")) {
-			createItem(pc, 41477, 10, 5000, 40013, 30);
+			createItem(pc, 41477, 10, 5000, 102, 30);
 		} else if (s.equals("F")) {
-			createItem(pc, 41477, 11, 5500, 40013, 33);
+			createItem(pc, 41477, 11, 5500, 102, 33);
 		} else if (s.equals("G")) {
-			createItem(pc, 41477, 12, 6000, 40013, 36);
+			createItem(pc, 41477, 12, 6000, 102, 36);
 		} else if (s.equals("H")) {
-			createItem(pc, 41477, 13, 6500, 40013, 39);
+			createItem(pc, 41477, 13, 6500, 102, 39);
 		} else if (s.equals("I")) {
-			createItem(pc, 41477, 14, 7000, 40013, 42);
+			createItem(pc, 41477, 14, 7000, 102, 42);
 		} else if (s.equals("J")) {
-			createItem(pc, 41477, 15, 7500, 40013, 45);
+			createItem(pc, 41477, 15, 7500, 102, 45);
 		// 村人の呼吸ポーションを作る
 		} else if (s.equals("K")) {
 			createItem(pc, 41478, 1, 500, 40032, 3);

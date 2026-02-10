@@ -56,7 +56,7 @@ public class C_Mail extends ClientBasePacket {
 			}
 			pc.sendPackets(new S_Mail(mailId, type));
 		} else if (type == 0x20) { // 一般メールを書く
-			if (!pc.getInventory().checkItem(40308, 50)) {
+			if (!pc.getInventory().checkItem(5, 50)) {
 				pc.sendPackets(new S_ServerMessage(189)); // アデナが不足しています。
 				return;
 			}
@@ -83,10 +83,10 @@ public class C_Mail extends ClientBasePacket {
 				receiver.sendPackets(new S_Mail(pc, mailId2, false));
 				receiver.sendPackets(new S_SkillSound(receiver.getId(), 1091));
 			}
-			pc.getInventory().consumeItem(40308, 50);
+			pc.getInventory().consumeItem(5, 50);
 			pc.sendPackets(new S_Mail(type, true));
 		} else if (type == 0x21) { // 血盟メールを書く
-			if (!pc.getInventory().checkItem(40308, 1000)) {
+			if (!pc.getInventory().checkItem(5, 1000)) {
 				pc.sendPackets(new S_ServerMessage(189)); // アデナが不足しています。
 				return;
 			}
@@ -107,7 +107,7 @@ public class C_Mail extends ClientBasePacket {
 						clanPc.sendPackets(new S_Mail(clanPc, TYPE_CLAN_MAIL));
 						clanPc.sendPackets(new S_SkillSound(clanPc.getId(), 1091));
 					}
-					pc.getInventory().consumeItem(40308, 1000);
+					pc.getInventory().consumeItem(5, 1000);
 				}
 			}
 		} else if (type == 0x30 || type == 0x31 || type == 0x32) { // 削除

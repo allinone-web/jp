@@ -14,6 +14,15 @@ cd release-build
 
 
 
+或者重新打包（會自動設置權限）：
+cd /Users/airtan/Documents/GitHub/jp
+ant clean compile
+./ReleaseBuild.sh
+cd /Users/airtan/Documents/GitHub/jp
+./ServerDebug.sh
+
+
+
 現在可以啟動服務器
 cd /Users/airtan/Documents/GitHub/jp
 ./ServerStart.sh

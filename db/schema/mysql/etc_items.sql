@@ -1,5 +1,6 @@
 -- ----------------------------
 -- Table structure for `etc_items`
+-- 已廢棄：已合併至 items 表，可隨時刪除。ItemTable 僅讀取 items。
 -- ----------------------------
 DROP TABLE IF EXISTS `etc_items`;
 CREATE TABLE `etc_items` (
@@ -9,6 +10,26 @@ CREATE TABLE `etc_items` (
   `identified_name_id` varchar(255) NOT NULL,
   `item_type` varchar(255) NOT NULL,
   `use_type` varchar(255) NOT NULL,
+  `effect_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `use_royal` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `use_knight` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `use_wizard` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `use_elf` tinyint(1) unsigned NOT NULL DEFAULT '0',
+  `add_str` tinyint(3) NOT NULL DEFAULT '0',
+  `add_dex` tinyint(3) NOT NULL DEFAULT '0',
+  `add_con` tinyint(3) NOT NULL DEFAULT '0',
+  `add_int` tinyint(3) NOT NULL DEFAULT '0',
+  `add_wis` tinyint(3) NOT NULL DEFAULT '0',
+  `add_sp` tinyint(3) NOT NULL DEFAULT '0',
+  `add_hit` tinyint(3) NOT NULL DEFAULT '0',
+  `add_dmg` tinyint(3) NOT NULL DEFAULT '0',
+  `add_bow_hit` tinyint(3) NOT NULL DEFAULT '0',
+  `add_bow_dmg` tinyint(3) NOT NULL DEFAULT '0',
+  `add_hp` int(10) NOT NULL DEFAULT '0',
+  `add_mp` int(10) NOT NULL DEFAULT '0',
+  `add_hpr` int(10) NOT NULL DEFAULT '0',
+  `add_mpr` int(10) NOT NULL DEFAULT '0',
+  `add_mr` tinyint(3) NOT NULL DEFAULT '0',
   `material` varchar(255) NOT NULL,
   `weight` int(10) unsigned NOT NULL DEFAULT '0',
   `inv_gfx_id` int(10) unsigned NOT NULL,

@@ -1,5 +1,6 @@
 -- ----------------------------
 -- Table structure for `weapons`
+-- 已廢棄：已合併至 items 表，可隨時刪除。ItemTable 僅讀取 items。
 -- ----------------------------
 DROP TABLE IF EXISTS `weapons`;
 CREATE TABLE `weapons` (

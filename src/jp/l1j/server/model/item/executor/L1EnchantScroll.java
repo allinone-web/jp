@@ -17,7 +17,9 @@ package jp.l1j.server.model.item.executor;
 import java.util.Arrays;
 import jp.l1j.configure.Config;
 import static jp.l1j.locale.I18N.*;
+import jp.l1j.server.datatables.EnchantBonusTable;
 import jp.l1j.server.datatables.EnchantLogTable;
+import jp.l1j.server.datatables.EnchantProtectTable;
 import jp.l1j.server.model.L1World;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
@@ -31,6 +33,7 @@ import jp.l1j.server.packets.server.S_SystemMessage;
 import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
 import jp.l1j.server.templates.L1Armor;
+import jp.l1j.server.templates.L1EnchantBonusData;
 
 public class L1EnchantScroll {
 
@@ -757,7 +760,7 @@ public class L1EnchantScroll {
 				pc.addAc(-i);
 			}
 			
-			L1EnchantBonus bonusItem = L1EnchantBonus.get(item.getItem().getItemId());
+			L1EnchantBonusData bonusItem = EnchantBonusTable.getInstance().get(item.getItem().getItemId());
 			if (bonusItem != null) {
 				pc.addAc(bonusItem.getAc(i));
 				pc.addStr(bonusItem.getStr(i));
@@ -892,11 +895,9 @@ public class L1EnchantScroll {
 	}
 
 	private void protectEnchant(L1PcInstance pc, L1ItemInstance item, L1ItemInstance target) {
-	System.out.println(target.getProtectItemId());
-		L1EnchantProtectScroll scroll = L1EnchantProtectScroll.get(
-						target.getProtectItemId());
-		target.setEnchantLevel(target.getEnchantLevel()
-						- scroll.getDownLevel(target.getItemId()));
+		System.out.println(target.getProtectItemId());
+		int downLevel = EnchantProtectTable.getInstance().getDownLevel(target.getProtectItemId(), target.getItemId());
+		target.setEnchantLevel(target.getEnchantLevel() - downLevel);
 		pc.sendPackets(new S_ServerMessage(1310));
 		// 強烈な光りを放ちましたが、装備が蒸発しませんでした。
 		target.setProtected(false);

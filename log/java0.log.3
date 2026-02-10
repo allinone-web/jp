@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Feb 04, 2026 2:16:49 AM jp.l1j.configure.L1Properties notifyLoadingDefault
 INFO: ShutdownDelay does not exists. Server use default value.
 Feb 04, 2026 2:16:49 AM jp.l1j.server.utils.IdFactory loadState
@@ -12,6 +13,2060 @@ Feb 04, 2026 2:35:26 AM jp.l1j.server.packets.client.C_AuthLogin <init>
 INFO: Decrypted packet data (hex):
 Feb 04, 2026 2:35:26 AM jp.l1j.server.packets.client.C_AuthLogin <init>
 INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+=======
+Feb 06, 2026 6:13:24 PM jp.l1j.configure.L1Properties notifyLoadingDefault
+INFO: ShutdownDelay does not exists. Server use default value.
+Feb 06, 2026 6:13:25 PM jp.l1j.server.utils.IdFactory loadState
+INFO: 現在のオブジェクトID: 268452656
+Feb 06, 2026 6:13:51 PM jp.l1j.server.ClientThread run
+INFO: 100.93.57.71 has connected to the server.
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 12
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 31 00 31 31 31 31 00 
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 31 00 31 31 31 31 00                9test1.1111.
+
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test1'
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='1111'
+Feb 06, 2026 6:14:04 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 06, 2026 6:14:09 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=11111 account=test1 host=100.93.57.71
+Feb 06, 2026 6:18:24 PM jp.l1j.server.model.instance.L1NpcInstance$NpcAIThreadImpl run
+WARNING: NpcAIで例外が発生しました。
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Item.isStackable()" because the return value of "jp.l1j.server.datatables.ItemTable.getTemplate(int)" is null
+	at jp.l1j.server.model.inventory.L1Inventory.consumeItem(L1Inventory.java:297)
+	at jp.l1j.server.model.instance.L1NpcInstance.useItem(L1NpcInstance.java:1935)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onItemUse(L1MonsterInstance.java:94)
+	at jp.l1j.server.model.instance.L1NpcInstance.AIProcess(L1NpcInstance.java:272)
+	at jp.l1j.server.model.instance.L1NpcInstance$NpcAIThreadImpl.run(L1NpcInstance.java:235)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:37 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getName()" because "template" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getName()" because "template" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.setting_template(L1NpcInstance.java:1125)
+	at jp.l1j.server.model.instance.L1NpcInstance.transform(L1NpcInstance.java:2223)
+	at jp.l1j.server.model.instance.L1MonsterInstance.transform(L1MonsterInstance.java:956)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:465)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:38 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:40 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:42 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:46 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:48 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:50 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:52 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:53 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:55 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:57 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:18:59 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:01 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:05 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:07 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:09 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:11 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:13 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:15 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:17 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:19 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:21 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:24 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:26 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:28 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:30 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:32 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:34 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:36 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:38 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:40 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:44 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:46 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:48 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:50 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:51 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:53 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:55 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:57 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:19:59 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:03 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:05 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:07 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:09 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:11 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:13 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:15 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:17 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:19 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:22 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:24 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:26 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:28 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:30 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:32 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:34 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:36 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:38 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:42 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:44 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:46 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:48 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:49 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:51 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:53 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:55 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:20:57 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:01 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:03 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:05 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:07 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:09 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:11 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:13 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:15 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:17 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:20 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:22 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:24 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:26 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:28 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:30 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:32 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:34 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:36 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:40 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:42 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:44 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:46 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:47 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:49 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:51 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:53 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:55 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:21:59 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:01 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:03 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:05 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:07 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:09 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:11 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:13 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:15 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:18 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:20 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:22 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:24 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:26 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:28 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:30 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:32 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:34 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:38 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:40 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:42 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:44 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:45 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:47 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:49 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:22:51 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcPcNpcHit(L1Attack.java:651)
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:404)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:23:22 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:407)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:23:24 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getNpcId()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.L1Attack.calcHit(L1Attack.java:407)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:321)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:24:29 PM jp.l1j.server.ClientThread run
+INFO: 100.93.57.71 has connected to the server.
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 31 00 31 31 31 31 31 31 00 00 00 
+
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 31 00 31 31 31 31 31 31 00 00 00    9test1.111111...
+
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test1'
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 06, 2026 6:24:35 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 12
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 31 00 31 31 31 31 00 
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 31 00 31 31 31 31 00                9test1.1111.
+
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test1'
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='1111'
+Feb 06, 2026 6:24:40 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 06, 2026 6:24:44 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=55555 account=test1 host=100.93.57.71
+Feb 06, 2026 6:25:26 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:26 PM jp.l1j.server.model.instance.L1NpcInstance$NpcAIThreadImpl run
+WARNING: NpcAIで例外が発生しました。
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Item.isStackable()" because the return value of "jp.l1j.server.datatables.ItemTable.getTemplate(int)" is null
+	at jp.l1j.server.model.inventory.L1Inventory.consumeItem(L1Inventory.java:297)
+	at jp.l1j.server.model.instance.L1NpcInstance.useItem(L1NpcInstance.java:1948)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onItemUse(L1MonsterInstance.java:72)
+	at jp.l1j.server.model.instance.L1NpcInstance.AIProcess(L1NpcInstance.java:272)
+	at jp.l1j.server.model.instance.L1NpcInstance$NpcAIThreadImpl.run(L1NpcInstance.java:235)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:26 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:30 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:31 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:32 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:32 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:40 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:42 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:42 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:46 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:51 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:52 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:56 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:56 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 06, 2026 6:25:58 PM jp.l1j.server.ClientThread$HcPacket run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Npc.getAgroFamily()" because the return value of "jp.l1j.server.model.instance.L1NpcInstance.getNpcTemplate()" is null
+	at jp.l1j.server.model.instance.L1NpcInstance.serchLink(L1NpcInstance.java:363)
+	at jp.l1j.server.model.instance.L1MonsterInstance.receiveDamage(L1MonsterInstance.java:375)
+	at jp.l1j.server.model.L1Attack.commitNpc(L1Attack.java:1871)
+	at jp.l1j.server.model.L1Attack.commit(L1Attack.java:1783)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:329)
+	at jp.l1j.server.model.instance.L1MonsterInstance.onAction(L1MonsterInstance.java:314)
+	at jp.l1j.server.packets.client.C_Attack.<init>(C_Attack.java:115)
+	at jp.l1j.server.packets.PacketHandler.handlePacket(PacketHandler.java:254)
+	at jp.l1j.server.ClientThread$HcPacket.run(ClientThread.java:406)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+>>>>>>> Stashed changes
 
 Feb 04, 2026 2:35:26 AM jp.l1j.server.packets.client.C_AuthLogin <init>
 INFO: Full packet dump:

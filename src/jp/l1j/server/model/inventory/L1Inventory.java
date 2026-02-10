@@ -28,7 +28,7 @@ import jp.l1j.configure.Config;
 import jp.l1j.server.datatables.InnKeyTable;
 import jp.l1j.server.datatables.ItemRateTable;
 import jp.l1j.server.datatables.ItemTable;
-import jp.l1j.server.datatables.RaceTicketTable;
+// import jp.l1j.server.datatables.RaceTicketTable; // BugBear Race removed
 import jp.l1j.server.model.L1Object;
 import jp.l1j.server.model.L1World;
 import jp.l1j.server.model.instance.L1ItemInstance;
@@ -40,7 +40,7 @@ import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
 import jp.l1j.server.templates.L1InventoryItem;
 import jp.l1j.server.templates.L1Item;
-import jp.l1j.server.templates.L1RaceTicket;
+// import jp.l1j.server.templates.L1RaceTicket; // BugBear Race removed
 import jp.l1j.server.utils.IdFactory;
 
 public class L1Inventory extends L1Object {
@@ -158,6 +158,7 @@ public class L1Inventory extends L1Object {
 		}
 		L1Item temp = ItemTable.getInstance().getTemplate(id);
 		if (temp == null) {
+			_log.warning("storeItem: item template not found for itemId=" + id);
 			return null;
 		}
 
@@ -216,17 +217,7 @@ public class L1Inventory extends L1Object {
 			}
 		}
 		/* 新規格納 */
-		if (itemId == 40309) {// レースチケット
-			String[] temp = item.getItem().getIdentifiedNameId().split(" ");
-			temp = temp[temp.length - 1].split("-");
-			L1RaceTicket ticket = new L1RaceTicket();
-			ticket.setItemObjId(item.getId());
-			ticket.setRound(Integer.parseInt(temp[0]));
-			ticket.setAllotmentPercentage(0.0);
-			ticket.setVictory(0);
-			ticket.setRunnerNum(Integer.parseInt(temp[1]));
-			RaceTicketTable.getInstance().storeNewTiket(ticket);
-		}
+		// BugBear Race ticket (40309) handler removed
 		item.setX(getX());
 		item.setY(getY());
 		item.setMap(getMapId());
@@ -304,7 +295,12 @@ public class L1Inventory extends L1Object {
 			_log.log(Level.INFO, "Count <= 0", new IllegalArgumentException());
 			return false;
 		}
-		if (ItemTable.getInstance().getTemplate(itemId).isStackable()) {
+		L1Item template = ItemTable.getInstance().getTemplate(itemId);
+		if (template == null) {
+			_log.warning("consumeItem: item template not found for itemId=" + itemId);
+			return false;
+		}
+		if (template.isStackable()) {
 			L1ItemInstance item = findItemId(itemId);
 			if (item != null && item.getCount() >= count) {
 				removeItem(item, count);
@@ -590,7 +586,12 @@ public class L1Inventory extends L1Object {
 		if (count == 0) {
 			return true;
 		}
-		if (ItemTable.getInstance().getTemplate(id).isStackable()) {
+		L1Item tmpl = ItemTable.getInstance().getTemplate(id);
+		if (tmpl == null) {
+			_log.warning("checkItem: item template not found for itemId=" + id);
+			return false;
+		}
+		if (tmpl.isStackable()) {
 			L1ItemInstance item = findItemId(id);
 			if (item != null && item.getCount() >= count) {
 				return true;
@@ -671,7 +672,12 @@ public class L1Inventory extends L1Object {
 	 * @return
 	 */
 	public int countItems(int id) {
-		if (ItemTable.getInstance().getTemplate(id).isStackable()) {
+		L1Item tmpl = ItemTable.getInstance().getTemplate(id);
+		if (tmpl == null) {
+			_log.warning("countItems: item template not found for itemId=" + id);
+			return 0;
+		}
+		if (tmpl.isStackable()) {
 			L1ItemInstance item = findItemId(id);
 			if (item != null) {
 				return item.getCount();

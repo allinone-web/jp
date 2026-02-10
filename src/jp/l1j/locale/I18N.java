@@ -399,7 +399,7 @@ public class I18N {
 	/*
 	 * jp.l1j.server.model.L1BugBearRace.java
 	 */
-	public static final String I18N_RACE_ROUND = bundle.getString("RaceRound");
+	// public static final String I18N_RACE_ROUND = bundle.getString("RaceRound"); // BugBear Race removed
 	
 	/*
 	 * jp.l1j.server.model.L1Clan.java

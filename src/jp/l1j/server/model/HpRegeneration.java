@@ -150,6 +150,7 @@ public class HpRegeneration extends TimerTask {
 				|| _pc.getMapId() == 196))) {
 			bonus += 3;
 		}
+<<<<<<< Updated upstream
 		if (_pc.hasSkillEffect(COOKING_1_5_N)
 				|| _pc.hasSkillEffect(COOKING_1_5_S)) {
 			bonus += 3;
@@ -170,6 +171,12 @@ public class HpRegeneration extends TimerTask {
 		bonus += L1MagicDoll.getNatHprByDoll(_pc); // マジックドールによるHPR補正
 
 		boolean inLifeStream = false;
+=======
+		if (_pc.getOriginalHpr() > 0) { // オリジナルCON HPR補正
+			bonus += _pc.getOriginalHpr();
+		}
+		boolean inLifeStream = false;
+>>>>>>> Stashed changes
 		if (isPlayerInLifeStream(_pc)) {
 			inLifeStream = true;
 			// 古代の空間、魔族の神殿ではHPR+3はなくなる？

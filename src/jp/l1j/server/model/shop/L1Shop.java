@@ -23,7 +23,7 @@ import jp.l1j.server.datatables.ItemTable;
 import jp.l1j.server.datatables.TownTable;
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
-import jp.l1j.server.model.L1BugBearRace;
+// import jp.l1j.server.model.L1BugBearRace; // BugBear Race removed
 import jp.l1j.server.model.L1CastleLocation;
 import jp.l1j.server.model.L1TaxCalculator;
 import jp.l1j.server.model.L1TownLocation;
@@ -287,28 +287,6 @@ public class L1Shop {
 			int itemId = order.getItem().getItemId();
 			int amount = order.getCount();
 			L1ItemInstance item = ItemTable.getInstance().createItem(itemId);
-			// XXX
-			if (item.getItemId() == 40309) {// レースチケット
-				item.setItem(order.getItem().getItem());
-				L1BugBearRace.getInstance().setAllBet(
-						L1BugBearRace.getInstance().getAllBet()
-								+ (int) (amount * order.getItem().getPrice()));
-				String[] runNum = item.getItem().getIdentifiedNameId().split(
-						"-");
-				int trueNum = 0;
-				for (int i = 0; i < 5; i++) {
-					if (L1BugBearRace.getInstance().getRunner(i).getNpcId() - 91350 == (Integer
-							.parseInt(runNum[runNum.length - 1]) - 1)) {
-						trueNum = i;
-						break;
-					}
-				}
-				L1BugBearRace.getInstance().setBetCount(
-						trueNum,
-						L1BugBearRace.getInstance().getBetCount(trueNum)
-								+ amount);
-			}
-
 			item.setCount(amount);
 			item.setIdentified(true);
 			inv.storeItem(item);

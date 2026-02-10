@@ -1806,6 +1806,7 @@ public class L1Character extends L1Object {
 		return false;
 	}
 
+<<<<<<< Updated upstream
 	/**
 	 * 幻想料理を使用中かどうか。
 	 * @return
@@ -1825,3 +1826,6 @@ public class L1Character extends L1Object {
 				hasSkillEffect(COOKING_3_6_S));
 	}
 }
+=======
+}
+>>>>>>> Stashed changes

@@ -123,6 +123,7 @@ public class MpRegeneration extends TimerTask {
 				|| _pc.getMapId() == 196))) {
 			baseMpr += 3;
 		}
+<<<<<<< Updated upstream
 		if (_pc.hasSkillEffect(COOKING_1_2_N)
 				|| _pc.hasSkillEffect(COOKING_1_2_S)) {
 			baseMpr += 3;
@@ -140,6 +141,11 @@ public class MpRegeneration extends TimerTask {
  			baseMpr += _pc.getOriginalMpr();
  		}
 		baseMpr += L1MagicDoll.getNatMprByDoll(_pc); // マジックドールによるMPR補正
+=======
+ 		if (_pc.getOriginalMpr() > 0) { // オリジナルWIS MPR補正
+ 			baseMpr += _pc.getOriginalMpr();
+ 		}
+>>>>>>> Stashed changes
 		int itemMpr = 0;
 		itemMpr += _pc.getMpr();
 

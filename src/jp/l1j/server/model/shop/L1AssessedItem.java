@@ -15,29 +15,13 @@
 
 package jp.l1j.server.model.shop;
 
-import jp.l1j.server.datatables.RaceTicketTable;
-import jp.l1j.server.model.instance.L1ItemInstance;
-import jp.l1j.server.model.L1World;
-import jp.l1j.server.templates.L1RaceTicket;
-
 public class L1AssessedItem {
 	private final int _targetId;
 	private final double _assessedPrice;
 
 	L1AssessedItem(int targetId, double assessedPrice) {
 		_targetId = targetId;
-		//XXX
-		L1ItemInstance item = (L1ItemInstance) L1World.getInstance().findObject(getTargetId());
-		if(item.getItemId()==40309){//レースチケット
-			L1RaceTicket ticket=RaceTicketTable.getInstance().getTemplate(_targetId);
-			int price=0;
-			if(ticket!=null){
-				price=(int) (assessedPrice*ticket.getAllotmentPercentage()*ticket.getVictory());
-			}
-			_assessedPrice = price;
-		}else{
-			_assessedPrice = assessedPrice;
-		}
+		_assessedPrice = assessedPrice;
 	}
 
 	public int getTargetId() {

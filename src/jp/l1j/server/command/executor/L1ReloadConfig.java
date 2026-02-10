@@ -49,6 +49,7 @@ import jp.l1j.server.datatables.TrapTable;
 import jp.l1j.server.datatables.WeaponSkillTable;
 import jp.l1j.server.model.L1BossCycle;
 import jp.l1j.server.model.instance.L1PcInstance;
+<<<<<<< Updated upstream
 import jp.l1j.server.model.item.executor.L1BeginnerItem;
 import jp.l1j.server.model.item.executor.L1BlankScroll;
 import jp.l1j.server.model.item.executor.L1BlessOfEva;
@@ -84,6 +85,8 @@ import jp.l1j.server.model.item.executor.L1UniqueEnchantScroll;
 import jp.l1j.server.model.item.executor.L1UnknownMaliceWeapon;
 import jp.l1j.server.model.item.executor.L1WisdomPotion;
 import jp.l1j.server.model.map.executor.L1MapLimiter;
+=======
+>>>>>>> Stashed changes
 import jp.l1j.server.packets.server.S_SystemMessage;
 
 public class L1ReloadConfig implements L1CommandExecutor {
@@ -133,6 +136,7 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		ShopTable.getInstance().reload();
 		SkillTable.getInstance().reload();
 		SprTable.getInstance().reload();
+<<<<<<< Updated upstream
 		TrapTable.getInstance().reload();
 		WeaponSkillTable.getInstance().reload();
 		// xml files
@@ -171,6 +175,10 @@ public class L1ReloadConfig implements L1CommandExecutor {
 		L1UniqueEnchantScroll.reload();
 		L1UnknownMaliceWeapon.reload();
 		L1WisdomPotion.reload();
+=======
+		WeaponSkillTable.getInstance().reload();
+		// XML reloading removed (DB-driven item logic only)
+>>>>>>> Stashed changes
 		pc.sendPackets(new S_SystemMessage("reload the configs is complete."));
 	}
 }

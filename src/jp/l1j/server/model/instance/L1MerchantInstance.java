@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 import jp.l1j.server.datatables.NpcTalkDataTable;
 import jp.l1j.server.datatables.TownTable;
 import jp.l1j.server.model.L1Attack;
-import jp.l1j.server.model.L1BugBearRace;
+// import jp.l1j.server.model.L1BugBearRace; // BugBear Race removed
 import jp.l1j.server.model.L1CastleLocation;
 import jp.l1j.server.model.L1Clan;
 import jp.l1j.server.model.L1NpcTalkData;
@@ -3049,18 +3049,7 @@ public class L1MerchantInstance extends L1NpcInstance {
 						htmlid = "j_html01";
 					}
 				}
-			} else if (npcid == 70035 || npcid == 70041 || npcid == 70042) { // ギランレース管理人(セシル　パーキン　ポーリー)
-				// STATUS_NONE = 0; STATUS_READY = 1; STATUS_PLAYING = 2;
-				// STATUS_END = 3;
-				if (L1BugBearRace.getInstance().getGameStatus() == 0) {
-					htmlid = "maeno5";
-				} else if (L1BugBearRace.getInstance().getGameStatus() == 1) {
-					htmlid = "maeno1";
-				} else if (L1BugBearRace.getInstance().getGameStatus() == 2) {
-					htmlid = "maeno3";
-				} else if (L1BugBearRace.getInstance().getGameStatus() == 3) {
-					htmlid = "maeno5";
-				}
+			// BugBear Race NPC handlers (70035/70041/70042) removed
 			} else if (npcid == 80192) { // 宝石細工職人 デービッド
 				if (pc.getInventory().checkItem(49031) // アイスクリスタル
 						&& pc.getInventory().checkItem(21088)) { // アイスクイーンのイヤリング　７段階

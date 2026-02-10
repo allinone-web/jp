@@ -65,7 +65,7 @@ import jp.l1j.server.datatables.NpcTalkDataTable;
 import jp.l1j.server.datatables.PetTable;
 import jp.l1j.server.datatables.PetTypeTable;
 import jp.l1j.server.datatables.PolyTable;
-import jp.l1j.server.datatables.RaceTicketTable;
+// import jp.l1j.server.datatables.RaceTicketTable; // BugBear Race removed
 import jp.l1j.server.datatables.RandomDungeonTable;
 import jp.l1j.server.datatables.ResolventTable;
 import jp.l1j.server.datatables.RestartLocationTable;
@@ -81,13 +81,13 @@ import jp.l1j.server.datatables.SprListTable;
 import jp.l1j.server.datatables.SprTable;
 import jp.l1j.server.datatables.WeaponSkillTable;
 import jp.l1j.server.model.ElementalStoneGenerator;
-import jp.l1j.server.model.L1BossCycle;
-import jp.l1j.server.model.L1BugBearRace;
+// import jp.l1j.server.model.L1BugBearRace; // BugBear Race removed
 import jp.l1j.server.model.L1CastleLocation;
 import jp.l1j.server.model.L1NpcRegenerationTimer;
 import jp.l1j.server.model.L1World;
 import jp.l1j.server.model.gametime.L1GameTimeClock;
 import jp.l1j.server.model.instance.L1PcInstance;
+<<<<<<< Updated upstream
 import jp.l1j.server.model.item.executor.L1BeginnerItem;
 import jp.l1j.server.model.item.executor.L1BlankScroll;
 import jp.l1j.server.model.item.executor.L1BlessOfEva;
@@ -122,6 +122,8 @@ import jp.l1j.server.model.item.executor.L1TreasureBox;
 import jp.l1j.server.model.item.executor.L1UniqueEnchantScroll;
 import jp.l1j.server.model.item.executor.L1UnknownMaliceWeapon;
 import jp.l1j.server.model.item.executor.L1WisdomPotion;
+=======
+>>>>>>> Stashed changes
 import jp.l1j.server.model.map.L1WorldMap;
 import jp.l1j.server.model.map.executor.L1MapLimiter;
 import jp.l1j.server.model.trap.L1WorldTraps;
@@ -334,13 +336,15 @@ public class GameServer extends Thread {
 		NpcChatTable.getInstance();
 		MailTable.getInstance();
 		SprListTable.getInstance();
-		RaceTicketTable.getInstance();
-		L1BugBearRace.getInstance();
+		// RaceTicketTable.getInstance();
+		// L1BugBearRace.getInstance();
+		// NOTE: BugBear Race disabled — 182 DB lacks race merchants/spawns/tickets
 		InnTable.getInstance();
 		MagicDollTable.getInstance();
 		CookingRecipeTable.getInstance();
 		ShutdownRequestTable.removeAll();
 		
+<<<<<<< Updated upstream
 		// Loading the XML files
 		L1BossCycle.load();
 		L1BeginnerItem.load();
@@ -378,6 +382,9 @@ public class GameServer extends Thread {
 		L1UniqueEnchantScroll.load();
 		L1UnknownMaliceWeapon.load();
 		L1WisdomPotion.load();
+=======
+		// XML loading removed (DB-driven item logic only)
+>>>>>>> Stashed changes
 		
 		System.out.println(I18N_LOADING_COMPLETE);
 		Runtime.getRuntime().addShutdownHook(ShutdownController.getInstance());

@@ -1,13 +1,16 @@
 {
 	"folders": [
 		{
-			"path": "."
+			"path": "../realgame_server_182"
+		},
+		{
+			"path": "../export-ios-realgame-v2"
 		},
 		{
 			"path": "../game2"
 		},
 		{
-			"path": "../linserver182"
+			"path": "../MirForGodot"
 		}
 	],
 	"settings": {}

@@ -203,7 +203,7 @@ public class L1DeathMatch {
 				// 定員に達したため、入場できません。
 				return;
 			}
-			if (!pc.getInventory().consumeItem(40308, 1000)) {
+			if (!pc.getInventory().consumeItem(5, 1000)) {
 				pc.sendPackets(new S_ServerMessage(189)); // 189 \f1アデナが不足しています。
 				return;
 			}
@@ -348,7 +348,7 @@ public class L1DeathMatch {
 				// pc.sendPackets(new S_ServerMessage(1264)); 本鯖用メッセージ
 				// 最小参加人数の2名に満たなかったため、レースを強制終了します。 1000アデナをお返ししました。
 				pc.sendPackets(new S_SystemMessage(String.format(I18N_DEATHMATCH_LESS_THAN_MIN_PLAYERS, gameStartMinPlayer)));
-				pc.getInventory().storeItem(40308, 1000);
+				pc.getInventory().storeItem(5, 1000);
 			}
 			break;
 		}

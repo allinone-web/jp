@@ -23,7 +23,6 @@ import java.util.logging.Logger;
 import jp.l1j.configure.Config;
 import jp.l1j.server.codes.ActionCodes;
 import jp.l1j.server.datatables.NpcTable;
-import jp.l1j.server.datatables.PolyTable;
 import jp.l1j.server.datatables.SkillTable;
 import jp.l1j.server.model.L1CastleLocation;
 import jp.l1j.server.model.L1Character;
@@ -349,13 +348,7 @@ public class L1SkillUse {
 				pc.sendPackets(new S_ServerMessage(316));
 				return false;
 			}
-			int polyId = pc.getTempCharGfx();
-			L1PolyMorph poly = PolyTable.getInstance().getTemplate(polyId);
-			// 魔法が使えない変身
-			if (poly != null && !poly.canUseSkill()) {
-				pc.sendPackets(new S_ServerMessage(285)); // \f1その状態では魔法を使えません。
-				return false;
-			}
+			// 【對齊 182】移除 canUseSkill 變身魔法限制 - 182 無此機制
 
 			if (!isAttrAgrees()) { // 精霊魔法で、属性が一致しなければ何もしない。
 				return false;
@@ -2257,14 +2250,6 @@ public class L1SkillUse {
 					if (cha instanceof L1PcInstance) {
 					}
 
-					// 料理の解除
-					for (int skillNum = COOKING_BEGIN; skillNum <= COOKING_END; skillNum++) {
-						if (isNotCancelable(skillNum)) {
-							continue;
-						}
-						cha.removeSkillEffect(skillNum);
-					}
-
 					if (cha instanceof L1PcInstance) {
 						L1PcInstance pc = (L1PcInstance) cha;
 
@@ -2338,14 +2323,6 @@ public class L1SkillUse {
 					}
 
 					if (cha instanceof L1PcInstance) {
-					}
-
-					// 料理の解除
-					for (int skillNum = COOKING_BEGIN; skillNum <= COOKING_END; skillNum++) {
-						if (isNotCancelable(skillNum)) {
-							continue;
-						}
-						cha.removeSkillEffect(skillNum);
 					}
 
 					if (cha instanceof L1PcInstance) {

@@ -37,7 +37,7 @@ import static jp.l1j.server.packets.server.S_EquipmentWindow.EQUIPMENT_INDEX_WEA
 import java.text.DecimalFormat;
 import java.util.List;
 import jp.l1j.configure.Config;
-import jp.l1j.server.datatables.RaceTicketTable;
+// import jp.l1j.server.datatables.RaceTicketTable; // BugBear Race removed
 import jp.l1j.server.model.instance.L1ItemInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.instance.L1PetInstance;
@@ -59,7 +59,7 @@ import jp.l1j.server.random.RandomGenerator;
 import jp.l1j.server.random.RandomGeneratorFactory;
 import jp.l1j.server.templates.L1InventoryItem;
 import jp.l1j.server.templates.L1Item;
-import jp.l1j.server.templates.L1RaceTicket;
+// import jp.l1j.server.templates.L1RaceTicket; // BugBear Race removed
 
 public class L1PcInventory extends L1Inventory {
 
@@ -174,20 +174,7 @@ public class L1PcInventory extends L1Inventory {
 				item.setEquipped(false);
 				setEquipped(item, true, true, false);
 			}
-			if (item.getItemId() == 40309) {// レースチケット{
-				L1RaceTicket ticket = RaceTicketTable.getInstance()
-						.getTemplate(item.getId());
-				if (ticket != null) {
-					L1Item temp = (L1Item) item.getItem().clone();
-					String buf = temp.getIdentifiedNameId() + " "
-							+ ticket.getRound() + "-"
-							+ ticket.getRunnerNum();
-					temp.setName(buf);
-					temp.setUnidentifiedNameId(buf);
-					temp.setIdentifiedNameId(buf);
-					item.setItem(temp);
-				}
-			}
+			// BugBear Race ticket (40309) handler removed
 			L1World.getInstance().storeObject(item);
 		}
 	}

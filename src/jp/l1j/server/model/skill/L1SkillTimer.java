@@ -18,6 +18,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import jp.l1j.server.GeneralThreadPool;
+import jp.l1j.server.datatables.ItemTable;
 import jp.l1j.server.datatables.SkillTable;
 import jp.l1j.server.model.L1Character;
 import jp.l1j.server.model.L1PolyMorph;
@@ -26,8 +27,6 @@ import jp.l1j.server.model.instance.L1NpcInstance;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.instance.L1PetInstance;
 import jp.l1j.server.model.instance.L1SummonInstance;
-import jp.l1j.server.model.item.executor.L1ExtraPotion;
-import jp.l1j.server.model.item.executor.L1FloraPotion;
 import static jp.l1j.server.model.skill.L1SkillId.*;
 import jp.l1j.server.model.skill.executor.L1BuffSkillExecutor;
 import jp.l1j.server.packets.server.S_CurseBlind;
@@ -50,6 +49,8 @@ import jp.l1j.server.packets.server.S_SkillIconShield;
 import jp.l1j.server.packets.server.S_SkillIconWisdomPotion;
 import jp.l1j.server.packets.server.S_SpMr;
 import jp.l1j.server.packets.server.S_Strup;
+import jp.l1j.server.templates.L1EtcItem;
+import jp.l1j.server.templates.L1Item;
 import jp.l1j.server.templates.L1Skill;
 
 public interface L1SkillTimer {
@@ -66,6 +67,20 @@ public interface L1SkillTimer {
  * XXX 2008/02/13 vala 本来、このクラスはあるべきではないが暫定処置。
  */
 class L1SkillStop {
+	private static final Logger _log = Logger.getLogger(L1SkillStop.class.getName());
+
+	/** DB驅動：依 item_id 從 ItemTable 取 L1EtcItem 用於技能結束還原。無資料時記錄警告、回傳 null（不崩潰）。 */
+	private static L1EtcItem getEtcItemForRevert(int itemId) {
+		L1Item t = ItemTable.getInstance().getTemplate(itemId);
+		if (!(t instanceof L1EtcItem)) {
+			if (t == null) {
+				_log.warning("L1SkillTimer: no template for item_id=" + itemId + " (revert effect skipped).");
+			}
+			return null;
+		}
+		return (L1EtcItem) t;
+	}
+
 	private static boolean stopSkillByExecutor(L1Character cha, int skillId) {
 		L1Skill skill = SkillTable.getInstance().findBySkillId(skillId);
 		if (skill == null) {
@@ -566,149 +581,146 @@ class L1SkillStop {
 				pc.addDodge((byte) -1); // 回避率 - 10%
 				pc.sendPackets(new S_PacketBox(S_PacketBox.DODGE_RATE_PLUS, pc.getDodge()));
 			}
-		} else if (skillId == STATUS_FLORA_POTION_STR) { // フローラ系ポーション：STR
-			L1FloraPotion potion = L1FloraPotion.get(40922);
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == STATUS_FLORA_POTION_STR) { // フローラ系ポーション：STR (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(40922);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				pc.addStr((byte) -potion.getEffect(pc).getStr());
+				pc.addStr((byte) -etc.getAddStr());
 				pc.sendPackets(new S_Strup(pc, 6, 0));
 			}
-		} else if (skillId == STATUS_FLORA_POTION_DEX) { // フローラ系ポーション：DEX
-			L1FloraPotion potion = L1FloraPotion.get(40923);
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == STATUS_FLORA_POTION_DEX) { // フローラ系ポーション：DEX (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(40923);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				pc.addDex((byte) -potion.getEffect(pc).getDex());
+				pc.addDex((byte) -etc.getAddDex());
 				pc.sendPackets(new S_Dexup(pc, 6, 0));
 			}
-		} else if (skillId == STONE_OF_DRAGON) { // ドラゴンの石
-			L1FloraPotion potion = L1FloraPotion.get(50555);
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == STONE_OF_DRAGON) { // ドラゴンの石 (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50555);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				pc.addHitup(-potion.getEffect(pc).getHit());
-				pc.addDmgup(-potion.getEffect(pc).getDmg());
-				pc.addBowHitup(-potion.getEffect(pc).getBowHit());
-				pc.addBowDmgup(-potion.getEffect(pc).getBowDmg());
-				pc.addSp(-potion.getEffect(pc).getSp());
+				pc.addHitup(-etc.getAddHit());
+				pc.addDmgup(-etc.getAddDmg());
+				pc.addBowHitup(-etc.getAddBowHit());
+				pc.addBowDmgup(-etc.getAddBowDmg());
+				pc.addSp(-etc.getAddSp());
 				pc.sendPackets(new S_SpMr(pc));
-				//pc.sendPackets(new S_SkillBrave(pc.getId(), 0, 0));
-				//pc.broadcastPacket(new S_SkillBrave(pc.getId(), 0, 0));
 			}
-		}else if (skillId == STATUS_EXP_UP) { // 祈りのポーション
+		} else if (skillId == STATUS_EXP_UP) { // 祈りのポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50616);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addExpBonusPct(-etc.getExpBonus());
+			}
+		} else if (skillId == STATUS_EXP_UP_II) { // 祈りのポーションII (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50617);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addExpBonusPct(-etc.getExpBonus());
+			}
+		} else if (skillId == POTION_OF_SWORDMAN) {  // 剣士のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50618);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addMaxHp(-etc.getAddHp());
+				pc.addHpr(-etc.getAddHpr());
+				pc.sendPackets(new S_ServerMessage(830));
+			}
+		} else if (skillId == POTION_OF_MAGICIAN) {  // 術士のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50619);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addMaxMp(-etc.getAddMp());
+				pc.addMpr(-etc.getAddMpr());
+				pc.sendPackets(new S_ServerMessage(830));
+			}
+		} else if (skillId == POTION_OF_RECOVERY) {  // 治癒のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50620);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addHpr(-etc.getAddHpr());
+				pc.sendPackets(new S_ServerMessage(830));
+			}
+		} else if (skillId == POTION_OF_MEDITATION) {  // 瞑想のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50621);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addMpr(-etc.getAddMpr());
+				pc.sendPackets(new S_ServerMessage(830));
+			}
+		} else if (skillId == POTION_OF_LIFE) {  // 生命のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50622);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addMaxHp(-etc.getAddHp());
+				pc.sendPackets(new S_ServerMessage(830));
+			}
+		} else if (skillId == POTION_OF_MAGIC) {  // 魔法のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50623);
+			if (cha instanceof L1PcInstance && etc != null) {
+				L1PcInstance pc = (L1PcInstance) cha;
+				pc.addMaxMp(-etc.getAddMp());
+				pc.sendPackets(new S_ServerMessage(830));
+			}
+		} else if (skillId == POTION_OF_MAGIC_RESIST) {  // 魔法抵抗のポーション (DB-driven)
 			if (cha instanceof L1PcInstance) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50616);
-				pc.addExpBonusPct(-extra.getEffect().getExp());
-			}
-		} else if (skillId == STATUS_EXP_UP_II) { // 祈りのポーションII
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50617);
-				pc.addExpBonusPct(-extra.getEffect().getExp());
-			}
-		} else if (skillId == POTION_OF_SWORDMAN) {  // 剣士のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50618);
-				pc.addMaxHp(-extra.getEffect().getHp());
-				pc.addHpr(-extra.getEffect().getHpr());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
-			}
-		} else if (skillId == POTION_OF_MAGICIAN) {  // 術士のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50619);
-				pc.addMaxMp(-extra.getEffect().getMp());
-				pc.addMpr(-extra.getEffect().getMpr());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
-			}
-		} else if (skillId == POTION_OF_RECOVERY) {  // 治癒のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50620);
-				pc.addHpr(-extra.getEffect().getHpr());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
-			}
-		} else if (skillId == POTION_OF_MEDITATION) {  // 瞑想のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50621);
-				pc.addMpr(-extra.getEffect().getMpr());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
-			}
-		} else if (skillId == POTION_OF_LIFE) {  // 生命のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50622);
-				pc.addMaxHp(-extra.getEffect().getHp());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
-			}
-		} else if (skillId == POTION_OF_MAGIC) {  // 魔法のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50623);
-				pc.addMaxMp(-extra.getEffect().getMp());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
-			}
-		} else if (skillId == POTION_OF_MAGIC_RESIST) {  // 魔法抵抗のポーション
-			if (cha instanceof L1PcInstance) {
-				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50624);
 				pc.addMr(-10);
 				pc.sendPackets(new S_SpMr(pc));
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_STR) {  // 腕力のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_STR) {  // 腕力のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50625);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50625);
-				pc.addStr(-extra.getEffect().getStr());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.addStr(-etc.getAddStr());
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_DEX) {  // 機敏のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_DEX) {  // 機敏のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50626);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50626);
-				pc.addDex(-extra.getEffect().getDex());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.addDex(-etc.getAddDex());
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_CON) {  // 体力のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_CON) {  // 体力のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50627);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50627);
-				pc.addCon(-extra.getEffect().getCon());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.addCon(-etc.getAddCon());
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_INT) {  // 知力のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_INT) {  // 知力のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50628);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50628);
-				pc.addInt(-extra.getEffect().getInt());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.addInt(-etc.getAddInt());
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_WIS) {  // 精神のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_WIS) {  // 精神のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50629);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50629);
-				pc.addWis(-extra.getEffect().getWis());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.addWis(-etc.getAddWis());
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_RAGE) {  // 憤怒のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_RAGE) {  // 憤怒のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50630);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50630);
-				pc.addHitup(-extra.getEffect().getHit());
-				pc.addDmgup(-extra.getEffect().getDmg());
-				pc.addBowHitup(-extra.getEffect().getBowHit());
-				pc.addBowDmgup(-extra.getEffect().getBowDmg());
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.addHitup(-etc.getAddHit());
+				pc.addDmgup(-etc.getAddDmg());
+				pc.addBowHitup(-etc.getAddBowHit());
+				pc.addBowDmgup(-etc.getAddBowDmg());
+				pc.sendPackets(new S_ServerMessage(830));
 			}
-		} else if (skillId == POTION_OF_CONCENTRATION) {  // 集中のポーション
-			if (cha instanceof L1PcInstance) {
+		} else if (skillId == POTION_OF_CONCENTRATION) {  // 集中のポーション (DB-driven)
+			L1EtcItem etc = getEtcItemForRevert(50631);
+			if (cha instanceof L1PcInstance && etc != null) {
 				L1PcInstance pc = (L1PcInstance) cha;
-				L1ExtraPotion extra = L1ExtraPotion.get(50631);
-				pc.addSp(-extra.getEffect().getSp());
+				pc.addSp(-etc.getAddSp());
 				pc.sendPackets(new S_SpMr(pc));
-				pc.sendPackets(new S_ServerMessage(830)); // 体に感じた力が消えていきます。
+				pc.sendPackets(new S_ServerMessage(830));
 			}
 		}
 

@@ -14,8 +14,6 @@
  */
 package jp.l1j.server.model;
 
-import java.util.HashMap;
-import java.util.Map;
 import java.util.logging.Logger;
 
 import jp.l1j.server.datatables.PolyTable;
@@ -30,157 +28,76 @@ import jp.l1j.server.packets.server.S_ServerMessage;
 import jp.l1j.server.packets.server.S_SkillIconGFX;
 import static jp.l1j.server.model.skill.L1SkillId.*;
 
-// Referenced classes of package jp.l1j.server.model:
-// L1PcInstance
-
+// 【對齊 182】變身數據類 - 使用 182 的個別布林欄位結構
 public class L1PolyMorph {
 	private static Logger _log = Logger.getLogger(L1PolyMorph.class.getName());
 
-	// weapon equip bit
-	private static final int DAGGER_EQUIP = 1;
-
-	private static final int SWORD_EQUIP = 2;
-
-	private static final int TWOHANDSWORD_EQUIP = 4;
-
-	private static final int BLUNT_EQUIP = 8;
-
-	private static final int SPEAR_EQUIP = 16;
-
-	private static final int STAFF_EQUIP = 32;
-
-	private static final int DUALSWORD_EQUIP = 64;
-
-	private static final int CLAW_EQUIP = 128;
-
-	private static final int BOW_EQUIP = 256;
-	
-	private static final int GAUNTLET_EQUIP = 256;
-
-	private static final int KIRINGKU_EQUIP = 512;
-
-	private static final int CHAINSWORD_EQUIP= 1024;
-
-	// armor equip bit
-	private static final int HELM_EQUIP = 1;
-
-	private static final int AMULET_EQUIP = 2;
-
-	private static final int EARRING_EQUIP = 4;
-
-	private static final int TSHIRT_EQUIP = 8;
-
-	private static final int ARMOR_EQUIP = 16;
-
-	private static final int CLOAK_EQUIP = 32;
-
-	private static final int BELT_EQUIP = 64;
-
-	private static final int SHIELD_EQUIP = 128;
-
-	private static final int GLOVE_EQUIP = 256;
-
-	private static final int RING_EQUIP = 512;
-
-	private static final int BOOTS_EQUIP = 1024;
-
-	private static final int GUARDER_EQUIP = 2048;
-
-	// 変身の原因を示すbit
+	// 変身の原因を示す定数（保留 - doPoly 簽名相容）
 	public static final int MORPH_BY_ITEMMAGIC = 1;
-
 	public static final int MORPH_BY_GM = 2;
-
-	public static final int MORPH_BY_NPC = 4; // 占星術師ケプリシャ以外のNPC
-
+	public static final int MORPH_BY_NPC = 4;
 	public static final int MORPH_BY_KEPLISHA = 8;
-
 	public static final int MORPH_BY_LOGIN = 0;
 
-	private static final Map<Integer, Integer> weaponFlgMap = new HashMap<Integer, Integer>();
-	static {
-		weaponFlgMap.put(1, SWORD_EQUIP);
-		weaponFlgMap.put(2, TWOHANDSWORD_EQUIP);
-		weaponFlgMap.put(3, DAGGER_EQUIP);
-		weaponFlgMap.put(4, BOW_EQUIP);
-		weaponFlgMap.put(6, SPEAR_EQUIP);
-		weaponFlgMap.put(7, BLUNT_EQUIP);
-		weaponFlgMap.put(8, STAFF_EQUIP);
-		weaponFlgMap.put(9, CLAW_EQUIP);
-		weaponFlgMap.put(10, DUALSWORD_EQUIP);
-		weaponFlgMap.put(11, GAUNTLET_EQUIP);
-		weaponFlgMap.put(13, CHAINSWORD_EQUIP);
-		weaponFlgMap.put(14, KIRINGKU_EQUIP);
-	}
-	private static final Map<Integer, Integer> armorFlgMap = new HashMap<Integer, Integer>();
-	static {
-		armorFlgMap.put(1, HELM_EQUIP);
-		armorFlgMap.put(2, ARMOR_EQUIP);
-		armorFlgMap.put(3, TSHIRT_EQUIP);
-		armorFlgMap.put(4, CLOAK_EQUIP);
-		armorFlgMap.put(5, GLOVE_EQUIP);
-		armorFlgMap.put(6, BOOTS_EQUIP);
-		armorFlgMap.put(7, SHIELD_EQUIP);
-		armorFlgMap.put(8, GUARDER_EQUIP);
-		armorFlgMap.put(10, AMULET_EQUIP);
-		armorFlgMap.put(11, RING_EQUIP);
-		armorFlgMap.put(12, EARRING_EQUIP);
-		armorFlgMap.put(13, BELT_EQUIP);
-	}
-
+	// 182 Poly 欄位
 	private int _id;
 	private String _name;
-	private int _polyId;
+	private String _db;
+	private int _polyId;     // gfx_id
 	private int _minLevel;
-	private int _weaponEquipFlg;
-	private int _armorEquipFlg;
-	private boolean _canUseSkill;
-	private int _causeFlg;
+	private int _weapon;     // 武器裝備模式 (0-7)
+	private boolean _helm;
+	private boolean _earring;
+	private boolean _necklace;
+	private boolean _t;       // T恤
+	private boolean _armor;
+	private boolean _cloak;
+	private boolean _ring;
+	private boolean _belt;
+	private boolean _glove;
+	private boolean _shield;
+	private boolean _boots;
 
-	public L1PolyMorph(int id, String name, int polyId, int minLevel,
-			int weaponEquipFlg, int armorEquipFlg, boolean canUseSkill,
-			int causeFlg) {
+	public L1PolyMorph(int id, String name, String db, int polyId, int minLevel,
+			int weapon, boolean helm, boolean earring, boolean necklace,
+			boolean t, boolean armor, boolean cloak, boolean ring,
+			boolean belt, boolean glove, boolean shield, boolean boots) {
 		_id = id;
 		_name = name;
+		_db = db;
 		_polyId = polyId;
 		_minLevel = minLevel;
-		_weaponEquipFlg = weaponEquipFlg;
-		_armorEquipFlg = armorEquipFlg;
-		_canUseSkill = canUseSkill;
-		_causeFlg = causeFlg;
+		_weapon = weapon;
+		_helm = helm;
+		_earring = earring;
+		_necklace = necklace;
+		_t = t;
+		_armor = armor;
+		_cloak = cloak;
+		_ring = ring;
+		_belt = belt;
+		_glove = glove;
+		_shield = shield;
+		_boots = boots;
 	}
 
-	public int getId() {
-		return _id;
-	}
-
-	public String getName() {
-		return _name;
-	}
-
-	public int getPolyId() {
-		return _polyId;
-	}
-
-	public int getMinLevel() {
-		return _minLevel;
-	}
-
-	public int getWeaponEquipFlg() {
-		return _weaponEquipFlg;
-	}
-
-	public int getArmorEquipFlg() {
-		return _armorEquipFlg;
-	}
-
-	public boolean canUseSkill() {
-		return _canUseSkill;
-	}
-
-	public int getCauseFlg() {
-		return _causeFlg;
-	}
+	public int getId() { return _id; }
+	public String getName() { return _name; }
+	public String getDb() { return _db; }
+	public int getPolyId() { return _polyId; }
+	public int getMinLevel() { return _minLevel; }
+	public int getWeapon() { return _weapon; }
+	public boolean isHelm() { return _helm; }
+	public boolean isEarring() { return _earring; }
+	public boolean isNecklace() { return _necklace; }
+	public boolean isT() { return _t; }
+	public boolean isArmor() { return _armor; }
+	public boolean isCloak() { return _cloak; }
+	public boolean isRing() { return _ring; }
+	public boolean isBelt() { return _belt; }
+	public boolean isGlove() { return _glove; }
+	public boolean isShield() { return _shield; }
+	public boolean isBoots() { return _boots; }
 
 	public static void handleCommands(L1PcInstance pc, String s) {
 		if (pc == null || pc.isDead()) {
@@ -199,13 +116,12 @@ public class L1PolyMorph {
 				if (pc.getTempCharGfx() == 6034
 						|| pc.getTempCharGfx() == 6035) {
 					pc.sendPackets(new S_ServerMessage(181));
-					// \f1そのようなモンスターには変身できません。
 				} else {
 				doPoly(pc, poly.getPolyId(), 7200, MORPH_BY_ITEMMAGIC);
 				pc.sendPackets(new S_CloseList(pc.getId()));
 				}
 			} else {
-				pc.sendPackets(new S_ServerMessage(181)); // \f1そのようなモンスターには変身できません。
+				pc.sendPackets(new S_ServerMessage(181));
 			}
 		}
 	}
@@ -218,27 +134,23 @@ public class L1PolyMorph {
 		if (cha instanceof L1PcInstance) {
 			L1PcInstance pc = (L1PcInstance) cha;
 			if (pc.getMapId() == 5124 // 釣り場
-					|| pc.getMap().getBaseMapId()==9000//ハーディんクエスト　過去TI
-					|| pc.getMap().getBaseMapId()==9101//ハーディンクエスト　オリム　海上船
+					|| pc.getMap().getBaseMapId()==9000
+					|| pc.getMap().getBaseMapId()==9101
 					){
-				pc.sendPackets(new S_ServerMessage(1170)); // ここでは変身できません。
+				pc.sendPackets(new S_ServerMessage(1170));
 				return;
 			}
 			if (pc.getTempCharGfx() == 6034
 					|| pc.getTempCharGfx() == 6035) {
-				pc.sendPackets(new S_ServerMessage(181)); // \f1そのようなモンスターには変身できません。
+				pc.sendPackets(new S_ServerMessage(181));
 				return;
 			}
-			if (!isMatchCause(polyId, cause)) {
-				pc.sendPackets(new S_ServerMessage(181)); // \f1そのようなモンスターには変身できません。
-				return;
-			}
+			// 【對齊 182】移除 isMatchCause 檢查 - 182 無此機制
 
  			pc.killSkillEffectTimer(SHAPE_CHANGE);
 			pc.setSkillEffect(SHAPE_CHANGE, timeSecs * 1000);
-			if (pc.getTempCharGfx() != polyId) { // 同じ変身の場合はアイコン送信以外が必要ない
+			if (pc.getTempCharGfx() != polyId) {
 				L1ItemInstance weapon = pc.getWeapon();
-				// 変身によって武器が外れるか
 				boolean weaponTakeoff = (weapon != null && !isEquipableWeapon(
 						polyId, weapon.getItem().getType()));
 				pc.setTempCharGfx(polyId);
@@ -267,7 +179,7 @@ public class L1PolyMorph {
 			L1MonsterInstance mob = (L1MonsterInstance) cha;
 			mob.killSkillEffectTimer(SHAPE_CHANGE);
 			mob.setSkillEffect(SHAPE_CHANGE, timeSecs * 1000);
-			if (mob.getTempCharGfx() != polyId) { // 同じ変身の場合はアイコン送信以外が必要ない
+			if (mob.getTempCharGfx() != polyId) {
 				mob.setTempCharGfx(polyId);
 				mob.broadcastPacket(new S_ChangeShape(mob.getId(), polyId));
 			}
@@ -278,13 +190,11 @@ public class L1PolyMorph {
 		if (cha instanceof L1PcInstance) {
 			L1PcInstance pc = (L1PcInstance) cha;
 			int classId = 0;
-			// ペットレース変身処理start
 			if (pc.getBasePoly() == 0){
 				classId = pc.getClassId();
 			} else {
 				classId = pc.getBasePoly();
 			}
-			// ペットレース変身処理end
 			pc.setTempCharGfx(classId);
 			pc.sendPackets(new S_ChangeShape(pc.getId(), classId));
 			pc.broadcastPacket(new S_ChangeShape(pc.getId(), classId));
@@ -301,44 +211,64 @@ public class L1PolyMorph {
 		}
 	}
 
-	// 指定したpolyIdがweapontTypeの武器を装備出来るか？
+	/**
+	 * 【對齊 182】武器裝備檢查
+	 * 182 isWeapon 模式 (0-7) 翻譯為 JP 武器類型編號:
+	 *   182: arrow=1, axe=2, bow=3, spear=4, sword=5, wand=6, dagger=8, twohand=24
+	 *   JP:  sword=1, twohand=2, dagger=3, bow=4, spear=6, blunt=7, staff=8
+	 */
 	public static boolean isEquipableWeapon(int polyId, int weaponType) {
 		L1PolyMorph poly = PolyTable.getInstance().getTemplate(polyId);
 		if (poly == null) {
 			return true;
 		}
-
-		Integer flg = weaponFlgMap.get(weaponType);
-		if (flg != null) {
-			return 0 != (poly.getWeaponEquipFlg() & flg);
+		switch (poly.getWeapon()) {
+			case 0: // 不可裝備武器（動物/怪物形態）
+				return false;
+			case 1: // 182: sword(5), dagger(8), twohand(24) → JP: sword(1), twohand(2), dagger(3)
+				return (weaponType == 1) || (weaponType == 2) || (weaponType == 3);
+			case 2: // 182: 單手武器 → JP: 排除雙手劍(2)、弓(4)、矛(6)、雙刀(10)
+				return (weaponType != 2) && (weaponType != 4) && (weaponType != 6) && (weaponType != 10);
+			case 3: // 182: 雙手武器（弓除外） → JP: twohand(2), spear(6), dualsword(10)
+				return (weaponType == 2) || (weaponType == 6) || (weaponType == 10);
+			case 4: // 182: bow(3) → JP: bow(4)
+				return (weaponType == 4);
+			case 5: // 182: spear(4) → JP: spear(6)
+				return (weaponType == 6);
+			case 6: // 182: wand(6) → JP: staff(8)
+				return (weaponType == 8);
+			case 7: // 182: axe(2)+spear(4)+wand(6)+sword(5)+twohand(24)
+				// → JP: sword(1)+twohand(2)+spear(6)+blunt(7)+staff(8)
+				return (weaponType == 1) || (weaponType == 2) || (weaponType == 6)
+						|| (weaponType == 7) || (weaponType == 8);
+			default:
+				return true;
 		}
-		return true;
 	}
 
-	// 指定したpolyIdがarmorTypeの防具を装備出来るか？
+	/**
+	 * 【對齊 182】防具裝備檢查
+	 * 182 使用個別布林欄位，由 JP armorType 對應：
+	 *   JP: helm=1, armor=2, tshirt=3, cloak=4, glove=5, boots=6, shield=7,
+	 *       guarder=8, amulet=10, ring=11, earring=12, belt=13
+	 */
 	public static boolean isEquipableArmor(int polyId, int armorType) {
 		L1PolyMorph poly = PolyTable.getInstance().getTemplate(polyId);
 		if (poly == null) {
 			return true;
 		}
-
-		Integer flg = armorFlgMap.get(armorType);
-		if (flg != null) {
-			return 0 != (poly.getArmorEquipFlg() & flg);
+		switch (armorType) {
+			case 1:  return poly.isHelm();     // 頭盔
+			case 2:  return poly.isArmor();    // 盔甲
+			case 3:  return poly.isT();        // T恤
+			case 4:  return poly.isCloak();    // 斗篷
+			case 5:  return poly.isGlove();    // 手套
+			case 6:  return poly.isBoots();    // 靴子
+			case 7:  return poly.isShield();   // 盾牌
+			case 11: return poly.isRing();     // 戒指
+			case 12: return poly.isEarring();  // 耳環
+			case 13: return poly.isBelt();     // 腰帶
+			default: return true;              // 其餘（護身符等）一律允許
 		}
-		return true;
-	}
-
-	// 指定したpolyIdが何によって変身し、それが変身させられるか？
-	public static boolean isMatchCause(int polyId, int cause) {
-		L1PolyMorph poly = PolyTable.getInstance().getTemplate(polyId);
-		if (poly == null) {
-			return true;
-		}
-		if (cause == MORPH_BY_LOGIN) {
-			return true;
-		}
-
-		return 0 != (poly.getCauseFlg() & cause);
 	}
 }

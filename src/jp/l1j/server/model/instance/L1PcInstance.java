@@ -3414,26 +3414,6 @@ public class L1PcInstance extends L1Character {
 		_isFishingReady = flag;
 	}
 
-	private int _cookingId = 0;
-
-	public int getCookingId() {
-		return _cookingId;
-	}
-
-	public void setCookingId(int i) {
-		_cookingId = i;
-	}
-
-	private int _dessertId = 0;
-
-	public int getDessertId() {
-		return _dessertId;
-	}
-
-	public void setDessertId(int i) {
-		_dessertId = i;
-	}
-
 	/**
 	 * LVによる命中ボーナスを設定する LVが変動した場合などに呼び出せば再計算される
 	 *

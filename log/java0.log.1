@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Feb 04, 2026 5:53:33 AM jp.l1j.configure.L1Properties notifyLoadingDefault
 INFO: ShutdownDelay does not exists. Server use default value.
 Feb 04, 2026 5:53:33 AM jp.l1j.server.utils.IdFactory loadState
@@ -165,4 +166,128 @@ INFO: === End C_AuthLogin Debug ===
 Feb 04, 2026 7:35:28 AM jp.l1j.server.packets.client.C_LoginToServer <init>
 INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
 Feb 04, 2026 7:43:13 AM jp.l1j.server.ClientThread run
+=======
+Feb 10, 2026 6:27:31 PM jp.l1j.configure.L1Properties notifyLoadingDefault
+INFO: ShutdownDelay does not exists. Server use default value.
+Feb 10, 2026 6:27:31 PM jp.l1j.server.utils.IdFactory loadState
+INFO: 現在のオブジェクトID: 268452656
+Feb 10, 2026 6:27:35 PM jp.l1j.server.datatables.PolyTable loadPolymorphs
+SEVERE: error while creating polymorph table
+java.sql.SQLException: Column 'db_name' not found.
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1078)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920)
+	at com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1167)
+	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5733)
+	at com.mchange.v2.c3p0.impl.NewProxyResultSet.getString(NewProxyResultSet.java:3326)
+	at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at jp.l1j.server.utils.LeakCheckedConnection.send(LeakCheckedConnection.java:52)
+	at jp.l1j.server.utils.LeakCheckedConnection$Delegate.invoke(LeakCheckedConnection.java:136)
+	at jdk.proxy2/jdk.proxy2.$Proxy6.getString(Unknown Source)
+	at jp.l1j.server.datatables.PolyTable.loadPolymorphs(PolyTable.java:63)
+	at jp.l1j.server.datatables.PolyTable.<init>(PolyTable.java:47)
+	at jp.l1j.server.datatables.PolyTable.getInstance(PolyTable.java:41)
+	at jp.l1j.server.GameServer.initialize(GameServer.java:258)
+	at jp.l1j.Server.main(Server.java:91)
+
+Feb 10, 2026 6:27:42 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 16
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
+
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test001'
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='111111'
+Feb 10, 2026 6:27:49 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 10, 2026 6:28:01 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 10, 2026 6:28:11 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 12
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 74 65 73 74 00 31 31 31 31 00 00 
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 74 65 73 74 00 31 31 31 31 00 00                9test.1111..
+
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='test'
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='1111'
+Feb 10, 2026 6:28:16 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 10, 2026 6:28:20 PM jp.l1j.server.ClientThread run
+INFO: Terminated the connection with 127.0.0.1
+Feb 10, 2026 6:28:23 PM jp.l1j.server.ClientThread run
+INFO: 127.0.0.1 has connected to the server.
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === C_AuthLogin Debug ===
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet length: 12
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Decrypted packet data (hex):
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: 39 31 31 31 31 00 31 31 31 31 00 00 
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: Full packet dump:
+0000: 39 31 31 31 31 00 31 31 31 31 00 00                91111.1111..
+
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read account name...
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() account - accountName='1111'
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: About to read password...
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: After readS() password - password='1111'
+Feb 10, 2026 6:28:27 PM jp.l1j.server.packets.client.C_AuthLogin <init>
+INFO: === End C_AuthLogin Debug ===
+Feb 10, 2026 6:28:27 PM jp.l1j.server.templates.L1Account create
+INFO: created new account for 1111
+Feb 10, 2026 6:28:43 PM jp.l1j.server.packets.client.C_LoginToServer <init>
+INFO: Logged character: char=1111 account=1111 host=127.0.0.1
+Feb 10, 2026 6:29:01 PM jp.l1j.server.ClientThread run
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1DoorGfx.getGfxId()" because "gfx" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1DoorGfx.getGfxId()" because "gfx" is null
+	at jp.l1j.server.model.instance.L1DoorInstance.<init>(L1DoorInstance.java:45)
+	at jp.l1j.server.datatables.DoorTable.createDoor(DoorTable.java:119)
+	at jp.l1j.server.datatables.DoorTable.createDoor(DoorTable.java:110)
+	at jp.l1j.server.model.L1DeathMatch.<init>(L1DeathMatch.java:77)
+	at jp.l1j.server.model.L1DeathMatch.getInstance(L1DeathMatch.java:63)
+	at jp.l1j.server.ClientThread.quitGame(ClientThread.java:592)
+	at jp.l1j.server.ClientThread.run(ClientThread.java:337)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+Feb 10, 2026 6:29:01 PM jp.l1j.server.ClientThread run
+>>>>>>> Stashed changes
 INFO: Terminated the connection with 127.0.0.1

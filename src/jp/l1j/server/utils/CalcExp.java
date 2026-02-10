@@ -341,6 +341,7 @@ public class CalcExp {
 		}
 	}
 
+<<<<<<< Updated upstream
 	public static double calcExpBonusRate(L1PcInstance pc) {
 		double penalty = ExpTable.getPenaltyRate(pc.getLevel());
 		double foodBonus = 1.0;
@@ -368,6 +369,14 @@ public class CalcExp {
 				+ L1MagicDoll.getExpBonusByDoll(pc)) / 100.0 + 1.0;
 		return Config.RATE_XP * penalty * foodBonus * bonus;
 	}
+=======
+	public static double calcExpBonusRate(L1PcInstance pc) {
+		double penalty = ExpTable.getPenaltyRate(pc.getLevel());
+		double bonus = (pc.getExpBonusPct()
+				+ ExpBonusTable.getExpBonusRate(pc.getLevel())) / 100.0 + 1.0;
+		return Config.RATE_XP * penalty * bonus;
+	}
+>>>>>>> Stashed changes
 
 	private static void addExpAndLawful(L1PcInstance pc, int exp, int lawful) {
 		double blessOfAinBonus = 1.0; // アインハザードの祝福

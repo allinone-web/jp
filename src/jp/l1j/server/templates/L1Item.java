@@ -71,24 +71,22 @@ public abstract class L1Item implements Cloneable, Serializable {
 		_name = name;
 	}
 
-	private String _unidentifiedNameId; // ● 未鑑定アイテムのネームＩＤ
+	private String _nameId; // ● ネームＩＤ（鑑定前/後で共通）
 
 	public String getUnidentifiedNameId() {
-		return _unidentifiedNameId;
+		return _nameId;
 	}
 
-	public void setUnidentifiedNameId(String unidentifiedNameId) {
-		_unidentifiedNameId = unidentifiedNameId;
+	public void setUnidentifiedNameId(String nameId) {
+		_nameId = nameId;
 	}
-
-	private String _identifiedNameId; // ● 鑑定済みアイテムのネームＩＤ
 
 	public String getIdentifiedNameId() {
-		return _identifiedNameId;
+		return _nameId;
 	}
 
-	public void setIdentifiedNameId(String identifiedNameId) {
-		_identifiedNameId = identifiedNameId;
+	public void setIdentifiedNameId(String nameId) {
+		_nameId = nameId;
 	}
 
 	private int _type; // ● 詳細なタイプ
@@ -775,5 +773,335 @@ public abstract class L1Item implements Cloneable, Serializable {
 
 	public int getPotionRecoveryRate() {
 		return 0;
+	}
+
+	private int _skillId; // ● スペルアイコン用スキルID
+
+	public int getSkillId() {
+		return _skillId;
+	}
+
+	public void setSkillId(int skillId) {
+		_skillId = skillId;
+	}
+
+	private boolean _spellConsume; // ● スペルアイコンの消費判定
+
+	public boolean isSpellConsume() {
+		return _spellConsume;
+	}
+
+	public void setSpellConsume(boolean spellConsume) {
+		_spellConsume = spellConsume;
+	}
+
+	private int _enchantAc;
+
+	public int getEnchantAc() {
+		return _enchantAc;
+	}
+
+	public void setEnchantAc(int enchantAc) {
+		_enchantAc = enchantAc;
+	}
+
+	private int _enchantStr;
+
+	public int getEnchantStr() {
+		return _enchantStr;
+	}
+
+	public void setEnchantStr(int enchantStr) {
+		_enchantStr = enchantStr;
+	}
+
+	private int _enchantDex;
+
+	public int getEnchantDex() {
+		return _enchantDex;
+	}
+
+	public void setEnchantDex(int enchantDex) {
+		_enchantDex = enchantDex;
+	}
+
+	private int _enchantCon;
+
+	public int getEnchantCon() {
+		return _enchantCon;
+	}
+
+	public void setEnchantCon(int enchantCon) {
+		_enchantCon = enchantCon;
+	}
+
+	private int _enchantInt;
+
+	public int getEnchantInt() {
+		return _enchantInt;
+	}
+
+	public void setEnchantInt(int enchantInt) {
+		_enchantInt = enchantInt;
+	}
+
+	private int _enchantWis;
+
+	public int getEnchantWis() {
+		return _enchantWis;
+	}
+
+	public void setEnchantWis(int enchantWis) {
+		_enchantWis = enchantWis;
+	}
+
+	private int _enchantCha;
+
+	public int getEnchantCha() {
+		return _enchantCha;
+	}
+
+	public void setEnchantCha(int enchantCha) {
+		_enchantCha = enchantCha;
+	}
+
+	private int _enchantHp;
+
+	public int getEnchantHp() {
+		return _enchantHp;
+	}
+
+	public void setEnchantHp(int enchantHp) {
+		_enchantHp = enchantHp;
+	}
+
+	private int _enchantMp;
+
+	public int getEnchantMp() {
+		return _enchantMp;
+	}
+
+	public void setEnchantMp(int enchantMp) {
+		_enchantMp = enchantMp;
+	}
+
+	private int _enchantHpr;
+
+	public int getEnchantHpr() {
+		return _enchantHpr;
+	}
+
+	public void setEnchantHpr(int enchantHpr) {
+		_enchantHpr = enchantHpr;
+	}
+
+	private int _enchantMpr;
+
+	public int getEnchantMpr() {
+		return _enchantMpr;
+	}
+
+	public void setEnchantMpr(int enchantMpr) {
+		_enchantMpr = enchantMpr;
+	}
+
+	private int _enchantMr;
+
+	public int getEnchantMr() {
+		return _enchantMr;
+	}
+
+	public void setEnchantMr(int enchantMr) {
+		_enchantMr = enchantMr;
+	}
+
+	private int _enchantSp;
+
+	public int getEnchantSp() {
+		return _enchantSp;
+	}
+
+	public void setEnchantSp(int enchantSp) {
+		_enchantSp = enchantSp;
+	}
+
+	private int _enchantHit;
+
+	public int getEnchantHit() {
+		return _enchantHit;
+	}
+
+	public void setEnchantHit(int enchantHit) {
+		_enchantHit = enchantHit;
+	}
+
+	private int _enchantDmg;
+
+	public int getEnchantDmg() {
+		return _enchantDmg;
+	}
+
+	public void setEnchantDmg(int enchantDmg) {
+		_enchantDmg = enchantDmg;
+	}
+
+	private int _enchantBowHit;
+
+	public int getEnchantBowHit() {
+		return _enchantBowHit;
+	}
+
+	public void setEnchantBowHit(int enchantBowHit) {
+		_enchantBowHit = enchantBowHit;
+	}
+
+	private int _enchantBowDmg;
+
+	public int getEnchantBowDmg() {
+		return _enchantBowDmg;
+	}
+
+	public void setEnchantBowDmg(int enchantBowDmg) {
+		_enchantBowDmg = enchantBowDmg;
+	}
+
+	private int _enchantWeightReduction;
+
+	public int getEnchantWeightReduction() {
+		return _enchantWeightReduction;
+	}
+
+	public void setEnchantWeightReduction(int enchantWeightReduction) {
+		_enchantWeightReduction = enchantWeightReduction;
+	}
+
+	private int _enchantDamageReduction;
+
+	public int getEnchantDamageReduction() {
+		return _enchantDamageReduction;
+	}
+
+	public void setEnchantDamageReduction(int enchantDamageReduction) {
+		_enchantDamageReduction = enchantDamageReduction;
+	}
+
+	private int _enchantDefenseEarth;
+
+	public int getEnchantDefenseEarth() {
+		return _enchantDefenseEarth;
+	}
+
+	public void setEnchantDefenseEarth(int enchantDefenseEarth) {
+		_enchantDefenseEarth = enchantDefenseEarth;
+	}
+
+	private int _enchantDefenseWater;
+
+	public int getEnchantDefenseWater() {
+		return _enchantDefenseWater;
+	}
+
+	public void setEnchantDefenseWater(int enchantDefenseWater) {
+		_enchantDefenseWater = enchantDefenseWater;
+	}
+
+	private int _enchantDefenseFire;
+
+	public int getEnchantDefenseFire() {
+		return _enchantDefenseFire;
+	}
+
+	public void setEnchantDefenseFire(int enchantDefenseFire) {
+		_enchantDefenseFire = enchantDefenseFire;
+	}
+
+	private int _enchantDefenseWind;
+
+	public int getEnchantDefenseWind() {
+		return _enchantDefenseWind;
+	}
+
+	public void setEnchantDefenseWind(int enchantDefenseWind) {
+		_enchantDefenseWind = enchantDefenseWind;
+	}
+
+	private int _enchantResistStun;
+
+	public int getEnchantResistStun() {
+		return _enchantResistStun;
+	}
+
+	public void setEnchantResistStun(int enchantResistStun) {
+		_enchantResistStun = enchantResistStun;
+	}
+
+	private int _enchantResistStone;
+
+	public int getEnchantResistStone() {
+		return _enchantResistStone;
+	}
+
+	public void setEnchantResistStone(int enchantResistStone) {
+		_enchantResistStone = enchantResistStone;
+	}
+
+	private int _enchantResistSleep;
+
+	public int getEnchantResistSleep() {
+		return _enchantResistSleep;
+	}
+
+	public void setEnchantResistSleep(int enchantResistSleep) {
+		_enchantResistSleep = enchantResistSleep;
+	}
+
+	private int _enchantResistFreeze;
+
+	public int getEnchantResistFreeze() {
+		return _enchantResistFreeze;
+	}
+
+	public void setEnchantResistFreeze(int enchantResistFreeze) {
+		_enchantResistFreeze = enchantResistFreeze;
+	}
+
+	private int _enchantResistHold;
+
+	public int getEnchantResistHold() {
+		return _enchantResistHold;
+	}
+
+	public void setEnchantResistHold(int enchantResistHold) {
+		_enchantResistHold = enchantResistHold;
+	}
+
+	private int _enchantResistBlind;
+
+	public int getEnchantResistBlind() {
+		return _enchantResistBlind;
+	}
+
+	public void setEnchantResistBlind(int enchantResistBlind) {
+		_enchantResistBlind = enchantResistBlind;
+	}
+
+	private int _enchantExpBonus;
+
+	public int getEnchantExpBonus() {
+		return _enchantExpBonus;
+	}
+
+	public void setEnchantExpBonus(int enchantExpBonus) {
+		_enchantExpBonus = enchantExpBonus;
+	}
+
+	private int _enchantPotionRecoveryRate;
+
+	public int getEnchantPotionRecoveryRate() {
+		return _enchantPotionRecoveryRate;
+	}
+
+	public void setEnchantPotionRecoveryRate(int enchantPotionRecoveryRate) {
+		_enchantPotionRecoveryRate = enchantPotionRecoveryRate;
 	}
 }

@@ -31,6 +31,7 @@ import jp.l1j.server.codes.ActionCodes;
 import jp.l1j.server.controller.timer.WarTimeController;
 import jp.l1j.server.datatables.CharBuffTable;
 import jp.l1j.server.datatables.CharacterTable;
+import jp.l1j.server.datatables.ItemTable;
 import jp.l1j.server.datatables.ClanRecommendTable;
 import jp.l1j.server.datatables.RestartLocationTable;
 import jp.l1j.server.datatables.ReturnLocationTable;
@@ -44,8 +45,6 @@ import jp.l1j.server.model.L1War;
 import jp.l1j.server.model.L1World;
 import jp.l1j.server.model.instance.L1PcInstance;
 import jp.l1j.server.model.instance.L1SummonInstance;
-import jp.l1j.server.model.item.executor.L1ExtraPotion;
-import jp.l1j.server.model.item.executor.L1FloraPotion;
 import jp.l1j.server.model.poison.L1DamagePoison;
 import jp.l1j.server.model.poison.L1ParalysisPoison;
 import jp.l1j.server.model.poison.L1SilencePoison;
@@ -92,6 +91,8 @@ import jp.l1j.server.packets.server.S_War;
 import jp.l1j.server.packets.server.S_Weather;
 import jp.l1j.server.templates.L1BookMark;
 import jp.l1j.server.templates.L1CharacterBuff;
+import jp.l1j.server.templates.L1EtcItem;
+import jp.l1j.server.templates.L1Item;
 import jp.l1j.server.templates.L1CharacterSkill;
 import jp.l1j.server.templates.L1GetBackRestart;
 import jp.l1j.server.templates.L1Skill;
@@ -102,6 +103,18 @@ public class C_LoginToServer extends ClientBasePacket {
 	private static final String C_LOGIN_TO_SERVER = "[C] C_LoginToServer";
 
 	private static Logger _log = Logger.getLogger(C_LoginToServer.class.getName());
+
+	/** DB驅動：登入恢復 buff 時從 ItemTable 取 L1EtcItem。無資料時記錄警告、回傳 null（不崩潰）。 */
+	private static L1EtcItem getEtcItemForRestore(int itemId) {
+		L1Item t = ItemTable.getInstance().getTemplate(itemId);
+		if (!(t instanceof L1EtcItem)) {
+			if (t == null) {
+				_log.warning("C_LoginToServer: no template for item_id=" + itemId + " (buff restore skipped).");
+			}
+			return null;
+		}
+		return (L1EtcItem) t;
+	}
 
 	public C_LoginToServer(byte abyte0[], ClientThread client)
 			throws FileNotFoundException, Exception {
@@ -486,18 +499,22 @@ public class C_LoginToServer extends ClientBasePacket {
 				pc.addNdodge((byte) 5); // 近距離回避率 - 50%
 				pc.sendPackets(new S_PacketBox(S_PacketBox.DODGE_RATE_MINUS, pc.getNdodge()));
 				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == STATUS_FLORA_POTION_STR) { // 激励、フローラポーション
-				L1FloraPotion potion = L1FloraPotion.get(40922);
-				int str = potion.getEffect(pc).getStr();
-				pc.addStr(str);
-				pc.sendPackets(new S_Strup(pc, str, remainingTime));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == STATUS_FLORA_POTION_DEX) { // 才能、フローラポーション
-				L1FloraPotion potion = L1FloraPotion.get(40923);
-				int dex = potion.getEffect(pc).getDex();
-				pc.addDex(dex);
-				pc.sendPackets(new S_Dexup(pc, dex, remainingTime));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
+			} else if (skillId == STATUS_FLORA_POTION_STR) { // 激励、フローラポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(40922);
+				if (etc != null) {
+					int str = etc.getAddStr();
+					pc.addStr(str);
+					pc.sendPackets(new S_Strup(pc, str, remainingTime));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == STATUS_FLORA_POTION_DEX) { // 才能、フローラポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(40923);
+				if (etc != null) {
+					int dex = etc.getAddDex();
+					pc.addDex(dex);
+					pc.sendPackets(new S_Dexup(pc, dex, remainingTime));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
 			} else if (skillId == STATUS_FREEZE) { // 凍結
 				pc.sendPackets(new S_Paralysis(S_Paralysis.TYPE_BIND, true));
 				pc.setSkillEffect(skillId, remainingTime * 1000);
@@ -519,95 +536,122 @@ public class C_LoginToServer extends ClientBasePacket {
 			} else if (skillId == STATUS_DESTRUCTION_NOSTRUM) { // 破壊の秘薬
 				pc.sendPackets(new S_SkillIconAura(221, remainingTime, 6));
 				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == STATUS_EXP_UP) { // 祈りのポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50616);
-				pc.addExpBonusPct(potion.getEffect().getExp());
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == STATUS_EXP_UP_II) { // 祈りのポーションII
-				L1ExtraPotion potion = L1ExtraPotion.get(50617);
-				pc.addExpBonusPct(potion.getEffect().getExp());
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_SWORDMAN) { // 剣士のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50618);
-				pc.addMaxHp(potion.getEffect().getHp());
-				pc.addHpr(potion.getEffect().getHpr());
-				pc.sendPackets(new S_HpUpdate(pc.getCurrentHp(), pc.getMaxHp()));
-				pc.startHpRegeneration();
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_MAGICIAN) { // 術師のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50619);
-				pc.addMaxMp(potion.getEffect().getMp());
-				pc.addMpr(potion.getEffect().getMpr());
-				pc.sendPackets(new S_MpUpdate(pc.getCurrentMp(), pc.getMaxMp()));
-				pc.startMpRegeneration();
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_RECOVERY) { // 治癒のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50620);
-				pc.addHpr(potion.getEffect().getHpr());
-				pc.startHpRegeneration();
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_MEDITATION) { // 瞑想のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50621);
-				pc.addMpr(potion.getEffect().getMpr());
-				pc.startMpRegeneration();
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_LIFE) { // 生命のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50622);
-				pc.addMaxHp(potion.getEffect().getHp());
-				pc.sendPackets(new S_HpUpdate(pc.getCurrentHp(), pc.getMaxHp()));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_MAGIC) { // 魔法のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50623);
-				pc.addMaxMp(potion.getEffect().getMp());
-				pc.sendPackets(new S_MpUpdate(pc.getCurrentMp(), pc.getMaxMp()));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_MAGIC_RESIST) { // 魔法抵抗のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50624);
-				pc.addMr(potion.getEffect().getMr());
-				pc.sendPackets(new S_SpMr(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_STR) { // 腕力のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50625);
-				pc.addStr(potion.getEffect().getStr());
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_DEX) { // 機敏のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50626);
-				pc.addDex(potion.getEffect().getDex());
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_CON) { // 体力のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50627);
-				pc.addCon(potion.getEffect().getCon());
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_INT) { // 知力のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50628);
-				pc.addInt(potion.getEffect().getInt());
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_WIS) { // 精神のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50629);
-				pc.addWis(potion.getEffect().getWis());
-				pc.sendPackets(new S_OwnCharStatus(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_RAGE) { // 憤怒のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50630);
-				pc.addHitup(potion.getEffect().getHit());
-				pc.addDmgup(potion.getEffect().getDmg());
-				pc.addBowHitup(potion.getEffect().getBowHit());
-				pc.addBowDmgup(potion.getEffect().getBowDmg());
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == POTION_OF_CONCENTRATION) { // 集中のポーション
-				L1ExtraPotion potion = L1ExtraPotion.get(50631);
-				pc.addSp(potion.getEffect().getSp());
-				pc.sendPackets(new S_SpMr(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId >= COOKING_BEGIN && skillId <= COOKING_END) { // 料理
-				L1Skill skill = SkillTable.getInstance().findBySkillId(skillId);
-				L1BuffSkillExecutor exe = skill.newBuffSkillExecutor();
-				exe.addEffect(null, pc, remainingTime);
-				pc.setSkillEffect(skillId, remainingTime * 1000);
+			} else if (skillId == STATUS_EXP_UP) { // 祈りのポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50616);
+				if (etc != null) {
+					pc.addExpBonusPct(etc.getExpBonus());
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == STATUS_EXP_UP_II) { // 祈りのポーションII (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50617);
+				if (etc != null) {
+					pc.addExpBonusPct(etc.getExpBonus());
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_SWORDMAN) { // 剣士のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50618);
+				if (etc != null) {
+					pc.addMaxHp(etc.getAddHp());
+					pc.addHpr(etc.getAddHpr());
+					pc.sendPackets(new S_HpUpdate(pc.getCurrentHp(), pc.getMaxHp()));
+					pc.startHpRegeneration();
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_MAGICIAN) { // 術師のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50619);
+				if (etc != null) {
+					pc.addMaxMp(etc.getAddMp());
+					pc.addMpr(etc.getAddMpr());
+					pc.sendPackets(new S_MpUpdate(pc.getCurrentMp(), pc.getMaxMp()));
+					pc.startMpRegeneration();
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_RECOVERY) { // 治癒のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50620);
+				if (etc != null) {
+					pc.addHpr(etc.getAddHpr());
+					pc.startHpRegeneration();
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_MEDITATION) { // 瞑想のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50621);
+				if (etc != null) {
+					pc.addMpr(etc.getAddMpr());
+					pc.startMpRegeneration();
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_LIFE) { // 生命のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50622);
+				if (etc != null) {
+					pc.addMaxHp(etc.getAddHp());
+					pc.sendPackets(new S_HpUpdate(pc.getCurrentHp(), pc.getMaxHp()));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_MAGIC) { // 魔法のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50623);
+				if (etc != null) {
+					pc.addMaxMp(etc.getAddMp());
+					pc.sendPackets(new S_MpUpdate(pc.getCurrentMp(), pc.getMaxMp()));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_MAGIC_RESIST) { // 魔法抵抗のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50624);
+				if (etc != null) {
+					pc.addMr(etc.getAddMr());
+					pc.sendPackets(new S_SpMr(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_STR) { // 腕力のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50625);
+				if (etc != null) {
+					pc.addStr(etc.getAddStr());
+					pc.sendPackets(new S_OwnCharStatus(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_DEX) { // 機敏のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50626);
+				if (etc != null) {
+					pc.addDex(etc.getAddDex());
+					pc.sendPackets(new S_OwnCharStatus(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_CON) { // 体力のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50627);
+				if (etc != null) {
+					pc.addCon(etc.getAddCon());
+					pc.sendPackets(new S_OwnCharStatus(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_INT) { // 知力のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50628);
+				if (etc != null) {
+					pc.addInt(etc.getAddInt());
+					pc.sendPackets(new S_OwnCharStatus(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_WIS) { // 精神のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50629);
+				if (etc != null) {
+					pc.addWis(etc.getAddWis());
+					pc.sendPackets(new S_OwnCharStatus(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_RAGE) { // 憤怒のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50630);
+				if (etc != null) {
+					pc.addHitup(etc.getAddHit());
+					pc.addDmgup(etc.getAddDmg());
+					pc.addBowHitup(etc.getAddBowHit());
+					pc.addBowDmgup(etc.getAddBowDmg());
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
+			} else if (skillId == POTION_OF_CONCENTRATION) { // 集中のポーション (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50631);
+				if (etc != null) {
+					pc.addSp(etc.getAddSp());
+					pc.sendPackets(new S_SpMr(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
 			} else if (skillId == BLOODSTAIN_OF_ANTHARAS) { // アンタラスの血痕
 				if (remainingTime - differenceTime > 0) {
 					L1BuffUtil.bloodstain(pc, (byte) 0,
@@ -669,15 +713,17 @@ public class C_LoginToServer extends ClientBasePacket {
 				pc.addDodge((byte) 1); // 回避率 + 10%
 				pc.sendPackets(new S_PacketBox(S_PacketBox.DODGE_RATE_PLUS, pc.getDodge()));
 				pc.setSkillEffect(skillId, remainingTime * 1000);
-			} else if (skillId == STONE_OF_DRAGON) { // ドラゴンの石
-				L1FloraPotion potion = L1FloraPotion.get(50555);
-				pc.addHitup(potion.getEffect(pc).getHit());
-				pc.addDmgup(potion.getEffect(pc).getDmg());
-				pc.addBowHitup(potion.getEffect(pc).getBowHit());
-				pc.addBowDmgup(potion.getEffect(pc).getBowDmg());
-				pc.addSp(potion.getEffect(pc).getSp());
-				pc.sendPackets(new S_SpMr(pc));
-				pc.setSkillEffect(skillId, remainingTime * 1000);
+			} else if (skillId == STONE_OF_DRAGON) { // ドラゴンの石 (DB-driven)
+				L1EtcItem etc = getEtcItemForRestore(50555);
+				if (etc != null) {
+					pc.addHitup(etc.getAddHit());
+					pc.addDmgup(etc.getAddDmg());
+					pc.addBowHitup(etc.getAddBowHit());
+					pc.addBowDmgup(etc.getAddBowDmg());
+					pc.addSp(etc.getAddSp());
+					pc.sendPackets(new S_SpMr(pc));
+					pc.setSkillEffect(skillId, remainingTime * 1000);
+				}
 			} else if (skillId == BLESS_OF_COMA1) { // コマの祝福Ａ
 				pc.setSkillEffect(skillId, remainingTime * 1000);
 				pc.addStr(5);

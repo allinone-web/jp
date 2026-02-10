@@ -50,8 +50,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <!-- 模擬戦の赤ネーム・デスペナルティの有無 True to On, False to Off -->
 <entry key="SimWarPenalty">True</entry>
 
-<!-- キャラクター作成時のスタート地点 ... 2005 新隠された渓谷 8013 ドロモンドの部屋 -->
-<entry key="StartMapId">2005</entry>
+<!-- キャラクター作成時のスタート地点 ... 4 說話之島村 2005 新隠された渓谷 8013 ドロモンドの部屋 -->
+<entry key="StartMapId">4</entry>
 
 <!-- リスタート時に特定の地点に戻る True to On, False to Off -->
 <entry key="GetBack">False</entry>

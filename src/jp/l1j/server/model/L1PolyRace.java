@@ -98,7 +98,7 @@ public class L1PolyRace {
 			// 選んだマッチはLv%0〜Lv%1が参加できます。
 			return;
 		}
-		if (!pc.getInventory().consumeItem(40308, 1000)) {
+		if (!pc.getInventory().consumeItem(5, 1000)) {
 			pc.sendPackets(new S_ServerMessage(189)); // \f1%0を買いません。
 			return;
 		}
@@ -222,7 +222,7 @@ public class L1PolyRace {
 				// pc.sendPackets(new S_ServerMessage(1264)); 本鯖用メッセージ
 				// 最小参加人数の2名に満たなかったため、レースを強制終了します。 1000アデナをお返ししました。
 				pc.sendPackets(new S_SystemMessage(String.format(I18N_POLYRACE_LESS_THAN_MIN_PLAYERS, Config.PET_RACE_MIN_PLAYER)));
-				pc.getInventory().storeItem(40308, 1000);
+				pc.getInventory().storeItem(5, 1000);
 			}
 			break;
 		}

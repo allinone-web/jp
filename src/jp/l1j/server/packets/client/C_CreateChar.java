@@ -168,7 +168,10 @@ public class C_CreateChar extends ClientBasePacket {
 		int mapId = Config.START_MAP_ID;
 		int locX = 0;
 		int locY = 0;
-		if (mapId == 2005) { // 新隠された渓谷
+		if (mapId == 4) { // 說話之島村 Talking Island Village
+			locX = 32580;
+			locY = 32931;
+		} else if (mapId == 2005) { // 新隠された渓谷
 			locX = 32691;
 			locY = 32864;
 		} else if (mapId == 8013) { // ドロモンドの部屋

@@ -164,7 +164,7 @@ public class SpawnNpcTable {
 			int count = 1;
 			String note = npc.getName();
 			con = L1DatabaseFactory.getInstance().getConnection();
-			pstm = con.prepareStatement("INSERT INTO spawn_npcs SET npc_id=?,note=?,count=?,loc_x=?,loc_y=?,heading=?,map_id=?");
+			pstm = con.prepareStatement("INSERT INTO spawn_npcs SET npc_id=?,name=?,count=?,loc_x=?,loc_y=?,heading=?,map_id=?");
 			pstm.setInt(1, npc.getNpcId());
 			pstm.setString(2, note);
 			pstm.setInt(3, count);

@@ -81,9 +81,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <!-- 加速器検知機能を使用するか。Trueにした場合ONになり、パケット送信間隔がチェックされるようになる -->
 <!-- Move: 移動間隔  Attack: 攻撃間隔  Spell: スキル使用間隔 -->
-<entry key="CheckMoveInterval">True</entry>
-<entry key="CheckAttackInterval">True</entry>
-<entry key="CheckSpellInterval">True</entry>
+<entry key="CheckMoveInterval">False</entry>
+<entry key="CheckAttackInterval">False</entry>
+<entry key="CheckSpellInterval">False</entry>
 <!-- 不正な間隔のパケットのカウントがInjusticeCount回以上になった場合の処罰方法 -->
 <!-- PunishmentType: -->
 <!-- 0:PunishmentTime秒後��強制切断 -->

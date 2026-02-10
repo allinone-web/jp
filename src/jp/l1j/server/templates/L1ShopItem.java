@@ -15,7 +15,6 @@
 package jp.l1j.server.templates;
 
 import jp.l1j.server.datatables.ItemTable;
-import jp.l1j.server.model.L1BugBearRace;
 
 public class L1ShopItem {
 	private static final long serialVersionUID = 1L;
@@ -49,15 +48,5 @@ public class L1ShopItem {
 
 	public int getPackCount() {
 		return _packCount;
-	}
-	//XXX レースチケット用
-	public void setName(int num){
-		int trueNum=L1BugBearRace.getInstance().getRunner(num).getNpcId()-91350+1;
-		_item=(L1Item) _item.clone();
-		String temp=""+_item.getIdentifiedNameId()+" "+
-				L1BugBearRace.getInstance().getRound()+"-"+trueNum;
-		_item.setName(temp);
-		_item.setUnidentifiedNameId(temp);
-		_item.setIdentifiedNameId(temp);
 	}
 }

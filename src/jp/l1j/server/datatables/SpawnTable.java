@@ -186,7 +186,7 @@ public class SpawnTable {
 			String note = npc.getName();
 			con = L1DatabaseFactory.getInstance().getConnection();
 			pstm = con.prepareStatement(String.format("INSERT INTO spawn_mobs SET %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s", 
-				"npc_id=?", "note=?", "count=?", "loc_x=?", "loc_y=?", 
+				"npc_id=?", "name=?", "count=?", "loc_x=?", "loc_y=?", 
 				"random_x=?", "random_y=?", "heading=?",
 				"min_respawn_delay=?", "max_respawn_delay=?", "map_id=?"));
 			pstm.setInt(1, npc.getNpcId());
