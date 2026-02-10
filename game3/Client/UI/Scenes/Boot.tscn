@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://bplgjg57stk3h"]
+
+[ext_resource type="Script" path="res://Client/Network/GodotTcpSession.cs" id="1_8kjq8"]
+[ext_resource type="Script" path="res://Client/Boot.cs" id="1_oghps"]
+[ext_resource type="Script" path="res://Client/Network/PacketHandler.cs" id="2_30q5"]
+[ext_resource type="Script" path="res://Client/Game/GameWorld.cs" id="4_jebb8"]
+[ext_resource type="PackedScene" uid="uid://n1uwwxhqlwxs" path="res://Client/UI/Scenes/GameEntity.tscn" id="5_43axn"]
+[ext_resource type="PackedScene" uid="uid://ba0p7ucjidct0" path="res://Client/UI/Scenes/HUD.tscn" id="6_y3q7"]
+
+[node name="Boot" type="Node2D"]
+script = ExtResource("1_oghps")
+AutoLoginCharName = "oppo"
+
+[node name="NetSession" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_8kjq8")
+
+[node name="PacketHandler" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_30q5")
+
+[node name="World" type="Node2D" parent="." node_paths=PackedStringArray("PacketHandlerRef")]
+process_mode = 4
+visible = false
+script = ExtResource("4_jebb8")
+EntityScene = ExtResource("5_43axn")
+PacketHandlerRef = NodePath("../PacketHandler")
+HUDScene = ExtResource("6_y3q7")

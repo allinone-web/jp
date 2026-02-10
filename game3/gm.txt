@@ -1,0 +1,26 @@
+Create item: .item
+
+Command: item → L1CreateItem
+Format (from L1CreateItem):
+.item <itemId|itemName> [count] [enchant] [identify]
+count default = 1
+enchant default = 0
+identify default = 0 (1 = identified)
+Create item set: .itemset
+
+Command: itemset → L1CreateItemSet
+Format depends on the item set definition.
+Spawn monster/NPC: .spawn
+
+Command: spawn → L1SpawnCmd
+Format:
+.spawn <npcId|npcName> [count] [range]
+count default = 1
+range default = 0
+Teleport to a spawn: .tospawn
+
+Command: tospawn → L1ToSpawn
+Used for jumping to an existing spawn entry.
+
+
+.buff [all|me] 10 1000

@@ -1,0 +1,250 @@
+這是一份基於你提供的 **Server (Java)** 和 **Client (C#)** 代碼，針對「怪物不追擊」、「位置不同步」與「Entity_NOT_FOUND」的深度技術分析與修復方案。
+
+---
+
+### 第一部分：全流程邏輯分析 (The Full Cycle)
+
+我們從**服務器(上帝視角)**與**客戶端(玩家視角)**的交互，詳細拆解怪物被攻擊後的行為。
+
+#### 場景：玩家攻擊怪物，怪物反擊並追擊
+
+1.  **玩家移動 (Player Move)**:
+    *   **Client**: 玩家點擊地面，`GameWorld.Movement.cs` 計算路徑，每隔 `_moveInterval` (約 600ms) 發送一次 `C_MoveChar (Op 10)`。
+    *   **Server (`C_Moving.java`)**: 收到 Op 10 -> 更新內存中 `PcInstance` 的 `_x, _y, _heading`。**這一步至關重要**，如果封包丟失或未發送，服務器認為玩家還在原地。
+
+2.  **玩家攻擊 (Player Attack)**:
+    *   **Client**: 玩家按下攻擊，觸發 `GameWorld.Combat.cs` -> `PerformAttackOnce`。發送 `C_Attack (Op 23)`。
+        *   *注意：Op 23 封包只包含 `TargetID`, `TargetX`, `TargetY`，**不包含玩家自己的座標**。*
+    *   **Server (`C_Attack.java`)**:
+        *   讀取封包。
+        *   調用 `pc.Attack(...)`。
+        *   檢查距離：`pc.getX()` 與 `target.getX()` 的距離。**重點：這裡用的是服務器記錄的 PC 座標。如果第 1 步的移動封包沒發送，這裡計算的距離就是錯的（過遠）。**
+        *   如果距離合法 -> 計算傷害 -> 觸發怪物 AI (`onAttacked`).
+        *   如果距離過遠 -> 攻擊無效，服務器可能認為玩家位置異常，發送 `S_ObjectMoving` 把玩家拉回舊位置 (Rubber-banding)。
+
+3.  **怪物 AI 反應 (Monster AI)**:
+    *   **Server (`MonsterInstance.java` -> `toFight`)**:
+        *   AI 循環啟動。檢查 `attackList`。
+        *   判斷距離：`getDistance(player.getX(), ...)`。
+        *   **分支 A (距離內)**: 攻擊玩家 -> 發送 `S_ObjectAttack (Op 35)`。
+        *   **分支 B (距離外)**:
+            *   調用 `AStar.FindPath` 尋路。
+            *   **關鍵點**：尋路的終點是 `player.getX(), player.getY()` (服務器記錄的玩家座標)。
+            *   如果服務器認為玩家在 (100,100)，實際玩家在 (100,105)，怪物就會走到 (100,100) 發呆，而不是追到 (100,105)。
+            *   計算出下一步 -> 更新怪物座標 -> 發送 `S_ObjectMoving (Op 18)`。
+
+4.  **客戶端接收怪物移動**:
+    *   **Client (`PacketHandler.cs` -> `ParseObjectMoving`)**:
+        *   收到 Op 18。
+        *   **故障點 (Entity_NOT_FOUND)**: 代碼中原本有 `if (distance > 14) return;`。如果怪物在 15 格外開始追擊（服務器視野通常是 20+），客戶端直接丟棄封包，導致怪物看起來沒動，或者瞬移。
+
+---
+
+### 第二部分：故障根源診斷
+
+根據你的日誌 `Move packet interval too long! Actual: 3735ms` 和 `monster attacking player at ... but client predicted ... diff=2`，問題核心已鎖定：
+
+**根源：客戶端在「停止移動」轉為「攻擊」的瞬間，沒有強制發送最後一個座標包。**
+
+*   **現象**：你走到怪物面前，客戶端顯示你在怪物臉上。你停止移動，開始攻擊。
+*   **Bug**：`StopWalking` 雖然被調用，但因為 `_moveTimer` 還沒冷卻（例如剛走完上一步才過了 200ms），客戶端為了防止加速，沒有發送最後這個 `C_MoveChar`。
+*   **後果**：服務器認為你還在上一步的位置（距離怪物 1-2 格）。
+    *   你發送攻擊 -> 服務器算距離 -> 可能太遠打不到。
+    *   怪物要追你 -> 服務器算路徑 -> 怪物走到你「上一步」的位置 -> 怪物在你面前停下，打空氣，不追你最新的位置。
+
+---
+
+### 第三部分：修復方案 (代碼修改)
+
+請嚴格按照以下步驟修改客戶端代碼。我們不改服務器，只讓客戶端更「誠實」地匯報位置。
+
+#### 1. 修改 `Client/Game/GameWorld.Movement.cs`
+**目的**：在 `StopWalking` 時，無視冷卻時間，**強制**發送一次位置更新。這告訴服務器「我確實停在這裡了」。
+
+```csharp
+// 找到 StopWalking 方法，替換為以下內容：
+private void StopWalking()
+{
+    if (!_isAutoWalking) return;
+    
+    _isAutoWalking = false;
+
+    if (_myPlayer != null)
+    {
+        // 恢復待機動作
+        _myPlayer.SetAction(GameEntity.ACT_BREATH);
+        
+        // 【核心修復】停止移動時，強制發送最終位置，參數 force=true
+        // 這樣服務器才能知道玩家精確停在哪個格子，怪物才能正確追擊到面前
+        SendPositionUpdateToServer("StopWalking", true);
+    }
+}
+```
+
+**同時，修改 `StepTowardsTarget` 方法：**
+在發送封包的地方，增加日誌並確保邏輯正確。
+
+```csharp
+// 找到 StepTowardsTarget 方法中發送封包的部分：
+
+// ... (計算 nextX, nextY, heading 代碼保持不變) ...
+
+// 發送移動包
+long currentTime = (long)Time.GetTicksMsec();
+// ... (日誌代碼) ...
+
+_lastMovePacketTime = currentTime;
+// 這裡發送移動包
+_netSession.Send(C_MoveCharPacket.Make(actualNextX, actualNextY, heading));
+
+// 【新增】發送移動包後，立即更新 "最後一次位置更新時間"，防止 StopWalking 重複發送
+_lastPositionUpdateTime = currentTime;
+
+// ... (後續代碼保持不變)
+```
+
+#### 2. 修改 `Client/Game/GameWorld.Combat.cs`
+**目的**：
+1. 實現 `SendPositionUpdateToServer` 方法，支持 `force` 參數。
+2. 在攻擊前檢查座標同步。
+3. 放寬怪物移動封包的接收範圍，解決 `Entity_NOT_FOUND`。
+
+**步驟 A：添加/修改 `SendPositionUpdateToServer`**
+
+```csharp
+// 在 GameWorld 類中添加或替換此方法：
+// 【核心修復】位置更新函數：增加 force 參數
+// 當 stop walking 或座標嚴重不同步時，必須強制發送，不受最小間隔限制
+private void SendPositionUpdateToServer(string reason, bool force = false)
+{
+    if (_myPlayer == null) return;
+    
+    long currentTime = (long)Time.GetTicksMsec();
+    
+    // 檢查最小發送間隔，但如果是強制發送 (force=true) 則忽略檢查
+    if (!force && _lastPositionUpdateTime > 0 && (currentTime - _lastPositionUpdateTime) < MIN_POSITION_UPDATE_INTERVAL_MS)
+    {
+        return; // 間隔太短且非強制，跳過
+    }
+    
+    int clientX = _myPlayer.MapX;
+    int clientY = _myPlayer.MapY;
+    int playerHeading = _myPlayer.Heading;
+    
+    // 發送位置更新包
+    _netSession.Send(C_MoveCharPacket.Make(clientX, clientY, playerHeading));
+    _lastPositionUpdateTime = currentTime;
+    
+    string forceTag = force ? "[FORCE] " : "";
+    GD.Print($"[Pos-Update] {forceTag}Sending position update ({reason}): Client:({clientX},{clientY}) heading={playerHeading}");
+}
+```
+
+**步驟 B：修改 `PerformAttackOnce` (攻擊前的座標檢查)**
+
+```csharp
+// 找到 PerformAttackOnce 方法，在發送攻擊包之前插入：
+
+public bool PerformAttackOnce(int targetId, int targetX, int targetY)
+{
+    if (_myPlayer == null) return false;
+    
+    // ... (速度檢查代碼保持不變) ...
+
+    _attackInProgress = true;
+    _attackCooldownTimer = 0;
+
+    // 【座標同步修復】攻擊前檢查：如果客戶端座標與服務器確認座標不符，強制同步
+    int clientX = _myPlayer.MapX;
+    int clientY = _myPlayer.MapY;
+    
+    // 如果 _serverConfirmedPlayerX 未初始化，先假設一致
+    int serverX = _serverConfirmedPlayerX >= 0 ? _serverConfirmedPlayerX : clientX;
+    int serverY = _serverConfirmedPlayerY >= 0 ? _serverConfirmedPlayerY : clientY;
+
+    // 如果差距大於 0 (即有任何不同步)，且我們正在攻擊
+    // 為了保險，建議在攻擊前強制發送一次位置（如果是近戰）
+    if (clientX != serverX || clientY != serverY)
+    {
+        GD.Print($"[Combat-Fix] Attack pos mismatch. Client:({clientX},{clientY}) Server:({serverX},{serverY}). Sending corrective move.");
+        // 強制發送位置，確保服務器知道我在這，怪物才能打到我，我也能打到怪物
+        SendPositionUpdateToServer("AttackPosFix", true);
+        
+        // 樂觀更新：假設服務器會接受這個位置
+        _serverConfirmedPlayerX = clientX;
+        _serverConfirmedPlayerY = clientY;
+    }
+
+    // ... (後續計算距離、朝向、發送攻擊包的代碼保持不變) ...
+}
+```
+
+**步驟 C：修復 `OnObjectMoved` 中的 `Entity_NOT_FOUND`**
+解決日誌中怪物因為距離遠而被忽略，導致不移動的問題。
+
+```csharp
+// 找到 OnObjectMoved 方法 (處理 S_ObjectMoving 封包)
+private void OnObjectMoved(int objectId, int x, int y, int heading)
+{
+    // ... (前面的代碼保持不變) ...
+
+    if (_entities.TryGetValue(objectId, out var updatedEntity))
+    {
+        // ... (現有邏輯) ...
+    }
+    else
+    {
+        // 實體不在 _entities 中 (還沒生成或已被刪除)
+        
+        int distanceToPlayer = 0;
+        if (_myPlayer != null)
+        {
+            // 使用歐幾里得距離計算
+            long dx = x - _myPlayer.MapX;
+            long dy = y - _myPlayer.MapY;
+            distanceToPlayer = (int)Math.Sqrt(dx * dx + dy * dy); 
+        }
+        
+        // 【關鍵修復】擴大緩存範圍
+        // 原本是 14，但服務器視野通常是 20~24。
+        // 如果怪物在 18 格處開始追擊，我們必須緩存這個移動，否則等它進入 14 格時，位置已經瞬移了。
+        if (distanceToPlayer <= 24) 
+        {
+            _pendingMovePackets[objectId] = (x, y, heading);
+            // 降低日誌級別或移除，避免刷屏
+            // GD.Print($"[Move-Cache] ObjId={objectId} cached move packet. Dist={distanceToPlayer}");
+        }
+        else
+        {
+            // 真的太遠了，忽略
+        }
+    }
+}
+```
+
+#### 3. 修改 `Client/Game/GameWorld.cs`
+確保 `_lastPositionUpdateTime` 變量存在且被正確初始化。
+
+```csharp
+// 在 GameWorld 類中確保有這些變量
+private long _lastPositionUpdateTime = 0;
+private const long MIN_POSITION_UPDATE_INTERVAL_MS = 640; // 最小發送間隔
+// 服務器確認的座標
+private int _serverConfirmedPlayerX = -1;
+private int _serverConfirmedPlayerY = -1;
+```
+
+---
+
+### 第四部分：總結修復效果
+
+經過上述修改後，遊戲邏輯將發生以下變化：
+
+1.  **停止即同步**：當你鬆開滑鼠或開始攻擊導致角色停止時，`StopWalking` 會立即發送一個 `C_MoveChar` 包。
+    *   *結果*：服務器立刻知道你停在了 `(100, 104)`，而不是認為你還在滑行。
+2.  **攻擊前校準**：每次攻擊前，如果客戶端發現自己位置和服務器上次確認的不一樣，會補發位置包。
+    *   *結果*：解決「拉回」問題，服務器計算傷害距離時會使用正確的座標。
+3.  **怪物視野擴大**：`OnObjectMoved` 緩存範圍從 14 改為 24。
+    *   *結果*：當怪物從遠處（例如 18 格）發現你並開始追擊時，客戶端會記錄它的移動軌跡。當它進入畫面（`S_ObjectAdd`）時，會立即應用這些移動，怪物會平滑地從遠處跑過來，而不是突然出現或發呆。
+
+這套方案完全符合 Lineage 1 服務器 (`MonAi.java`, `C_Moving.java`) 的預期行為，解決了因封包節流導致的狀態不同步問題。

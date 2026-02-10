@@ -1,0 +1,4 @@
+18.spell direction， 19.spell no direction   魔法攻擊遠程（魔法攻擊的範圍skill_list.csv的range ），
+21.attack bow  弓箭攻擊 遠程
+1.attack， 5.attack sword ， 12.attack Axe，30.alt attack  近戰，
+24.walk Spear  41.attack staff ， 近戰遠距離，長矛類。

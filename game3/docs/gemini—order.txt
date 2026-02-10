@@ -1,0 +1,168 @@
+你现在是一名精通 C#、Java 与 Godot 4 的逆向工程专家。我正在进行韓國1999年代網路遊戲《lineage》项目的逆向开发。
+
+项目背景：
+服務器代碼： server-full.zip
+/Server 服務器目录：存放功能完整的服务端逻辑（Java/C#），这是我的“真相来源”。
+客戶端代碼：client 3.zip
+其他客戶端目录（/Client, /Core, /Skins 等）：属于基于 Godot 的客户端项目，核心逻辑通常在 /Core  /Client /Client/network /Client/Game中。
+
+
+# Role: 資深 Godot 引擎調試專家 (Senior Debugger) & 渲染邏輯分析師
+
+## Context (現狀描述)
+我正在開發《Lineage》的 Godot 客戶端。目前核心功能已運作，但在視覺表現上發現兩個嚴重故障。
+我提供了最新的**客戶端運行日誌 (Client Logs)** 以及之前的代碼文件 (`CustomCharacterProvider.cs`, `GameEntity.Visuals.cs` 等)。
+
+請根據日誌和故障描述，分析問題根源，並提供**精確的修復代碼**。
+
+## 故障報告 (Bug Reports)
+
+### 故障 1：陰影位置錯誤 (Shadow Misalignment)
+* **現象**：角色的黑色圓形陰影顯示在角色的**身體正中心 (Center)**，而不是**腳底 (Feet)**。
+* **預期**：陰影應該位於角色精靈的底部，與地面接觸。
+* **分析方向**：請檢查 `CustomCharacterProvider.cs` 或 `GameEntity.Visuals.cs` 中生成陰影圖層的邏輯。是否缺少了 `Offset` 修正？Godot 的 `Sprite2D` 默認是 `Centered = true`，對於陰影層，我們是否需要調整其 `Position.Y` 或 `Offset`？
+
+### 故障 2：法師 (Mage, Gfx 734) 武器顯示異常
+* **現象**：
+    * 裝備 **木棒 (Staff/Type 2)** 時：圖像顯示正常。
+    * 裝備 **弓 (Bow/Type 3)** 或 **劍 (Sword/Type 5)** 時：角色動作變了，但**手中沒有武器圖像**（空的）。
+* **日誌分析 (關鍵證據)**：
+    * **弓 (Type 3)**: 日誌顯示 `[Provider] Gfx:734 匹配武器 Gfx:738, 類型:3`。這證明 **數據層 (Provider)** 成功找到了對應的武器圖檔 ID (738)。
+    * **劍 (Type 5)**: 日誌顯示 `[Provider] Gfx:734 匹配武器 Gfx:742, 類型:5`。這證明 ID (742) 也找到了。
+* **矛盾點**：既然 `Provider` 找到了 ID，為什麼 `Visuals` 層沒顯示出來？
+* **分析方向**：
+    1.  **Z-Index (層級問題)**：武器層是否被錯誤地渲染到了主體層 (Body) 的後面？(Body Z=0, Weapon Z 應該是 1)。
+    2.  **空幀問題**：是否雖然加載了 `Gfx:738`，但生成的 `SpriteFrames` 是空的？
+    3.  **渲染開關**：檢查 `GameEntity.Visuals.cs` 中的 `UpdateVisuals`。當檢測到有武器數據時，是否正確執行了 `weaponSprite.Visible = true` 和 `weaponSprite.Play(...)`？
+
+## Client Logs (參考日誌)
+```text
+[GameWorld] MyPlayer Visual Sync -> Mode: 20
+[Weapon] Posture Sync: 20 (Type:3) for Obj:10005
+[Provider] Gfx:734 匹配武器 Gfx:738, 類型:3  <-- 弓數據已找到，但畫面不顯示
+[UI] Double Clicked Item: +0 初学者之弓 (ID: 5117035)
+
+[GameWorld] MyPlayer Visual Sync -> Mode: 11
+[Weapon] Posture Sync: 11 (Type:2) for Obj:10005
+[Provider] Gfx:734 匹配武器 Gfx:741, 類型:2  <-- 木棒顯示正常
+
+[GameWorld] MyPlayer Visual Sync -> Mode: 4
+[Weapon] Posture Sync: 4 (Type:5) for Obj:10005
+[Provider] Gfx:734 匹配武器 Gfx:742, 類型:5  <-- 劍數據已找到，但畫面不顯示
+
+
+
+
+
+任务目标：
+
+架构审计：对比 /Server 的封包分发机制（通常在 PacketHandler 或 OpCode 类中）与 /client 下的网络处理类。
+
+协议清单对比：请列出一张表格，对比服务端已定义的 Opcode 与客户端已实现的 Handler。
+
+列出 Opcode (Hex)、服务端协议名、客户端实现状态。
+
+标记出哪些协议在客户端中虽然存在，但 关键参数（顺序或类型） 与服务端不匹配。
+
+缺失协议识别：重点识别 /Server 中存在但在客户端 /Core 或 /Client 目录下完全缺失的协议，尤其是涉及“战斗”和“技能”的部分。
+
+自主补全建议：针对缺失最严重的协议，请根据服务端的封包结构，在 /Core 的适当目录下为我生成对应的 C# 处理模板。
+
+请先扫描项目文件，然后给出详细的对齐报告
+
+
+
+# Role: 資深 MMORPG 網絡協議架構師 (Senior Network Architect)
+
+## Context (背景)
+我正在開發一個基於《天堂 (Lineage)》協議的 C# Godot 客戶端。客戶端的代碼，已經上傳了當前的 `PacketHandler.cs` 文件。目前的代碼框架已經包含登錄、物品背包等基礎功能，這些已經完善的代碼**絕對不允許被刪除或破壞**。
+
+## Objective (目標)
+請以「生產級環境 (Production-Grade)」的標準，對我的 `PacketHandler.cs` 進行深度審計、修復與功能補全。你需要完成以下 5 項具體任務：
+
+## Task 1: Opcode 全局審計與修復
+請逐行核對 `HandlePacket` 中的每一個 Opcode case，確保其與服務端的協議嚴格對齊。
+- 如果發現任何 Opcode 對齊錯誤（例如 `ReadByte` 數量不對、數據類型錯誤），請**列出具體的錯誤清單**。
+- 針對錯誤，提供完整的修復代碼。
+
+## Task 2: Case 35 的深度辨析與修正
+請重點檢查代碼中的 `case 35`：
+- **核心疑問**：請明確區分 **Opcode 35** 與 **Opcode 123 (S_PacketBox) 中的 SubCode 35**。
+    - Opcode 35 應解析為：`S_ObjectAttack` (物理/遠程攻擊)。
+    - Opcode 123 SubCode 35 應解析為：變身/道具剩餘時間。
+- **要求**：請檢查代碼是否混淆了這兩者？請在代碼中清晰地將它們分開，並確保 Opcode 35 的物理/遠程分支判斷邏輯（基於 `Tags/Serial`）是正確的。
+
+## Task 3: 魔法系統 (Magic Packet) 完整重構
+請重寫/補全 **Opcode 57 (S_ObjectAttackMagic)** 的解析邏輯。
+- **標準**：代碼必須是生產級別的，包含完整的錯誤處理（Try-Catch）。
+- **功能要求**：
+    1. 必須支持「有目標魔法」與「無目標地面魔法 (AOE)」。
+    2. 必須精確解析 X, Y 坐標，以便在地面播放特效。
+    3. 必須支持目標列表（Target List）的循環讀取。
+- **可視化要求**：代碼中必須包含詳細的中文註釋（文字備註），解釋每一個字節（ReadByte/ReadInt）對應的協議含義。
+
+## Task 4: 代碼整合 (Integration)
+請在提供的 `PacketHandler.cs` 基礎上進行修改。
+- **輸出方式**：請輸出修改後的完整代碼，或者關鍵修改片段（如果文件過大）。
+- **關鍵約束**：將修復後的邏輯無縫整合進現有的 `switch(opcode)` 結構中。
+
+## Task 5: 嚴格的防護約束 (Safety Constraints)
+1. **禁止刪除**：絕對不要刪除或修改與上述任務無關的現有代碼（如 Login, Inventory, Movement 等已完善的功能）。
+2. **字節對齊**：所有的 `Read` 操作必須嚴格計算字節數，防止指針偏移導致後續封包亂碼。
+3. **魯棒性**：關鍵解析方法必須包含 `try-catch` 塊，防止單個封包錯誤導致客戶端崩潰。
+
+---
+
+請開始執行審計，並按步驟輸出結果和最終代碼。
+
+
+
+
+# Role: 資深遊戲引擎架構師 (Senior Game Engine Architect) & 2D 渲染管線專家
+
+## Context (背景)
+我正在重構一個基於《天堂 (Lineage)》協議的 Godot C# 客戶端。我上傳了視覺渲染與實體邏輯的核心代碼：`ListSprLoader.cs`, `CustomCharacterProvider.cs`, `GameEntity.cs`, `GameEntity.Visuals.cs` 以及相關分部類。
+
+## Critical Business Logic (核心業務邏輯 - 視覺渲染管線)
+請注意，該遊戲的視覺系統並非簡單的「二選一」模式，而是一套基於**「基礎動作模組」+「動態圖層疊加」**的復合系統。請以此為最高準則進行審計：
+
+### 1. 基礎層：6套動作模組 (Base Action Sets)
+* **邏輯**：每個角色主體（Body）擁有 **6套獨立的動作/外觀資源**，分別對應不同的武器類型（如：空手、單手劍、雙手劍、弓、矛、杖）。
+* **行為**：當玩家切換武器類型時，**主體層（Base Layer）必須先切換到對應的動作 SpriteFrames**。這是為了確保角色的「姿態（Posture）」與手中的武器類型一致（例如：拿弓時必須是射箭姿勢，無論是否疊加了額外的武器圖層）。
+
+### 2. 疊加層：數據驅動的組件 (Data-Driven Overlays)
+在基礎層之上，系統必須根據 `list.spr` 文件的特定索引數據，靈活判斷是否需要實例化並疊加額外的 `AnimatedSprite2D`：
+* **武器層 (Weapon Layer)**：由 `list.spr` 索引 **106** 決定。如果有數據，則在 Z-Index 1 疊加武器圖像；無數據則不顯示（僅依靠主體層的默認武器外觀）。
+* **服裝層 (Clothes Layer)**：由 `list.spr` 索引 **105** 決定。如果有數據，則在 Z-Index 2+ 疊加。
+* **特效層 (Effect Layer)**：由 `list.spr` 索引 **109** 決定。如果有數據，則在最上層疊加。
+
+### 3. 渲染層級 (Z-Order)
+必須嚴格遵守以下順序（由下至上）：
+`陰影(-1)` -> `主體(0)` -> `武器(1)` -> `服裝(2)` -> `特效(3+)`
+
+---
+
+## Task 1: 數據結構與遷移審計
+我在 `GameEntity.cs` 中刪除了舊的硬編碼數組（如 `WeaponGfxs`）。請檢查：
+1.  **基礎動作映射**：那 6 套基礎動作的 ID 映射邏輯現在去哪了？是否正確遷移到了 `CustomCharacterProvider.cs` 或類似的數據類中？代碼能否根據武器類型（Type）正確檢索到對應的主體資源 ID？
+2.  **疊加數據解析**：請檢查 `ListSprLoader.cs` 是否正確解析了 105, 106, 109 字段，並能將其提供給 Visuals 層使用。
+
+## Task 2: 視覺邏輯實現 (Visuals Implementation)
+請重點審計 `GameEntity.Visuals.cs` 中的 `UpdateVisuals()` 或 `UpdateWeapon()` 方法：
+1.  **雙重同步檢查**：
+    * 代碼是否先執行了**「主體動作切換」**？（確保拿弓時是弓的動作）。
+    * 代碼是否接著執行了**「106 數據檢查」**？（如果 106 有數據，是否正確啟用了 Weapon Sprite 並加載了資源；如果沒數據，是否正確隱藏了 Weapon Sprite）。
+2.  **動畫同步 (Sync)**：當主體播放 `Attack` 動作的第 3 幀時，疊加的武器層、服裝層是否也嚴格同步在第 3 幀？`SetAction` 是否正確廣播到了所有活躍圖層？
+
+## Task 3: 完整性與遺漏檢查
+由於主文件進行了瘦身，請務必檢查：
+1.  **攻速與動作對應**：不同武器類型（如匕首 vs 雙手劍）通常有不同的攻速或動作幀數。這個邏輯現在由誰管理？是否因刪除常量而丟失？
+2.  **層級管理**：在代碼中是否明確設置了 `ZIndex`？是否存在層級混亂的風險？
+
+## Task 4: 輸出交付物
+1.  **審計報告**：列出所有邏輯斷層、變量丟失或層級錯誤。
+2.  **修復代碼**：請針對 `GameEntity.Visuals.cs` (以及涉及數據提供的 Provider 類)，寫出符合上述**「6套基礎動作 + 105/106/109 動態疊加」**邏輯的**生產級代碼**。
+    * 代碼必須包含詳細註釋，解釋如何根據武器類型切換主體，以及如何根據 `list.spr` 數據決定是否疊加圖層。
+    * 請展示如何優雅地處理這些 `AnimatedSprite2D` 的生命週期（按需創建 vs 預加載）。
+
+請開始全面分析，確保新架構既整潔又沒有丟失任何舊有的渲染特性。

@@ -1,0 +1,772 @@
+  734 ，有完整的图片。   734 应该像正常玩家角色和。物一样读区。  but。    101.shadow(735)
+	102.type(5)
+	106.weapon(736 741 738 739 742)    这个角色的特殊在于， 734，有这一行。106.weapon(736 741 738 739 742)  。   因为734是 游戏公司独特设计的一种尝试， 就是 换装系统。  他的角色无论哪个 动作都是空手。  然后叠加 736 741 738 739 742 这样的5类武器。  他的武器有点类似。阴影， 他的角色图像是3层组成，  第一层 阴影101.shadow(735)，  第二层 是 正常标准的角色 0，1，，2，3，，4，11，22，23。   这2层，所有角色都一样。   但是特殊的第第三层图像，武器层。   106.weapon(736 741 738 739 742)  。武器的映射(736-剑，  741-斧。   738 -弓。  739-矛。  742-杖。 每一套武器，都跟角色一样，拥有完整的 walk  attack  Damage  Breath    明白了吗。       不仅法师，还有 死亡骑士也是这样。  #240	64	Death Knight
+	3.Breath(1 6,0.0:5 0.1:4 0.2:4 0.3:4 0.4:4 0.5:4)
+	0.walk(1 4,8.0:4 8.1:4 8.2:4 8.3:4)
+	1.attack(1 6,16.0:2 16.1:2 16.2:4[86 16.3:1 16.4:1 16.5:5!)
+	30.Alt attack(1 7,0.0:4 24.0:2 24.1:2 24.2:4[87 24.3:1 24.4:1 24.5:5!)
+	18.Spell Direction(1 7,32.0:2 32.1:2 32.2:3 32.3:4 32.4:1 32.5:6! 32.6:4)
+	31.spell direction extra(1 7,32.0:2 32.1:2 32.2:3 32.3:4 32.4:1 32.5:6! 32.6:4)
+	19.Spell No Direction(1 5,40.0:3 40.1:6 40.2:2 40.3:6! 40.4:3)
+	2.Damage(1 3,0.0:4 48.0:6[88 48.1:2)
+	8.Death(1 7,56.6:6 56.0:3<89 56.1:3 56.2:4 56.3:4 56.4:3 56.5:3)
+	101.shadow(241)
+	102.type(10)
+	105.clothes(1 242)
+#241	64	Death Knight s
+	102.type(0)
+#242	64	Death Knight l
+	102.type(0)
+	104.attr(8) 死亡骑士有105.clothes(1 242)。    所以应该先升级   ListSprLoader。 识别   weapon     shadow  这几个特别类型。 做出多层的角色图像。代码可以放在 GameEntity.clothes  或  GameEntity.weapon         还有一类 #167	4	energy bolt
+	0.fly(1 4,0.3:3 0.0:2<97 0.1:3 0.2:2)
+	104.attr(8)
+	109.effect(4 219)  。。请看109.effect(4 219)  ，  这个意思是 魔法光箭释放后，达到  被攻击目标后， 再播放109.effect(4 219)    219这个动画。    。 请思考最完善的最优化的方案。  把这4类 重新设计clothes。   effect 。weapon，shadow。    还有 请 检查  list 中对于。]213的定义。   ]213 定义是在动画播放过程中，再播放一个动画 ，动画是]213。。1.attack(1 10,0.0:4 24.0:6[34 24.1:1 24.2:3]213。   #185	40	necromancer e
+	3.Breath(1 3,0.0:4 0.1:4 0.2:4)
+	0.walk(1 4,8.0:4 8.1:4 8.2:4 8.3:4)
+	30.Alt attack(1 7,0.0:4 16.5:1 16.0:2[81 16.1:5 16.2:1 16.3:1 16.4:6!)
+	1.attack(1 10,0.0:4 24.0:6[34 24.1:1 24.2:3]213 24.3:3! 24.4:4 24.2:4 24.3:4 24.4:4 24.2:4)
+	8.Death(0 7,32.6:4 32.0:2<80 32.1:2 32.2:4]180 32.3:3 32.4:3 32.5:2)
+	2.damage(1 2,0.0:4 24.0:6[79)
+	101.shadow(174)
+	102.type(10)
+	105.clothes(1 186)   请看 213的具体定义。 #213	1	give earth
+	0.fire(0 10,0.9:1 0.0:0 0.1:2 0.2:1 0.3:1 0.4:1 0.5:1 0.6:1 0.7:1 0.8:1)
+	104.attr(8)。  。请妥善整理我上面描述的。5类 （或更多）独特的设置。  提出最佳方案。  有序的更新 完善角色动画的方案。  让我确认。  
+Thought for 6s
+
+明白了——我之前把 106.weapon(...) 误当成“替代 body 的 renderGfx”，但你描述的是三层（甚至多层）叠加渲染体系：
+
+Base 身体层（734 自己就有完整图片）
+
+Shadow 阴影层（101.shadow）
+
+Weapon 武器层（106.weapon）：不是替代身体，而是“额外叠加的一套完整动作图片”
+
+以及类似的 Clothes 换装层（105.clothes）
+
+以及 Effect/附带动画触发（109.effect、帧内 ]213 等）
+
+所以现在 734 不显示的根因就非常清晰了：
+
+你当前的 CustomCharacterProvider 只返回 一个 SpriteFrames（单层动画）。
+而 734 这类资源在引擎里必须以 多层节点叠加 才是“完整角色”。
+你现在只在请求“body 一层”，但视觉系统（Visuals/GameEntity）很可能在创建/绑定层级时出现了缺失或逻辑不一致，导致 body 层没被正确挂载或被错误的层覆盖/隐藏，或者期待 provider 返回“合成后结果”但 provider 不做合成。
+
+下面我给一个最完善、最可维护、最优化的方案，把你说的 5 类（实际是 4 大类 + 1 类帧内触发）全部体系化。你确认后再落地到代码。
+
+目标：把 list.spr 的“层/附带规则”变成可执行的渲染图
+需要支持的规则类型（按你给的例子整理）
+
+shadow 层
+101.shadow(735)
+→ 给角色附加一个“阴影 gfx”，通常只有图层，不一定有 actions
+
+weapon 层（换武器叠加）
+106.weapon(736 741 738 739 742)
+→ 武器不是替换 734，而是“额外叠加一层完整动作图”，并且随 weaponType 切换不同 gfx
+
+clothes 层（换装叠加）
+105.clothes(1 242)（Death Knight）
+→ 类似武器层，也是叠加层（可能有多个槽位/参数）
+
+effect（两种）
+
+结束/命中触发：109.effect(4 219)（energy bolt 的例子）
+→ “某事件发生后播放另一个动画（219）”
+
+帧内触发：动作串里的 ]213
+例：1.attack(... 24.2:3]213 24.3:3! ...)
+→ 在播放到某一帧/某个子段时，触发播放 gfx=213 的动画
+
+最佳架构（强烈建议）：职责拆分成 3 层
+A. ListSprLoader：只做“解析 + 结构化数据”
+
+把 list.spr 解析成 SprDefinition 扩展字段，不要把渲染逻辑塞进去。
+
+建议在 SprDefinition 增加（或用旁表）：
+
+class SprDefinition {
+  int GfxId;
+  int SpriteId;
+  Dictionary<int, SprActionSequence> Actions;
+
+  int ShadowGfxId;                      // 101.shadow
+  List<int> WeaponGfxIds;               // 106.weapon(...) 顺序要保留
+  Dictionary<int,int> ClothesSlots;     // 105.clothes(slot -> gfx)
+  List<OnEventEffect> EventEffects;     // 109.effect(...)
+}
+
+
+同时把“帧内 ]213”解析进 SprFrameInfo（你现在似乎已有 EffectIds）：
+
+class SprFrameInfo {
+  int ActionId;
+  int FrameIdx;
+  int RealDuration;
+  bool FlipX;
+  List<int> SoundIds;
+
+  List<int> EffectIds;    // 来自 ]213 / ]180 / 等
+  // 还可以加：EffectAttach / EffectTarget 等（如果 list 里有语义）
+}
+
+
+关键点：ListSprLoader 只负责把 101/105/106/109/ ]xxx 变成结构字段，不负责“怎么画”。
+
+B. Provider：只做“给某个 gfx+action+heading 输出 SpriteFrames”
+
+你现在的 Provider 做得很好：异步 + key 修复 + forceFirst 修复。
+
+但要配合多层体系，需要扩展成两个层次 API：
+
+1）基础能力保持不变（单 gfx 输出 frames）
+
+GetBodyFrames(gfxId, actionId, heading)
+仍然可以用来取 body / weapon / clothes / shadow 任意一层的 frames。
+
+2）新增一个“获取渲染计划”的轻量接口（推荐）
+
+Provider 不做合成，但可以提供一个“该角色有哪些层”的信息：
+
+CharacterRenderPlan GetRenderPlan(int gfxId);
+
+
+返回：
+
+class CharacterRenderPlan {
+  int BaseGfx;                 // = gfxId
+  int ShadowGfx;               // maybe -1
+  List<OverlaySlot> Overlays;  // weapon/clothes 等
+}
+
+class OverlaySlot {
+  OverlayType Type;            // Weapon/Clothes
+  int SlotId;                  // Clothes slot
+  List<int> CandidateGfxIds;   // weapon gfx list / clothes gfx list
+}
+
+
+这样 Visuals/GameEntity 可以决定当前角色实际使用哪个 weapon gfx / clothes gfx。
+
+C. Visuals / GameEntity：负责“多层节点叠加”
+
+这是现在 734 失败的关键：多层没建起来或没按规则绑定。
+
+推荐的渲染结构（Godot）：
+
+CharacterRoot (Node2D)
+  ├─ ShadowSprite   (AnimatedSprite2D)   z = 0
+  ├─ BodySprite     (AnimatedSprite2D)   z = 1
+  ├─ ClothesSprite  (AnimatedSprite2D)   z = 2 (可多个slot)
+  ├─ WeaponSprite   (AnimatedSprite2D)   z = 3
+  └─ EffectSpawner  (Node2D)             用来生成临时特效
+
+
+每一层都：
+
+同步 actionId、heading、播放进度（或者简单做：统一重置到相同动画名并同时 play）
+
+Anchor/offset 用你 texture meta 的 spr_anchor_x/y 来定位（每帧设置或用 shader/transform）
+
+如何处理 effect（109.effect 与 ]213）——建议统一成“触发器系统”
+1）帧内 ]213：在播放到该帧时触发
+
+你已经在贴的旧 BuildFromSequence 里写过 spr_effect_ids meta，这很对。
+
+最佳做法：
+
+Provider 在每帧 texture 上写 spr_effect_ids
+
+Visuals 的 AnimatedSprite 在 frame_changed 信号里读取当前帧 texture meta：
+
+如果有 spr_effect_ids，就 spawn 对应 effect gfx 的临时 AnimatedSprite2D 播放一次
+
+effect 的位置跟随角色（self），或根据规则跟随 target（如果未来支持）
+
+2）109.effect(4 219)：属于“事件触发”
+
+它不是“帧内”，而是“某个事件完成后/命中后”触发。
+建议解析成：
+
+OnEventEffect { EventType = 4, EffectGfx = 219 }
+
+
+触发时机应由战斗/技能系统通知 Visuals，例如：
+
+projectile 命中 -> Visuals.PlayEffect(219, targetPos)
+
+动画播放完毕 / 攻击判定时刻 -> Visuals.PlayEffect(219, target)
+
+这类不要塞进 Provider 的帧构建里，否则会把“逻辑事件”硬编码进美术播放。
+
+现在回到 734：为什么你当前“单层 provider”会导致完全不显示？
+
+你给的日志里：
+
+734 的 sequence 找到了（seqFrames=6）
+
+PrepareFrameData 算出来 fileAct0=9 frameIdx0=5 offset=1（看起来也合理）
+
+但是最后 builtFrames=0
+
+这说明 _pakLoader.GetImage(734, fileAct, frameIdx) 返回了 null。
+
+既然你强调“734 有完整图片”，那真正可疑点就只剩两类：
+
+可疑点 1：SpriteId / gfxId 取图前缀用错了
+
+你的代码取图用的是：
+
+int mappedId = (sprDef != null) ? sprDef.SpriteId : gfxId;
+Image img = _pakLoader.GetImage(mappedId, fileAct, frameIdx, ...)
+
+
+如果 734 的 sprDef.SpriteId 并不等于 734（例如 spriteId=216 或别的），你就会去 pak 里找 216-9-5 而不是 734-9-5。
+
+而你日志里输出的是：
+
+[Visual-Build] gfx=734 finalAct=3 -> fileAct0=9 ...
+
+
+注意：你日志把 gfx={mappedId} 打印成了 734 ——说明 sprDef.SpriteId 在你的实现里可能就是 734，或者你打印用的是 gfxId 不是 mappedId（这点要核对你日志的变量来源）。
+
+这里是“立刻能修”的关键诊断：
+
+在 _pakLoader.GetImage(...) 失败时，打印你最终寻址的三元组：
+
+mappedId
+
+fileAct
+
+frameIdx
+
+然后用 Pak 索引确认是否存在该 key
+
+只要把 PakLoader 增加一个 HasFile(gfx, act, frame) 或 debug dump，就能一枪命中。
+
+可疑点 2：heading offset 规则与你的 list 不一致
+
+你对所有 seq.DirectionCount==1 的情况一律认为 8 方向，并计算 offset：
+
+int effectiveDirCount = (seq.DirectionCount == 0) ? 0 : 8;
+int fileOffset = ListSprLoader.GetFileOffset(heading, effectiveDirCount);
+
+
+但如果 734 的打包规则不是你现在的 offset 映射（比如它的方向文件排列跟 1.38 逻辑不同），你就会把 fileAct 算错，导致找不到文件。
+
+不过你给的 list 里 3.Breath(1 6,8.5:7 8.0:7 ...)
+8.x 这类 actionId 看起来确实是“按方向偏移后得到的实际文件 action”，你的 offset 策略理论上是对的。
+
+所以最优先怀疑仍然是 mappedId（SpriteId）前缀或 pak 命名规则。
+
+我建议你确认的“最小可执行修复路线”（按顺序，最省时间）
+第 1 步（立刻定位 734 为啥取不到）
+
+在 PrepareFrameData 里，当 img == null 时加一条极少量日志（只对某个 gfx，比如 734）：
+
+if (img == null && mappedId == 734) {
+  GD.PrintErr($"[PAK-MISS] gfx={mappedId} fileAct={fileAct} frame={fInfo.FrameIdx} heading={heading} offset={fileOffset}");
+}
+
+
+如果你怕刷屏，只打印第一帧即可。
+
+这一步会把问题收敛成两类：
+
+pak 里没有这个 key（索引缺失 / 命名不同）
+
+你的 mappedId/fileAct/frame 算错了（SpriteId 或 offset）
+
+第 2 步（把多层系统正式落地）
+
+即使 734 body 修好，weapon/clothes/shadow/effect 仍需要系统化。
+所以建议并行推进：
+
+ListSprLoader 输出 ShadowGfx / WeaponGfxIds / Clothes
+
+Visuals 构建多层 AnimatedSprite2D
+
+Provider 继续只负责“某一层的 frames”
+
+第 3 步（把 ]213 与 109.effect 统一）
+
+]213：帧内触发（frame_changed）
+
+109.effect：事件触发（命中/结束）
+
+你要我“有序的更新方案，让你确认”——我给你一个版本化里程碑
+V1：只修 734 body 能显示（不做换装叠加）
+
+加 PAK-MISS 定位
+
+修正 mappedId / offset / fileAct 使 734 能取到图
+
+✅ 你能立刻看到法师 body 出现
+
+V2：加 shadow 层（101.shadow）
+
+Visuals 增加 ShadowSprite 节点
+
+从 sprDef.ShadowGfxId 取 frames，和 body 同步播放
+
+✅ 阴影正确出现
+
+V3：加 weapon / clothes 叠加层（106.weapon / 105.clothes）
+
+Visuals 增加 WeaponSprite / ClothesSprite（可多个slot）
+
+GameEntity 根据装备/状态选择当前 weaponGfxId / clothesGfxId
+
+同步 action/heading 与 body
+
+✅ 法师换武器能显示武器层；DK 换装能显示衣服层
+
+V4：加帧内特效 ]213
+
+ListSprLoader 把 ]xxx 解析进 frameInfo.EffectIds
+
+Provider 写 spr_effect_ids
+
+Visuals 在 frame_changed spawn 特效
+
+✅ necromancer attack 播放到 ]213 时会喷出 give earth
+
+V5：加事件特效 109.effect
+
+战斗/技能系统在命中/结束时调用 PlayEffect(effectGfx, position)
+
+不与 Provider 耦合
+
+✅ energy bolt 命中后播放 219
+
+你现在让我“检查 213 定义 + 设计方案”——结论
+
+]213 的含义：在动作播放过程中触发 213 动画（很像“附带魔法/地面效果”）
+
+#213 自己是一个 effect gfx（0.fire），属于独立播放对象
+
+最佳实现就是我上面 V4：帧内触发器系统（meta + frame_changed）
+
+最后：我需要你贴一段“PakLoader 的索引命名规则”或 sprDef.SpriteId 的实际值吗？
+
+我不会让你再“确认一堆问题”，但要把 734 当场修掉，只差一个硬信息：
+
+你的 pak 文件名/索引 key 到底是 gfxId-action-frame 还是 spriteId-action-frame？
+你代码里用的是 sprDef.SpriteId，但你日志显示用起来像 gfxId。
+
+你不想再来回试，我建议你直接做这个单行验证：
+
+在 734 build 时打印：
+
+GD.PrintErr($"[DBG-734] gfxId={gfxId} spriteId={(sprDef!=null?sprDef.SpriteId:-999)} mappedId={mappedId}");
+
+
+只要这一行，你就能立刻知道是不是 SpriteId 前缀造成 pak miss。
+
+如果你同意上面的“V1~V5 里程碑方案”，我下一条消息会给你：
+
+734 立刻定位+修复的代码补丁（最小改动）
+
+ListSprLoader 扩展字段的结构
+
+Visuals 多层叠加节点的同步实现要点（Godot 4）
+
+109.effect 与 ]213 的统一触发器实现
+
+
+
+
+734 (Mage Male) 及类似角色（死亡骑士）的正确渲染逻辑是：层级 (Z-Index)组件数据来源行为逻辑Layer 0 (底)Shadow (阴影)101.shadow(id)始终跟随角色，播放与本体相同的动作（或特定阴影动作）。Layer 1 (中)Body (身体)GfxId (如 734)基础素体。对于 734，无论拿什么武器，身体永远是空手的动作。Layer 2 (上)Clothes (衣服)105.clothes(list)(可选) 覆盖在身体上的防具层。Layer 3 (顶)Weapon (武器)106.weapon(list)关键层。根据装备的武器类型，从列表中选一个 Gfx 叠加在身体上。特效触发逻辑：事件特效 (109.effect): 如魔法命中后触发。属于逻辑层触发。帧特效 (]213): 动作播放到特定帧时触发。属于视觉层触发。2. 最佳修复方案 (Best Practice)我们需要按顺序升级底层数据解析，然后向上层提供数据。第一步：升级 ListSprLoader.cs (数据层)拆分 Metadata：将 105 (Clothes) 和 106 (Weapons) 彻底分离。新增 Effect：解析 109.effect。结构化定义：在 SprDefinition 中增加 Weapons 和 EventEffects 字段。第二步：升级 CustomCharacterProvider.cs (服务层)提供 GetWeaponGfxId(baseGfx, weaponType) 接口。提供 GetShadowGfxId(baseGfx) 接口。第三步：升级 GameEntity.Visuals.cs (表现层)实例化 _shadowSprite 和 _weaponSprite。在 UpdateVisuals 中同时驱动 3 个 Sprite 播放相同的动作 (Action) 和方向 (Heading)。3. 代码落地：升级 ListSprLoader.cs这是基础。必须先让加载器识别出 weapon 和 shadow 的区别。请使用以下代码覆盖 Client/Utility/ListSprLoader.cs。修改亮点：SprDefinition：新增 Weapons (List) 和 EventEffects (Dictionary)。ParseMetadata：106: 独立解析为 Weapons。109: 解析为 EventEffects（支持 4 219 这种 事件ID->动画ID 的映射）。105: 专用于 Clothes。C#using Godot;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+
+namespace Client.Utility
+{
+    // =============================================================
+    // [1] 数据模型定义
+    // =============================================================
+
+    public sealed class ResolvedSprFrame
+    {
+        public int GfxId;
+        public int SequenceId;
+        public int Heading;
+        public int SourceActionIdA;
+        public int FrameIdxB;
+        public int DurationUnitC;
+        public float RealDuration;
+        public int DirectionOffset;
+        public int FileActionIndex;
+        public string SprFileName = "";
+        public bool IsKeyFrame;
+        public bool FlipX;
+        public int RedirectId = -1;
+        public List<int> SoundIds = new List<int>();
+        public List<int> EffectIds = new List<int>();
+
+        public override string ToString() => $"Spr={SprFileName} FileA={FileActionIndex} B={FrameIdxB} Off={DirectionOffset}";
+    }
+
+    public sealed class ResolvedSprSequence
+    {
+        public int GfxId;
+        public int SequenceId;
+        public int Heading;
+        public string SequenceName = "";
+        public int DirectionCount;
+        public List<ResolvedSprFrame> Frames = new List<ResolvedSprFrame>();
+        public HashSet<string> UniqueFiles = new HashSet<string>();
+    }
+
+    public class SprFrame
+    {
+        public int ActionId;
+        public int FrameIdx;
+        public int DurationUnit;
+        public float RealDuration;
+        public List<int> SoundIds = new List<int>();
+        public List<int> EffectIds = new List<int>();
+        public bool IsKeyFrame;
+        public bool FlipX;
+        public int RedirectId = -1;
+    }
+
+    public class SprActionSequence
+    {
+        public int ActionId;
+        public string Name;
+        public int DirectionCount;
+        public List<SprFrame> Frames = new List<SprFrame>();
+    }
+
+    public class SprDefinition
+    {
+        public int GfxId;
+        public int SpriteId;
+        public string Name;
+        public Dictionary<int, SprActionSequence> Actions = new Dictionary<int, SprActionSequence>();
+        
+        // --- 核心元数据 ---
+        public int ShadowId = -1;       // 101.shadow
+        public int Type = 0;            // 102.type
+        public int Attr = 0;            // 104.attr
+        
+        // --- 换装/分层数据 ---
+        public List<int> Clothes = new List<int>(); // 105.clothes (衣服层)
+        public List<int> Weapons = new List<int>(); // 106.weapon (武器层) [NEW]
+        
+        // --- 事件特效 ---
+        // Key: EventType (如 4), Value: EffectGfxId (如 219)
+        public Dictionary<int, int> EventEffects = new Dictionary<int, int>(); // 109.effect [NEW]
+
+        public int FlyingHeight = 0;
+        public int Framerate = 24;
+        public int Stride = 0;
+    }
+
+    // =============================================================
+    // [2] 核心解析器
+    // =============================================================
+    public static class ListSprLoader
+    {
+        public const float BASE_SPEED_UNIT = 40.0f;
+        private static readonly Dictionary<int, SprDefinition> _cache = new();
+
+        public static int GetFileOffset(int heading, int directionCount)
+        {
+            if (directionCount <= 1) return 0;
+            // 严格遵循服务器方向定义：0=N, 1=NE... 6=W, 7=NW
+            // 客户端资源通常以 6(W) 或 7(NW) 为基准，这里沿用你验证过的映射
+            int offset;
+            switch (heading)
+            {
+                case 7: offset = 0; break;
+                case 0: offset = 1; break;
+                case 1: offset = 2; break;
+                case 2: offset = 3; break;
+                case 3: offset = 4; break;
+                case 4: offset = 5; break;
+                case 5: offset = 6; break;
+                case 6: offset = 7; break;
+                default: offset = 0; break;
+            }
+            return offset;
+        }
+
+        public static SprDefinition Get(int gfxId)
+        {
+            if (_cache.TryGetValue(gfxId, out var def)) return def;
+            return null;
+        }
+
+        public static void PrintDebugActionList(int gfxId)
+        {
+            if (_cache.TryGetValue(gfxId, out var def))
+            {
+                string keys = string.Join(", ", def.Actions.Keys);
+                string weps = string.Join(",", def.Weapons);
+                GD.Print($"[ListSpr-Check] Gfx={gfxId} Actions:[{keys}] Shadow={def.ShadowId} Weapons:[{weps}]");
+            }
+            else
+            {
+                GD.Print($"[ListSpr-Check] ❌ Gfx={gfxId} NOT FOUND!");
+            }
+        }
+
+        public static void Load(string listPath)
+        {
+            if (!Godot.FileAccess.FileExists(listPath)) return;
+
+            try
+            {
+                _cache.Clear();
+                byte[] fileBytes = Godot.FileAccess.GetFileAsBytes(listPath);
+                string content = Encoding.UTF8.GetString(fileBytes);
+
+                using (StringReader reader = new StringReader(content))
+                {
+                    string line;
+                    SprDefinition currentDef = null;
+
+                    while ((line = reader.ReadLine()) != null)
+                    {
+                        line = line.Trim();
+                        if (string.IsNullOrWhiteSpace(line)) continue;
+
+                        if (line.StartsWith("#"))
+                        {
+                            currentDef = ParseHeader(line);
+                            if (currentDef != null) _cache[currentDef.GfxId] = currentDef;
+                        }
+
+                        if (currentDef == null) continue;
+                        ParseLineBody(currentDef, line);
+                    }
+                }
+                GD.Print($"[ListSpr] ✅ 解析完成，加载 {_cache.Count} 条定义。");
+                
+                // 验证关键角色
+                GD.Print("--------- [Diagnostic] ListSpr Post-Load Check ---------");
+                PrintDebugActionList(734); // Mage Male (Verify Weapons)
+                PrintDebugActionList(240); // Death Knight
+                GD.Print("--------------------------------------------------------");
+            }
+            catch (Exception ex)
+            {
+                GD.PrintErr($"[ListSpr] ❌ 解析崩溃: {ex.Message}");
+            }
+        }
+
+        private static SprDefinition ParseHeader(string line)
+        {
+            try
+            {
+                var parts = line.Split(new[] { ' ', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+                if (parts.Length < 2) return null;
+
+                string idStr = parts[0].Substring(1);
+                int id = int.Parse(idStr);
+                int finalGfxId = id;
+                string secondCol = parts[1];
+
+                if (secondCol.Contains("="))
+                {
+                    var kv = secondCol.Split('=');
+                    if (kv.Length > 1 && int.TryParse(kv[1], out int rightVal)) finalGfxId = rightVal;
+                }
+
+                string name = (parts.Length > 2 && !parts[2].Contains(".")) ? parts[2] : $"Role_{id}";
+
+                return new SprDefinition { GfxId = id, SpriteId = finalGfxId, Name = name };
+            }
+            catch { return null; }
+        }
+
+        private static void ParseLineBody(SprDefinition def, string line)
+        {
+            var matches = Regex.Matches(line, @"(\d+)\.([a-zA-Z0-9_\s]+)\(([^)]+)\)");
+            foreach (Match m in matches)
+            {
+                if (!m.Success) continue;
+                int id = int.Parse(m.Groups[1].Value);
+                string name = m.Groups[2].Value.Trim();
+                string content = m.Groups[3].Value.Trim();
+
+                if (id < 100) ParseAction(def, id, name, content);
+                else ParseMetadata(def, id, content);
+            }
+        }
+
+        // [核心修改] 元数据解析逻辑升级
+        private static void ParseMetadata(SprDefinition def, int id, string content)
+        {
+            try
+            {
+                switch (id)
+                {
+                    case 101: def.ShadowId = int.Parse(content); break;
+                    case 102: def.Type = int.Parse(content); break;
+                    case 104: def.Attr = int.Parse(content); break;
+                    
+                    // 105: Clothes (衣服)
+                    case 105:
+                        ParseIdList(content, def.Clothes);
+                        break;
+
+                    // 106: Weapon (武器) - [NEW] 独立解析
+                    case 106:
+                        ParseIdList(content, def.Weapons);
+                        break;
+
+                    // 109: Effect (事件特效) - [NEW] 解析 "Type GfxId" 对
+                    // 例: 109.effect(4 219) -> Event 4 triggers Gfx 219
+                    case 109:
+                        var effParts = content.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                        if (effParts.Length >= 2)
+                        {
+                            if (int.TryParse(effParts[0], out int evtId) && int.TryParse(effParts[1], out int effGfx))
+                            {
+                                def.EventEffects[evtId] = effGfx;
+                            }
+                        }
+                        break;
+
+                    case 110: def.Framerate = int.Parse(content); break;
+                    case 111: def.Stride = int.Parse(content); break;
+                }
+            }
+            catch { }
+        }
+
+        private static void ParseIdList(string content, List<int> targetList)
+        {
+            var nums = content.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            if (nums.Length > 0)
+            {
+                // 兼容 "Count ID1 ID2..." 格式：如果第一个数等于后面数量，则跳过第一个数
+                int startIdx = (nums.Length > 1 && int.Parse(nums[0]) == nums.Length - 1) ? 1 : 0;
+                for (int i = startIdx; i < nums.Length; i++)
+                    if (int.TryParse(nums[i], out int c)) targetList.Add(c);
+            }
+        }
+
+        private static void ParseAction(SprDefinition def, int actId, string name, string content)
+        {
+            var split = content.Split(',');
+            if (split.Length < 2) return;
+
+            var headerNums = split[0].Trim().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            if (headerNums.Length < 1) return;
+
+            // 1代表有向(8方向)，0代表无向
+            int rawDirFlag = int.Parse(headerNums[0]);
+            int dirCount = (rawDirFlag == 1) ? 8 : 1; 
+
+            SprActionSequence action = new SprActionSequence
+            {
+                ActionId = actId,
+                Name = name,
+                DirectionCount = dirCount
+            };
+
+            string frameStr = split[1].Trim();
+            var rawTokens = frameStr.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            foreach (var token in rawTokens)
+            {
+                SprFrame frame = ParseSingleFrame(token);
+                if (frame != null) action.Frames.Add(frame);
+            }
+
+            def.Actions[actId] = action;
+        }
+
+        private static SprFrame ParseSingleFrame(string token)
+        {
+            try
+            {
+                SprFrame frame = new SprFrame();
+                string body = token;
+
+                if (body.Contains("!")) { frame.IsKeyFrame = true; body = body.Replace("!", ""); }
+                if (body.Contains(">")) { frame.FlipX = true; body = body.Replace(">", ""); }
+
+                int redirectIdx = body.IndexOf('<');
+                if (redirectIdx != -1)
+                {
+                    string redStr = body.Substring(redirectIdx + 1);
+                    string numStr = ExtractLeadingNumber(redStr);
+                    if (int.TryParse(numStr, out int rId)) frame.RedirectId = rId;
+                    body = body.Substring(0, redirectIdx);
+                }
+
+                ExtractAllBracketNumbers(body, ']', frame.EffectIds, out body);
+                ExtractAllBracketNumbers(body, '[', frame.SoundIds, out body);
+
+                int dotIdx = body.IndexOf('.');
+                int colonIdx = body.IndexOf(':');
+                if (dotIdx == -1) return null;
+
+                string aStr = body.Substring(0, dotIdx);
+                if (!int.TryParse(aStr, out int aVal)) return null;
+                frame.ActionId = aVal;
+
+                if (colonIdx != -1 && colonIdx > dotIdx + 1)
+                {
+                    string bStr = body.Substring(dotIdx + 1, colonIdx - dotIdx - 1);
+                    if (int.TryParse(ExtractLeadingNumber(bStr), out int bVal)) frame.FrameIdx = bVal;
+                }
+                else
+                {
+                    string bStr = body.Substring(dotIdx + 1);
+                    if (int.TryParse(ExtractLeadingNumber(bStr), out int bVal)) frame.FrameIdx = bVal;
+                }
+
+                if (colonIdx != -1 && colonIdx + 1 < body.Length)
+                {
+                    string cStr = body.Substring(colonIdx + 1);
+                    if (int.TryParse(ExtractLeadingNumber(cStr), out int cVal))
+                    {
+                        frame.DurationUnit = cVal;
+                        frame.RealDuration = cVal * BASE_SPEED_UNIT;
+                    }
+                }
+                return frame;
+            }
+            catch { return null; }
+        }
+
+        private static string ExtractLeadingNumber(string s)
+        {
+            string res = "";
+            foreach (char c in s) { if (char.IsDigit(c)) res += c; else break; }
+            return res;
+        }
+
+        private static void ExtractAllBracketNumbers(string bodyIn, char bracketChar, List<int> outIds, out string bodyOut)
+        {
+            string body = bodyIn;
+            while (true)
+            {
+                int idx = body.IndexOf(bracketChar);
+                if (idx == -1) break;
+                string tail = body.Substring(idx + 1);
+                string numStr = ExtractLeadingNumber(tail);
+                if (int.TryParse(numStr, out int id)) outIds.Add(id);
+                int removeLen = 1 + numStr.Length;
+                body = body.Remove(idx, Math.Min(removeLen, body.Length - idx));
+            }
+            bodyOut = body;
+        }
+
+        public static List<int> GetAllGfxIds()
+        {
+            var list = new List<int>(_cache.Keys);
+            list.Sort();
+            return list;
+        }
+    }
+}

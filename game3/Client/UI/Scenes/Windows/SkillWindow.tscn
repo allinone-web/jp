@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://o56iryppfktr"]
+
+[ext_resource type="PackedScene" uid="uid://dip4ct7bxn0np" path="res://Client/UI/Scenes/BaseWindow.tscn" id="1_qtbor"]
+[ext_resource type="Script" path="res://Client/UI/Scripts/SkillWindow.cs" id="2_a0t46"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2vco"]
+
+[node name="SkillWindow" instance=ExtResource("1_qtbor")]
+script = ExtResource("2_a0t46")
+
+[node name="TitleLabel" parent="." index="2"]
+text = " SKILL"
+
+[node name="Scroll" type="ScrollContainer" parent="ContentContainer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="TabContainer" type="TabContainer" parent="ContentContainer/Scroll" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_h2vco")

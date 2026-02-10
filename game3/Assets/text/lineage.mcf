@@ -1,0 +1,134 @@
+System Setting Begin
+	Login=0;
+	Prince=1;
+	Knight=2;
+	Elf=3;
+	Magician=4;
+	Credits=5;
+	Hunting=6;
+	PlayrtKilling=7;
+	PledgeWar=8;
+	PledgeWin=9;
+	PledgeLose=10;
+	SeigeWar=8;
+	SeigeWin=9;
+	SeigeOccupy=21;
+	SeigeFail=10;
+	Death=5;
+	Fanfare=26;
+SystemMenu Exit
+
+Map Setting Begin
+	Numbers of Setting = 41;
+	Default Music = 32;
+
+	Map:0
+		music=12;
+	MAP:4	// dangerous ruin
+		music=39;
+		Begin x=32708, y=32617;
+		End x=32915, y=32730;
+	MAP:4	// kent
+		music=14;
+		Begin x=33031, y=32718;
+		End x=33086, y=32814;
+	MAP:4	// gludio
+		music=18;
+		Begin x=32516, y=32560;
+		End x=33278, y=33003;
+	MAP:4	// orc
+		music=15;
+		Begin x=32769, y=32247;
+		End x=32854, y=32321;
+	MAP:4	// elf
+		music=16;
+		Begin x=32911, y=32187;
+		End x=33216, y=32543;
+	MAP:4	// woodback
+		music=18;
+		Begin x=32500, y=32997;
+		End x=32910, y=33571;
+	MAP:4	// siver knight town
+		music=18;
+		Begin x=33028, y=33288;
+		End x=33180, y=33430;
+	MAP:4	// windawood desert
+		music=15;
+		Begin x=32724, y=33072;
+		End x=32970, y=33531;
+	MAP:4	// dragon
+		music=19;
+		Begin x=33312, y=32251;
+		End x=33470, y=32418;
+	MAP:4	// giran
+		music=20;
+		Begin x=33338, y=32644;
+		End x=33532, y=32879;
+	MAP:4	// mirror forest
+		music=38;
+		Begin x=33674, y=33057;
+		End x=33791, y=33150;
+	MAP:4	// heine
+		music=23;
+		Begin x=33568, y=33191;
+		End x=33657, y=33469;
+	MAP:4	// heine forest
+		music=40;
+		Begin x=33280, y=33087;
+		End x=33792, y=33535;
+	MAP:4
+		music=18;
+    MAP:5
+		music=37;
+    MAP:6
+		music=37;
+    MAP:14
+		music=36;
+    MAP:15
+		music=35;
+    MAP:16
+		music=16;
+    MAP:17
+		music=16;
+    MAP:29
+		music=35;
+    MAP:37
+		music=38;
+    MAP:52
+		music=35;
+	MAP:57
+		music=40;
+	MAP:58
+		music=40;
+	MAP:59
+		music=36; 
+	MAP:63
+		music=24;
+    MAP:64
+        music=35;
+	MAP:16384
+		music=23;
+	MAP:16896
+		music=23;
+	MAP:17408
+		music=23;
+	MAP:17920
+		music=23;
+	MAP:18432
+		music=23;
+	MAP:18944
+		music=23;
+	MAP:19456
+		music=23;
+	MAP:19968
+		music=23;
+	MAP:20480
+		music=23;
+	MAP:20992
+		music=23;
+	MAP:21504
+		music=23;
+	MAP:22016
+		music=23;
+
+Map Setting Exit

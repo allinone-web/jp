@@ -1,0 +1,5374 @@
+Source	ItemID	kText	cText
+desc	$0	장검	長劍
+desc	$1	도끼	斧
+desc	$2	등잔	燈
+desc	$3	양손검	雙手劍
+desc	$4	아데나	金幣
+desc	$5	청소부	警衛
+desc	$6	괴물 눈	漂浮之眼
+desc	$7	해골	骷髏
+desc	$8	슬라임	史萊姆
+desc	$9	무장	揮舞
+desc	$10	켜짐	打開
+desc	$11	기름 없음	無油
+desc	$12	요정족 단검	精靈匕首
+desc	$13	오크족 단검	歐西斯匕首
+desc	$14	아탐	亞連
+desc	$15	스칼펠	小刀
+desc	$16	일본도	武士刀
+desc	$17	싸울아비 장검	瑟魯基之劍
+desc	$18	늑대인간	狼人
+desc	$19	장로	長者
+desc	$20	철퇴	釘錘
+desc	$21	문	門
+desc	$22	시체	屍體
+desc	$23	고기	肉
+desc	$24	활	弓
+desc	$25	창	矛
+desc	$26	체력 회복제	治癒藥水
+desc	$27	단풍나무 막대	楓木魔杖
+desc	$28	소나무 막대	松木魔杖
+desc	$29	오우크 막대	橡木魔杖
+desc	$30	`젤고 머' 주문서	對盔甲施法的卷軸
+desc	$31	`쥬드 오크 야크' 주문서	毀滅盔甲的卷軸
+desc	$32	`엔알 9' 주문서	
+desc	$33	`지자자 조자자 주자자' 주문서	
+desc	$34	`프라탸바야' 주문서	解除詛咒的卷軸
+desc	$35	`데이엔 푸엘스' 주문서	對武器施法的卷軸
+desc	$36	`렙 게스 벤 제아' 주문서	
+desc	$37	`프리루체니' 주문서	
+desc	$38	`엘빕 일로' 주문서	
+desc	$39	`베르 예드 호레' 주문서	傳送回家的卷軸
+desc	$40	`벤자르 보르가브' 주문서	瞬間移動卷軸
+desc	$41	`타르' 주문서	
+desc	$42	`윰 윰' 주문서	
+desc	$43	`케르노드 웰' 주문서	鑑定卷軸
+desc	$44	`엘람 에보우' 주문서	
+desc	$45	`두암 스나트' 주문서	
+desc	$46	`안도바 베가린' 주문서	
+desc	$47	`베 포르브리데르네' 주문서	
+desc	$48	`핵켐 무쉬' 주문서	
+desc	$49	`벨록스 넵' 주문서	復活卷軸
+desc	$50	`푸비 블렛치' 주문서	
+desc	$51	`테모브' 주문서	
+desc	$52	`가르벤 더' 주문서	
+desc	$53	`리드 미' 주문서	
+desc	$54	`키르제' 주문서	
+desc	$55	확인 주문서	鑑定卷軸
+desc	$56	돌 골렘	高崙石頭怪
+desc	$57	좀비	人形殭屍
+desc	$58	난쟁이	侏儒
+desc	$59	오크	妖魔
+desc	$60	전투 도끼	戰斧
+desc	$61	화살	箭
+desc	$62	바르디쉐	巴迪須
+desc	$63	빌귀사름	柴刀
+desc	$64	요정족 활	精靈弓
+desc	$65	오크족 활	歐西斯弓
+desc	$66	넓은 검	闊劍
+desc	$67	양초	蠟燭
+desc	$68	당근	胡蘿蔔
+desc	$69	몽둥이	木棒
+desc	$70	단검	匕首
+desc	$71	벡드코빈	貝卡合金
+desc	$72	달걀	蛋
+desc	$73	포챠드	法丘
+desc	$74	도리깨	弗萊爾
+desc	$75	넓은 창	闊矛
+desc	$76	귀사름	吉薩
+desc	$77	미늘창	戟
+desc	$78	뿔나팔	號角
+desc	$79	투창	標槍
+desc	$80	열쇠	鑰匙
+desc	$81	기병창	槍
+desc	$82	레몬	檸檬
+desc	$83	루선해머	露西錘
+desc	$84	모닝스타	流星錘
+desc	$85	오렌지	橘子
+desc	$86	팬케익	烤薄餅
+desc	$87	파르티잔	帕提森
+desc	$88	지팡이	柺杖
+desc	$89	란서	倫瑟
+desc	$90	반지	戒指
+desc	$91	룬스워드	北歐神劍
+desc	$92	언월도	彎刀
+desc	$93	은 화살	銀箭
+desc	$94	난쟁이족 도끼	侏儒鐵斧
+desc	$95	요정족 창	精靈之矛
+desc	$96	오크족 창	歐西斯之矛
+desc	$97	난쟁이족 검	小侏儒短劍
+desc	$98	요정족 검	精靈短劍
+desc	$99	오크족 검	歐西斯短劍
+desc	$100	짧은 검	短劍
+desc	$101	양날 단검	小劍
+desc	$102	삼지창	三叉戟
+desc	$103	유니콘 뿔	獨角獸之角
+desc	$104	불지	摩具
+desc	$105	장궁	尤米弓
+desc	$106	사과	蘋果
+desc	$107	바나나	香蕉
+desc	$108	행운 과자	幸運餅乾
+desc	$109	크림 파이	奶油派
+desc	$110	엘븐 와퍼	精靈餅乾
+desc	$111	워해머	戰錘
+desc	$112	군터의 집	甘特之屋
+desc	$113	게렝의 집	吉倫之家
+desc	$114	통나무 집	旅社日誌
+desc	$115	마을	村莊
+desc	$116	가죽 갑옷	小藤甲
+desc	$117	착용	使用中
+desc	$118	요정족 가죽 투구	精靈皮盔
+desc	$119	가죽 모자	皮帽
+desc	$120	오크족 투구	歐西斯頭盔
+desc	$121	철 해골 모자	鐵殼帽
+desc	$122	난쟁이족 철 투구	侏儒鐵盔
+desc	$123	딱딱한 모자	硬帽
+desc	$124	중절모	軟呢帽
+desc	$125	고깔	圓帽
+desc	$126	고깔	小丑帽
+desc	$127	찌그러진 냄비	凹損的壺
+desc	$128	투구	鋼盔
+desc	$129	깃털 투구	羽毛盔
+desc	$130	광휘의 투구	光輝之盔
+desc	$131	에칭된 투구	蝕刻盔
+desc	$132	반대 성향의 투구	對立之盔
+desc	$133	새깃 장식 투구	毛冠盔
+desc	$134	정신감응 투구	心靈之盔
+desc	$135	복면 투구	全罩式頭盔
+desc	$136	회색룡 비늘 갑옷	灰色龍鱗甲
+desc	$137	화룡 비늘 갑옷	火龍鱗盔甲
+desc	$138	풍룡 비늘 갑옷	風龍鱗盔甲
+desc	$139	주황룡 비늘 갑옷	朱紅龍鱗甲
+desc	$140	흑룡 비늘 갑옷	黑龍鱗甲
+desc	$141	수룡 비늘 갑옷	水龍鱗盔甲
+desc	$142	지룡 비늘 갑옷	地龍鱗盔甲
+desc	$143	황룡 비늘 갑옷	黃龍鱗甲
+desc	$144	회색룡 비늘	灰龍鱗
+desc	$145	화룡 비늘	火龍鱗
+desc	$146	풍룡 비늘	風龍鱗
+desc	$147	주황룡 비늘	朱紅龍鱗
+desc	$148	흑룡 비늘	黑龍鱗
+desc	$149	수룡 비늘	水龍鱗
+desc	$150	지룡 비늘	地龍鱗
+desc	$151	황룡 비늘	黃龍鱗
+desc	$152	판금 갑옷	金屬盔甲
+desc	$153	수정 갑옷	水晶盔甲
+desc	$154	청동 판금 갑옷	青銅盔甲
+desc	$155	미늘 갑옷	藤甲
+desc	$156	띠 갑옷	皮甲
+desc	$157	난쟁이족 미쓰릴 코트	侏儒之米索莉外套
+desc	$158	요정족 미쓰릴 코트	精靈之米索莉外套
+desc	$159	사슬 갑옷	鏈甲
+desc	$160	오크족 사슬 갑옷	歐西斯鏈甲
+desc	$161	조악한 사슬 갑옷	粗鏈甲
+desc	$162	비늘 갑옷	鱗甲
+desc	$163	징박힌 가죽 갑옷	銀釘皮甲
+desc	$164	고리 갑옷	環甲
+desc	$165	오크족 고리 갑옷	歐西斯環甲
+desc	$166	조악한 고리 갑옷	粗環甲
+desc	$167	가죽 재킷	皮夾克
+desc	$168	티셔츠	T恤
+desc	$169	미이라 붕대	木乃伊繃帶
+desc	$170	요정족 망토	精靈斗篷
+desc	$171	빛바랜 망토	褪色斗篷
+desc	$172	오크족 망토	歐西斯斗篷
+desc	$173	조잡한 망토	粗糙的小斗蓬
+desc	$174	난쟁이족 망토	侏儒斗篷
+desc	$175	모자달린 망토	連身的斗蓬
+desc	$176	기름 망토	油布斗篷
+desc	$177	미끄러운 망토	光滑的斗蓬
+desc	$178	보호 망토	保護者斗篷
+desc	$179	누더기 망토	破爛的斗篷
+desc	$180	투명 망토	隱身斗篷
+desc	$181	오페라 망토	歌劇斗篷
+desc	$182	마법 망토	抗魔法斗篷
+desc	$183	장식 망토	裝飾斗篷
+desc	$184	치환 망토	位移斗篷
+desc	$185	천 조각	布塊
+desc	$186	작은 방패	小盾牌
+desc	$187	요정족 방패	精靈盾牌
+desc	$188	청록 방패	青綠斗篷
+desc	$189	우럭하이 방패	阿克海盾牌
+desc	$190	흰손잡이 방패	白手盾牌
+desc	$191	오크족 방패	歐西斯盾牌
+desc	$192	붉은 눈 방패	紅眼盾牌
+desc	$193	큰 방패	大盾牌
+desc	$194	난쟁이족 둥근 방패	侏儒圓盾
+desc	$195	큰 둥근 방패	大圓盾
+desc	$196	반사 방패	反射之盾
+desc	$197	반짝이는 은 방패	銀盾
+desc	$198	가죽 장갑	皮手套
+desc	$199	낡은 장갑	舊手套
+desc	$200	실수 장갑	探險用長手套
+desc	$201	덧댄 장갑	填補手套
+desc	$202	힘 장갑	權力的長手套
+desc	$203	승마 장갑	騎馬手套
+desc	$204	민첩 장갑	靈巧的長手套
+desc	$205	펜싱 장갑	劍術手套
+desc	$206	짧은 부츠	短統靴
+desc	$207	걷기용 신	步行鞋
+desc	$208	철 신	鐵鞋
+desc	$209	딱딱한 신	硬皮靴
+desc	$210	긴 부츠	長靴
+desc	$211	기병용 군화	長統馬靴
+desc	$212	쾌속 부츠	快速靴
+desc	$213	전투화	戰鬥靴
+desc	$214	물위 걷기 부츠	防水靴
+desc	$215	정글 부츠	叢林靴
+desc	$216	점프 부츠	跳躍靴
+desc	$217	하이킹 부츠	旅行靴
+desc	$218	요정족 부츠	精靈靴
+desc	$219	진흙 부츠	泥靴
+desc	$220	실수 부츠	探險靴
+desc	$221	승마용 부츠	騎馬靴
+desc	$222	부양 부츠	飄浮靴
+desc	$223	눈 부츠	雪靴
+desc	$224	셔츠	襯衫
+desc	$225	망토	斗蓬
+desc	$226	갑옷	盔甲
+desc	$227	축복받은	受祝福的
+desc	$228	저주받은	被詛咒的
+desc	$229	소원 막대	希望魔杖
+desc	$230	순간이동 주문서	瞬間移動卷軸
+desc	$231	남은 연료	木炭
+desc	$232	파란 물약	藍色藥水
+desc	$233	비취 물약	翡翠藥水
+desc	$234	초록 물약	綠色藥水
+desc	$235	주홍 물약	橙色藥水
+desc	$236	보라 물약	紫色藥水
+desc	$237	빨간 물약	紅色藥水
+desc	$238	맑은 물약	白色藥水
+desc	$239	불투명 물약	黑色藥水
+desc	$240	경비병	警衛
+desc	$241	순간이동 조종 반지	傳送控制戒指
+desc	$242	눈멀기 물약	失明藥水
+desc	$243	저주 풀기 주문서	解除咀咒的卷軸
+desc	$244	무기 마법 주문서	對武器施法的卷軸
+desc	$245	파랗게	藍色的
+desc	$246	검게	黑色的
+desc	$247	한 순간	一瞬間發出
+desc	$248	잠시	持續發出
+desc	$249	갑옷 마법 주문서	對盔甲施法的卷軸
+desc	$250	진동합니다	震動
+desc	$251	빛납니다	光芒
+desc	$252	은색으로	銀色的
+desc	$253	강렬하게	強烈的
+desc	$254	갑옷 파괴 주문서	毀滅盔甲的卷軸
+desc	$255	고급 체력 회복제	強力治癒藥水
+desc	$256	개구리	青蛙
+desc	$257	부활 주문서	復活卷軸
+desc	$258	괴물 생성 막대	創造怪物魔杖
+desc	$259	결투장	競技場
+desc	$260	변신 막대	變形魔杖
+desc	$261	변신 조종 반지	變形控制戒指
+desc	$262	번개 소환 막대	閃電魔杖
+desc	$263	흑단 막대	烏木魔杖
+desc	$264	속도향상 물약	自我加速藥水
+desc	$265	셸로브	夏洛伯
+desc	$266	오크 전사	妖魔鬥士
+desc	$267	오크 궁수	妖魔弓箭手
+desc	$268	늑대	狼
+desc	$269	판도라	潘朵拉
+desc	$270	군터	甘特
+desc	$271	독수리	鷹
+desc	$272	흑기사	黑騎士
+desc	$273	흑기사 대장	黑騎士隊長
+desc	$274	커츠	克特
+desc	$275	이곳이 '말하는 섬'인가	這裡就是 '說話之島'嗎
+desc	$276	'붉은 기사의 집' 출신의 기사에게서 알아낸 것이니 틀림 없을겁니다.	這消息是從'紅騎士之家'傳出來的,應該沒錯。
+desc	$277	이곳에 폐하께 반기를 들 기회를 노리고 있는 자들이 있다는 정보도 틀림 없는 것 같습니다.	而且居住在這裡的人大多反對統治者所定的法律。
+desc	$278	...하지만 폐하께서도 너무 신경쓰시는 것이 아닌가. 아무리 듀크 데필의 자식이라고는 하지만 애송이 한 놈이 뭘 할 수 있다고...	但是殿下實在是過度反應！一個小孩能作什麼？就算他是杜克的兒子，又怎樣？  
+desc	$279	입을 조심하라. 스스로 폐하에 결정에 대해 토를 달 수 있는 신분이라 생각하는가.	閉嘴。以你的身分怎麼可以質問所下的命令。
+desc	$280	주...죽을 죄를 지었습니다!	長官...當然不是！請原諒我。
+desc	$281	...자, 일단 섬을 한번 돌아보기로 하자. 내 말해두지만 함부로 아무에게나 칼을 대지 말도록 하라.	...那，我們先巡視一下島的情況吧。記住，除非必要不許隨便殺人。
+desc	$282	예!	是！
+desc	$283	일단 섬 주민들과 접촉해서 그럴 듯한 녀석을 색출해 보는 것이 빠를 것 같습니다.	首先接觸島住民後，找出比較可疑的人。
+desc	$284	...그것보다는 우선 군터를 찾아가서 물어보는게 낫지 않을까요?	是不是先找到甘特而且問他比較恰當？
+desc	$285	군터는 폐하께 큰 반감을 가지고 있는 자인데 우리에게 협력 하겠나?	甘特和領主的關係並不是處的很好，為什麼你覺得他會協助我們？
+desc	$286	...이렇게 된 바에야 이 섬에 사는 놈들을 군터도 포함해서 싸그리 죽이고 돌아가는게 어떨까요? 그게 후환도 없고...	為什麼我們不乾脆殺掉甘特和島上其他的人？那麼就不會再留下任何麻煩。
+desc	$287	...내 이전에 말하지 않았는가, 입을 조심하라고. 무고한 자의 피를 흘리는 자는 그 10배를 값아야 할 것이야.	我難道沒有告訴你們說話小心一點？我保證，殺害無辜的人將會遭受到更大的報復。
+desc	$288	...문제는 역시 우리가 찾는 인물이 실제로 이곳에서 두각을 나타내고 있느냐 아니냐인데...	問題是…我們在找的這個人對這裡有任何的影響力嗎？  
+desc	$289	...아니, 그 반대다. 두각을 나타내는 녀석이야말로 폐하께 반기를 들 위험한 놈일 수 있는 것이다. 자, 경계를 게을리 말고 주위를 살피라!	不，這是另外一個方法。如果這裡的某一人對島上的人們有影響力，那麼我們就必須除掉他。現在保持警戒並且散開！
+desc	$290	예!	是！
+desc	$291	탐색의 보고를.	偵查之後必須跟我報告吧。
+desc	$292	예! 현재로써는 특별히 수상한 녀석은 보이지 않습니다.	是！到目前尚未發現可疑的傢伙。
+desc	$293	하지만...이 섬에 있는 사람들은 전체적으로 폐하께 대한 반발 의식이 있는 것 같았습니다.	但是…以我的感覺而言，住在這裡的大部分的住民對殿下有反感。 
+desc	$294	실제로 순찰중 습격을 당할 뻔 한적도 있었습니다.	我們在偵查的時候差點被攻擊。
+desc	$295	'특별히' 수상한 자는 발견하지 못했지만, 바꾸어 말하면 이 섬에 있는 사람들은 전부 어딘가 '조금씩' 수상합니다.	雖然沒有發現“特別”可疑的人，但是總覺得這裡的住民皆有點奇怪。
+desc	$296	흐~음. 결국 이 섬에 대한 경계를 늦출 수 없다는 이야기인가...	嗯。那麼我們必須繼續觀察這裡的情況…
+desc	$297	좋아, 일단 오늘은 이것으로 귀환하기로 한다. 전원 철수!	好，我們今天暫時撤退。所有人，撤退！
+desc	$298	예!	是！
+desc	$299	이 건방진 것들이 어디서...!	真是有種…竟敢攻擊我們！
+desc	$300	...한번 보고 상대방의 실력을 파악하지 못하다니, 불쌍한 자들...	笨蛋。你們根本不知道敵人的能力。
+desc	$301	커헉!	哦！
+desc	$302	...훗, 나를 죽여도...소용 없다...이미 이곳에 반역자들이 있다는 보고는 폐하께 들어가 있어......곧 또다른 토벌대가 올 것이다...	你或許打敗了我，但是我已經通知領主這個島上有背叛者。新的遠征軍很快就會到來。
+desc	$303	수련장	修練場
+desc	$304	발심	巴辛
+desc	$305	지하수련장	地下修練場
+desc	$306	바포메트	巴風特
+desc	$307	금빛 열쇠	黃金鑰匙
+desc	$308	은회색 열쇠	銀鑰匙
+desc	$309	도린	朵琳
+desc	$310	합계:	總計:
+desc	$311	셸로브 발톱	夏洛伯之爪
+desc	$312	붉은 기사의 망토	紅騎士之斗篷
+desc	$313	붉은 기사의 검	紅騎士之劍
+desc	$314	글루디오 영지행 배표	往古魯丁的船票
+desc	$315	말하는 섬행 배표	往說話之島的船票
+desc	$316	해독제	解毒藥水
+desc	$317	구울	食屍鬼
+desc	$318	스파토이	史巴托
+desc	$319	웅골리언트	楊果里恩
+desc	$320	선착장 관리인	港口主人
+desc	$321	...모든 죽은 자들의 주인...	…格蘭肯的…光榮…
+desc	$322	...그랑 카인에게...영광...있으라...	…在所有的亡者之中，他就是鑰匙…
+desc	$323	...그랑 카인이여...반왕 켄 라우헬에게도 죽음을...	... 格蘭肯…給肯恩羅侯死亡的…
+desc	$324	그루먼	古魯門
+desc	$325	버그베어	食人妖精
+desc	$326	랜턴	燈籠
+desc	$327	랜턴용 기름	燈油
+desc	$328	강력 체력 회복제	終極治癒藥水
+desc	$329	부츠	長靴
+desc	$330	장갑	手套
+desc	$331	네크로맨서	魔法師
+desc	$332	케티	凱蒂
+desc	$333	룻	露西
+desc	$334	카림	凱倫
+desc	$335	발터자르	巴土瑟
+desc	$336	카스파	卡士伯
+desc	$337	메르키오르	馬庫爾
+desc	$338	세마	西瑪
+desc	$339	어디 숨었는가,오림! 이 배신자여!	歐林，你這背叛者！你躲在哪?
+desc	$340	너는 우리로부터 끝까지 숨을 수는 없으리라!	歐林，你不可能躲得過我們！
+desc	$341	어서 나와 위대한 마력의 소유자에게 용서를 빌라!	出來並向偉大的魔法師乞求饒你的狗命吧！
+desc	$342	그는 관대하시니 너를 용서하실 것이라...빨리 나오지 못하겠는가!	他是寬容之神…也許會原諒你，趕快出來啊！
+desc	$343	슬라임 레이스 표	史萊姆競賽門票
+desc	$344	캐논 보이	加農炮小子
+desc	$345	레이디 호크	鷹女王
+desc	$346	라이트닝	閃電
+desc	$347	가디안	守護神
+desc	$348	이븐스타	夜星
+desc	$349	슈퍼블랙	超級黑暗
+desc	$350	마키아벨리	馬基雅弗利
+desc	$351	마이베이비	寶貝
+desc	$352	슈팅스타	流星
+desc	$353	뷸렛	子彈
+desc	$354	엘븐 애로우	精靈之箭
+desc	$355	사이하	沙哈
+desc	$356	호크윈드	鷹之風
+desc	$357	팰컨	獵鷹
+desc	$358	펌블	摸索
+desc	$359	젤리피쉬	霹靂
+desc	$360	켄트성	肯特城堡
+desc	$361	슬라임 레이스장	史萊姆競賽聯盟
+desc	$362	글루딘 마을	古魯丁村莊
+desc	$363	출발 준비!	準備
+desc	$364	시작!	GO！
+desc	$365	아만	阿門
+desc	$366	회 게임의 우승자는	場比賽的優勝者是
+desc	$367	입니다!	！
+desc	$368	좋음	好
+desc	$369	보통	普通
+desc	$370	나쁨	不好
+desc	$371	데스나이트	死亡騎士
+desc	$372	크로우	怪手
+desc	$373	고라	葛拉
+desc	$374	게렝	吉倫
+desc	$375	제	第
+desc	$376	경기 시작	剩餘時間：
+desc	$377	분전!	分鐘！
+desc	$378	가버너	加姆諾
+desc	$379	영이글	年輕的鷹
+desc	$380	세인트라이트	神聖的光
+desc	$381	글루디아	古魯丁
+desc	$382	가버너&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	加姆諾&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$383	영이글&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	年輕的鷹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$384	세인트라이트	神聖之光
+desc	$385	글루디아&nbsp;&nbsp;&nbsp;&nbsp;	古魯丁&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$386	캐논 보이&nbsp;&nbsp;&nbsp;	加農炮小子&nbsp;&nbsp;&nbsp;
+desc	$387	레이디 호크&nbsp;	鷹女王&nbsp;
+desc	$388	라이트닝&nbsp;&nbsp;&nbsp;&nbsp;	閃電&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$389	가디안&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	守護神&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$390	이븐스타&nbsp;&nbsp;&nbsp;&nbsp;	夜星&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$391	슈퍼블랙&nbsp;&nbsp;&nbsp;&nbsp;	超級黑暗&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$392	마키아벨리&nbsp;&nbsp;	馬基雅弗利&nbsp;&nbsp;
+desc	$393	마이베이비&nbsp;&nbsp;	寶貝&nbsp;&nbsp;
+desc	$394	슈팅스타&nbsp;&nbsp;&nbsp;&nbsp;	流星&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$395	뷸렛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	子彈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$396	엘븐 애로우&nbsp;	精靈之箭&nbsp;
+desc	$397	사이하&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	沙哈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$398	호크윈드&nbsp;&nbsp;&nbsp;&nbsp;	鷹之風&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$399	팰컨&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	獵鷹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$400	펌블&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	摸索&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$401	젤리피쉬&nbsp;&nbsp;&nbsp;&nbsp;	霹靂&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$402	의 배당율은	的賠率為
+desc	$403	마후	梅格
+desc	$404	모든 살아있는 자들에게 죽음을!!	殺掉所有生存者！！
+desc	$405	크로울링 크로	怪手
+desc	$406	오림	歐林
+desc	$407	파아그리오의 대검	帕格立歐巨劍
+desc	$408	파아그리오의 장창	帕格立歐長矛
+desc	$409	사이하의 투구	沙哈頭盔
+desc	$410	사이하의 신발	沙哈草鞋
+desc	$411	클레모어	雙刃大砍刀
+desc	$412	대형 도끼	巨斧
+desc	$413	면류관	王冠
+desc	$414	기사의 면갑	騎士面甲
+desc	$415	그라디우스	侵略者之劍
+desc	$416	악운의 단검	骰子匕首
+desc	$417	doom blade	末日刀
+desc	$418	광전사의 도끼	狂戰士斧
+desc	$419	에바의 방패	伊娃之盾
+desc	$420	에바의 비늘갑옷	伊娃之鱗甲
+desc	$421	에바의 눈물	伊娃之淚
+desc	$422	파아그리오의 날개	帕格立歐之髮
+desc	$423	사이하의 은총	沙哈的恩典
+desc	$424	성기사의 검	戰士之劍
+desc	$425	성기사의 갑옷	戰士盔甲
+desc	$426	파괴의 도끼	破壞之斧
+desc	$427	증오의 갑주	恨之盔甲
+desc	$428	포르세의 검	波曲王之劍
+desc	$429	사각 방패	塔盾
+desc	$430	게일	蓋爾
+desc	$431	사이하의 반지	沙哈的戒指
+desc	$432	이스마엘	伊賽馬利
+desc	$433	켄트 백작	肯特伯爵
+desc	$434	은 완전히 부서져 있습니다.	完全被破壞了。
+desc	$435	이 거의 부서져 갑니다.	幾乎破碎了。
+desc	$436	의 이곳 저곳에 큰 구멍이 났습니다.	有了很多洞。
+desc	$437	에 작은 구멍이 나기 시작했습니다.	開始產生小小的洞。
+desc	$438	에 약간의 금이 가있습니다.	被產生的瑕疵。
+desc	$439	은 건재합니다.	是完整的。
+desc	$440	외성문	外城門
+desc	$441	내성문	內城門
+desc	$442	은 닫혀 있습니다.	是關閉的。
+desc	$443	은 열려 있습니다.	是開放的。
+desc	$444	세금	稅金
+desc	$445	훈트	韓特
+desc	$446	애쉬톤	艾須同
+desc	$447	던컨	鄧肯
+desc	$448	무어	摩爾
+desc	$449	카나	卡娜
+desc	$450	로리아	羅利雅
+desc	$451	파르보	法波
+desc	$452	제인트	杰特
+desc	$453	지타	吉塔
+desc	$454	렝고	林果
+desc	$455	휜	芬
+desc	$456	쥬디스	茱迪思
+desc	$457	공금	寶庫
+desc	$458	안딘	安迪
+desc	$459	이소리야	索拉雅
+desc	$460	'청상어'단	藍色鯊魚
+desc	$461	무기 상점 '기적의 집'	武器商店『奇蹟之屋』
+desc	$462	아이템 샵 '풍요의 꿈'	道具商店『富有之夢』
+desc	$463	무기 상점 '강철 도끼'	武器商店『鋼鐵之斧』
+desc	$464	마법 상점 '샤먼의 집'	魔法商店『巫師之屋』
+desc	$465	막사	軍營
+desc	$466	경비병! 저놈들을 남김없이 죽여버려라!	警衛！殺掉那些入侵者不必仁慈！
+desc	$467	모...목숨만은~ 목숨만은 살려주시오~~~	請…請饒恕我卑…卑微的生命…
+desc	$468	바호프	巴歐
+desc	$469	공격 태세	攻擊狀態
+desc	$470	방어 태세	防禦狀態
+desc	$471	휴식	停留
+desc	$472	경계	警戒
+desc	$473	해산	解散
+desc	$474	문지기	守門人
+desc	$475	근위병	城堡守衛
+desc	$476	산개	延伸
+desc	$477	이 반역자들! 열을 셀동안 이곳에서 꺼지지 않으면 죽여버리겠다!	你們這些背叛的人渣！在我數到１０之前還不離開的話我就殺了你們…
+desc	$478	토마	多瑪
+desc	$479	우드포드	伍得福
+desc	$480	오포	阿福
+desc	$481	로한	羅瀚
+desc	$482	토반	透本
+desc	$483	토미	湯米
+desc	$484	라이라	萊拉
+desc	$485	사니타	聖妮塔
+desc	$486	엘른	伊連
+desc	$487	한나	漢娜
+desc	$488	세겜 아투바	沙罕阿吐巴
+desc	$489	바주아 아투바	巴瑞阿吐巴
+desc	$490	켄투 네루가	肯土那魯加
+desc	$491	네나니 간디	那那米甘地
+desc	$492	타가 로바	泰加羅孚
+desc	$493	루 두다-마라	露都達瑪拉
+desc	$494	아투바 오크	阿吐巴妖魔
+desc	$495	네루가 오크	那魯加妖魔
+desc	$496	간디 오크	甘地妖魔
+desc	$497	로바 오크	羅孚妖魔
+desc	$498	두다-마라 오크	都達瑪拉妖魔
+desc	$499	아투바의 토템	阿吐巴圖騰
+desc	$500	네루가의 토템	那魯加圖騰
+desc	$501	간디의 토템	甘地圖騰
+desc	$502	로바의 토템	羅孚圖騰
+desc	$503	두다-마라의 토템	都達瑪拉圖騰
+desc	$504	가스트	卡司特
+desc	$505	귀환 주문서	傳送回家的卷軸
+desc	$506	강화 변신 막대	強化變形魔杖
+desc	$507	마력 회복 물약	加速魔力回復藥水
+desc	$508	마력의 돌	魔法寶石
+desc	$509	오크 가드	妖魔警衛
+desc	$510	오크 레인져	妖魔騎警
+desc	$511	오크 스카우트	妖魔巡守
+desc	$512	다이아몬드	鑽石
+desc	$513	루비	紅寶石
+desc	$514	사파이어	藍寶石
+desc	$515	에메랄드	綠寶石
+desc	$516	마법 방어 사슬 갑옷	抗魔法鏈甲
+desc	$517	마법서 (힐)	魔法書 (初級治癒術)
+desc	$518	마법서 (라이트)	魔法書 (日光術)
+desc	$519	마법서 (실드)	魔法書 (保護罩)
+desc	$520	마법서 (에너지 볼트)	魔法書 (光箭)
+desc	$521	마법서 (텔레포트)	魔法書 (指定傳送)
+desc	$522	마법서 (큐어 포이즌)	魔法書 (解毒術)
+desc	$523	마법서 (칠 터치)	魔法書 (寒冷戰慄)
+desc	$524	마법서 (커스: 포이즌)	魔法書 (毒咒)
+desc	$525	마법서 (인챈트 웨폰)	魔法書 (擬似魔法武器)
+desc	$526	마법서 (디텍션)	魔法書 (無所遁形術)
+desc	$527	마법서 (라이트닝)	魔法書 (極光雷電)
+desc	$528	마법서 (턴 언데드)	魔法書 (起死回生術)
+desc	$529	마법서 (익스트라 힐)	魔法書 (中級治癒術)
+desc	$530	마법서 (커스: 블라인드)	魔法書 (闇盲咒術)
+desc	$531	마법서 (블레스드 아머)	魔法書 (鎧甲護持)
+desc	$532	마법서 (파이어볼)	魔法書 (燃燒的火球)
+desc	$533	마법서 (인챈트 덱스터리티)	魔法書 (通暢氣脈術)
+desc	$534	마법서 (웨폰 브레이크)	魔法書 (壞物術)
+desc	$535	마법서 (뱀파이어릭 터치)	魔法書 (吸血鬼之吻)
+desc	$536	마법서 (슬로우)	魔法書 (緩速術)
+desc	$537	마법서 (커스: 패럴라이즈)	魔法書 (木乃伊的詛咒)
+desc	$538	마법서 (콜 라이트닝)	魔法書 (極道落雷)
+desc	$539	마법서 (그레이터 힐)	魔法書 (高級治癒術)
+desc	$540	마법서 (테이밍 몬스터)	魔法書 (迷魅術)
+desc	$541	마법서 (리무브 커스)	魔法書 (聖潔之光)
+desc	$542	마법서 (크리에이트 좀비)	魔法書 (造屍術)
+desc	$543	마법서 (인챈트 마이티)	魔法書 (體魄強健術)
+desc	$544	마법서 (헤이스트)	魔法書 (加速術)
+desc	$545	마법서 (캔슬레이션)	魔法書 (魔法相消術)
+desc	$546	마법서 (이럽션)	魔法書 (地裂術)
+desc	$547	마법서 (힐 올)	魔法書 (體力回復術)
+desc	$548	마법서 (아이스 랜스)	魔法書 (冰矛圍籬)
+desc	$549	마법서 (서먼 몬스터)	魔法書 (召喚術)
+desc	$550	마법서 (홀리 워크)	魔法書 (神聖疾走)
+desc	$551	마법서 (토네이도)	魔法書 (龍捲風)
+desc	$552	마법서 (풀 힐)	魔法書 (全部治癒術)
+desc	$553	마법서 (파이어월)	魔法書 (火牢)
+desc	$554	마법서 (블리자드)	魔法書 (冰雪暴)
+desc	$555	마법서 (인비지블리티)	魔法書 (隱身術)
+desc	$556	마법서 (리절렉션)	魔法書 (返生術)
+desc	$557	마법서 (라이트닝 스톰)	魔法書 (雷霆風暴)
+desc	$558	마법서 (포그 오브 슬리핑)	魔法書 (沉睡之霧)
+desc	$559	마법서 (셰이프 체인지)	魔法書 (變形術)
+desc	$560	마법서 (이뮨 투 함)	魔法書 (聖結界)
+desc	$561	마법서 (매스 텔레포트)	魔法書 (集體傳送術)
+desc	$562	마법서 (크리에이트 매지컬 웨폰)	魔法書 (創造魔法武器)
+desc	$563	마법서 (미티어 스트라이크)	魔法書 (流星雨)
+desc	$564	마법서 (그레이트 리절렉션)	魔法書 (終極返生術)
+desc	$565	마법서 (매스 슬로우)	魔法書 (集體緩速術)
+desc	$566	마법서 (디스인티그레이트)	魔法書 (究極光裂術)
+desc	$567	의	的
+desc	$568	스람	索連
+desc	$569	마법 방어 투구	抗魔法頭盔
+desc	$570	참나무 지팡이	橡木魔法杖
+desc	$571	마법사의 지팡이	美基魔法杖
+desc	$572	마력의 지팡이	巫術魔法杖
+desc	$573	힘의 지팡이	力量魔法杖
+desc	$574	물의 신의 석장	伊娃的水鉤
+desc	$575	바람의 신의 막대	沙哈的風魔法杖
+desc	$576	불의 신의 홀	帕格立歐炙熱之竿
+desc	$577	대지의 신의 지팡이	梅弗的莫臼藍棍
+desc	$578	아인하사드의 의지	殷海薩的意志
+desc	$579	그랑 카인의 뜻	格蘭肯的邪惡
+desc	$580	무명 로브	綿質長袍
+desc	$581	가죽 코트	皮外套
+desc	$582	경화 가죽 갑옷	硬皮甲
+desc	$583	미스릴 메쉬	米索莉網
+desc	$584	청색 로브	青色長袍
+desc	$585	적색 코트	赤色外套
+desc	$586	녹색 외투	綠色外套
+desc	$587	흰색 조끼	白色背心
+desc	$588	황금의 법의	黃金之法衣
+desc	$589	흑색 법의	黑色法衣
+desc	$590	거북이등 로브	海龜長袍
+desc	$591	요정족 장검	精靈長劍
+desc	$592	요정족 장궁	精靈長弓
+desc	$593	요정족 코트	精靈外套
+desc	$594	요정족 메쉬	精靈網
+desc	$595	요정족 사슬 갑옷	精靈鏈甲
+desc	$596	궁도용 장갑	箭術手套
+desc	$597	신록의 망토	綠色斗篷
+desc	$598	다마스커스 검	大馬士革刀
+desc	$599	에스톡	艾須同
+desc	$600	피묻은 장검	血腥之劍
+desc	$601	불화살	火箭
+desc	$602	마법 모자	能量頭盔
+desc	$603	지혜의 판금 갑옷	智慧金屬盔甲
+desc	$604	불굴의 판금 갑옷	意志金屬盔甲
+desc	$605	힘의 장검	力量長劍
+desc	$606	지식의 장검	知識長劍
+desc	$607	오크 근위병	妖魔城堡警衛
+desc	$608	아주 배고픔	非常餓
+desc	$609	약간 배고픔	稍微餓。
+desc	$610	보통	普通。
+desc	$611	배부름	稍微飽。
+desc	$612	아주 배부름	非常飽。
+desc	$613	수집	收集
+desc	$614	존슨	詹森
+desc	$615	딕	迪克
+desc	$616	에너지 헬멧	能量頭盔
+desc	$617	빨간 양말	紅短襪
+desc	$618	매스 텔레포트 주문서	全體傳送術的卷軸
+desc	$619	가스트 로드	卡司特王
+desc	$620	베릴	威利
+desc	$621	해피	幸福
+desc	$622	메리	快樂
+desc	$623	조이	喜歡
+desc	$624	스카이하트	飛空鹿
+desc	$625	골든 퍼	黃金毛皮
+desc	$626	나이트 아이	夜之眼
+desc	$627	라우퀴	拉奇
+desc	$628	다크 파이어	黑暗之火
+desc	$629	님프	女神
+desc	$630	세조	沙揉
+desc	$631	더 셰도우	陰影
+desc	$632	더 블루	藍色
+desc	$633	로즈라이데	羅瑟萊得
+desc	$634	레세비스	萊瑟必得
+desc	$635	스틸 팡	鋼鐵尖牙
+desc	$636	로키	洛基
+desc	$637	페너트레이트	穿透
+desc	$638	토르	托
+desc	$639	포세이돈	波西頓
+desc	$640	솔론	索隆
+desc	$641	라스미나	萊瑟米娜
+desc	$642	스타라이트	星光
+desc	$643	루만	露門
+desc	$644	자이언트 스트렝스	怪力巨人
+desc	$645	시프	希孚
+desc	$646	켈베로스	希比羅
+desc	$647	더 레드	紅色
+desc	$648	피어스 아이	兇猛的眼睛
+desc	$649	인드라	因朵拉
+desc	$650	아이언 팡	鐵尖牙
+desc	$651	이프리트	艾弗力特
+desc	$652	헤르메스	何摩思
+desc	$653	탈로스	塔羅思
+desc	$654	헤카진	黑克津
+desc	$655	비슈누	米修
+desc	$656	실버	銀
+desc	$657	부바빅	巴發比
+desc	$658	진	琴
+desc	$659	시바	希娃
+desc	$660	더 화이트	白色
+desc	$661	네파우	那伊帕
+desc	$662	리바이어던	萊邁爾侖
+desc	$663	테테시즈	泰特希
+desc	$664	우사스	幽瑟斯
+desc	$665	킨드리에	金得利
+desc	$666	바하무트	巴哈姆特
+desc	$667	가드 독	警衛犬
+desc	$668	더 블랙	黑色
+desc	$669	제우스	宙斯
+desc	$670	헤라	希拉
+desc	$671	세트	芭樂
+desc	$672	사쥬카그	沙如卡
+desc	$673	아담	龍
+desc	$674	자우멘	納門
+desc	$675	이브	汪汪
+desc	$676	행운의 티셔츠	幸運的Ｔ恤
+desc	$677	T-shirt of Eva	伊娃的Ｔ恤
+desc	$678	해피&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	幸福&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$679	메리&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	快樂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$680	조이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	歡喜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$681	스카이하트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	飛空鹿&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$682	골든 퍼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	黃金毛皮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$683	나이트 아이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	夜之眼&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$684	라우퀴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	拉奇&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$685	다크 파이어&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	黑暗之火&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$686	님프&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	女神&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$687	세조&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	沙揉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$688	더 셰도우&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	陰影&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$689	더 블루&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	藍色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$690	로즈라이데&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	羅瑟萊得&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$691	레세비스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	萊瑟必思&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$692	스틸 팡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	鋼鐵尖牙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$693	로키&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	洛基&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$694	페너트레이트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	穿透&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$695	토르&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	托&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$696	포세이돈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	波西頓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$697	솔론&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	索隆&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$698	라스미나&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	萊瑟米娜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$699	스타라이트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	星光&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$700	루만&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	露門&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$701	지아언트 스트렝스&nbsp;	怪力巨人&nbsp;
+desc	$702	시프&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	希孚&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$703	켈베로스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	希比羅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$704	더 레드&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	紅色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$705	피어스 아이&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	兇猛的眼睛&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$706	인드라&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	因朵拉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$707	아이언 팡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	鐵尖牙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$708	이프리트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	艾弗力特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$709	헤르메스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	何摩思&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$710	탈로스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	塔羅思&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$711	헤카진&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	黑克津&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$712	비슈누&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	米修&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$713	실버&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	銀&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$714	부바빅&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	巴發比&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$715	진&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	琴&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$716	시바&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	希娃&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$717	더 화이트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	白色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$718	네파우&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	那伊帕&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$719	리바이어던&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	萊邁爾侖&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$720	테테시즈&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	泰特希&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$721	우사스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	幽瑟斯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$722	킨드리에&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	金得利&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$723	바하무트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	巴哈姆特&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$724	가드 독&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	警衛犬&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$725	더 블랙&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	黑色&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$726	제우스&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	宙斯&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$727	헤라&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	希拉&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$728	세트&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	芭樂&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$729	사쥬카그&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	沙如卡&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$730	아담&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	龍&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$731	자우멘&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	納門&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$732	이브&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;	汪汪&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+desc	$733	에이브라함	亞伯拉罕
+desc	$734	튜링	特玲
+desc	$735	이반	伊凡
+desc	$736	동물 토너먼트 표	動物競賽票
+desc	$737	밥	鮑伯
+desc	$738	루카	魯卡
+desc	$739	'동물 콜롯세움' 선수 등록 마감	距『動物競技場』登記時間結束還有
+desc	$740	'동물 토너먼트' 선수 등록 마감	距『動物競技場』登記時間結束還有
+desc	$741	'동물 토너먼트' 경기 시작	『動物競技場』開始比賽
+desc	$742	이번 경기의 승자는	這場比賽的優勝者是…
+desc	$743	의	的
+desc	$744	이제부터 8강전을 시작합니다!	現在開始進行比賽！
+desc	$745	이제부터 4강전을 시작합니다!	現在開始進行準決賽！
+desc	$746	이제부터 결승전을 시작합니다!	現在開始進行最後決賽！
+desc	$747	참가 확인서	錦標賽證明書
+desc	$748	숲과 요정의 어머니	迷幻森林之母
+desc	$749	네루파	娜魯帕
+desc	$750	엘	艾爾
+desc	$751	호런	何侖
+desc	$752	아라크네	芮克妮
+desc	$753	판	潘
+desc	$754	페어리	精靈
+desc	$755	엔트	安特
+desc	$756	듀펠게넌	都佩傑諾
+desc	$757	펑거스	蘑菇
+desc	$758	브롭	布拉伯
+desc	$759	작은 활	短弓
+desc	$760	판의 갈기털	潘的鬃毛
+desc	$761	미스릴 원석	粗糙的米索莉塊
+desc	$762	정령의 돌	元素石
+desc	$763	엔트의 줄기	安特之樹枝
+desc	$764	버섯포자의 즙	蘑菇汁
+desc	$765	오우거의 눈물	食人巨魔的血
+desc	$766	실	線
+desc	$767	미스릴	純粹的米索莉塊
+desc	$768	페어리 더스트	精靈粉末
+desc	$769	아라크네의 거미줄	芮克妮的網
+desc	$770	엔트의 껍질	安特之樹皮
+desc	$771	오리하루콘	奧里哈魯根
+desc	$772	미스릴 실	米索莉線
+desc	$773	미스릴 화살	米索莉箭
+desc	$774	아라크네의 허물	芮克妮的蛻皮
+desc	$775	활 골무	腕甲
+desc	$776	페어리의 날개	精靈羽翼
+desc	$777	마법의 플룻	魔法笛子
+desc	$778	나무방패	木盾
+desc	$779	미스릴 판금	米索莉金屬板
+desc	$780	오리하루콘 판금	奧里哈魯根金屬板
+desc	$781	나무 갑옷	木甲
+desc	$782	요정족 흉갑	精靈護胸金屬板
+desc	$783	판의 뿔	潘的角
+desc	$784	크로스 보우	十字弓
+desc	$785	단검신	短劍的劍身
+desc	$786	장검신	長劍的劍身
+desc	$787	오리하루콘 검신	奧里哈魯根的劍身
+desc	$788	요정족 판금 갑옷	精靈金屬盔甲
+desc	$789	레이피어	細劍
+desc	$790	엘름의 축복	艾爾穆的祝福
+desc	$791	미스릴 도금 뿔	覆上米索莉的角
+desc	$792	오리하루콘 도금 뿔	覆上奧里哈魯根的角
+desc	$793	메일 브레이커	鎖子甲破壞者
+desc	$794	엔트의 열매	安特的水果
+desc	$795	파워 글로브	力量手套
+desc	$796	요정족 사슬 갑옷	精靈鏈甲
+desc	$797	듀펠게넌의 목걸이	都佩傑諾的項鍊
+desc	$798	나무 줄기 옷	木製的夾克
+desc	$799	고급	品質
+desc	$800	최고급	高品質
+desc	$801	마법 방어 요정족 검	抗魔精靈短劍
+desc	$802	민첩도 향상 요정족 검	敏捷精靈短劍
+desc	$803	마력 향상 요정족 검	魔法精靈短劍
+desc	$804	그대여. 목숨이 아까우면 빨리 이곳을 떠날지어다. 이곳은 그대같은 자가 더럽히지 못할 신성한 곳이다.	人類，如果你重視你的生命現在就快離開這神聖的地方。
+desc	$805	페어리 퀸	精靈女皇
+desc	$806	제길할, 너도 내 연구를 방해하러 온 놈이냐!	該死，你也是來妨礙我的研究的嗎？
+desc	$807	도대체 왜 세상에는 내 연구를 시샘하는 놈들이 이렇게 많은거지!	真是可惡為什麼有那麼多人要來妨礙我的研究？
+desc	$808	받아라!	去死吧！
+desc	$809	하하하! 실력도 없는 놈이 까불기는! 당장 내 눈 앞에서 꺼져버려!	哈哈哈！沒有能力就滾！立刻滾！
+desc	$810	두고보자, 언젠가는 원수를 갚아주마!	有一天你會付出代價的！
+desc	$811	나르엔	那翰
+desc	$812	도에트	多特
+desc	$813	후린달렌	胡林戴里恩
+desc	$814	오크 주민	妖魔農夫
+desc	$815	동족을 살해한 자는 자신의 피로 그 죄를 씻게 되리라.	若殺害同族，必須以自己的生命贖罪。
+desc	$816	1번 경기장	第一競技場
+desc	$817	2번 경기장	第二競技場
+desc	$818	3번 경기장	第三競技場
+desc	$819	4번 경기장	第四競技場
+desc	$820	모리엔	莫里恩
+desc	$821	테오도르	里爾得
+desc	$822	...지금. 가지. 껍질. 없다. 나중에. 다시. 와라.	現在、沒有樹皮、沒有枝脈。稍後、來、再一次、
+desc	$823	모든 것에는 한도가 있는 법. 나에게 실을 자을 시간을 다오.	任何事物都有限制，給我時間去製造線。
+desc	$824	갈기털이 남아나질 않겠다! 좀 있다해!	我已經沒有鬃毛了！待會再來吧！
+desc	$825	이런 곳에 가두었다고 나를 완전히 제어할 수 있다 생각하지 말라, 인간들이여!	愚蠢的人類！將我關在這裡也無法控制我的！
+desc	$826	꺼져라!	滾！
+desc	$827	칫, 또 요정놈이군. 디텍션 마법으로 본거지가 발각되기 전에 일단 숨자!	哼，又是妖精。我必須在他使用無所遁形術前隱藏起來！
+desc	$828	사이하의 목걸이	沙哈的護身符
+desc	$829	루카스	盧卡斯
+desc	$830	스티브	史提夫
+desc	$831	스텐리	史坦利
+desc	$832	잭	傑克
+desc	$833	파울	保羅
+desc	$834	다니엘	丹尼爾
+desc	$835	앤드류	安德魯
+desc	$836	브루노	布魯諾
+desc	$837	시드니	席德尼
+desc	$838	필립	菲力浦
+desc	$839	에반	伊班
+desc	$840	로드니	羅德尼
+desc	$841	네일	尼爾
+desc	$842	만델	曼德
+desc	$843	제임스	詹姆士
+desc	$844	루크	路凱
+desc	$845	머윈	梅溫
+desc	$846	헥터	海克特
+desc	$847	테리	泰瑞
+desc	$848	빈센트	文森
+desc	$849	에버트	愛弗特
+desc	$850	콜버트	考伯特
+desc	$851	알폰스	愛爾芬
+desc	$852	빅터	維克特
+desc	$853	넬슨	尼爾森
+desc	$854	퍼킨	波金
+desc	$855	제이슨	傑森
+desc	$856	라반	拉班
+desc	$857	란달	蘭道
+desc	$858	세실	賽西
+desc	$859	디오	迪歐
+desc	$860	안톤	安東
+desc	$861	데렉	戴芮克
+desc	$862	모나	夢娜
+desc	$863	헬렌	海倫
+desc	$864	엘리자	伊麗莎
+desc	$865	모리아	莫麗雅
+desc	$866	마가렛	瑪格瑞特
+desc	$867	살리나	夏麗娜
+desc	$868	제시	傑西
+desc	$869	베티	貝蒂
+desc	$870	제니	珍妮
+desc	$871	벨마	莫瑪
+desc	$872	앨리스	愛麗絲
+desc	$873	에블린	愛弗琳
+desc	$874	토비아	托維亞
+desc	$875	리엘	李爾
+desc	$876	알다	阿爾達
+desc	$877	아만다	阿曼達
+desc	$878	리나	麗娜
+desc	$879	샐리	莎麗
+desc	$880	데이지	黛西
+desc	$881	브리젯	布萊杰
+desc	$882	타냐	坦雅
+desc	$883	다리아	戴芮雅
+desc	$884	도리스	桃瑞絲
+desc	$885	트레이시	崔西
+desc	$886	폴리	波麗
+desc	$887	이올라	艾歐拉
+desc	$888	마리나	瑪麗娜
+desc	$889	엠마	艾瑪
+desc	$890	몰리	莫莉
+desc	$891	베리타	莫瑞塔
+desc	$892	데포로쥬 서버	太陽神阿波羅
+desc	$893	켄 라우헬 서버	愛神邱比特
+desc	$894	질리언 서버	勝利女神雅典娜
+desc	$895	이실로테 서버	美神維納斯
+desc	$896	조우 서버	天神宙斯
+desc	$897	하딘 서버	天后海拉
+desc	$898	케레니스 서버	戰神馬爾斯
+desc	$899	오웬 서버	月亮女神阿緹蜜絲
+desc	$900	크리스터 서버	海神波賽頓
+desc	$901	아툰 서버	冥王黑帝斯
+desc	$902	가드리아 서버	火神赫發斯特斯
+desc	$903	군터 서버	收穫女神蒂蜜特
+desc	$904	세인트 버나드	聖伯納犬
+desc	$905	도베르만	杜賓狗
+desc	$906	콜리	柯利
+desc	$907	세퍼드	牧羊犬
+desc	$908	비글	小獵犬
+desc	$909	브루너	布朗諾
+desc	$910	엘미나	艾米娜
+desc	$911	마빈	馬賓
+desc	$912	벨리사	維萊莎
+desc	$913	데커	戴克
+desc	$914	게라드	傑瑞德
+desc	$915	글렌	格林
+desc	$916	멜린	梅林
+desc	$917	아논	亞南
+desc	$918	미란다	米蘭德
+desc	$919	데니스	丹尼斯
+desc	$920	에드릭	艾德瑞克
+desc	$921	오스몬드	阿特曼德
+desc	$922	은기사의 방패	銀騎士之盾
+desc	$923	늑대 인간의 송곳니	狼人的尖牙
+desc	$924	그래, 수금한 돈을 운반하느라 고생했다. 돌아가서 다음 수금때까지 푹 쉬도록.	好，幫我將金幣運送到這裡來，辛苦了，回去休息吧。
+desc	$925	켈베로스	地獄犬
+desc	$926	'폭풍의 칼날'단	暴風之刃
+desc	$927	돼지	豬
+desc	$928	암탉	母雞
+desc	$929	젖소	牛
+desc	$930	사슴	鹿
+desc	$931	멧돼지	野豬
+desc	$932	란디스	藍迪西
+desc	$933	바우먼	巴門
+desc	$934	아놋테	安納特
+desc	$935	할트	赫特
+desc	$936	토끼	兔子
+desc	$937	킹 버그베어	食人妖精王
+desc	$938	마법의 투구: 치유	治癒魔法頭盔
+desc	$939	마법의 투구: 신속	敏捷魔法頭盔
+desc	$940	마법의 투구: 힘	力量魔法頭盔
+desc	$941	낡은 두루마리	古老的卷軸
+desc	$942	늑대인간 방의 열쇠	狼人之屋的鑰匙
+desc	$943	용기의 물약	勇敢藥水
+desc	$944	지혜의 물약	慎重藥水
+desc	$945	베레스	巴列斯
+desc	$946	트레이	特萊
+desc	$947	메트	麥特
+desc	$948	타르킨	塔奇
+desc	$949	고담	高特
+desc	$950	보긴	寶金
+desc	$951	윈다우드 성	風木之城
+desc	$952	오리	鴨子
+desc	$953	오우거	歐吉
+desc	$954	여관 열쇠	旅館鑰匙
+desc	$955	셀레나	瑟琳娜
+desc	$956	대여시간이 앞으로	出租時間還剩餘
+desc	$957	분 남았습니다.	分鐘。
+desc	$958	고블린	哥布林
+desc	$959	하피	哈維
+desc	$960	거대 개미	巨蟻
+desc	$961	거대 병정 개미	巨大兵蟻
+desc	$962	바실리스크	邪惡蜥蜴
+desc	$963	한스	漢斯
+desc	$964	잭슨	傑克森
+desc	$965	아슈르	亞修
+desc	$966	스콜피온	毒蠍
+desc	$967	로우플	正義
+desc	$968	카오틱	邪惡
+desc	$969	코카트리스	亞力安
+desc	$970	코볼트	地靈
+desc	$971	변신 주문서	變形卷軸
+desc	$972	드레이크	飛龍
+desc	$973	도우미	管理者
+desc	$974	강화 추방 막대	強化驅逐魔杖
+desc	$975	추방 막대	驅逐魔杖
+desc	$976	침묵 막대	沉靜魔杖
+desc	$977	수면 막대	沉睡魔杖
+desc	$978	아스테어 서버	蛇髮女墨杜沙
+desc	$979	듀크 데필 서버	半人馬涅索斯
+desc	$980	발센 서버	牛人彌諾陶洛斯
+desc	$981	어레인 서버	地獄犬刻耳拍洛斯
+desc	$982	카스톨 서버	獨眼巨人庫克羅普斯
+desc	$983	세바스찬 서버	獅子涅墨亞
+desc	$984	데컨 서버	飛馬珀伽索斯
+desc	$985	아인하사드 서버	水蛇許德拉
+desc	$986	해골궁수	骷髏弓箭手
+desc	$987	해골도끼병	骷髏斧手
+desc	$988	해골창병	骷髏槍兵
+desc	$989	트롤	多羅
+desc	$990	라이칸스로프	萊肯
+desc	$991	무리안	莫妮亞
+desc	$992	흑장로	黑長者
+desc	$993	용의 안식을 방해하는 자에게 죽음을!	殺死打擾龍休息的入侵者！
+desc	$994	먹이다! 먹이!	是食物！食物！
+desc	$995	이 계곡에 들어온 이상 절대 살아서 돌아갈 수 없을 것이다! 후하하하...	一旦進來此峽谷，還想活回去?哈哈哈！…
+desc	$996	죽음을!	殺掉！
+desc	$997	반송:	回信：
+desc	$998	상대방이 없어서 편지를 보내지 못했습니다.	收信者不在，因此無法傳送。
+desc	$999	상대방의 짐이 너무 무거워서 편지를 받을 수 없었습니다.	對方攜帶太多的物品，因此無法收信。
+desc	$1000	서큐버스	思克巴
+desc	$1001	비홀더	多眼怪
+desc	$1002	완력의 목걸이	力量項鍊
+desc	$1003	민첩의 목걸이	敏捷項鍊
+desc	$1004	체력의 목걸이	體質項鍊
+desc	$1005	지식의 목걸이	智力項鍊
+desc	$1006	지혜의 목걸이	精神項鍊
+desc	$1007	매력의 목걸이	魅力項鍊
+desc	$1008	인프라비젼 투구	夜視頭盔
+desc	$1009	양손 방패	雙手盾
+desc	$1010	에틴	阿魯巴
+desc	$1011	바실리스크 뿔	蜥蜴的角
+desc	$1012	드레이크 발톱	飛龍的爪子
+desc	$1013	오크 투사의 목걸이	妖魔戰士護身符
+desc	$1014	네크로맨서의 수정구	水晶球
+desc	$1015	크레이	卡瑞
+desc	$1016	해골저격병	骷髏神射手
+desc	$1017	해골돌격병	骷髏鬥士
+desc	$1018	해골근위병	骷髏警衛
+desc	$1019	서큐버스 퀸	思克巴女皇
+desc	$1020	드래곤 슬레이어	屠龍劍
+desc	$1021	가죽모자	皮帽子
+desc	$1022	징박은 가죽모자	銀釘皮帽
+desc	$1023	가죽투구	皮頭盔
+desc	$1024	해골투구	骷髏頭盔
+desc	$1025	가죽샌달	皮涼鞋
+desc	$1026	징박은 가죽샌달	銀釘皮涼鞋
+desc	$1027	가죽부츠	皮長靴
+desc	$1028	가죽방패	皮盾牌
+desc	$1029	징박은 가죽방패	銀釘皮盾
+desc	$1030	골각방패	骷髏盾牌
+desc	$1031	가죽조끼	皮背心
+desc	$1032	벨트달린 가죽조끼	皮盔甲
+desc	$1033	징박은 가죽조끼	銀釘皮背心
+desc	$1034	중갑가죽조끼	硬皮背心
+desc	$1035	뼈갑옷	骷髏盔甲
+desc	$1036	동물가죽	皮革
+desc	$1037	철괴	金屬塊
+desc	$1038	벨트	皮帶
+desc	$1039	고급피혁	高級皮革
+desc	$1040	뼈조각	骨頭碎片
+desc	$1041	오크 좀비	妖魔殭屍
+desc	$1042	다크 엘프	黑暗精靈
+desc	$1043	아이들론	艾多倫
+desc	$1044	임프	安普
+desc	$1045	임프 장로	安普長老
+desc	$1046	그렘린	葛林
+desc	$1047	아울베어	歐熊
+desc	$1048	대검	巨劍
+desc	$1049	파아그리오 서버	公牛克里特
+desc	$1050	에바 서버	女妖塞壬
+desc	$1051	사이하 서버	巨龍拉冬
+desc	$1052	마프르 서버	百眼怪阿耳戈斯
+desc	$1053	라다르	拉達
+desc	$1054	파린	法林
+desc	$1055	라이엔	連
+desc	$1056	줄리	朱利
+desc	$1057	핀	平
+desc	$1058	죠엘	喬治
+desc	$1059	불 속성	火屬性
+desc	$1060	물 속성	水屬性
+desc	$1061	바람 속성	風屬性
+desc	$1062	땅 속성	地屬性
+desc	$1063	마나의 지팡이	瑪那魔杖
+desc	$1064	불의 엘릭서	火之萬能藥
+desc	$1065	물의 엘릭서	水之萬能藥
+desc	$1066	바람의 엘릭서	風之萬能藥
+desc	$1067	땅의 엘릭서	地之萬能藥
+desc	$1068	케이스	凱瑟
+desc	$1069	해리슨	海瑞森
+desc	$1070	후퍼	胡帕
+desc	$1071	콥	卡爾
+desc	$1072	번치	班曲
+desc	$1073	쿠하틴	克哈丁
+desc	$1074	왈! 왈! 그르르르	汪汪！呼呼呼
+desc	$1075	편지지	信紙
+desc	$1076	발루인	拜崙
+desc	$1077	쿠알빈	克賓
+desc	$1078	콰진	昆林
+desc	$1079	알민	艾明
+desc	$1080	데푸핀	迪普賓
+desc	$1081	LEV	等級
+desc	$1082	AC	防禦
+desc	$1083	HP	體力
+desc	$1084	MP	魔力
+desc	$1085	불우한 이웃을 도웁시다!	我們一起幫助貧民吧！
+desc	$1086	펫 호루라기	哨子
+desc	$1087	이 신성한 숲에서 사라져라! 축복받지 못한 존재여!	你不屬於這裡，立刻離開這神聖的森林吧！
+desc	$1088	왈! 왈!	汪！汪！
+desc	$1089	컹컹!	吭！吭！
+desc	$1090	크르르	咳！咳！
+desc	$1091	네, 주인님	是的，主人。
+desc	$1092	훗.	呵。
+desc	$1093	자자 이 우승자에게 도전할 동물을 가진 자는 더 없습니까!	有沒有人要向冠軍挑戰？！
+desc	$1094	돌맹이	石頭
+desc	$1095	날 찾아내다니.. 살려둘 수 없다!	既然讓你找到了我,我就不能讓你離開這個地方!!!
+desc	$1096	여럿이 날 공격하다니.. 분하지만 도망쳐야겠군.	竟然來攻擊我?!氣歸氣,我還是得逃!!
+desc	$1097	용아병의 뼈	史巴托的骨頭
+desc	$1098	생명력 향상 요정족 검	體質精靈短劍
+desc	$1099	민첩도 향상 요정족 활	敏捷精靈弓
+desc	$1100	숫돌	磨刀石
+desc	$1101	지도:아덴 전역	地圖:大陸全圖
+desc	$1102	지도:말하는 섬	地圖:說話之島
+desc	$1103	지도:글루디오	地圖:古魯丁
+desc	$1104	지도:켄트 성	地圖:肯特城
+desc	$1105	지도:오크 요새	地圖:妖魔城堡
+desc	$1106	지도:요정의 숲	地圖:妖精森林
+desc	$1107	지도:윈다우드	地圖:風木之城
+desc	$1108	지도:은기사 마을	地圖:銀騎士村莊
+desc	$1109	지도:용의 계곡	地圖:龍之谷
+desc	$1110	오크 마법사	妖魔法師
+desc	$1111	홉고블린	哈柏哥布林
+desc	$1112	난쟁이족 전사	侏儒戰士
+desc	$1113	사이클롭스	獨眼巨人
+desc	$1114	, 비키시오!	請讓開!
+desc	$1115	, 비키지 않으면 공격하겠소!	否則我會攻擊你!
+desc	$1116	안타라스	安塔瑞斯
+desc	$1117	수행한다.	是
+desc	$1118	수행하지 않는다.	否
+desc	$1119	타격치	攻擊力
+desc	$1120	영양	營養度
+desc	$1121	밝기	亮度
+desc	$1122	손상도	損壞度
+desc	$1123	양손 무기	雙手武器
+desc	$1124	공격 성공	攻擊成功
+desc	$1125	추가 타격	額外攻擊點數
+desc	$1126	사용 가능	可使用職業
+desc	$1127	[왕자/공주]	[王族]
+desc	$1128	[기사]	[騎士]
+desc	$1129	[요정]	[妖精]
+desc	$1130	[마법사]	[法師]
+desc	$1131	STR	力量
+desc	$1132	DEX	敏捷
+desc	$1133	CON	體質
+desc	$1134	WIS	精神
+desc	$1135	INT	智力
+desc	$1136	CHA	魅力
+desc	$1137	최대 HP	體力上限
+desc	$1138	마나 흡수	吸取魔力
+desc	$1139	주술력	魔攻
+desc	$1140	헤이스트 효과	加速效果
+desc	$1141	행운	幸運
+desc	$1142	무게	重量
+desc	$1143	활 명중치	弓的命中率
+desc	$1144	상대방 혈맹이 없어서 편지를 보내지 못했습니다.	對方沒有血盟無法寄信。
+desc	$1145	에스트	伊斯特
+desc	$1146	혈맹 편지지	血盟的信紙
+desc	$1147	은장검	銀長劍
+desc	$1148	은검	銀劍
+desc	$1149	은도끼	銀斧
+desc	$1150	마법 방어	魔法防禦額外點數
+desc	$1151	재질:액체	材質:液體
+desc	$1152	재질:밀랍	材質:蠟
+desc	$1153	재질:식물성	材質:植物性
+desc	$1154	재질:동물성	材質:動物性
+desc	$1155	재질:종이	材質:紙
+desc	$1156	재질:천	材質:布
+desc	$1157	재질:가죽	材質:皮
+desc	$1158	재질:나무	材質:木
+desc	$1159	재질:뼈	材質:骨頭
+desc	$1160	재질:용 비늘	材質:龍鱗
+desc	$1161	재질:철	材質:鐵
+desc	$1162	재질:금속	材質:金屬
+desc	$1163	재질:구리	材質:銅
+desc	$1164	재질:은	材質:銀
+desc	$1165	재질:금	材質:金
+desc	$1166	재질:백금	材質:白金
+desc	$1167	재질:미스릴	材質:米索莉
+desc	$1168	재질:블랙미스릴	材質:黑色米索莉
+desc	$1169	재질:유리	材質:玻璃
+desc	$1170	재질:보석	材質:寶石
+desc	$1171	재질:광석	材質:礦石
+desc	$1172	재질:오리하루콘	材質:奧里哈魯根
+desc	$1173	펫 목걸이	項圈
+desc	$1174	리자드맨	蜥蜴人
+desc	$1175	데몬	惡魔
+desc	$1176	그리폰	格利芬
+desc	$1177	레인져	巡守
+desc	$1178	하녀	女僕
+desc	$1179	사탕	情人禮物(糖果)
+desc	$1180	해리	哈利
+desc	$1181	종류	種族
+desc	$1182	레벨	等級
+desc	$1183	딸꾹!	咳!
+desc	$1184	영주	奇岩領主
+desc	$1185	납세고지서	繳稅通知單
+desc	$1186	납세독촉장	稅金催繳單
+desc	$1187	퇴거명령서	退出命令書
+desc	$1188	지도:기란	地圖:奇岩
+desc	$1189	서클렛	皇冠
+desc	$1190	인삼	人蔘
+desc	$1191	허브	香菜
+desc	$1192	버섯	蘑菇
+desc	$1193	독버섯	毒蘑菇
+desc	$1194		
+desc	$1195	번째 집	號血盟小屋
+desc	$1196	청동괴	銅塊
+desc	$1197	파란 옷감	藍色布料
+desc	$1198	푸른 옷감	綠色布料
+desc	$1199	붉은 옷감	紅色布料
+desc	$1200	하얀 옷감	白色布料
+desc	$1201	강철괴	鋼鐵塊
+desc	$1202	구리 원석	銅原石
+desc	$1203	강철 원석	鋼鐵原石
+desc	$1204	목재	木材
+desc	$1205	부적	友友幸運符
+desc	$1206	마법사 모자	法師之帽
+desc	$1207	마법사 옷	法師長袍
+desc	$1208	강철 장갑	鋼鐵手套
+desc	$1209	강철 면갑	鋼鐵頭盔
+desc	$1210	강철 방패	鋼鐵盾牌
+desc	$1211	강철 부츠	鋼鐵長靴
+desc	$1212	강철 판금 갑옷	鋼鐵金屬盔甲
+desc	$1213	배크두	文生
+desc	$1214	투투	強生
+desc	$1215	버기 	傑克
+desc	$1216	얼루	小克
+desc	$1217	제프리	琪琪
+desc	$1218	카이	小哈
+desc	$1219	아돌프	夏朵
+desc	$1220	오버폿	維尼
+desc	$1221	럼프스	橘蛋
+desc	$1222	부카	妙妙
+desc	$1223	그룩	愛琳
+desc	$1224	쿤두라	飛雪
+desc	$1225	쿠마토	傑洛
+desc	$1226	두렉	西西
+desc	$1227	그로돈	五月
+desc	$1228	퀘니버	小年
+desc	$1229	플루토	小丁
+desc	$1230	두리바	欣恬
+desc	$1231	버루얼	傑洛
+desc	$1232	일레자	傑菲特
+desc	$1233	경매 관리자	拍賣管理者
+desc	$1234	경매에 성공하였습니다.	已成功的拍賣。
+desc	$1235	입찰에 실패하였습니다.	已成功的投標。
+desc	$1236	집이 판매되었습니다.	血盟小屋已成交。
+desc	$1237	경매가 취소되었습니다.	取消拍賣。
+desc	$1238	오빌	歐比
+desc	$1239	'황금성'단	黃金之鷹
+desc	$1240	타이론	泰倫
+desc	$1241	콜버트	庫爾巴特
+desc	$1242	기란	奇岩
+desc	$1243	나무	原木
+desc	$1244	사냥꾼 활	獵人之弓
+desc	$1245	가죽	硬皮
+desc	$1246	허버트	哈巴特
+desc	$1247	레이스 표	食人妖精競賽票
+desc	$1248	사우람	蘇瑞耳
+desc	$1249	노딤	諾丁
+desc	$1250	몰리	瑪理
+desc	$1251	농축 체력 회복제	濃縮體力恢復劑 
+desc	$1252	농축 고급 체력 회복제	濃縮強力體力恢復劑
+desc	$1253	농축 강력 체력 회복제	濃縮終極體力恢復劑
+desc	$1254	복권	樂透彩卷
+desc	$1255	당첨 복권 "한장 더!"	您中了 再來一次!
+desc	$1256	당첨 복권 500 아데나	您中了 500 金幣
+desc	$1257	당첨 복권 5,000 아데나	您中了 5,000 金幣
+desc	$1258	당첨 복권 1,000,000 아데나	您中了 1,000,000 金幣
+desc	$1259	말콤	瑪寇恩
+desc	$1260	데이먼	戴蒙
+desc	$1261	타이러스	泰瑞思
+desc	$1262	셔윈	雪爾溫
+desc	$1263	모란	莫潤
+desc	$1264	페르디난드	斐迪南
+desc	$1265	질레스	吉列斯
+desc	$1266	알드레드	阿德瑞斯
+desc	$1267	길리언	古利安
+desc	$1268	마누스	曼那斯
+desc	$1269	피에르	辟芮
+desc	$1270	가쓰	賈斯
+desc	$1271	올리버	奧力佛
+desc	$1272	어니스트	厄莉斯特
+desc	$1273	로렌	羅侖
+desc	$1274	노엘	諾爾
+desc	$1275	케리	凱瑞
+desc	$1276	프랭크	法蘭克
+desc	$1277	제레미	傑洛米
+desc	$1278	고드윈	賈德溫
+desc	$1279	루시우스	露希爾
+desc	$1280	가브리엘	賈柏爾
+desc	$1281	알버트	艾爾柏
+desc	$1282	헨리	亨利
+desc	$1283	고든	戈登
+desc	$1284	시그문드	賽穆得
+desc	$1285	에머리	艾莫莉
+desc	$1286	워너	溫諾
+desc	$1287	제롬	傑洛姆
+desc	$1288	맥심	馬克辛
+desc	$1289	베논	文諾
+desc	$1290	로버트	羅伯特
+desc	$1291	쏘론	斯戎
+desc	$1292	로빈	羅賓
+desc	$1293	테렌스	德倫西
+desc	$1294	아론	亞諾
+desc	$1295	버질	范吉爾
+desc	$1296	앰브로즈	安伯瑞斯
+desc	$1297	마리오	馬利歐
+desc	$1298	케빈	凱文
+desc	$1299	알몬	歐蒙
+desc	$1300	구스타브	賈斯特
+desc	$1301	메이어	邁爾
+desc	$1302	아빙	雅文
+desc	$1303	그로버	庫佛
+desc	$1304	발레인	伯蘭尼
+desc	$1305	알렉스	艾力克斯
+desc	$1306	다이앤	戴安那
+desc	$1307	베쓰	巴斯
+desc	$1308	헨리에타	漢妮塔
+desc	$1309	저스틴	查士丁尼
+desc	$1310	이브	伊芙
+desc	$1311	밸레스카	法斯加
+desc	$1312	카르멜	卡繆兒
+desc	$1313	베비나	立夫那
+desc	$1314	리비아	利芙雅
+desc	$1315	질다	吉達
+desc	$1316	사라	莎拉
+desc	$1317	테클라	塔克拉
+desc	$1318	엘리노라	艾隆娜
+desc	$1319	메어리	馬莉
+desc	$1320	니콜린느	尼可莉尼
+desc	$1321	엘라리아	以拉利雅
+desc	$1322	줄리아	朱利雅
+desc	$1323	캐트리오나	卡特琳娜
+desc	$1324	미리얌	邁倫
+desc	$1325	멘네퍼	曼尼佛
+desc	$1326	오사	歐薩
+desc	$1327	조안나	喬安娜
+desc	$1328	테오도라	泰多娜
+desc	$1329	마아제리	瑪格利
+desc	$1330	글레다	葛達
+desc	$1331	노엘라	娜拉
+desc	$1332	루친다	露辛達
+desc	$1333	미네르바	蜜拉瓦
+desc	$1334	제랄딘	葛瑞丁娜
+desc	$1335	폴리나	寶琳娜
+desc	$1336	에밀라	艾蜜利雅
+desc	$1337	줄리아나	朱利雅娜
+desc	$1338	살로마	莎洛瑪
+desc	$1339	베레니스	伯羅尼斯
+desc	$1340	카렐리아	凱瑞利雅
+desc	$1341	캐린느	凱利娜
+desc	$1342	레오노라	利奧羅娜
+desc	$1343	이오네	奧娜
+desc	$1344	기네브라	吉娜娃
+desc	$1345	두아나	都瓦納
+desc	$1346	시그리드	辛格立德
+desc	$1347	테사	泰莎
+desc	$1348	에르마	阿瑪
+desc	$1349	에이다	艾達
+desc	$1350	테클라	斯加拉
+desc	$1351	아바	艾瓦
+desc	$1352	알마스	艾爾瑪斯
+desc	$1353	폴리	寶麗
+desc	$1354	윌마	爾瑪
+desc	$1355	발리사	范利莎
+desc	$1356	프류던스	伯度斯
+desc	$1357	질	吉兒
+desc	$1358	샬로트	夏洛特
+desc	$1359	엘스페쓰	伊爾斯賓斯
+desc	$1360	귄프리드	加費德
+desc	$1361	잉그리드	英加德
+desc	$1362	룰루	露露
+desc	$1363	테루마	瑟瑪
+desc	$1364	마리안	馬利安
+desc	$1365	베르니스	柏妮斯
+desc	$1366	브리타	柏利塔
+desc	$1367	아렐라	奧艾爾
+desc	$1368	다그니	達格妮
+desc	$1369	알씨아	奧斯娜
+desc	$1370	에드나	艾德娜
+desc	$1371	멜라니	邁拉妮亞
+desc	$1372	베르다	范妲
+desc	$1373	이오나	艾歐娜
+desc	$1374	슬라니아	斯拉妮亞
+desc	$1375	헨리에트	漢瑞塔
+desc	$1376	윈	懷恩
+desc	$1377	티르자	瑟拉
+desc	$1378	헤르미아	海米亞
+desc	$1379	커플 링	情人戒指
+desc	$1380	토펜	托芬
+desc	$1381	가격	價格
+desc	$1382	경매관리자	拍賣管理者
+desc	$1383	경매게시판	拍賣佈告欄
+desc	$1384	혈맹게시판	血盟佈告欄
+desc	$1385	게시판	佈告欄
+desc	$1386	현관문	城門
+desc	$1387	가구 제거 막대	移除傢俱魔杖
+desc	$1388	투기장 관람표	競技場門票
+desc	$1389	마감일	結束日期
+desc	$1390	크기 : %d칸	大小 : %d坪
+desc	$1391	놀	冰原狼人
+desc	$1392	미믹	密密
+desc	$1393	미노타우르스	巨斧牛人 
+desc	$1394	미노타우르스	鏈鎚牛人
+desc	$1395	아이스 골렘	高崙冰石人
+desc	$1396	페이퍼 맨	紙人
+desc	$1397	여우	狐狸
+desc	$1398	자이언트	巨人
+desc	$1399	외성 남문	外城南門
+desc	$1400	외성 서문	外城西門
+desc	$1401	내성 남문	內城南門
+desc	$1402	내성 서문	內城西門
+desc	$1403	내성 동문	內城東門
+desc	$1404	실루엣	影魔
+desc	$1405	인어	美人魚
+desc	$1406	크로코다일	巨大鱷魚
+desc	$1407	악어	鱷魚
+desc	$1408	리빙아머	活鎧甲
+desc	$1409	마을 귀환 주문서	指定傳送卷軸(村莊)
+desc	$1410	기란 귀환 주문서	指定傳送卷軸(奇岩)
+desc	$1411	노래하는 섬 귀환 주문서	指定傳送卷軸(歌唱之島)
+desc	$1412	해마	海馬
+desc	$1413	루더	勞德
+desc	$1414	요한	喬漢
+desc	$1415	치료사	治療師
+desc	$1416	시리스	希莉斯
+desc	$1417	이쉬타	伊斯塔
+desc	$1418	제노	傑諾
+desc	$1419	벨게터	貝爾吉特
+desc	$1420	프라운	佛朗
+desc	$1421	치료사	治療師
+desc	$1422	일드라스	伊爾卓斯
+desc	$1423	드리스트	德瑞斯特
+desc	$1424	숨겨진 계곡 귀환 주문서	指定傳送卷軸(隱藏之谷)
+desc	$1425	말미잘	海葵
+desc	$1426	파푸리온	法利昂
+desc	$1427	바쿡	蟑螂人
+desc	$1428	라미아	蛇女
+desc	$1429	시댄서	希爾黛斯
+desc	$1430	크랩맨	蟹人
+desc	$1431	랫맨	鼠人
+desc	$1432	혈거인간	穴居人
+desc	$1433	일렉카둠	伊萊克頓
+desc	$1434	부아크	巴克休
+desc	$1435	수호탑	守護者之塔
+desc	$1436	(힐)	(初級治癒術)
+desc	$1437	(라이트)	(日光術)
+desc	$1438	(실드)	(保護罩)
+desc	$1439	(에너지 볼트)	(光箭)
+desc	$1440	(텔레포트)	(指定傳送)
+desc	$1441	(큐어 포이즌)	(解毒術)
+desc	$1442	(칠 터치)	(寒冷戰慄)
+desc	$1443	(커스: 포이즌)	(毒咒)
+desc	$1444	(인챈트 웨폰)	(擬似魔法武器)
+desc	$1445	(디텍션)	(無所遁形術)
+desc	$1446	(라이트닝)	(極光雷電)
+desc	$1447	(턴 언데드)	(起死回生術)
+desc	$1448	(익스트라 힐)	(中級治癒術)
+desc	$1449	(커스: 블라인드)	(闇盲咒術)
+desc	$1450	(블레스드 아머)	(鎧甲護持)
+desc	$1451	(파이어볼)	(燃燒的火球)
+desc	$1452	(인챈트 덱스터리티)	(通暢氣脈術)
+desc	$1453	(웨폰 브레이크)	(壞物術)
+desc	$1454	(뱀파이어릭 터치)	(吸血鬼之吻)
+desc	$1455	(슬로우)	(緩速術)
+desc	$1456	(커스: 패럴라이즈)	(木乃伊的詛咒)
+desc	$1457	(콜 라이트닝)	(極道落雷)
+desc	$1458	(그레이터 힐)	(高級治癒術)
+desc	$1459	(테이밍 몬스터)	(迷魅術)
+desc	$1460	(리무브 커스)	(聖潔之光)
+desc	$1461	(크리에이트 좀비)	(造屍術)
+desc	$1462	(인챈트 마이티)	(體魄強健術)
+desc	$1463	(헤이스트)	(加速術)
+desc	$1464	(캔슬레이션)	(魔法相消術)
+desc	$1465	(이럽션)	(地裂術)
+desc	$1466	(힐 올)	(體力回復術)
+desc	$1467	(아이스 랜스)	(冰矛圍籬)
+desc	$1468	(서먼 몬스터)	(召喚術)
+desc	$1469	(홀리 워크)	(神聖疾走)
+desc	$1470	(토네이도)	(龍捲風)
+desc	$1471	(풀 힐)	(全部治癒術)
+desc	$1472	(파이어월)	(火牢)
+desc	$1473	(블리자드)	(冰雪暴)
+desc	$1474	(인비지블리티)	(隱身術)
+desc	$1475	(리절렉션)	(返生術)
+desc	$1476	(라이트닝 스톰)	(雷霆風暴)
+desc	$1477	(포그 오브 슬리핑)	(沉睡之霧)
+desc	$1478	(셰이프 체인지)	(變形術)
+desc	$1479	(이뮨 투 함)	(聖結界)
+desc	$1480	(매스 텔레포트)	(集體傳送術)
+desc	$1481	(크리에이트 매지컬 웨폰)	(創造魔法武器)
+desc	$1482	(미티어 스트라이크)	(流星雨)
+desc	$1483	(그레이트 리절렉션)	(終極返生術)
+desc	$1484	(매스 슬로우)	(集體緩術速)
+desc	$1485	(디스인티그레이트)	(究極光裂術)
+desc	$1486	빈 주문서 (레벨 1)	空的魔法卷軸(等級1)
+desc	$1487	마법 주문서	魔法卷軸
+desc	$1488	에브롤	伊芙洛爾
+desc	$1489	가오리	魟魚
+desc	$1490	머맨	人魚
+desc	$1491	실라칸스	寇拉坎
+desc	$1492	크러스트시안	奎斯坦修
+desc	$1493	물고기	魚
+desc	$1494	해파리	水母
+desc	$1495	곰	熊
+desc	$1496	상어	鯊魚
+desc	$1497	아스테	海星
+desc	$1498	터틀 드래곤	龍龜
+desc	$1499	EXP	經驗值
+desc	$1500	결투장 안내원	競技場警衛
+desc	$1501	굿맨	正義者
+desc	$1502	뉴트럴맨	中立者
+desc	$1503	이블맨	邪惡者
+desc	$1504	신관전사	聖殿武士
+desc	$1505	사라만다	火蜥蜴
+desc	$1506	거대 여왕 개미	巨蟻女皇
+desc	$1507	에바의 축복	伊娃的祝福
+desc	$1508	인어의 비늘	人魚之鱗
+desc	$1509	또 우리의 비늘을 뺐으러 온 것이냐. 인간! 어서 꺼져!	有人要搶我們的魚鱗,人類!趕快滾開呀!
+desc	$1510	루디엘	里迪
+desc	$1511	피셔	費雪
+desc	$1512	바이거	拜格
+desc	$1513	하이네	海音
+desc	$1514	엘란	伊連
+desc	$1515	시반	須凡
+desc	$1516	브리트	比特
+desc	$1517	리올	里歐
+desc	$1518	데릭	迪瑞克
+desc	$1519	해리	哈瑞
+desc	$1520	샤논	修曼
+desc	$1521	트리온	卓恩
+desc	$1522	엘리나	伊莉娜
+desc	$1523	리노테	李諾特
+desc	$1524	아리나	艾莉娜
+desc	$1525	안나벨	安娜貝爾
+desc	$1526	펠릭스	菲力
+desc	$1527	오리엘	歐瑞爾
+desc	$1528	버랜트	巴瑞特
+desc	$1529	폴츠	保特斯
+desc	$1530	스펜서	史班瑟
+desc	$1531	게일	蓋爾
+desc	$1532	스트라	斯塔
+desc	$1533	지도:노래하는 섬	地圖:歌唱之島
+desc	$1534	지도:숨겨진 계곡	地圖:隱藏之谷
+desc	$1535	지도:하이네	地圖:海音
+desc	$1536	드웰	綴爾
+desc	$1537	포이즌 서펜트	毒蛇之牙
+desc	$1538	하킴	哈金
+desc	$1539	앨리	伊莉
+desc	$1540	아디나	艾迪娜
+desc	$1541	제니아	蘭妮雅
+desc	$1542	미리엄	蜜瑞雅
+desc	$1543	에드리	依卓
+desc	$1544	엘샤	艾爾莎
+desc	$1545	트리오나	卓娜
+desc	$1546	로레나	露蘿娜
+desc	$1547	노비타	諾薇塔
+desc	$1548	모르나	默娜
+desc	$1549	델리아	黛利雅
+desc	$1550	다인	達英
+desc	$1551	하이드림	海迪倫
+desc	$1552	앨빈	艾爾賓
+desc	$1553	생명의 검	生命之劍
+desc	$1554	도펠갱어	變形怪
+desc	$1555	아벨	亞伯
+desc	$1556	외성 북문	外城北門
+desc	$1557	사샤	沙夏
+desc	$1558	가렛	賈瑞特
+desc	$1559	오크성 후문	後門
+desc	$1560	Amulet of Silver Serpent	銀蛇護身符
+desc	$1561	Silver Serpent Scale	銀蛇鱗
+desc	$1562	데스	死神
+desc	$1563	유령	鬼魂
+desc	$1564	강철문	鐵門
+desc	$1565	라바 골렘	高崙熔岩怪
+desc	$1566	불타는 전사	火焰戰士
+desc	$1567	이프리트	伊弗利特
+desc	$1568	혼 켈베로스	烈炎獸
+desc	$1569	피닉스	不死鳥
+desc	$1570	파이어 에그	火炎蛋
+desc	$1571	폭탄 꽃	爆彈花
+desc	$1572	불타는 궁수	火焰弓箭手
+desc	$1573	난쟁이 왕	侏儒王
+desc	$1574	난쟁이 마스터	侏儒總管
+desc	$1575	대장장이	侏儒鐵匠
+desc	$1576	난쟁이 일꾼	侏儒工人
+desc	$1577	난쟁이 가드	侏儒警衛
+desc	$1578	오크 산타	聖誕妖魔
+desc	$1579	드래곤 플라이	龍蠅
+desc	$1580	아시타지오	阿西塔基奧
+desc	$1581	마법서 (아이스 대거)	魔法書 (冰箭)
+desc	$1582	마법서 (윈드 커터)	魔法書 (風刃)
+desc	$1583	마법서 (파이어 애로우)	魔法書 (火箭)
+desc	$1584	마법서 (스탈락)	魔法書 (地獄之牙)
+desc	$1585	마법서 (프로즌 클라우드)	魔法書 (寒冰氣息)
+desc	$1586	마법서 (어스 재일)	魔法書 (岩牢)
+desc	$1587	마법서 (콘 오브 콜드)	魔法書 (冰錐)
+desc	$1588	마법서 (선 버스트)	魔法書 (烈炎術)
+desc	$1589	마법서 (어스 퀘이크)	魔法書 (震裂術)
+desc	$1590	마법서 (파이어 스톰)	魔法書 (火風暴)
+desc	$1591	포템핀	波天芬
+desc	$1592	이벨빈	里佛賓
+desc	$1593	펠토	佩多
+desc	$1594	베리	蓓莉
+desc	$1595	랄프	瑞福
+desc	$1596	레슬리	萊思利
+desc	$1597	코브	考伯
+desc	$1598	가빈	加賓
+desc	$1599	데일리	戴利
+desc	$1600	아타라	阿塔拉
+desc	$1601	강철의 문	鐵斧護衛
+desc	$1602	프렉슨	富萊森
+desc	$1603	외성 동문	外城東門
+desc	$1604	엑셀론	艾斯倫
+desc	$1605	발라카스	巴拉卡斯
+desc	$1606	크리스마스 카드	聖誕卡片
+desc	$1607	지도:화룡의 둥지	地圖:火龍窟
+desc	$1608	아시타지오의 재	阿西塔基奧的灰燼
+desc	$1609	콜롯세움 관리인	競技場管理員
+desc	$1610	투기장 입장권	競技場入場卷
+desc	$1611	크리옴	克里歐
+desc	$1612	경기 시작까지	離比賽開始
+desc	$1613	분 남았습니다.	分後比賽將開始.
+desc	$1614	분 남았습니다. 참가를 원하시는 분들은 지금 입장하여주십시오.	分鐘後比賽將開始，想參賽者請現在入場。
+desc	$1615	이제 곧 몬스터들이 등장할 것입니다. 건투를 빕니다.	現在怪物即將登場.祝你好運
+desc	$1616	폭죽	煙火
+desc	$1617	꽃가루	彩帶
+desc	$1618	빨간봉투	紅包
+desc	$1619	발렌타인데이	情人節
+desc	$1620	화이트데이	白色情人節
+desc	$1621	캔디	糖果
+desc	$1622	초콜릿	巧克力
+desc	$1623	카드	卡片
+desc	$1624	스텔라	史堤拉
+desc	$1625	적색	紅色
+desc	$1626	청색	綠色
+desc	$1627	남색	藍色
+desc	$1628	황색	黃色
+desc	$1629	원형	圓形
+desc	$1630	2단	兩段
+desc	$1631	하트	心形
+desc	$1632	눈꽃	雪
+desc	$1633	꽃술	煙火
+desc	$1634	혼합	混合
+desc	$1635	백색	白色
+desc	$1636	Let the hunt begin!	開始狩獵吧!
+desc	$1637	콜드	庫德
+desc	$1638	아리에	艾莉雅 
+desc	$1639	모모	摩摩
+desc	$1640	오킴	歐肯
+desc	$1641	올드	歐得
+desc	$1642	진	珍
+desc	$1643	로즈	蘿絲
+desc	$1644	티나	緹娜
+desc	$1645	마기	梅吉
+desc	$1646	진실의 목걸이	真實項鍊
+desc	$1647	정열의 목걸이	熱情項鍊
+desc	$1648	행운의 목걸이	幸運項鍊
+desc	$1649	희망의 목걸이	希望項鍊
+desc	$1650	기적의 목걸이	奇蹟項鍊
+desc	$1651	마법서 (그레이터 헤이스트)	魔法書 (強力加速術)
+desc	$1652	강화	強化
+desc	$1653	에스메랄다	預言者
+desc	$1654	3연발	三連發
+desc	$1655	6연발	六連發
+desc	$1656	스파크	仙女棒
+desc	$1657	2색(백적)	雙色(白紅)
+desc	$1658	2색(적황)	雙色(紅黃)
+desc	$1659	2색(황남)	雙色(黃藍)
+desc	$1660	7색	七色
+desc	$1661	항마의 반지	抗魔戒指
+desc	$1662	멸마의 반지	滅魔戒指
+desc	$1663	화령의 반지	火靈戒指
+desc	$1664	수령의 반지	水靈戒指
+desc	$1665	지령의 반지	地靈戒指
+desc	$1666	풍령의 반지	風靈戒指
+desc	$1667	낡은	小型
+desc	$1668	고급	大型
+desc	$1669	신체의 벨트	身體腰帶
+desc	$1670	정신의 벨트	精神腰帶
+desc	$1671	영혼의 벨트	靈魂腰帶
+desc	$1672	부활절 달걀	復活蛋
+desc	$1673	최대 MP	最大魔力
+desc	$1674	신녀 아가타	聖使阿卡塔
+desc	$1675	신녀 클라라	聖使克拉拉
+desc	$1676	신녀 도로시아	聖使圖蘿西亞
+desc	$1677	신녀 베로니카	聖使貝蘿尼卡
+desc	$1678	신녀 비비아나	聖使薇薇安
+desc	$1679	신녀 로사	聖使蘿莎
+desc	$1680	신녀 보나	聖使柏娜
+desc	$1681	신녀 비나	聖使畢娜
+desc	$1682	신녀 드라	聖使德拉
+desc	$1683	신녀 로시	聖使羅西
+desc	$1684	변신술사	幻術師
+desc	$1685	방어구 강화사	防具強化師
+desc	$1686	무기 강화사	武器強化師
+desc	$1687	그레이트 힐러	高級治癒師
+desc	$1688	용기의 증표	勇氣之證
+desc	$1689	희망의 반지	希望戒指
+desc	$1690	행운의 반지	幸運戒指
+desc	$1691	기적의 반지	奇蹟戒指
+desc	$1692	정열의 반지	熱情戒指
+desc	$1693	진실의 반지	真實戒指
+desc	$1694	프라이트	佛利特
+desc	$1695	계곡 아울베어	弱化歐熊
+desc	$1696	섬 가스트	弱化卡司特
+desc	$1697	섬 가스트 로드	弱化卡司特王
+desc	$1698	미완성 골렘	弱化高崙石頭怪
+desc	$1699	계곡 셸로브	弱化夏洛伯
+desc	$1700	계곡 곰	弱化熊
+desc	$1701	섬 크로코다일	弱化巨大鱷魚
+desc	$1702	돌연변이 악어	弱化鱷魚
+desc	$1703	돌연변이 도마뱀	弱化蜥蜴人
+desc	$1704	계곡 하피	弱化哈維
+desc	$1705	스타이저	弱化飛龍
+desc	$1706	썩어가는 해골저격병	弱化骷髏神射手
+desc	$1707	썩어가는 해골돌격병	弱化骷髏鬥士
+desc	$1708	썩어가는 해골근위병	弱化骷髏警衛
+desc	$1709	섬 코카트리스	弱化亞力安
+desc	$1710	퇴화한 비홀더	弱化多眼怪
+desc	$1711	계곡 라이칸스로프	弱化萊肯
+desc	$1712	계곡 늑대인간	弱化狼人
+desc	$1713	지친 랫맨	弱化鼠人
+desc	$1714	계곡 오우거	弱化歐吉
+desc	$1715	탈주 흑기사	弱化黑騎士
+desc	$1716	굶주린 트롤	弱化多羅
+desc	$1717	계곡 곰	弱化熊
+desc	$1718	계곡 그리폰	弱化格利芬
+desc	$1719	계곡 해골저격병	弱化骷髏弓兵
+desc	$1720	계곡 해골돌격병	弱化骷髏槍兵
+desc	$1721	계곡 해골근위병	弱化骷髏警衛 
+desc	$1722	큐커스	弱化獨眼巨人
+desc	$1723	계곡 바실리스크	弱化邪惡蜥蜴
+desc	$1724	리온	瑞歐
+desc	$1725	커스	卡斯
+desc	$1726	키리스	卡利思
+desc	$1727	무보	慕伯
+desc	$1728	루바	蘿芭
+desc	$1729	티오	提奧
+desc	$1730	쿤	昆
+desc	$1731	키요리	奇耀
+desc	$1732	파고	帕古
+desc	$1733	지하 던전에는 무엇이 있는 걸까?	地下洞穴裡到底有什麼呢?
+desc	$1734	그 곳을 이렇게 계속 방치하다가는 무언가 큰일이 벌어질 거 같아...	如果停留在那個地方,好像會發生事情...
+desc	$1735	예언서에 나타난 그분은 언제쯤 오시려나...	在預言書裡所說的那人何時會出現呢...
+desc	$1736	만일 지하 던전의 봉인이 풀리기라도 한다면...	萬一地下洞穴的封印被解除的話...
+desc	$1737	코코	小柯
+desc	$1738	스카이	史蓋
+desc	$1739	저주받은 에틴	受詛咒的阿魯巴
+desc	$1740	저주받은 버그베어	弱化食人妖精
+desc	$1741	지하 크랩맨	弱化蟹人
+desc	$1742	지하 라미아	弱化蛇女
+desc	$1743	시궁 바쿡	弱化蟑螂人
+desc	$1744	오염된 오크 좀비	弱化妖魔殭屍
+desc	$1745	봉인된 서큐버스 퀸	受封印的思克巴女皇
+desc	$1746	봉인된 서큐버스	弱化思克巴
+desc	$1747	배회하는 무리안	弱化莫妮亞
+desc	$1748	배회하는 웅골리언트	弱化楊果里恩
+desc	$1749	썩어가는 해골	弱化史巴托
+desc	$1750	괴물 버섯	弱化蘑菇
+desc	$1751	자극하지 마라! 더 이상 강요하지 마라!	別反抗了! 死亡已離你不遠!
+desc	$1752	미친 군주가 보낸 파수꾼이냐? 죽어버려!!	你是領主派來的冒險者嗎? 受死吧!!
+desc	$1753	우리들을 봉인 하려는 자! 반드시 죽는다!	想要封印我們的人! 都必須死亡!
+desc	$1754	어리석은 놈! 너 따위가 우리를 봉인 할 수 있을 거 같아?!	愚蠢的傢伙! 憑你就想要將我們封印嗎?!
+desc	$1755	붉은 열쇠	紅鑰匙
+desc	$1756	검은 열쇠	黑鑰匙
+desc	$1757	섬의 증표	歌唱之島項鍊
+desc	$1758	계곡의 증표	隱藏之谷項鍊
+desc	$1759	기사의 견습용 갑옷	騎士盔甲
+desc	$1760	기사의 견습용 방패	騎士盾牌
+desc	$1761	기사의 견습용 투구	騎士頭盔
+desc	$1762	견습용 검	王族之劍
+desc	$1763	군주의 견습용 갑옷	王族盔甲
+desc	$1764	군주의 견습용 방패	王族盾牌
+desc	$1765	군주의 견습용 투구	王族頭盔
+desc	$1766	요정의 견습용 활	妖精之弓
+desc	$1767	마법사의 견습용 망토	法師斗蓬
+desc	$1768	마법사의 견습용 부츠	法師長靴
+desc	$1769	마법사의 견습용 모자	法師頭盔
+desc	$1770	마법사의 견습용 지팡이	法師之杖
+desc	$1771	얼음의 여왕	冰之女王
+desc	$1772	마일드	麥德
+desc	$1773	키리우스	吉利烏斯
+desc	$1774	팅 커	汀卡
+desc	$1775	비우스	畢伍斯
+desc	$1776	만드라	曼德拉
+desc	$1777	데리안	戴倫
+desc	$1778	타라스	塔拉斯
+desc	$1779	바뤼에스	巴耶斯 
+desc	$1780	엘뤼온	艾利溫
+desc	$1781	크리스터	克里斯特
+desc	$1782	라즐로스	拉哲洛斯
+desc	$1783	눈사람	雪人
+desc	$1784	샤벨 타이거	冰原老虎
+desc	$1785	좀비 엘모어 마법사	艾爾摩法師
+desc	$1786	에티	雪怪
+desc	$1787	좀비 엘모어 장군	艾爾摩將軍
+desc	$1788	허스키	哈士奇
+desc	$1789	아이언 골렘	高崙鋼鐵怪
+desc	$1790	좀비 엘모어 병사	艾爾摩士兵
+desc	$1791	아이스 맨	冰人
+desc	$1792	비온	畢歐
+desc	$1793	디마	提瑪
+desc	$1794	루루	露露
+desc	$1795	데칸	戴肯
+desc	$1796	로터스	羅德斯
+desc	$1797	가루가	嘉魯卡
+desc	$1798	돌 장갑	石製手套
+desc	$1799	가죽 장갑	皮製手套
+desc	$1800	수정 장갑	水晶手套
+desc	$1801	설인 장갑	雪人手套
+desc	$1802	운명의 부츠	毀滅長靴
+desc	$1803	저주 받은 부츠	詛咒長靴
+desc	$1804	수중 부츠	深水長靴
+desc	$1805	데몬의 장갑	惡魔手套
+desc	$1806	데몬의 갑옷	惡魔盔甲
+desc	$1807	데몬의 부츠	惡魔長靴
+desc	$1808	데몬의 투구	惡魔頭盔
+desc	$1809	데스나이트의 장갑	死亡騎士手套
+desc	$1810	데스나이트의 갑옷	死亡騎士盔甲
+desc	$1811	데스나이트의 부츠	死亡騎士長靴
+desc	$1812	데스나이트의 투구	死亡騎士頭盔
+desc	$1813	진주 목걸이	珍珠項鍊
+desc	$1814	에메랄드 목걸이	綠寶石項鍊
+desc	$1815	루비 목걸이	紅寶石項鍊
+desc	$1816	자수정 목걸이	紫水晶項鍊
+desc	$1817	다이아몬드 목걸이	鑽石項鍊
+desc	$1818	트롤의 벨트	多羅皮帶
+desc	$1819	오우거의 벨트	歐吉皮帶
+desc	$1820	타이탄의 벨트	泰坦皮帶
+desc	$1821	사이하의 활	沙哈之弓
+desc	$1822	정령옥	精靈玉
+desc	$1823	데푸리	德弗利
+desc	$1824	티파니	帝芬妮
+desc	$1825	로쿠	羅庫
+desc	$1826	타우스	塔斯
+desc	$1827	비얀	碧恩
+desc	$1828	엔케	小安安
+desc	$1829	정령의 수정 (레지스트 매직)	精靈水晶(魔法防禦)
+desc	$1830	정령의 수정 (바디 투 마인드)	精靈水晶(心靈轉換)
+desc	$1831	정령의 수정 (텔레포트 투 마더)	精靈水晶(世界樹的呼喚)
+desc	$1832	정령의 수정 (클리어 마인드)	精靈水晶(淨化精神)
+desc	$1833	정령의 수정 (레지스트 엘리멘트)	精靈水晶(屬性防禦)
+desc	$1834	정령의 수정 (리턴 투 네이쳐)	精靈水晶(釋放元素)
+desc	$1835	정령의 수정 (블러드 투 소울)	精靈水晶(魂體轉換)
+desc	$1836	정령의 수정 (프로텍션 프롬 엘리멘트)	精靈水晶(單屬性防禦)
+desc	$1837	정령의 수정 (파이어 웨폰)	精靈水晶(火焰武器)
+desc	$1838	정령의 수정 (윈드 샷)	精靈水晶(風之神射)
+desc	$1839	정령의 수정 (윈드 워크)	精靈水晶(風之疾走)
+desc	$1840	정령의 수정 (어스 스킨)	精靈水晶(大地防護)
+desc	$1841	정령의 수정 (인탱글)	精靈水晶(地面障礙)
+desc	$1842	정령의 수정 (이레이즈 매직)	精靈水晶(魔法消除)
+desc	$1843	정령의 수정 (서먼 레서 엘리멘탈)	精靈水晶(召喚屬性精靈)
+desc	$1844	정령의 수정 (블레스 오브 파이어)	精靈水晶(烈炎氣息)
+desc	$1845	정령의 수정 (아이 오브 스톰)	精靈水晶(暴風之眼)
+desc	$1846	정령의 수정 (어스 바인드)	精靈水晶(大地屏障)
+desc	$1847	정령의 수정 (네이쳐스 터치)	精靈水晶(生命之泉)
+desc	$1848	정령의 수정 (블레스 오브 어스)	精靈水晶(大地的祝福)
+desc	$1849	정령의 수정 (에어리어 오브 사일런스)	精靈水晶(封印禁地)
+desc	$1850	정령의 수정 (서먼 그레이터 엘리멘탈)	精靈水晶(召喚強力屬性精靈)
+desc	$1851	정령의 수정 (버닝 웨폰)	精靈水晶(烈炎武器)
+desc	$1852	정령의 수정 (네이쳐스 블레싱)	精靈水晶(生命的祝福)
+desc	$1853	정령의 수정 (콜 오브 네이쳐)	精靈水晶(生命呼喚)
+desc	$1854	정령의 수정 (스톰 샷)	精靈水晶(暴風神射)
+desc	$1855	정령의 수정 (윈드 셰클)	精靈水晶(風之枷鎖)
+desc	$1856	정령의 수정 (아이언 스킨)	精靈水晶(鋼鐵防護)
+desc	$1857	마법서 (홀리 웨폰)	魔法書 (神聖武器)
+desc	$1858	마법서 (디크리즈 웨이트)	魔法書 (負重強化)
+desc	$1859	마법서 (위크 엘리멘탈)	魔法書 (能量感測)
+desc	$1860	마법서 (카운터 매직)	魔法書 (魔法屏障)
+desc	$1861	마법서 (메디테이션)	魔法書 (冥想術)
+desc	$1862	마법서 (마나 드레인)	魔法書 (魔力奪取)
+desc	$1863	마법서 (다크니스)	魔法書 (黑闇之影)
+desc	$1864	마법서 (위크니스)	魔法書 (弱化術)
+desc	$1865	마법서 (블레스 웨폰)	魔法書 (祝福魔法武器)
+desc	$1866	마법서 (버서커스)	魔法書 (狂暴術)
+desc	$1867	마법서 (디지즈)	魔法書 (疾病術)
+desc	$1868	마법서 (라이프 스트림)	魔法書 (治癒能量風暴)
+desc	$1869	마법서 (사일런스)	魔法書 (魔法封印)
+desc	$1870	마법서 (디케이 포션)	魔法書 (藥水霜化術)
+desc	$1871	마법서 (카운터 디텍션)	魔法書 (強力無所遁形術)
+desc	$1872	마법서 (앱솔루트 배리어)	魔法書 (絕對屏障)
+desc	$1873	마법서 (어드밴스 스피릿)	魔法書 (靈魂昇華)
+desc	$1874	마법서 (프리징 블리자드)	魔法書 (冰雪颶風)
+desc	$1875	린다	琳達
+desc	$1876	파고르	帕羅
+desc	$1877	디코	迪庫
+desc	$1878	히림	希林
+desc	$1879	상아탑 마법사	象牙塔魔法師
+desc	$1880	청소중...  청소중...	掃地..掃地..掃乾淨..
+desc	$1881	상아탑 내부... 이상무	象牙塔內..應該可以放心...
+desc	$1882	...주인님. 어디 계십니까?	..主人..在哪裡啊?
+desc	$1883	흐음... 그 책이 어디에 있더라?	咦..那本書放在哪啊?
+desc	$1884	...그 시약을 섞으면...	..如果把這藥水一起混合...
+desc	$1885	도대체가 알 수가 없군...	不曉得這是怎麼回事...
+desc	$1886	아아, 뭐가 잘못된 걸까?	啊!! 發生甚麼了!?
+desc	$1887	...낙제 받으면 안되는데...	...一定要考上....
+desc	$1888	휴우, 다리 아파라...	哎呀,腿好酸喔...
+desc	$1889	지도:오렌	地圖:歐瑞
+desc	$1890	그리폰의 깃털	格利芬羽毛
+desc	$1891	바람의 눈물	風之淚
+desc	$1892	빈 주문서 (레벨 2)	空的魔法卷軸(等級2)
+desc	$1893	빈 주문서 (레벨 3)	空的魔法卷軸(等級3)
+desc	$1894	빈 주문서 (레벨 4)	空的魔法卷軸(等級4)
+desc	$1895	빈 주문서 (레벨 5)	空的魔法卷軸(等級5)
+desc	$1896	매직 볼	魔法球
+desc	$1897	바르니아	巴尼亞
+desc	$1898	리비안	魯比恩
+desc	$1899	요정의 견습용 갑옷	精靈皮盔甲
+desc	$1900	요정의 견습용 부츠	精靈皮長靴
+desc	$1901	요정의 견습용 투구	精靈皮頭盔
+desc	$1902	콜롯세움 부관리인	競技場入場管理員
+desc	$1903	민첩함의 투구	精靈敏捷頭盔
+desc	$1904	체력의 투구	精靈體質頭盔
+desc	$1905	낡은 거래 문서	古老的交易文件
+desc	$1906	아논의 편지	亞南的信
+desc	$1907	오스의 증서	阿特的證書
+desc	$1908	수색문서	搜索狀
+desc	$1909	제로의 소개서	傑羅的介紹狀
+desc	$1910	젬의 소개장	詹姆的介紹狀
+desc	$1911	흑기사의 서약서	黑騎士的誓約
+desc	$1912	두다 마라 오크 마법서	都達瑪拉妖魔魔法書
+desc	$1913	네루가 오크 마법서	那魯加妖魔魔法書
+desc	$1914	간디 오크 마법서	甘地妖魔魔法書
+desc	$1915	아투바 오크 마법서	阿吐巴妖魔魔法書
+desc	$1916	저주받은 마법서	受詛咒的魔法書
+desc	$1917	마력서	魔法能量之書
+desc	$1918	붉은 망토	紅色斗篷
+desc	$1919	해골바가지	骷髏頭
+desc	$1920	구울의 손톱	食屍鬼的指甲
+desc	$1921	구울의 이빨	食屍鬼的牙齒
+desc	$1922	터틀 드래곤의 껍질	龍龜甲
+desc	$1923	기사의 두건	騎士頭巾
+desc	$1924	붉은 기사의 두건	紅騎士頭巾
+desc	$1925	리키	瑞奇
+desc	$1926	오스	歐斯
+desc	$1927	제로	傑羅
+desc	$1928	젬	詹姆
+desc	$1929	흑기사-수색대	黑騎士搜索隊
+desc	$1930	잊혀진 섬행 배표	遺忘之島船票
+desc	$1931	이스발	依斯巴
+desc	$1932	아시리스	阿西理斯
+desc	$1933	잊혀진 판금 갑옷	被遺忘的金屬盔甲
+desc	$1934	잊혀진 가죽 갑옷	被遺忘的皮盔甲
+desc	$1935	잊혀진 로브	被遺忘的長袍
+desc	$1936	잊혀진 비늘 갑옷	被遺忘的鱗甲
+desc	$1937	소환 조종 반지	召喚控制戒指
+desc	$1938	잊혀진 대검	被遺忘的巨劍
+desc	$1939	잊혀진 검	被遺忘的劍
+desc	$1940	잊혀진 보우건	被遺忘的弩槍
+desc	$1941	낡은 바람의 투구	小型風之頭盔
+desc	$1942	바람의 투구	風之頭盔
+desc	$1943	토끼의 간	兔子的肝
+desc	$1944	어블리젼	俄布里
+desc	$1945	하이네행 배표	海音港口船票
+desc	$1946	고대의 판금 갑옷	古老的金屬盔甲
+desc	$1947	고대의 가죽 갑옷	古老的皮盔甲
+desc	$1948	고대의 로브	古老的長袍
+desc	$1949	고대의 비늘 갑옷	古老的鱗甲
+desc	$1950	고대의 검	古老的劍
+desc	$1951	고대의 대검	古老的巨劍
+desc	$1952	고대의 보우건	古老的弩槍
+desc	$1953	디텍터	迪泰特
+desc	$1954	치키	奇克
+desc	$1955	럭키	洛奇
+desc	$1956	티론	提倫
+desc	$1957	고대의 주문서	古代的卷軸
+desc	$1958	봉인된	受封印
+desc	$1959	마법서 (트루 타겟)	魔法書 (精準目標)
+desc	$1960	마법서 (글로잉 오라)	魔法書 (激勵士氣)
+desc	$1961	생명의 비밀	生命的卷軸
+desc	$1962	아그리 콜라	歐吉古樂
+desc	$1963	다비	塔比
+desc	$1964	윈드로드	風壓
+desc	$1965	엑스퍼린	樂金比
+desc	$1966	(아이스 대거)	(冰箭)
+desc	$1967	(윈드 커터)	(風刃)
+desc	$1968	(파이어 애로우)	(火箭)
+desc	$1969	(스탈락)	(地獄之牙)
+desc	$1970	(프로즌 클라우드)	(寒冰氣息)
+desc	$1971	(어스 재일)	(岩牢)
+desc	$1972	(콘 오브 콜드)	(冰錐)
+desc	$1973	(선 버스트)	(烈炎術)
+desc	$1974	(어스 퀘이크)	(震裂術)
+desc	$1975	(파이어 스톰)	(火風暴)
+desc	$1976	(그레이터 헤이스트)	(強力加速術)
+desc	$1977	(홀리 웨폰)	(神聖武器)
+desc	$1978	(디크리즈 웨이트)	(負重強化)
+desc	$1979	(위크 엘리멘탈)	(能量感測)
+desc	$1980	(카운터 매직)	(魔法屏障)
+desc	$1981	(메디테이션)	(冥想術)
+desc	$1982	(마나 드레인)	(魔力奪取)
+desc	$1983	(다크니스)	(黑闇之影)
+desc	$1984	(위크니스)	(弱化術)
+desc	$1985	(블레스 웨폰)	(祝福魔法武器)
+desc	$1986	(버서커스)	(狂暴術)
+desc	$1987	(디지즈)	(疾病術)
+desc	$1988	(라이프 스트림)	(治癒能量風暴)
+desc	$1989	(사일런스)	(魔法封印)
+desc	$1990	(디케이 포션)	(藥水霜化術)
+desc	$1991	(카운터 디텍션)	(強力無所遁形術)
+desc	$1992	(맵솔루트 배리어)	(絕對屏障)
+desc	$1993	(어드밴스 스피릿)	(靈魂昇華)
+desc	$1994	(프리징 블리자드)	(冰雪颶風)
+desc	$1995	(트루 타겟)	(精準目標)
+desc	$1996	(글로잉 오라)	(激勵士氣)
+desc	$1997	환상의 검	幻象之劍
+desc	$1998	환상의 갑옷	幻象盔甲
+desc	$1999	환상의 활	幻象之弓
+desc	$2000	환상의 무기 마법 주문서	對武器施法的幻象卷軸
+desc	$2001	환상의 갑옷 마법 주문서	對盔甲施法的幻象卷軸
+desc	$2002	일루지나	依魯吉那
+desc	$2003	강철 마나의 지팡이	鋼鐵瑪那魔杖
+desc	$2004	불의 정령	火之精靈
+desc	$2005	물의 정령	水之精靈
+desc	$2006	바람의 정령	風之精靈
+desc	$2007	땅의 정령	土之精靈
+desc	$2008	불의 정령수	強力火之精靈
+desc	$2009	물의 정령수	強力水之精靈
+desc	$2010	바람의 정령수	強力風之精靈
+desc	$2011	땅의 정령수	強力土之精靈
+desc	$2012	마크	馬克
+desc	$2013	짐	吉姆
+desc	$2014	수색 개미	搜查螞蟻
+desc	$2015	문지기 개미	看守螞蟻
+desc	$2016	아리아	艾莉亞
+desc	$2017	다크마르	達克馬勒
+desc	$2018	페어리 프린세스	精靈公主
+desc	$2019	디롱	迪隆
+desc	$2020	언데드의 배신자	不死族背叛者
+desc	$2021	마샤	馬沙
+desc	$2022	비밀방 열쇠	密室鑰匙
+desc	$2023	웅골리언트의 발톱	楊果里恩之爪
+desc	$2024	라미아의 비늘	蛇女之鱗
+desc	$2025	환생의 물약	返生藥水
+desc	$2026	감사의 편지	感謝信
+desc	$2027	마을 주민들의 유품	村民的遺物
+desc	$2028	정령 원석	精靈原石
+desc	$2029	저주 받은 정령서	受詛咒的精靈書
+desc	$2030	언데드의 열쇠	不死族的鑰匙
+desc	$2031	좀비 열쇠	殭屍鑰匙
+desc	$2032	해골 열쇠	骷髏鑰匙
+desc	$2033	언데드의 뼈	不死族的骨頭
+desc	$2034	언데드의 뼈조각	不死族的骨頭碎片
+desc	$2035	붉은 기사의 방패	紅騎士盾牌
+desc	$2036	제인	傑恩
+desc	$2037	알렉스	亞歷斯
+desc	$2038	크로노스	克洛諾斯
+desc	$2039	흑마법사	黑魔法師
+desc	$2040	사뮤엘	沙謬爾
+desc	$2041	피니스	菲尼斯
+desc	$2042	히터	希特
+desc	$2043	하이디	夏迪
+desc	$2044	할렌	海蓮
+desc	$2045	토비	托比
+desc	$2046	샐던	仙德
+desc	$2047	란달프	藍達夫
+desc	$2048	앨린다의 서펜트	艾琳達的蛇身
+desc	$2049	엘린다	艾琳達
+desc	$2050	엘린다의 추종자	艾琳達的追蹤者
+desc	$2051	멜린다	麥琳達
+desc	$2052	타낙	塔納
+desc	$2053	란달프	藍達夫
+desc	$2054	에스메랄다	艾斯默拉德
+desc	$2055	유리아	尤利亞
+desc	$2056	요셉	約瑟
+desc	$2057	라켈	拉肯
+desc	$2058	루스	魯斯
+desc	$2059	코라스	柯拉斯
+desc	$2060	코라	柯拉
+desc	$2061	루벤	魯班
+desc	$2062	마커	馬柯
+desc	$2063	잭-O-랜턴	南瓜怪
+desc	$2064	잭-0-랜턴	南瓜怪
+desc	$2065	호박씨	南瓜種子
+desc	$2066	거대 호박씨	巨大南瓜種子
+desc	$2067	호박 가면	南瓜帽
+desc	$2068	호박 캔디	南瓜糖果
+desc	$2069	금호박	金南瓜
+desc	$2070	은호박	銀南瓜
+desc	$2071	동호박	銅南瓜
+desc	$2072	호박 투구	南瓜頭套
+desc	$2073	변종 거대 여왕 개미	變種巨蟻女皇
+desc	$2074	변종 거대 병정 개미	變種巨大兵蟻
+desc	$2075	요정족 티셔츠	精靈T恤
+desc	$2076	군주의 위엄	君主的威嚴
+desc	$2077	비밀 키	秘密鑰匙
+desc	$2078	신비한 수정구	神秘水晶球
+desc	$2079	신비한 지팡이	神秘魔杖
+desc	$2080	수정 지팡이	水晶魔杖
+desc	$2081	배신자의 해골근위병	背叛的骷髏警衛兵
+desc	$2082	잭-오-랜턴	南瓜人
+desc	$2083	다크마르의 불의 정령	達克馬勒之火精靈
+desc	$2084	다크마르의 물의 정령	達克馬勒之水精靈
+desc	$2085	다크마르의 바람의 정령	達克馬勒之風精靈
+desc	$2086	다크마르의 땅의 정령	達克馬勒之土精靈
+desc	$2087	칼바스	金侃
+desc	$2088	라미아 방 열쇠	蛇女房間鑰匙
+desc	$2089	마법서 (콜 클렌)	魔法書 (呼喚盟友)
+desc	$2090	아리아의 보답	艾莉亞的回報
+desc	$2091	요정족 보물	妖精族寶物
+desc	$2092	오크론	奧克倫
+desc	$2093	넝마주이	拾荒者
+desc	$2094	파푸리온의 마갑주	古代水龍鱗盔甲
+desc	$2095	안타라스의 마갑주	古代地龍鱗盔甲
+desc	$2096	발라카스의 마갑주	古代火龍鱗盔甲
+desc	$2097	린드비오르의 마갑주	古代風龍鱗盔甲
+desc	$2098	초보 텔레포터	初級傳送師
+desc	$2099	산적	強盜
+desc	$2100	산적 두목	強盜頭目
+desc	$2101	도펠겡어	變形怪首領
+desc	$2102	가고일	翼魔
+desc	$2103	나이트메어	夢魘
+desc	$2104	레서 드래곤	幼龍
+desc	$2105	다이어울프	魔狼
+desc	$2106	그레이트 미노타우르스	巨大牛人
+desc	$2107	키메라	奇美拉
+desc	$2108	본 드래곤	骨龍
+desc	$2109	에이션트 자이언트	古代巨人
+desc	$2110	리치	巫妖
+desc	$2111	댄싱 소드	死亡之劍
+desc	$2112	레서 데몬	小惡魔
+desc	$2113	메두사	梅杜莎
+desc	$2114	발록	炎魔
+desc	$2115	젤라틴 큐브	果凍怪
+desc	$2116	린드비오르	林德拜爾
+desc	$2117	켄 라우헬	反王肯恩
+desc	$2118	케레니스	賽尼斯
+desc	$2119	근위대	警衛隊
+desc	$2120	친위대	親衛隊
+desc	$2121	데프만	戴夫曼
+desc	$2122	라온	拉溫
+desc	$2123	파우	包武
+desc	$2124	카무	卡木
+desc	$2125	오지	奧基
+desc	$2126	시리우스	西里烏斯
+desc	$2127	티몬	提蒙
+desc	$2128	비우스트	畢斯特
+desc	$2129	아덴	亞丁
+desc	$2130	제시카	潔西卡
+desc	$2131	미사	米薩
+desc	$2132	마르자	摩札
+desc	$2133	초비	喬比
+desc	$2134	빈드로	賓多
+desc	$2135	마이키	馬依琪
+desc	$2136	아린	亞琳
+desc	$2137	마틸다	馬提達
+desc	$2138	엘레아노	艾列亞諾
+desc	$2139	제니퍼	珍妮佛
+desc	$2140	셀마	仙瑪
+desc	$2141	리리아	莉莉亞
+desc	$2142	마르엔	馬勒安
+desc	$2143	쉐리안	雪莉
+desc	$2144	버클리	巴克利
+desc	$2145	존스	瓊斯
+desc	$2146	빔	賓
+desc	$2147	라프가	拉弗嘉
+desc	$2148	로젠	羅傑
+desc	$2149	제이미	傑邁
+desc	$2150	막스	馬克斯
+desc	$2151	라파엘	拉帕爾
+desc	$2152	바바라	巴巴拉
+desc	$2153	키드만	齊德曼
+desc	$2154	아퀸	阿庫
+desc	$2155	멜리	莫麗
+desc	$2156	오원	歐文
+desc	$2157	켈빈	喀爾文
+desc	$2158	루이스	路易斯
+desc	$2159	딘	丁
+desc	$2160	리차드	李察
+desc	$2161	맥	麥
+desc	$2162	월리	威利
+desc	$2163	스빈	史斌
+desc	$2164	잭키	傑可
+desc	$2165	에플렉	艾裴利
+desc	$2166	브레드	布朗德
+desc	$2167	루키	魯琪
+desc	$2168	오만의 탑 21층 이동 주문서	傲慢之塔移動卷軸(21F)
+desc	$2169	오만의 탑 11층 이동 주문서	傲慢之塔移動卷軸(11F)
+desc	$2170	촌장 보좌관	副村長
+desc	$2171	마을 관리인	村莊管理人
+desc	$2172	말하는 섬마을	說話之島村莊
+desc	$2173	글루딘 마을	古魯丁村莊
+desc	$2174	켄트 성마을	肯特村莊
+desc	$2175	화전민촌	燃柳村莊
+desc	$2176	우드벡 마을	風木村莊
+desc	$2177	은기사 마을	銀騎士村莊
+desc	$2178	기란	성마을	奇岩村莊
+desc	$2179	하이네 성마을	海音村莊
+desc	$2180	상아탑 마을	歐瑞村莊
+desc	$2181	웰던	마을	威頓村莊
+desc	$2182	성십자단	聖十字軍
+desc	$2183	귀족 부인	貴族婦人
+desc	$2184	귀족 남자	貴族男士
+desc	$2185	청년	青年
+desc	$2186	꼬마	小朋友
+desc	$2187	소녀	少年
+desc	$2188	마을 주민	村民
+desc	$2189	반왕의 갑옷	反王盔甲
+desc	$2190	반왕의 부츠	反王長靴
+desc	$2191	반왕의 건틀릿	反王手套
+desc	$2192	반왕의 투구	反王頭盔
+desc	$2193	드래곤의 뼈	龍之骨
+desc	$2194	케레니스의 부츠	賽尼斯長靴
+desc	$2195	키메라의 가죽(용)	奇美拉之皮(龍)
+desc	$2196	키메라의 가죽(산양)	奇美拉之皮(山羊)
+desc	$2197	키메라의 가죽(사자)	奇美拉之皮(獅子)
+desc	$2198	키메라의 가죽(뱀)	奇美拉之皮(蛇)
+desc	$2199	케레니스의 서클릿	賽尼斯頭箍
+desc	$2200	용의 심장	龍之心
+desc	$2201	케레니스의 장갑	賽尼斯手套
+desc	$2202	케레니스의 로브	賽尼斯斗篷
+desc	$2203	지도:아덴	地圖:亞丁
+desc	$2204	수호탑:에바	守護塔:伊娃
+desc	$2205	수호탑:파아그리오	守護塔:帕格里奧
+desc	$2206	수호탑:마프르	守護塔:馬普勒
+desc	$2207	수호탑:사이하	守護塔:沙哈
+desc	$2208	마프르의 도끼	馬普勒之斧
+desc	$2209	발라카스	巴拉卡斯鱗甲 
+desc	$2210	아덴 기념주화	亞丁紀念貨幣
+desc	$2211	린드비오르	林德拜爾鱗甲
+desc	$2212	리치 로브	巫妖斗篷
+desc	$2213	메두사 방패	梅杜莎盾牌
+desc	$2214	미노타우르스 도끼	牛人斧頭
+desc	$2215	에이션트 자이언트의 반지	古代巨人戒指
+desc	$2216	안타라스	安塔瑞斯鱗甲
+desc	$2217	파푸리온	法利昂鱗甲
+desc	$2218	얼음의 여왕 시녀	冰之女王侍女
+desc	$2219	배신당한 오크대장	背叛的妖魔隊長
+desc	$2220	배신당한 오크궁수	背叛的妖魔巡守
+desc	$2221	영혼의 결정체 조각	靈魂水晶
+desc	$2222	영혼의 편지	靈魂之證
+desc	$2223	왕가의 문장 조각	王族徽章的碎片
+desc	$2224	신비한 주머니	神秘的袋子
+desc	$2225	수호자의 반지	守護者的戒指
+desc	$2226	얼음의 여왕...	冰之女王... 
+desc	$2227	영혼의 결정체... 나의 연구...	靈魂水晶... 我的...
+desc	$2228	카루딤	卡路丁
+desc	$2229	쥬케	朱奎
+desc	$2230	팀프킨	恬金
+desc	$2231	캐서린	凱瑟琳
+desc	$2232	샤루	夏露
+desc	$2233	키닌	奇寧
+desc	$2234	엘레리스	艾勒里斯
+desc	$2235	마구스	馬古斯
+desc	$2236	페가	菲卡
+desc	$2237	멜리사	馬夏
+desc	$2238	혈맹 집행인	血盟執行人
+desc	$2239	도펠갱어의 체액	變形怪的血
+desc	$2240	고대 열쇠의 조각(머리 부분)	古代鑰匙(上半部)
+desc	$2241	고대인의 지혜	古代人的智慧
+desc	$2242	고대의 악마에 대한 기록서	古代惡魔的記載
+desc	$2243	파란색 플룻	藍色長笛
+desc	$2244	신비한 소라 껍데기	神秘貝殼
+desc	$2245	밤의 시야	夜之視野
+desc	$2246	고대의 유산	古代的遺物
+desc	$2247	찢어진 조사원의 조사서	破損的調查簿
+desc	$2248	조사원의 조사서 조각	調查簿的缺頁
+desc	$2249	보호 장갑	保護者手套
+desc	$2250	마나 망토	瑪那斗篷
+desc	$2251	용기의 벨트	勇敢皮帶
+desc	$2252	고대인의 활	水精靈之弓
+desc	$2253	천상의 검	天空之劍
+desc	$2254	지무	志武
+desc	$2255	자이언트 장로	巨人長老
+desc	$2256	자이언트 가디언	巨人守護神
+desc	$2257	조사원	調查員
+desc	$2258	헤이트	希托
+desc	$2259	세피아	賽菲亞
+desc	$2260	세피아의 죄	賽菲亞之罪
+desc	$2261	고대의 망령	古代亡靈
+desc	$2262	신비한 바위	神秘的岩石
+desc	$2263	산적 부두목	強盜頭目
+desc	$2264	가디언의 주머니	守護神之袋
+desc	$2265	마샤의 주머니	馬沙之袋
+desc	$2266	고대의 하프	水之豎琴
+desc	$2267	디가르뎅의 병사	公爵的士兵  
+desc	$2268	결혼 반지(사파이어)	結婚戒指(藍寶石)
+desc	$2269	결혼 반지(다이아몬드)	結婚戒指(鑽石)
+desc	$2270	망령의 주머니	古代亡靈之袋
+desc	$2271	오디아	奧帝亞
+desc	$2272	모린	毛林
+desc	$2273	캔디스	肯帝斯
+desc	$2274	셀리나	謝林納
+desc	$2275	신디	辛蒂
+desc	$2276	디나	帝那
+desc	$2277	에보니	愛寶尼
+desc	$2278	리자	里賈
+desc	$2279	보비	波菲
+desc	$2280	레빈스	黎賓斯
+desc	$2281	아미에	阿米勒
+desc	$2282	리스	里斯
+desc	$2283	베스	貝斯
+desc	$2284	다이아나	戴娜
+desc	$2285	나시	娜希
+desc	$2286	미첼	米倩
+desc	$2287	아카시아	阿卡希亞
+desc	$2288	민디	敏迪
+desc	$2289	엔젤린	安琪林
+desc	$2290	로린	羅林
+desc	$2291	자모라	賈牧拉
+desc	$2292	타라스의 마법 주머니	塔拉斯的魔法袋
+desc	$2293	기사의 견습용 검	騎士之劍
+desc	$2294	에디에	艾帝爾
+desc	$2295	아라나	阿拉納
+desc	$2296	베버리	波波里
+desc	$2297	메요	美遙
+desc	$2298	프로랜스	波羅林斯
+desc	$2299	제네스	傑奈斯
+desc	$2300	주디스	朱帝斯
+desc	$2301	루시에	魯西爾
+desc	$2302	이사벨	里沙比爾
+desc	$2303	로시리	羅希里
+desc	$2304	나디네	那帝奈
+desc	$2305	시비아	希菲亞
+desc	$2306	소피아	蘇菲亞
+desc	$2307	아베리	雅裴里
+desc	$2308	카롯	卡倫
+desc	$2309	로시스	羅希斯
+desc	$2310	쉬리에	希利爾
+desc	$2311	셀레	謝里
+desc	$2312	안젤리나	安琪利亞
+desc	$2313	미첼리	米琴利
+desc	$2314	나탈리아	納塔利亞
+desc	$2315	비올레트	非奧賴特
+desc	$2316	마리엘	馬里爾
+desc	$2317	비안카	菲卡
+desc	$2318	벨라	比拉
+desc	$2319	플로리네	波羅里奈
+desc	$2320	완다	丸塔
+desc	$2321	메이	梅梅
+desc	$2322	조안	喬安
+desc	$2323	오펠리아	奧發利亞
+desc	$2324	보니에	波尼爾
+desc	$2325	멜라	麥拉
+desc	$2326	테레사	塔麗沙
+desc	$2327	노나	諾那
+desc	$2328	사디에	沙帝爾
+desc	$2329	브리티네	布里帝奈
+desc	$2330	탐마라	塔馬拉
+desc	$2331	루신다	魯辛達
+desc	$2332	안젤리카	安潔里卡
+desc	$2333	첼레네	潔列奈
+desc	$2334	레시에	利希爾
+desc	$2335	카리샤	卡里沙
+desc	$2336	실비아	施非亞
+desc	$2337	제니스	潔尼斯
+desc	$2338	니타	尼塔
+desc	$2339	맥콜리	麥客里
+desc	$2340	도리에	桃里爾
+desc	$2341	헬레네	海樂奈
+desc	$2342	신녀 에리엘	神女艾利爾
+desc	$2343	헤이스트사	加速師
+desc	$2344	쿠퍼	庫伯
+desc	$2345	던햄	德漢
+desc	$2346	발록의 검	炎魔之劍
+desc	$2347	발록의 시선	炎魔之眼
+desc	$2348	발록의 발톱	炎魔之爪
+desc	$2349	발록의 숨결	炎魔之心
+desc	$2350	데스 블레이드	黑燄之劍
+desc	$2351	마나 수정구	瑪那水晶球
+desc	$2352	화염의 활	赤焰之弓
+desc	$2353	화염의 검	赤焰之劍
+desc	$2354	황금 지휘봉	黃金權杖
+desc	$2355	디가르뎅	迪嘉勒廷
+desc	$2356	라무다	拉姆塔
+desc	$2357	고대인	古代人
+desc	$2358	승리의 폭죽	勝利煙火
+desc	$2359	매직 볼	魔法球
+desc	$2360	발록의 추종자	炎魔僕人
+desc	$2361	고대인의 망령	古代人亡靈
+desc	$2362	분노한 고대인의 망령	憤怒的古代人亡靈
+desc	$2363	고대 군주의 열쇠	古代王族的鑰匙
+desc	$2364	고대 기사의 열쇠	古代騎士的鑰匙
+desc	$2365	고대 요정의 열쇠	古代妖精的鑰匙
+desc	$2366	고대 마법사의 열쇠	古代法師的鑰匙
+desc	$2367	운명의 열쇠	文明的鑰匙
+desc	$2368	발록의 창조물	炎魔創造物
+desc	$2369	고대인의 변신 막대	古代變身魔杖
+desc	$2370	쥬얼 마스터	珠寶大師
+desc	$2371	파르츠	帕勒特
+desc	$2372	주스	汁
+desc	$2373	결혼 반지(에메랄드)	結婚戒指(綠寶石)
+desc	$2374	결혼 반지(루비)	結婚戒指(紅寶石)
+desc	$2375	결혼 반지(금)	結婚戒指(金)
+desc	$2376	결혼 반지(은)	結婚戒指(銀)
+desc	$2377	고대인의 화살	古代之箭
+desc	$2378	고대 열쇠의 조각(몸 부분)	古代鑰匙(下半部)
+desc	$2379	소환 주문서	召喚卷軸
+desc	$2380	혈맹 귀환 주문서	血盟傳送卷軸
+desc	$2381	변종 웅골리언트	變種楊果里恩
+desc	$2382	변종 라미아	變種蛇女
+desc	$2383	사악한 비홀더	邪惡多眼怪
+desc	$2384	사악한 미믹	邪惡密密
+desc	$2385	공포의 켈베로스	恐怖的地獄犬
+desc	$2386	공포의 파이어 에그	恐怖的火炎蛋
+desc	$2387	난폭한 스파토이	殘暴的史巴托
+desc	$2388	난폭한 해골돌격병	殘暴的骷髏鬥士
+desc	$2389	난폭한 해골도끼병	殘暴的骷髏斧兵
+desc	$2390	난폭한 해골저격병	殘暴的骷髏神射手
+desc	$2391	난폭한 해골창병	殘暴的骷髏槍兵
+desc	$2392	난폭한 구울	殘暴的食屍鬼
+desc	$2393	화염의 고스트	火燄之靈魂
+desc	$2394	화염의 네크로맨서	火燄之魔法師
+desc	$2395	제니스 퀸	潔尼斯女王
+desc	$2396	다이어 골렘	鑽石高崙怪
+desc	$2397	시어	幻象眼魔
+desc	$2398	좀비 로드	殭屍王
+desc	$2399	뱀파이어	吸血鬼
+desc	$2400	오만의 탑 11층 이동 부적	傲慢之塔傳送符(11F)
+desc	$2401	오만의 탑 21층 이동 부적	傲慢之塔傳送符(21F)
+desc	$2402	오만의 탑 31층 이동 부적	傲慢之塔傳送符(31F)
+desc	$2403	오만의 탑 41층 이동 부적	傲慢之塔傳送符(41F)
+desc	$2404	오만의 탑 31층 이동 주문서	傲慢之塔移動卷軸(31F)
+desc	$2405	오만의 탑 41층 이동 주문서	傲慢之塔移動卷軸(41F)
+desc	$2406	제니스의 반지	潔尼斯戒指
+desc	$2407	공포의 아이언 골렘	恐怖的高崙鋼鐵怪
+desc	$2408	보물 상자	藏寶箱
+desc	$2409	박쥐	蝙蝠
+desc	$2410	그림자 가면	影子面具
+desc	$2411	오크 장로의 머리카락	妖魔長老首級
+desc	$2412	그림자 장갑	影子手套
+desc	$2413	비밀 명단	秘密名單
+desc	$2414	살생부(글루딘 마을)	暗殺名單(古魯丁村)
+desc	$2415	살생부(화전민 마을)	暗殺名單(燃柳村)
+desc	$2416	살생부(켄트 마을)	暗殺名單(肯特村)
+desc	$2417	살생부(우드벡 마을)	暗殺名單(風木村)
+desc	$2418	살생부(하이네 마을)	暗殺名單(海音村)
+desc	$2419	살생부(아덴 마을)	暗殺名單(亞丁城鎮)
+desc	$2420	살생부(기란 마을)	暗殺名單(奇岩村)
+desc	$2421	살생부 주머니	暗殺名單之袋
+desc	$2422	죽음의 서약	死亡誓約
+desc	$2423	그림자 부츠	影子長靴
+desc	$2424	예티의 머리카락	雪怪首級
+desc	$2425	펑거스의	蘑菇毒液
+desc	$2426	어쌔신의 증표	刺客之證
+desc	$2427	부식된 어쌔신의 검	生鏽的刺客之劍
+desc	$2428	죽음을 주관 하는 자에 관한 문서	死亡之證
+desc	$2429	어쌔신 마스터의 상자	刺客首領的箱子
+desc	$2430	경비 대장	康
+desc	$2431	오크 장로	妖魔長老
+desc	$2432	론드	倫得
+desc	$2433	타락한 경비병	叛逃的刺客警衛
+desc	$2434	리빌	力比
+desc	$2435	데도프	戴度普
+desc	$2436	이카	依卡
+desc	$2437	토드	托得
+desc	$2438	로덱	羅德
+desc	$2439	아트신	亞特辛
+desc	$2440	토다	托達
+desc	$2441	블루디카	布魯迪卡
+desc	$2442	쿠프	庫普
+desc	$2443	어쌔신 마스터의 추종자	刺客首領護衛
+desc	$2444	로제	羅吉
+desc	$2445	어쌔신	刺客
+desc	$2446	어쌔신 마스터	刺客首領
+desc	$2447	흉폭한 예티	凶猛的雪怪
+desc	$2448	하로	哈路
+desc	$2449	이도류	雙刀
+desc	$2450	크로우	鋼爪
+desc	$2451	활	十字弓
+desc	$2452	어둠의	黑暗
+desc	$2453	흑빛의	幽暗
+desc	$2454	은색의	銀光
+desc	$2455	흑왕도	暗黑雙刀
+desc	$2456	흑왕아	暗黑鋼爪
+desc	$2457	흑왕궁	暗黑十字弓
+desc	$2458	구리빛	青銅
+desc	$2459	강철	鋼鐵
+desc	$2460	그림자	暗影
+desc	$2461	짧은	短
+desc	$2462	다마스커스	大馬士革
+desc	$2463	스팅	飛刀
+desc	$2464	건틀렛	鐵手甲
+desc	$2465	망토	斗篷
+desc	$2466	로브	披肩
+desc	$2467	장갑	手套
+desc	$2468	머리띠	頭飾
+desc	$2469	부츠	長靴
+desc	$2470	열화의	火屬性
+desc	$2471	물결의	水屬性
+desc	$2472	바람의	風屬性
+desc	$2473	대지의	地屬性
+desc	$2474	흑마석	一級黑魔石
+desc	$2475	흑요석	二級黑魔石
+desc	$2476	강암석	三級黑魔石
+desc	$2477	현암석	四級黑魔石
+desc	$2478	암황석	五級黑魔石
+desc	$2479	마령석	黑魔石水晶
+desc	$2480	결정	結晶
+desc	$2481	불의 대정령	火精靈王
+desc	$2482	물의 대정령	水精靈王
+desc	$2483	바람의 대정령	風精靈王
+desc	$2484	킬러비	殺人蜂
+desc	$2485	볼 라이트닝	閃電球
+desc	$2486	토끼	兔子
+desc	$2487	가디언 아머	鎧甲守護神
+desc	$2488	유니콘	獨角獸
+desc	$2489	꿈의 혼령	鬼火
+desc	$2490	방황하는	徬徨的
+desc	$2491	하데스티	哈德斯提
+desc	$2492	레이아스	雷亞斯
+desc	$2493	공간이동사 에냐	艾納
+desc	$2494	스크와티	史克瓦提
+desc	$2495	다크엘프 레인저	黑暗妖精巡守
+desc	$2496	카렌	卡連
+desc	$2497	에들렌	艾德連
+desc	$2498	칸의 경비병	康的警衛
+desc	$2499	칸의 말	棕馬
+desc	$2500	론드의 말	白馬
+desc	$2501	론드의 암살대	倫得的刺客
+desc	$2502	블루디카의 암살대	布魯迪卡的刺客
+desc	$2503	[다크 엘프]	[黑暗妖精]
+desc	$2504	(블라인드 하이딩)	(暗隱術)
+desc	$2505	(인챈트 베놈)	(附加劇毒)
+desc	$2506	(쉐도우 아머)	(影之防護)
+desc	$2507	(브링 스톤)	(提煉魔石)
+desc	$2508	(무빙 악셀레이션)	(行走加速)
+desc	$2509	(버닝 스피릿츠)	(燃燒鬥志)
+desc	$2510	(다크 블라인드)	(暗黑盲咒)
+desc	$2511	(베놈 레지스트)	(毒性抵抗)
+desc	$2512	(더블 브레이크)	(雙重破壞)
+desc	$2513	(언케니 닷지)	(暗影閃避)
+desc	$2514	(쉐도우 팽)	(暗影之牙)
+desc	$2515	(파이널 번)	(會心一擊)
+desc	$2516	실버 스팅	銀飛刀
+desc	$2517	헤비 스팅	重飛刀
+desc	$2518	흑정령의 수정 (블라인드 하이딩)	黑暗精靈水晶(暗隱術)
+desc	$2519	흑정령의 수정 (인챈트 베놈)	黑暗精靈水晶(附加劇毒)
+desc	$2520	흑정령의 수정 (쉐도우 아머)	黑暗精靈水晶(影之防護)
+desc	$2521	흑정령의 수정 (브링 스톤)	黑暗精靈水晶(提煉魔石)
+desc	$2522	흑정령의 수정 (무빙 악셀레이션)	黑暗精靈水晶(行走加速)
+desc	$2523	흑정령의 수정 (버닝 스피릿츠)	黑暗精靈水晶(燃燒鬥志)
+desc	$2524	흑정령의 수정 (다크 블라인드)	黑暗精靈水晶(暗黑盲咒)
+desc	$2525	흑정령의 수정 (베놈 레지스트)	黑暗精靈水晶(毒性抵抗)
+desc	$2526	흑정령의 수정 (더블 브레이크)	黑暗精靈水晶(雙重破壞)
+desc	$2527	흑정령의 수정 (언케니 닷지)	黑暗精靈水晶(暗影閃避)
+desc	$2528	흑정령의 수정 (쉐도우 팽)	黑暗精靈水晶(暗影之牙)
+desc	$2529	흑정령의 수정 (파이널 번)	黑暗精靈水晶(會心一擊)
+desc	$2530	엘릭서 (STR)	萬能藥(力量)
+desc	$2531	엘릭서 (CON)	萬能藥(體質)
+desc	$2532	엘릭서 (DEX)	萬能藥(敏捷)
+desc	$2533	엘릭서 (INT)	萬能藥(智慧)
+desc	$2534	엘릭서 (WIS)	萬能藥(精神)
+desc	$2535	엘릭서 (CHA)	萬能藥(魅力)
+desc	$2536	다크 엘프의 견습용 검	黑暗妖精之劍
+desc	$2537	다크 엘프의 견습용 투구	黑暗妖精頭盔
+desc	$2538	다크 엘프의 견습용 부츠	黑暗妖精長靴
+desc	$2539	다크 엘프의 견습용 망토	黑暗妖精斗篷
+desc	$2540	칸의 주머니	康之袋
+desc	$2541	론드의 주머니	倫得之袋
+desc	$2542	블루디카의 주머니	布魯迪卡之袋
+desc	$2543	지도:침묵의 동굴	地圖:沉默洞穴
+desc	$2544	키마	奇馬
+desc	$2545	론도	倫度
+desc	$2546	세리아	瑟利亞
+desc	$2547	얀	顏
+desc	$2548	제티	潔蒂
+desc	$2549	키마의 암살대	奇馬的刺客
+desc	$2550	데린	德林
+desc	$2551	땅의 대정령	土精靈王
+desc	$2552	세디아	賽帝亞
+desc	$2553	크레바스	克萊巴斯
+desc	$2554	피에로	皮爾勒
+desc	$2555	아스함	亞斯罕
+desc	$2556	비숍	比修
+desc	$2557	피어스	皮爾斯
+desc	$2558	그랑디크	格朗狄克
+desc	$2559	하뮤드	赫穆得
+desc	$2560	엘비엔느	艾菲安尼
+desc	$2561	라뮤네	拉穆奈
+desc	$2562	카린느	卡林尼
+desc	$2563	열혈토끼	暴走兔
+desc	$2564	어둠의 씨앗	黑暗種子
+desc	$2565	빛의 씨앗	光明種子
+desc	$2566	거대 어둠의 씨앗	巨大黑暗種子
+desc	$2567	거대 빛의 씨앗	巨大光明種子
+desc	$2568	동빛 씨앗	銅光種子
+desc	$2569	은빛 씨앗	銀光種子
+desc	$2570	금빛 씨앗	金光種子
+desc	$2571	어둠의 집행자	黑暗執行者
+desc	$2572	빛의 집행자	光明執行者
+desc	$2573	페리아	菲莉雅
+desc	$2574	로빈우드	羅賓伍得
+desc	$2575	고대의 체력 회복제	古代體力恢復劑
+desc	$2576	고대의 고급 체력 회복제	古代強力體力恢復劑
+desc	$2577	고대의 강력 체력 회복제	古代終極體力恢復劑
+desc	$2578	송편	年糕
+desc	$2579	쑥송편	艾草年糕
+desc	$2580	월병	月餅
+desc	$2581	복월병	福月餅
+desc	$2582	봉인된 오만의 탑 11층 이동 부적	封印的傲慢之塔傳送符(11F)
+desc	$2583	봉인된 오만의 탑 21층 이동 부적	封印的傲慢之塔傳送符(21F) 
+desc	$2584	봉인된 오만의 탑 31층 이동 부적	封印的傲慢之塔傳送符(31F)
+desc	$2585	봉인된 오만의 탑 41층 이동 부적	封印的傲慢之塔傳送符(41F)
+desc	$2586	디아노스	迪亞諾斯
+desc	$2587	쿠거	黑豹
+desc	$2588	나이트발드	騎士范德
+desc	$2589	머미로드	木乃伊王
+desc	$2590	그림리퍼	鐮刀死神
+desc	$2591	그랑카인의 눈물	格蘭肯之淚
+desc	$2592	검은 혈흔	黑色血痕
+desc	$2593	저주의피혁(열화)	詛咒的皮革(火)
+desc	$2594	저주의피혁(물결)	詛咒的皮革(水)
+desc	$2595	저주의피혁(바람)	詛咒的皮革(風)
+desc	$2596	저주의피혁(대지)	詛咒的皮革(地)
+desc	$2597	은색의 실뭉치	銀色線球
+desc	$2598	회중시계 바늘	鐘擺
+desc	$2599	은빛의 서클릿	銀光頭箍
+desc	$2600	빛나는 비늘	光明的鱗片
+desc	$2601	빛나는 신체의 벨트	光明身體腰帶
+desc	$2602	빛나는 정신의 벨트	光明精神腰帶
+desc	$2603	빛나는 영혼의 벨트	光明靈魂腰帶 
+desc	$2604	침식의 유해	侵蝕的骨骸
+desc	$2605	지혜의 수정	賢者水晶
+desc	$2606	영원의 결정	永恆的結晶
+desc	$2607	현자의 목걸이	賢者項鍊
+desc	$2608	바무트	巴姆特
+desc	$2609	아이리스	艾莉絲
+desc	$2610	저주의 오크좀비	受詛咒的妖魔殭屍
+desc	$2611	저주의 엘모어 병사	受詛咒的艾爾摩士兵
+desc	$2612	저주의 엘모어 마법사	受詛咒的艾爾摩法師
+desc	$2613	저주의 엘모어 장군	受詛咒的艾爾摩將軍
+desc	$2614	어둠의 라이칸스로프	暗黑萊肯
+desc	$2615	냉혹한 샤벨타이거	冷酷冰原老虎
+desc	$2616	화염의 혼 켈베로스	火焰烈炎獸
+desc	$2617	화염의 아시타지오	火焰阿西塔基奧
+desc	$2618	암흑의 흑기사	暗黑黑騎士
+desc	$2619	어둠의 불타는 전사	暗黑火焰戰士
+desc	$2620	어둠의 불타는 궁수	暗黑火焰弓箭手
+desc	$2621	암흑의 서큐버스 퀸	暗黑思克巴女皇
+desc	$2622	오만한 제니스 퀸	傲慢的潔尼斯女王
+desc	$2623	시어 주니어	小幻象眼魔
+desc	$2624	마퀴스 뱀파이어	馬昆斯吸血鬼
+desc	$2625	공포의 좀비로드	恐怖的殭屍王
+desc	$2626	진 건틀렛	真鐵手甲
+desc	$2627	피어스의 선물주머니	皮爾斯的禮物
+desc	$2628	리토용1	無界擂台1
+desc	$2629	리토용2	無界擂台2
+desc	$2630	리토용3	無界擂台3
+desc	$2631	리토용4	無界擂台4
+desc	$2632	리토용5	無界擂台5
+desc	$2633	리토용6	無界擂台6
+desc	$2634	리토용7	無界擂台7
+desc	$2635	리토용8	無界擂台8
+desc	$2636	리토용9	無界擂台9
+desc	$2637	리토용10	無界擂台10
+desc	$2638	리토용11	無界擂台11
+desc	$2639	리토용12	無界擂台12
+desc	$2640	리토용13	無界擂台13
+desc	$2641	리토용14	無界擂台14
+desc	$2642	리토용15	無界擂台15
+desc	$2643	리토용16	無界擂台16
+desc	$2644	리토용17	無界擂台17
+desc	$2645	리토용18	無界擂台18
+desc	$2646	리토용19	無界擂台19
+desc	$2647	리토용20	無界擂台20
+desc	$2648	핑거 오브 데스	死亡之指
+desc	$2649	다크 스타	黑暗之星
+desc	$2650	펑거스의 독	蘑菇毒液
+desc	$2651	진실의 가면	真實的面具
+desc	$2652	타락의 열쇠	墮落鑰匙
+desc	$2653	엔디아의 보자기	安迪亞之袋
+desc	$2654	엔디아의 편지	安迪亞之信
+desc	$2655	타락의 사제	墮落的司祭
+desc	$2656	혼돈의 사제	混沌的司祭
+desc	$2657	죽음의 사제	死亡的司祭
+desc	$2658	타락한 영혼	墮落的靈魂
+desc	$2659	엔디아	安迪亞
+desc	$2660	그림 속 억압된 영혼이 분노에 휩싸이니...	壓抑的靈魂被憤怒纏繞著...
+desc	$2661	억압된 영혼의 분노를 승화 시키려 함이...	將壓抑的憤怒靈魂昇華...
+desc	$2662	속박의 길을 벗어나 자유의 길에 이르고...	解脫束縛邁進自由...
+desc	$2663	억압의 문은 열리리...	壓抑之門將被開啟...
+desc	$2664	믿음과 불신 사이의 괴리가 심장을 삼키고	信任與背叛侵蝕著心靈
+desc	$2665	유형과 무형 사이의 괴리가 사지를 갈라 놓으니	現實與虛幻殘毀著身體
+desc	$2666	감성의 눈은 이성의 눈에 가려지네	感性被理性掩沒
+desc	$2667	나는 꺼지지 않는 불꽃이다. 바람을 가르는 위상이다	火焰將永不熄滅
+desc	$2668	봉인된 오만의 탑 51층 이동 부적	封印的傲慢之塔傳送符(51F)
+desc	$2669	봉인된 오만의 탑 61층 이동 부적	封印的傲慢之塔傳送符(61F)
+desc	$2670	봉인된 오만의 탑 71층 이동 부적	封印的傲慢之塔傳送符(71F)
+desc	$2671	봉인된 오만의 탑 81층 이동 부적	封印的傲慢之塔傳送符(81F)
+desc	$2672	봉인된 오만의 탑 91층 이동 부적	封印的傲慢之塔傳送符(91F)  
+desc	$2673	오만의 탑 51층 이동 주문서	傲慢之塔移動卷軸(51F)
+desc	$2674	오만의 탑 61층 이동 주문서	傲慢之塔移動卷軸(61F)
+desc	$2675	오만의 탑 71층 이동 주문서	傲慢之塔移動卷軸(71F)
+desc	$2676	오만의 탑 81층 이동 주문서	傲慢之塔移動卷軸(81F)
+desc	$2677	오만의 탑 91층 이동 주문서	傲慢之塔移動卷軸(91F)
+desc	$2678	오만의 탑 51층 이동 부적	傲慢之塔傳送符(51F)
+desc	$2679	오만의 탑 61층 이동 부적	傲慢之塔傳送符(61F)
+desc	$2680	오만의 탑 71층 이동 부적	傲慢之塔傳送符(71F)
+desc	$2681	오만의 탑 81층 이동 부적	傲慢之塔傳送符(81F)
+desc	$2682	오만의 탑 91층 이동 부적	傲慢之塔傳送符(91F)
+desc	$2683	크리스마스 폭죽	聖誕煙火
+desc	$2684	빨간색 양말	紅短襪
+desc	$2685	녹색 양말	綠短襪
+desc	$2686	떠도는 영혼	飄遊靈魂
+desc	$2687	크리스마스 트리	耶誕樹
+desc	$2688	카리프	卡立普
+desc	$2689	류미엘	陸米爾
+desc	$2690	라비엔느	拉比安尼
+desc	$2691	비욘드	比安德
+desc	$2692	하이 도베르만	高等杜賓狗
+desc	$2693	하이 베어	高等熊
+desc	$2694	하이 세퍼드	高等牧羊犬
+desc	$2695	하이 세인트버나드	高等聖伯納犬
+desc	$2696	하이 폭스	高等狐狸
+desc	$2697	하이 래빗	高等暴走兔
+desc	$2698	하이 비글	高等小獵犬
+desc	$2699	하이 허스키	高等哈士奇
+desc	$2700	열혈 곰	狂暴熊
+desc	$2701	고양이	貓
+desc	$2702	하이 캣	高等貓
+desc	$2703	하이 울프	高等狼
+desc	$2704	하이 콜리	高等柯利
+desc	$2705	몽테스	蒙特斯
+desc	$2706	아덴 주화 수송인	亞丁貨幣運送者
+desc	$2707	네루파의 판	潘
+desc	$2708	칸의 경비대	康的警衛隊
+desc	$2709	아덴 주화	亞丁貨幣
+desc	$2710	정의의 경전 1권	正義聖經上部
+desc	$2711	가디언의 생명수	生命之水
+desc	$2712	정의의 경전 2권	正義聖經下部
+desc	$2713	야광석 조각	螢光碎片
+desc	$2714	아덴 기사단의 망토	亞丁騎士團披肩
+desc	$2715	생존의 증표	生存之証
+desc	$2716	신년괴물	年獸
+desc	$2717	몽테스의 말	蒙特斯之馬
+desc	$2718	몽테스의 기사단	亞丁騎士團
+desc	$2719	2단계 마법주사위	2階段魔法骰子
+desc	$2720	3단계 마법주사위	3階段魔法骰子
+desc	$2721	4단계 마법주사위	4階段魔法骰子
+desc	$2722	6단계 마법주사위	6階段魔法骰子
+desc	$2723	깡총~깡총~	蹦~蹦~
+desc	$2724	지금 가요~	馬上來了~
+desc	$2725	불렀어요?~	你在叫我嗎？~
+desc	$2726	주인님, 지금가요~	主人，馬上來了~
+desc	$2727	쫑긋~쫑긋~	吼呼~吼呼~
+desc	$2728	냐옹~	喵~
+desc	$2729	냐아옹~	喵喵~
+desc	$2730	아이~귀찮아~	唉~好煩喔~
+desc	$2731	금방 간답니다~	馬上來了~
+desc	$2732	냐앙~	喵嗚~
+desc	$2733	캬앙~	卡嗚~
+desc	$2734	캬앙~ 캬앙~	卡嗚~ 卡嗚~
+desc	$2735	캬앙~ 지금 가요~	卡嗚~ 馬上來了~
+desc	$2736	캬앙~ 주인님이 부르시네~	卡嗚~ 主人在叫我了~
+desc	$2737	캬아앙~	卡啊嗚~
+desc	$2738	워우~	喔嗚~
+desc	$2739	워우~킁킁~	喔嗚~砰砰~
+desc	$2740	킁킁~주인님의 냄새군	砰砰~ 這是主人的味道
+desc	$2741	킁~주인님이 부르시네	砰~ 主人在找我了
+desc	$2742	쿠우우~	喔呼呼~
+desc	$2743	반지의 정령	戒靈
+desc	$2744	흑장로의 로브	黑長者長袍
+desc	$2745	흑장로의 샌달	黑長者涼鞋
+desc	$2746	발터자르의 모자	巴土瑟之帽
+desc	$2747	카스파의 모자	卡士伯之帽
+desc	$2748	메르키오르의 모자	馬庫爾之帽
+desc	$2749	세마의 모자	西瑪之帽
+desc	$2750	오림의 반지	歐林戒指
+desc	$2751	세마의 반지	西瑪戒指
+desc	$2752	얼음 여왕의 매력적인 샌달	冰之女王魅力涼鞋
+desc	$2753	얼음 여왕의 매력적인 드레스	冰之女王魅力禮服
+desc	$2754	마력을 잃은 얼음 여왕의 지팡이	失去魔力的冰之女王魔杖
+desc	$2755	도펠겡어 보스의 왼쪽 반지	變形怪首領之戒(左)
+desc	$2756	도펠겡어 보스의 오른쪽 반지	變形怪首領之戒(右)
+desc	$2757	도펠겡어 보스의 목걸이	變形怪首領項鍊
+desc	$2758	데스나이트의 불검	死亡騎士的烈炎之劍
+desc	$2759	론드의 이도류	倫得雙刀
+desc	$2760	알려지지 않은 창	不為人知的矛
+desc	$2761	알려지지 않은 도끼	不為人知的斧
+desc	$2762	복수의 칼날	復仇之劍
+desc	$2763	증오의 발톱	恨之鋼爪
+desc	$2764	마력을 잃은 데몬의 지팡이	失去魔力的惡魔鐮刀
+desc	$2765	바포메트의 갑옷	巴風特盔甲
+desc	$2766	마력을 잃은 바포메트의 지팡이	失去魔力的巴風特魔杖
+desc	$2767	베레스의 부츠	巴列斯長靴
+desc	$2768	마력을 잃은 베레스의 지팡이	失去魔力的巴列斯魔杖
+desc	$2769	거대 여왕 개미의 금빛 날개	巨蟻女皇的金翅膀
+desc	$2770	거대 여왕 개미의 은빛 날개	巨蟻女皇的銀翅膀
+desc	$2771	고대 요정의 활	古代妖精弩槍
+desc	$2772	고대 다크엘프의 검	古代黑暗妖精之劍
+desc	$2773	커츠의 장갑	克特手套
+desc	$2774	커츠의 갑옷	克特盔甲
+desc	$2775	커츠의 부츠	克特長靴
+desc	$2776	커츠의 투구	克特頭盔
+desc	$2777	마력을 잃은 커츠의 검	失去魔力的克特之劍
+desc	$2778	안타라스의 비늘	安塔瑞斯之鱗
+desc	$2779	안타라스의 부서진 발톱	安塔瑞斯之爪
+desc	$2780	안타라스의 시선	安塔瑞斯之眼
+desc	$2781	안타라스의 눈물	安塔瑞斯之血
+desc	$2782	안타라스의 분신	安塔瑞斯之肉
+desc	$2783	안타라스의 숨결	安塔瑞斯之心
+desc	$2784	안타라스의 뼈	安塔瑞斯之骨
+desc	$2785	안타라스의 이빨	安塔瑞斯之牙
+desc	$2786	발라카스의 비늘	巴拉卡斯之鱗
+desc	$2787	발라카스의 부서진 발톱	巴拉卡斯之爪
+desc	$2788	발라카스의 시선	巴拉卡斯之眼
+desc	$2789	발라카스의 눈물	巴拉卡斯之血
+desc	$2790	발라카스의 분신	巴拉卡斯之肉
+desc	$2791	발라카스의 숨결	巴拉卡斯之心
+desc	$2792	발라카스의 뼈	巴拉卡斯之骨
+desc	$2793	발라카스의 이빨	巴拉卡斯之牙
+desc	$2794	파푸리온의 비늘	法利昂之鱗
+desc	$2795	파푸리온의 부서진 발톱	法利昂之爪
+desc	$2796	파푸리온의 시선	法利昂之眼
+desc	$2797	파푸리온의 눈물	法利昂之血
+desc	$2798	파푸리온의 분신	法利昂之肉
+desc	$2799	파푸리온의 숨결	法利昂之心
+desc	$2800	파푸리온의 뼈	法利昂之骨
+desc	$2801	파푸리온의 이빨	法利昂之牙
+desc	$2802	린드비오르의 비늘	林德拜爾之鱗
+desc	$2803	린드비오르의 부서진 발톱	林德拜爾之爪
+desc	$2804	린드비오르의 시선	林德拜爾之眼
+desc	$2805	린드비오르의 눈물	林德拜爾之血
+desc	$2806	린드비오르의 분신	林德拜爾之肉
+desc	$2807	린드비오르의 숨결	林德拜爾之心
+desc	$2808	린드비오르의 뼈	林德拜爾之骨
+desc	$2809	린드비오르의 이빨	林德拜爾之牙
+desc	$2810	진화의 열매	進化果實
+desc	$2811	컹컹! 바로 갑니다! 주인님!	吭吭！馬上過去了！主人！
+desc	$2812	컹! 주인님이 부르는 소리군!	吭！主人在叫我了！
+desc	$2813	컹컹! 명령만 내리십시요!	吭吭！請吩咐！
+desc	$2814	컹컹! 전 언제나 주인님의 곁에 있습니다!	吭吭！我一直在主人身邊！
+desc	$2815	왈! 주인님, 놀아주세요~	嗚唉！主人，請陪我玩∼
+desc	$2816	왈왈! 주인님이 놀아주려나보다~	嗚唉嗚唉！主人要陪我玩了∼
+desc	$2817	왈!왈! 사랑하는 주인님, 지금가요~	嗚唉！嗚唉！親愛的主人，現在過去了∼
+desc	$2818	왈!왈!왈! 평생 주인님 곁에 있을거에요~	嗚唉！嗚唉！嗚唉！這一生我都要在主人身邊∼
+desc	$2819	컹!컹! 넵! 주인님!	吭!吭！是的！主人！
+desc	$2820	컹컹! 주인님, 부르셨습니까~!	吭吭！主人您叫我嗎？
+desc	$2821	컹컹! 지금 달려 갑니다~!	吭吭！現在過去了！
+desc	$2822	컹컹 주인님, 명령만 하십시요~!	吭吭！主人，請您吩咐！
+desc	$2823	크르르....?	喀勒勒...
+desc	$2824	크르르..왜 부르는거지.	喀勒勒...為何叫我呢？
+desc	$2825	크르르..주인장, 나도 바쁘다구.	喀勒勒...喂，我也很忙的！
+desc	$2826	크르르...쳇. 할 수 없군.	喀勒勒...叱，沒辦法！
+desc	$2827	왈! 헥헥~ 지금가요~	嗚唉！嘿嘿∼現在過去了∼
+desc	$2828	왈왈! 헥헥~ 주인님 불렀나요?	嗚唉嗚唉！嘿嘿∼主人您叫我嗎？
+desc	$2829	헥~헥 주인님이 먹이를 주실려나~	嘿嘿∼ 主人要給我食物了嗎？
+desc	$2830	헥헥~ 주인님 옆에 가야지~	嘿嘿∼我要在主人身邊∼
+desc	$2831	우우...조금 있다 갈께요오~	嗚嗚...我待會再過去喔！
+desc	$2832	우~ 벌꿀이라도 주실려나~	嗚∼ 是要給我蜂蜜嗎？
+desc	$2833	킁킁~맛있는 냄새가 주인님한테 나네~	喀喀∼這個人的味道很香呢！
+desc	$2834	킁킁~ 주인님, 제가 옆에 있을께요~	喀喀∼主人，我會在身邊陪您的！
+desc	$2835	캬앙~부르셨어요?	卡啊∼你有叫我嗎？
+desc	$2836	캬앙~털에 윤기가 없네~	卡啊∼毛都沒有光澤了！
+desc	$2837	캬앙~주인님, 먹이 주세요~	卡啊∼主人，給我食物吧！
+desc	$2838	캬앙~ 주인님 곁에 있을께요~	卡啊∼我要待在主人身邊！
+desc	$2839	냥~ 귀찮게 또 부르네냥~	喵∼好煩又再叫我！
+desc	$2840	냐아옹~숨박꼭질 놀이해요?	喵嗚∼玩捉迷藏嗎？
+desc	$2841	냥~ 간답니다냥~	喵∼現在過去了啦！
+desc	$2842	냥~ 가면 안아줄려나?	喵∼過去的話會抱我嗎？
+desc	$2843	쫑긋~? 당근~당근~	蹦蹦∼胡蘿蔔∼胡蘿蔔∼
+desc	$2844	쫑긋~ 주인님이 어디있지?	蹦蹦∼主人在哪裡呢？
+desc	$2845	쫑긋~쫑긋~ 주인님 곁에 가야지~	蹦蹦∼蹦蹦∼我要到主人身邊∼
+desc	$2846	쫑긋~ 당근 있어요?	蹦蹦∼有胡蘿蔔嗎？
+desc	$2847	멍~! 잠시만 기다려요~	汪！請等一下∼
+desc	$2848	멍! 아이~옷이 더러워 지겠네~	汪！啊∼衣服髒了∼
+desc	$2849	멍!멍! 우아하게 가야지	汪！汪！我要優雅地過去
+desc	$2850	멍멍! 주인님이랑 있을래요~	汪汪！我要在主人身邊∼
+desc	$2851	우....졸려~	嗚....好睏∼
+desc	$2852	우....무슨 일이에요?	嗚....怎麼了？
+desc	$2853	우.....먹이라도 주시려나..	嗚....是要給我食物嗎？
+desc	$2854	우...주인님 곁이 제일 좋아...	嗚...我最喜歡待在主人身旁...
+desc	$2855	쿠거의가죽	黑豹的皮
+desc	$2856	쿠거의발톱	黑豹的爪
+desc	$2857	머미로드의 물약	木乃伊藥水
+desc	$2858	아이리스의 목걸이	艾莉絲項鍊
+desc	$2859	나이트발드의 검	騎士范德之劍
+desc	$2860	조드	喬德
+desc	$2861	롤코	羅克
+desc	$2862	오만의 탑 100층 이동 주문서	傲慢之塔移動卷軸(100F)
+desc	$2863	리퍼	鐮刀死神的使者
+desc	$2864	달빛의 눈물	月光之淚
+desc	$2865	요마의 이빨	黑暗之牙
+desc	$2866	사냥개의 이빨	獵犬之牙
+desc	$2867	흑룡의 이빨	龍之牙
+desc	$2868	파멸의 이빨	破滅之牙
+desc	$2869	투견의 이빨	鬥犬之牙
+desc	$2870	불멸의 이빨	不滅之牙
+desc	$2871	신마의 이빨	神之牙
+desc	$2872	황금의 이빨	黃金之牙
+desc	$2873	강철의 이빨	鋼鐵之牙
+desc	$2874	승리의 이빨	勝利之牙
+desc	$2875	블래스 펫아머	寵物祝福盔甲
+desc	$2876	체인 펫아머	寵物鏈甲
+desc	$2877	크로스 펫아머	寵物十字盔甲
+desc	$2878	레더 펫아머	寵物皮盔甲
+desc	$2879	미스릴 펫아머	寵物米索莉盔甲
+desc	$2880	샤이닝 펫아머	寵物光明盔甲
+desc	$2881	스켈 펫아머	寵物骷髏盔甲
+desc	$2882	강철 펫아머	寵物鋼鐵盔甲
+desc	$2883	레이더스	雷德斯
+desc	$2884	혼돈의 열쇠	混沌鑰匙
+desc	$2885	다크엘프 제너럴	黑暗妖精將軍
+desc	$2886	다크엘프 시프	黑暗妖精盜賊
+desc	$2887	다크엘프 솔저	黑暗妖精士兵
+desc	$2888	다크엘프 위자드	黑暗妖精法師
+desc	$2889	다크엘프 레인저	黑暗妖精巡守
+desc	$2890	다크엘프 가드	黑暗妖精警衛
+desc	$2891	다크엘프 비스트테이머	馴獸師
+desc	$2892	다이어 뱃	魔蝙蝠
+desc	$2893	다이어 베어	魔熊
+desc	$2894	다크 엘리멘탈리스트	黑暗精靈使
+desc	$2895	다크 엘리멘탈	闇之精靈
+desc	$2896	그레이터 다크엘리멘탈	闇精靈王
+desc	$2897	샌트	仙特
+desc	$2898	샌디	仙蒂
+desc	$2899	파심	帕辛
+desc	$2900	길 잃은 아이	迷路的孩子
+desc	$2901	부모 잃은 아이	失去父母的孩子
+desc	$2902	라폰스	拉龐斯
+desc	$2903	라스타바드 장검	拉斯塔巴德長劍
+desc	$2904	라스타바드 이도류	拉斯塔巴德雙刀
+desc	$2905	라스타바드 단검	拉斯塔巴德短劍
+desc	$2906	라스타바드 한손창	拉斯塔巴德矛
+desc	$2907	라스타바드 보우	拉斯塔巴德弓
+desc	$2908	라스타바드 헤비 크로스 보우	拉斯塔巴德重十字弓
+desc	$2909	라스타바드 스태프	拉斯塔巴德魔杖
+desc	$2910	라스타바드 체인 메일	拉斯塔巴德鏈甲
+desc	$2911	라스타바드 징박힌 레더 아머	拉斯塔巴德銀釘皮盔甲
+desc	$2912	라스타바드 로브	拉斯塔巴德長袍
+desc	$2913	라스타바드 부츠	拉斯塔巴德長靴
+desc	$2914	라스타바드 라운드 실드	拉斯塔巴德圓盾
+desc	$2915	라스타바드 크로스 보우	拉斯塔巴德十字弓
+desc	$2916	라스타바드 레더 아머	拉斯塔巴德皮盔甲
+desc	$2917	비스트테이머의 반지	馴獸師戒指
+desc	$2918	늑대가죽 망토	狼皮斗篷
+desc	$2919	엘리멘탈리스트의 반지	精靈使戒指
+desc	$2920	라스타바드 블레이드	小武士刀
+desc	$2921	바라스	巴拉斯
+desc	$2922	쿠노스	庫諾斯
+desc	$2923	테라누스	泰拉奴斯
+desc	$2924	자이루스	賈路斯
+desc	$2925	이얀	以焉
+desc	$2926	라스타바드	拉斯塔巴德
+desc	$2927	리만	里曼
+desc	$2928	용병단	傭兵團
+desc	$2929	프랑코	福朗克
+desc	$2930	용병단장	傭兵團團長
+desc	$2931	웰던	威頓
+desc	$2932	켄트	肯特
+desc	$2933	윈다우드	風木
+desc	$2934	루즈	路擇
+desc	$2935	벡터	拜特
+desc	$2936	러스터	勒斯特
+desc	$2937	카미아	卡米亞
+desc	$2938	세라티	瑟拉提
+desc	$2939	라뮤즈	拉謬斯
+desc	$2940	부루터스	布魯特斯
+desc	$2941	그레이	葛雷
+desc	$2942	케니히	凱尼西
+desc	$2943	뮤라스	謬拉斯
+desc	$2944	카라스	卡拉斯
+desc	$2945	경비병사	警衛士兵
+desc	$2946	으 악!	哇∼啊！
+desc	$2947	으..윽...	...就算殺了一個我，還有千千萬萬個我...
+desc	$2948	끄으..윽...	喀呃..阿...
+desc	$2949	헉!	別說我沒有給你們機會...
+desc	$2950	커헉!!	喀喝！
+desc	$2951	우엑!	嗚呃！
+desc	$2952	크윽!	喀呃！
+desc	$2953	아..아...	我一定會詛咒你...
+desc	$2954	쿨럭!!	喀喀！！
+desc	$2955	살려줘!!!	救命啊！！!
+desc	$2956	이렇..게 당하다니...	竟然..這樣被敗...
+desc	$2957	분하다...	真不甘心...
+desc	$2958	으으.. 이놈들!!	阿阿.. 傢伙們!!
+desc	$2959	여기까지..인가...	到這裡..嗎...
+desc	$2960	본진에 연락을...	連絡本營...
+desc	$2961	장군님! 여기 적들이...	將軍！這裡有敵軍...
+desc	$2962	정찰병유언1	偵探兵遺言1
+desc	$2963	정찰병유언2	偵探兵遺言2
+desc	$2964	정찰병유언3	偵探兵遺言3
+desc	$2965	정찰병유언4	偵探兵遺言4
+desc	$2966	어둠의 안식을...	黑暗之安息...
+desc	$2967	그랑카인이시여! 적들에게 저주를!!	格蘭肯之神！詛咒敵人吧！
+desc	$2968	..그랑카인이시여...	..格蘭肯之神啊...
+desc	$2969	피의 복수를!!	為血報仇吧！
+desc	$2970	너희를 영원히 저주하리라...	永遠詛咒你們...
+desc	$2971	아인하사드의 하찮은 피조물 따위가...	殷海薩的被造物...
+desc	$2972	캐스터유언1	播報者遺言1
+desc	$2973	캐스터유언2	播報者遺言2
+desc	$2974	캐스터유언3	播報者遺言3
+desc	$2975	캐스터유언4	播報者遺言4
+desc	$2976	단테스님이 너희들을 응징해 주실 것이다..	丹特斯將會懲戒你們..
+desc	$2977	지원병력은 오지 않는 것인가...	支援兵不會來嗎...
+desc	$2978	이 곳을 지켜내지 못하다니...	無法堅守此處...
+desc	$2979	이 전투에서 이겼다고 좋아하지 마라... 	不要因戰勝而先高興... 
+desc	$2980	라스타바드에... 영광 있으라!	拉斯塔巴德... 帶來榮耀吧！
+desc	$2981	그랑카인의 분노가 이 대륙을 불바다로 만들 것이다!!	格蘭肯的憤怒會將此大地染為鮮血！！
+desc	$2982	경비대장	警衛隊長
+desc	$2983	돌격단장	突擊隊長
+desc	$2984	야히의 분신	火焰之影的分身
+desc	$2985	속박된 영혼	束縛的靈魂
+desc	$2986	사르샤	沙勒霞
+desc	$2987	흑기사 부대장	黑騎士副隊長
+desc	$2988	마족의 주문서	魔族的卷軸
+desc	$2989	영혼의 구	靈魂之球
+desc	$2990	얼음 여왕의 지팡이	冰之女王魔杖
+desc	$2991	데몬의 지팡이	惡魔鐮刀
+desc	$2992	바포메트의 지팡이	巴風特魔杖
+desc	$2993	베레스의 지팡이	巴列斯魔杖
+desc	$2994	커츠의 검	克特之劍
+desc	$2995	에이시느	艾絲西尼
+desc	$2996	[하이펫]	[高等寵物]
+desc	$2997	흑기사 근위병	黑騎士警衛兵
+desc	$2998	라스타바드의 시선	拉斯塔巴德之眼
+desc	$2999	블루디카의 협력서	布魯迪卡的協議書
+desc	$3000	수호의 경전 1권	守護經典上冊
+desc	$3001	블랙 미스릴 조각	黑色米索莉塊
+desc	$3002	난쟁이 군단장의 협력서	賽米的協議書
+desc	$3003	무기 제작 도면	裝備製造圖
+desc	$3004	수호의 경전 2권	守護經典下冊
+desc	$3005	병사의 목걸이	士兵的項鍊
+desc	$3006	다크엘프 병사의 배지	黑暗妖精士兵的徽章
+desc	$3007	다크엘프 장군의 배지	黑暗妖精將軍的徽章
+desc	$3008	수호 단원의 반지	守護團戒指
+desc	$3009	성스러운 물	神聖之水
+desc	$3010	성스러운 빵	神聖的麵包
+desc	$3011	난쟁이의 주머니	賽米的袋子
+desc	$3012	성스러운 주머니	神聖的袋子
+desc	$3013	에노	艾諾
+desc	$3014	칸의 경비대 부대장	康的警衛副隊長
+desc	$3015	세미	賽米
+desc	$3016	신녀 키리	神女奇麗
+desc	$3017	패잔병	殘敗兵
+desc	$3018	보상금	守護團獎金
+desc	$3019	블랙 미스릴 원석	黑色米索莉原石
+desc	$3020	블랙 미스릴	黑色米索莉
+desc	$3021	블랙 미스릴 판금	黑色米索莉金屬板
+desc	$3022	머미로드의 왕관	木乃伊王的王冠
+desc	$3023	스크롤 주머니	端午節活動袋子
+desc	$3024	단오절 이벤트 도우미	小環
+desc	$3025	은쫑즈	銀粽子
+desc	$3026	금쫑즈	金粽子
+desc	$3027	황금괴	黃金
+desc	$3028	황금원석조각	黃金原石
+desc	$3029	황금 판금	黃金金屬板
+desc	$3030	은괴	銀
+desc	$3031	은원석조각	銀原石
+desc	$3032	은 판금	銀金屬板
+desc	$3033	백금괴	白金
+desc	$3034	백금원석조각	白金原石
+desc	$3035	백금 판금	白金金屬板
+desc	$3036	불렀수?	你叫我嗎？
+desc	$3037	월급 주면서 부려먹어라!	要我做事先支付薪水吧！
+desc	$3038	왜 부르셔?	幹嘛叫我？
+desc	$3039	내가 애완견이냐	我是你的寵物嗎？
+desc	$3040	배고파! 밥줘!	肚子餓了！餵我吃飯！
+desc	$3041	호랑이	老虎
+desc	$3042	노세	諾斯
+desc	$3043	하이 캣	高等貓
+desc	$3044	blank	空白
+desc	$3045	하이 콜리	高等柯利
+desc	$3046	blank	空白
+desc	$3047	하이 울프	高等狼
+desc	$3048	아이스 젬	ICE
+desc	$3049	개 아이템	樣道具
+desc	$3050	드레스 마이티	力量提升
+desc	$3051	드레스 덱스터리티	敏捷提升
+desc	$3052	카리프의 주머니	卡立普的袋子
+desc	$3053	시장 텔레포터	商店村傳送師
+desc	$3054	시장 경비병	商店村警衛
+desc	$3055	쟌쿠	詹庫
+desc	$3056	명예의코인	名譽貨幣
+desc	$3057	신뢰의코인	信賴貨幣
+desc	$3058	지혜의코인	智慧貨幣
+desc	$3059	용기의코인	勇氣貨幣
+desc	$3060	골렘의 숨결	高崙之心
+desc	$3061	불새의 숨결	不死鳥之心
+desc	$3062	얼음여왕의 숨결	冰之女王之心
+desc	$3063	드레이크의 숨결	飛龍之心
+desc	$3064	마프르의 유산	馬普勒之石
+desc	$3065	파아그리오의 유산	帕格里奧之石
+desc	$3066	에바의 유산	伊娃之石
+desc	$3067	사이하의 유산	沙哈之石
+desc	$3068	뱀파이어의 망토	吸血鬼斗篷[活動道具•2006/10/20中午12:00統一刪除]
+desc	$3069	사신의 망토	死神披肩
+desc	$3070	쿠론	庫倫
+desc	$3071	투락	庫勒
+desc	$3072	쿠샨	庫珊
+desc	$3073	바란카의 크로우	巴蘭卡鋼爪
+desc	$3074	바란카의 갑옷	巴蘭卡盔甲
+desc	$3075	바란카의 투구	巴蘭卡頭盔
+desc	$3076	바란카의 장갑	巴蘭卡手套
+desc	$3077	바란카의 부츠	巴蘭卡長靴
+desc	$3078	라이아의 완드	蕾雅魔杖
+desc	$3079	라이아의 목걸이	蕾雅項鍊
+desc	$3080	라이아의 반지	蕾雅戒指
+desc	$3081	라이아의 로브	蕾雅長袍
+desc	$3082	비스트 서머너의 반지	喚獸師戒指
+desc	$3083	비스트 서머너의 목걸이	喚獸師項鍊
+desc	$3084	비스트 서머너의 로브	喚獸師長袍
+desc	$3085	비스트 서머너의 채찍	喚獸師長鞭
+desc	$3086	블랙 위자드의 반지	黑法師戒指
+desc	$3087	블랙 위자드의 목걸이	黑法師項鍊
+desc	$3088	블랙 위자드의 로브	黑法師長袍
+desc	$3089	블랙 위자드의 스태프	黑法師之杖
+desc	$3090	다크 포레스터의 반지	黑暗棲林者戒指
+desc	$3091	다크 포레스터의 부츠	黑暗棲林者長靴
+desc	$3092	다크 포레스터의 갑옷	黑暗棲林者盔甲
+desc	$3093	다크 포레스터의 물약	黑暗棲林者藥水
+desc	$3094	블랙 엔트의 줄기	黑暗安特的樹枝
+desc	$3095	블랙 엔트의 껍질	黑暗安特的樹皮
+desc	$3096	블랙 엔트의 열매	黑暗安特的水果
+desc	$3097	죽음의 대가	死亡的誓約
+desc	$3098	블랙 티거의 가죽	黑虎的皮
+desc	$3099	블랙 티거의 송곳니	黑虎的牙
+desc	$3100	블랙 티거의 발톱	黑虎的爪
+desc	$3101	딥 플라워의 뿌리	深淵之花的根
+desc	$3102	딥 플라워의 꽃 봉오리	深淵之花的花苞
+desc	$3103	플레이트웜의 독주머니	金屬蜈蚣的毒液
+desc	$3104	플레이트웜의 송곳니	金屬蜈蚣的牙
+desc	$3105	플레이트웜의 껍질	金屬蜈蚣的皮
+desc	$3106	두더지의 가죽	鼴鼠的皮
+desc	$3107	딜로의 꼬리	犰狳的尾巴
+desc	$3108	플레이트웜 껍질 갑옷	金屬蜈蚣皮盔甲
+desc	$3109	블랙 티거 가죽 망토	黑虎皮斗篷
+desc	$3110	침묵의 검	沉默之劍
+desc	$3111	디아드요새 이도류	狄亞得雙刀
+desc	$3112	디아드요새 크로스보우	狄亞得十字弓
+desc	$3113	광물 수거 문서	礦物收集文件
+desc	$3114	광물 주머니	礦物袋子
+desc	$3115	브롭의 위액	布拉伯的胃液
+desc	$3116	화산재	火山灰
+desc	$3117	흑정령석	黑暗元素石
+desc	$3118	광부 오움	歐姆礦工
+desc	$3119	수송 다크엘프	黑暗妖精運送員
+desc	$3120	프림	福林
+desc	$3121	레이더	雷德
+desc	$3122	하구틴	哈古丁
+desc	$3123	도망친 오움	歐姆逃亡者
+desc	$3124	오움	歐姆
+desc	$3125	장로 오움	歐姆長老
+desc	$3126	속죄의 신녀	贖罪的神女
+desc	$3127	공간이동사 디아루즈	迪亞路哲
+desc	$3128	상인 카루푸	嘉勒福
+desc	$3129	창고지기 가울	嘉歐
+desc	$3130	공간이동사 디아베스	迪雅貝斯
+desc	$3131	상인 에마르트	艾瑪勒特
+desc	$3132	창고지기 가린	嘉林
+desc	$3133	작업감독 오움	歐姆監工
+desc	$3134	달프가딘	達夫哥丁
+desc	$3135	레오나	雷奧納
+desc	$3136	블랙 티거	黑虎
+desc	$3137	서먼엘리멘탈	召喚精靈使
+desc	$3138	바란카	巴蘭卡
+desc	$3139	라이아	蕾雅
+desc	$3140	비스트서머너	喚獸師
+desc	$3141	블랙 위자드	黑法師
+desc	$3142	다크포레스터	黑暗棲林者
+desc	$3143	블랙엔트	黑暗安特
+desc	$3144	헤비오움	歐姆裝甲兵
+desc	$3145	미들오움	歐姆民兵
+desc	$3146	딜로	犰狳
+desc	$3147	플레이트웜	金屬蜈蚣
+desc	$3148	딥플라워	深淵之花
+desc	$3149	두더지	鼴鼠
+desc	$3150	곡괭이	鋤頭
+desc	$3151	오움의 주머니	歐姆的袋子
+desc	$3152	오움이 만들던 조각상	半成品的雕像
+desc	$3153	오움의 투박한 조각상	未精雕的雕像
+desc	$3154	오움이 다듬던 조각상	未修補的雕像
+desc	$3155	오움의 섬세한 조각상	未磨光的雕像
+desc	$3156	오움의 채색된 조각상 	未上漆的雕像
+desc	$3157	오움의 완성된 조각상	完成品的雕像
+desc	$3158	레오나의 돈 주머니	雷奧納的袋子
+desc	$3159	다크엘프 사냥꾼	黑暗妖精獵人
+desc	$3160	다크엘프 어프렌티스	黑暗妖精魔法學徒
+desc	$3161	레딘	雷汀
+desc	$3162	트리스탄	特里斯坦
+desc	$3163	크레도나스	克列度納斯
+desc	$3164	번스	范斯
+desc	$3165	제네스	傑奈斯
+desc	$3166	랑스	朗斯
+desc	$3167	코데랏지	克德拉吉
+desc	$3168	제스틴	傑斯汀
+desc	$3169	스미터	史米特
+desc	$3170	얀스틴	焉斯汀
+desc	$3171	드레스 이베이젼	閃避提升
+desc	$3172	흑정령의 수정 (드레스 마이티)	黑暗精靈水晶(力量提升)
+desc	$3173	흑정령의 수정 (드레스 덱스터리티)	黑暗精靈水晶(敏捷提升)
+desc	$3174	흑정령의 수정 (드레스 이베이젼)	黑暗精靈水晶(閃避提升)
+desc	$3175	마법서 (샤이닝 오라)	魔法書(鋼鐵士氣)
+desc	$3176	마법서 (브레이브 오라)	魔法書(衝擊士氣)
+desc	$3177	(샤이닝 오라)	(鋼鐵士氣)
+desc	$3178	(브레이브 오라)	(衝擊士氣)
+desc	$3179	디아드궁수	狄亞得弓箭手
+desc	$3180	아덴 정찰병	亞丁偵查兵
+desc	$3181	올레	奧勒
+desc	$3182	수감중인 다크엘프	被囚禁的黑暗妖精
+desc	$3183	식물생장소	植物養殖所
+desc	$3184	카리프의 고급 주머니	卡立普的高級袋子
+desc	$3185	부활과 영생의 계약서	復活與永生之誓約書
+desc	$3186	라보르의 주머니	拉伯勒的袋子
+desc	$3187	라블라	拉布羅
+desc	$3188	라보르	拉伯勒
+desc	$3189	거친 칼날	粗糙的刀身
+desc	$3190	구리 인장	銅印記
+desc	$3191	은 인장	銀印記
+desc	$3192	금 인장	金印記
+desc	$3193	조화의 인장	靈魂的印記
+desc	$3194	정신력의 인장	精神的印記
+desc	$3195	체력의 인장	身體的印記
+desc	$3196	태하의 가방: 구리 인장	泰和的袋子：銅印記
+desc	$3197	태하의 가방: 은 인장	泰和的袋子：銀印記
+desc	$3198	태하의 가방: 금 인장	泰和的袋子：金印記
+desc	$3199	라블라의 주머니	拉布羅的袋子
+desc	$3200	마드리안	馬德里安
+desc	$3201	리하스	李哈斯
+desc	$3202	리하스의 편지	李哈斯的信
+desc	$3203	레이언의 반지	雷安的戒指
+desc	$3204	행복한 눈사람	幸福的雪人
+desc	$3205	황금 양말	金襪子
+desc	$3206	기사의 견습세트	騎士的實習套裝
+desc	$3207	레이언	雷安
+desc	$3208	레지나	蕾吉娜
+desc	$3209	요정의 견습세트	妖精的實習套裝
+desc	$3210	테이레스	泰列斯
+desc	$3211	마법사의 견습세트	法師的實習套裝
+desc	$3212	포드마스터	波勒提特
+desc	$3213	군주의 견습세트	王族的實習套裝
+desc	$3214	포르티드	福德大師
+desc	$3215	다크엘프의 견습세트	黑暗妖精的實習套裝
+desc	$3216	한복 티셔츠	韓服(女性)
+desc	$3217	기모노 티셔츠	和服(女性)
+desc	$3218	치파오 티셔츠	旗袍(女性)
+desc	$3219	태하	泰和
+desc	$3220	아덴 국왕의 기념 주화	亞丁王國紀念貨幣
+desc	$3221	시장 공간이동사	商店村傳送師
+desc	$3222	루쿠	路庫
+desc	$3223	데니츠	丹尼斯
+desc	$3224	카샴	卡珊
+desc	$3225	유노	優諾
+desc	$3226	과닐	瓜尼
+desc	$3227	도요	多由
+desc	$3228	마법사의 주머니	魔法師袋子
+desc	$3229	카카오 열매	卡卡歐果實
+desc	$3230	카카오 반죽	卡卡歐麵團
+desc	$3231	설탕	砂糖
+desc	$3232	카카오 버터	卡卡歐奶油
+desc	$3233	발렌시아	小任性
+desc	$3234	블레즈	布萊斯
+desc	$3235	계산기	計算機
+desc	$3236	얇은 판금	薄金屬板
+desc	$3237	아덴 상단	亞丁商團
+desc	$3238	왕궁 게이트키퍼	王宮門口守門人
+desc	$3239	요새 게이트키퍼	要塞門口守門人
+desc	$3240	용기의 반지	勇氣戒指
+desc	$3241	자애의 목걸이	慈愛項鍊
+desc	$3242	여행자	旅行者
+desc	$3243	주술사	咒術師
+desc	$3244	여행자의 조잡한 부적	旅行者的粗糙的符咒
+desc	$3245	여행자의 부적	旅行者符咒
+desc	$3246	여행자의 신비로운 부적	旅行者的神秘符咒
+desc	$3247	오리하루콘 단검	奧里哈魯根短劍
+desc	$3248	미스릴 단검	米索莉短劍
+desc	$3249	데몬 액스	惡魔斧頭
+desc	$3250	크림슨 랜스	深紅長矛
+desc	$3251	맘보 코트	曼波外套
+desc	$3252	맘보 모자	曼波帽子
+desc	$3253	염령의 장갑	火靈手套
+desc	$3254	빙령의 장갑	水靈手套
+desc	$3255	풍령의 장갑	風靈手套
+desc	$3256	암령의 장갑	地靈手套
+desc	$3257	심연의 반지	深淵戒指
+desc	$3258	봉인 주문서	封印卷軸
+desc	$3259	기술서 (쇼크 스턴)	技術書(衝擊之暈)
+desc	$3260	마법서 (런 클렌)	魔法書(援護盟友)
+desc	$3261	정령의 수정 (트리플 애로우)	精靈水晶(三重矢)
+desc	$3262	정령의 수정 (엘리멘탈 폴다운)	精靈水晶(弱化屬性)
+desc	$3263	정령의 수정 (카운터 미러)	精靈水晶(鏡反射)
+desc	$3264	정령의 수정 (윈드 셰클)	精靈水晶(風之枷鎖)
+desc	$3265	정령의 수정 (엑조틱 바이탈라이즈)	精靈水晶(體能激發)
+desc	$3266	정령의 수정 (워터 라이프)	精靈水晶(水之元氣)
+desc	$3267	정령의 수정 (엘리멘탈 파이어)	精靈水晶(屬性之火)
+desc	$3268	봉인 해제 주문서	解除封印卷軸
+desc	$3269	시리우스 기념 주화	希里巫斯紀念金幣
+desc	$3270	지저 크랩맨	地底蟹人
+desc	$3271	지저 대왕거북	地底巨王龜
+desc	$3272	지저 리자드맨	地底蜥蜴人
+desc	$3273	지저 대왕벌레	地底巨王蟲
+desc	$3274	지저 일렉카둠	地底伊萊克頓
+desc	$3275	지저 전갈 미스틱	地底魔蠍
+desc	$3276	지저 전갈 파이탄	地底蛇蠍
+desc	$3277	지저 비홀더	地底多眼怪
+desc	$3278	말하는 두루마리	說話卷軸
+desc	$3279	상아탑의 한손검	象牙塔單手劍
+desc	$3280	상아탑의 양손검	象牙塔雙手劍
+desc	$3281	상아탑의 도끼	象牙塔斧頭
+desc	$3282	상아탑의 창	象牙塔長矛
+desc	$3283	상아탑의 활	象牙塔長弓
+desc	$3284	상아탑의 석궁	象牙塔石弓
+desc	$3285	상아탑의 지팡이	象牙塔魔杖
+desc	$3286	상아탑의 이도류	象牙塔雙刀
+desc	$3287	상아탑의 크로우	象牙塔鋼爪
+desc	$3288	상아탑의 단검	象牙塔短劍
+desc	$3289	상아탑의 가죽 투구	象牙塔皮頭盔
+desc	$3290	상아탑의 가죽 갑옷	象牙塔皮盔甲
+desc	$3291	상아탑의 가죽 샌달	象牙塔皮涼鞋
+desc	$3292	상아탑의 가죽 장갑	象牙塔皮手套
+desc	$3293	상아탑의 가죽 방패	象牙塔皮盾牌
+desc	$3294	상아탑의 반지	象牙塔戒指
+desc	$3295	상아탑의 티셔츠	象牙塔T恤
+desc	$3296	상아탑의 순간이동 주문서	象牙塔瞬間移動卷軸
+desc	$3297	상아탑의 귀환 주문서	象牙塔傳送回家的卷軸
+desc	$3298	상아탑의 확인 주문서	象牙塔鑑定卷軸
+desc	$3299	상아탑의 저주 풀기 주문서	象牙塔解咒卷軸
+desc	$3300	상아탑의 변신 주문서	象牙塔變身卷軸
+desc	$3301	상아탑의 체력 회복제	象牙塔治癒藥水
+desc	$3302	상아탑의 속도향상 물약	象牙塔加速藥水
+desc	$3303	말하는 섬 마을 귀환 주문서	說話之島指定傳送卷軸
+desc	$3304	글루딘 마을 귀환 주문서	古魯丁村莊指定傳送卷軸
+desc	$3305	켄트 마을 귀환 주문서	肯特村莊指定傳送卷軸
+desc	$3306	우드벡 마을 귀환 주문서	風木村莊指定傳送卷軸
+desc	$3307	화전민 마을 귀환 주문서	燃柳村莊指定傳送卷軸
+desc	$3308	요정숲 귀환 주문서	妖森指定傳送卷軸
+desc	$3309	은기사 마을 귀환 주문서	銀騎士村莊指定傳送卷軸
+desc	$3310	기란 마을 귀환 주문서	奇岩村莊指定傳送卷軸
+desc	$3311	하이네 마을 귀환 주문서	海音村莊指定傳送卷軸 
+desc	$3312	오렌 마을 귀환 주문서	歐瑞村莊指定傳送卷軸
+desc	$3313	웰던 마을 귀환 주문서	威頓村莊指定傳送卷軸 
+desc	$3314	아덴 마을 귀환 주문서	亞丁村莊指定傳送卷軸 
+desc	$3315	침묵의 동굴 귀환 주문서	沉默洞穴指定傳送卷軸
+desc	$3316	레크만	雷克曼
+desc	$3317	세리안	賽利安
+desc	$3318	리리	莉莉
+desc	$3319	기온	奇溫
+desc	$3320	시리아	希利亞
+desc	$3321	오실리아	奧西利亞
+desc	$3322	호닌	胡尼
+desc	$3323	치코	齊柯
+desc	$3324	홉	賀伯
+desc	$3325	터크	托克
+desc	$3326	갈리온	迦利溫
+desc	$3327	길버트	吉伯特
+desc	$3328	포리칸	波利卡
+desc	$3329	제릭	傑瑞
+desc	$3330	자루만	賈魯曼
+desc	$3331	래리	萊利
+desc	$3332	래리의 보좌관	萊利的輔佐官
+desc	$3333	래리의 병사	萊利的士兵
+desc	$3334	드루가 가문 1세대 가보	多魯嘉1世傳家之寶
+desc	$3335	드루가 가문 2세대 가보	多魯嘉2世傳家之寶
+desc	$3336	드루가 가문 3세대 가보	多魯嘉3世傳家之寶
+desc	$3337	드루가 가문 4세대 가보	多魯嘉4世傳家之寶
+desc	$3338	드루가 가문 5세대 가보	多魯嘉5世傳家之寶
+desc	$3339	드루가 가문 6세대 가보	多魯嘉6世傳家之寶
+desc	$3340	드루가 가문 7세대 가보	多魯嘉7世傳家之寶
+desc	$3341	알 수 없는 가보	無法得知的傳家之寶
+desc	$3342	타락의 머리카락	墮落首級
+desc	$3343	타락의 로브	墮落長袍
+desc	$3344	타락의 장갑	墮落手套
+desc	$3345	타락의 망토	墮落斗篷
+desc	$3346	타락의 부츠	墮落長靴
+desc	$3347	타락의 낫	墮落鐮刀
+desc	$3348	타락의 재물	墮落的財物
+desc	$3349	타락의 악마서 1권	墮落的惡魔書1冊
+desc	$3350	타락의 외침	墮落之舌
+desc	$3351	타락의 악마서 2권	墮落的惡魔書2冊
+desc	$3352	타락의 독	墮落之毒
+desc	$3353	타락의 악마서 3권	墮落的惡魔書3冊
+desc	$3354	타락의 이빨	墮落之牙
+desc	$3355	타락의 악마서 4권	墮落的惡魔書4冊
+desc	$3356	타락의 손길	墮落之手
+desc	$3357	고대인의 주술서 1권	古代人的咒術書1冊
+desc	$3358	악마의 검은색 족쇄	惡魔的黑色腳鐐
+desc	$3359	기안의 두루마리	奇安的卷軸
+desc	$3360	칼바스의 두루마리	金侃的卷軸
+desc	$3361	고대인의 주술서 2권	古代人的咒術書2冊
+desc	$3362	악마의 붉은색 족쇄	惡魔的紅色腳鐐
+desc	$3363	고대인의 연금술 두루마리	古代人的鍊金術卷軸
+desc	$3364	고대인의 주술서 3권	古代人的咒術書3冊
+desc	$3365	악마의 파란색 족쇄	惡魔的藍色腳鐐
+desc	$3366	고대인의 주술 두루마리	古代人的咒術卷軸
+desc	$3367	고대인의 주술서 4권	古代人的咒術書4冊
+desc	$3368	악마의 흰색 족쇄	惡魔的白色腳鐐
+desc	$3369	연금술사의 돌	鍊金術之石
+desc	$3370	정신력의 물약	精神藥水
+desc	$3371	저주받은 피	詛咒之血
+desc	$3372	악마의 피	惡魔之血
+desc	$3373	발록의 핏빛 망토	炎魔的血光斗篷
+desc	$3374	악마의 크로스보우	惡魔十字弓
+desc	$3375	악마의 칼	惡魔之劍
+desc	$3376	악마의 이도류	惡魔雙刀
+desc	$3377	악마의 크로우	惡魔鋼爪
+desc	$3378	와일드 베놈	狂野之毒
+desc	$3379	와일드 팡	狂野毒牙
+desc	$3380	와일드 매직	狂野之魔
+desc	$3381	매드 리자드맨	狂暴蜥蜴人
+desc	$3382	하이 리자드맨	高等蜥蜴人
+desc	$3383	헤비 리자드맨	重裝蜥蜴人
+desc	$3384	매드 마이어	狂暴myer? (不曉得是啥)
+desc	$3385	하이 마이어	高等myer?  
+desc	$3386	헤비 마이어	重裝myer?
+desc	$3387	라버본	海賊骷髏
+desc	$3388	라버본 솔져	海賊骷髏士兵
+desc	$3389	라버본 헤드	海賊骷髏首領
+desc	$3390	낡은 가죽주머니	古老皮袋
+desc	$3391	낡은 비단주머니	古老絲袋
+desc	$3392	유물주머니	遺物袋子
+desc	$3393	켄트용사의 검	肯特勇士之劍
+desc	$3394	켄트궁사의 활	肯特射手之弓
+desc	$3395	켄트마법사의 지팡이	肯特法師魔杖
+desc	$3396	켄트암살자의 이도류	肯特刺客雙刀
+desc	$3397	켄트전사의 도끼	肯特戰士斧頭
+desc	$3398	켄트문장 부츠	肯特徽章長靴
+desc	$3399	켄트문장 갑옷	肯特徽章盔甲
+desc	$3400	켄트문장 장갑	肯特徽章手套
+desc	$3401	켄트문장 방패	肯特徽章盾牌
+desc	$3402	켄트문장 투구	肯特徽章頭盔
+desc	$3403	그을린 빵조각	煙燻的麵包屑
+desc	$3404	타다남은 빵조각	烤焦的麵包屑
+desc	$3405	와인	紅酒
+desc	$3406	위스키	威士忌
+desc	$3407	타락	墮落
+desc	$3408	타락의 분신	墮落的分身
+desc	$3409	거대한 무덤 가디언	巨大墳墓守護者
+desc	$3410	무덤 가디언 나이트	墳墓守護者騎士
+desc	$3411	무덤 가디언 메이지	墳墓守護者法師
+desc	$3412	무덤 가디언	墳墓守護者
+desc	$3413	레서데몬	小惡魔
+desc	$3414	발록의 분신	炎魔的分身
+desc	$3415	칼바스의 하인	金侃的僕人
+desc	$3416	고대 자이언트 장군	古代巨人將軍
+desc	$3417	고대 자이언트 장로	古代巨人長老
+desc	$3418	수감된 아덴 용병	被囚禁的亞丁傭兵
+desc	$3419	밧슈	巴休
+desc	$3420	로이	羅伊
+desc	$3421	아덴성 공주	亞丁城公主
+desc	$3422	로이의 주머니	羅伊的袋子
+desc	$3423	북쪽 감옥 열쇠	北方監獄鑰匙
+desc	$3424	보보	波波
+desc	$3425	광전사 효과	狂戰士效果
+desc	$3426	마법 랜턴	魔法燈籠
+desc	$3427	오베르	奧貝勒
+desc	$3428	니키	尼奇
+desc	$3429	동빙내성	寒冰耐性
+desc	$3430	석화내성	石化耐性
+desc	$3431	수면내성	睡眠耐性
+desc	$3432	암흑내성	暗黑耐性
+desc	$3433	스턴내성	昏迷耐性
+desc	$3434	홀드내성	支撐耐性
+desc	$3435	없음	無
+desc	$3436	듀발	杜發
+desc	$3437	듀란	杜蘭
+desc	$3438	록산느	洛杉尼
+desc	$3439	해적섬행 배표	海賊島船票
+desc	$3440	숨겨진 선착장행 배표	隱藏港口船票
+desc	$3441	후임병! 후임병!	後援兵! 後援兵!
+desc	$3442	내 임무도 여기까지...	我的任務也將到此...
+desc	$3443	그랑카인의 축복이 함께하길! 크하하하!	願格蘭肯的祝福同在! 喀哈哈哈!
+desc	$3444	이대로 죽을수는 없지! 어스바인드!	我絕對不能就這樣死去! 大地屏障!
+desc	$3445	널 지체시킨 것 만으로도 충분하다.	只要讓你停滯這就夠了. 
+desc	$3446	이것이 끝은 아니다!	這絕不是最後!
+desc	$3447	dummy	dummy
+desc	$3448	dummy	dummy
+desc	$3449	dummy	dummy
+desc	$3450	dummy	dummy
+desc	$3451	dummy	dummy
+desc	$3452	dummy	dummy
+desc	$3453	dummy	dummy
+desc	$3454	dummy	dummy
+desc	$3455	dummy	dummy
+desc	$3456	dummy	dummy
+desc	$3457	모리스	莫利斯
+desc	$3458	망령의 뼈조각	亡靈的骨塊
+desc	$3459	민첩의 셔츠	敏捷T恤
+desc	$3460	힘의 셔츠	力量T恤
+desc	$3461	지능의 셔츠	智能T恤
+desc	$3462	맘보토끼	曼波兔
+desc	$3463	맘보토끼졸개	曼波兔部下
+desc	$3464	화염의 이빨	火之牙
+desc	$3465	빙하의 이빨	水之牙
+desc	$3466	바람의 이빨	風之牙
+desc	$3467	대지의 이빨	地之牙
+desc	$3468	화령의 주인	火靈之主
+desc	$3469	수령의 주인	水靈之主
+desc	$3470	풍령의 주인	風靈之主
+desc	$3471	지령의 주인	地靈之主
+desc	$3472	심연의 화령	深淵火靈
+desc	$3473	심연의 수령	深淵水靈
+desc	$3474	심연의 풍령	深淵風靈
+desc	$3475	심연의 지령	深淵地靈
+desc	$3476	심연의 주인	深淵之主
+desc	$3477	심연의 구울	深淵食屍鬼
+desc	$3478	심연의 궁수	深淵弓箭手
+desc	$3479	씽	西斯
+desc	$3480	연금술사	鍊金術師
+desc	$3481	마족의 노예	魔族的奴隸
+desc	$3482	북동쪽 감옥 열쇠	東北方監獄鑰匙
+desc	$3483	동쪽 감옥 열쇠	東方監獄鑰匙
+desc	$3484	보물지도 조각	藏寶圖碎片
+desc	$3485	아들의 편지	兒子的信
+desc	$3486	아들의 유골	兒子的遺骸
+desc	$3487	완성된 보물지도	完成的藏寶圖
+desc	$3488	드레이크의 열쇠	德雷克鑰匙
+desc	$3489	푸른 도마뱀의 껍질	藍尾蜥蜴之皮
+desc	$3490	아들의 초상화	兒子的肖像畫
+desc	$3491	작은 보물지도	小藏寶圖
+desc	$3492	카드무스의 목걸이	卡得穆斯項鍊
+desc	$3493	무한의 화살통	無限箭筒
+desc	$3494	원주민 토템	原住民圖騰
+desc	$3495	푸른 해적 두건	藍海賊頭巾
+desc	$3496	푸른 해적 장갑	藍海賊手套
+desc	$3497	푸른 해적 부츠	藍海賊長靴
+desc	$3498	바다의 망토	藍海賊斗篷
+desc	$3499	푸른 해적 가죽갑옷	藍海賊皮盔甲
+desc	$3500	해골 목걸이	骷髏項鍊
+desc	$3501	저주받은 루비 반지	受詛咒的紅寶石戒指
+desc	$3502	저주받은 사파이어 반지	受詛咒的藍寶石戒指
+desc	$3503	저주받은 다이아몬드 반지	受詛咒的鑽石戒指
+desc	$3504	커트라스	短刀
+desc	$3505	샴쉬르	海賊彎刀
+desc	$3506	해적섬행 배표	海賊島船票
+desc	$3507	숨겨진 선착장행 배표	隱藏之港船票
+desc	$3508	라쿤	浣熊
+desc	$3509	블루 테일	藍尾蜥蜴
+desc	$3510	하이 라쿤	高等浣熊
+desc	$3511	키위 패롯	奇異鸚鵡
+desc	$3512	황금 화살	黃金箭
+desc	$3513	오리하루콘 화살	奧里哈魯根箭
+desc	$3514	블랙미스릴 화살	黑色米索莉箭
+desc	$3515	발록의 레서데몬	炎魔的小惡魔
+desc	$3516	발록의 데몬	炎魔的惡魔
+desc	$3517	발록의 서큐버스	炎魔的思克巴
+desc	$3518	발록의 서큐버스 퀸	炎魔的思克巴女皇
+desc	$3519	발록의 바포메트	炎魔的巴風特
+desc	$3520	발록의 베레스	炎魔的巴列斯
+desc	$3521	정령의 결정	精靈結晶
+desc	$3522	정령의 파편	精靈碎片
+desc	$3523	고대의 정령	古代的精靈
+desc	$3524	드레이크	德雷克
+desc	$3525	밀레	米列
+desc	$3526	쿠드	庫得
+desc	$3527	베릭	貝林
+desc	$3528	저주받은 에메랄드 반지	受詛咒的綠寶石戒指
+desc	$3529	듀론	杜倫
+desc	$3530	포니	波尼
+desc	$3531	카미트	卡米特
+desc	$3532	박쥐 송곳니	蝙蝠之牙
+desc	$3533	늑대 가죽	狼皮
+desc	$3534	딥플라워 줄기	深淵花枝條
+desc	$3535	블랙티거 심장	黑虎之心
+desc	$3536	다크엘프 주머니	黑暗妖精袋子
+desc	$3537	스콜피온 껍질	毒蠍之皮
+desc	$3538	거대무리안 거미줄	巨大莫妮亞蜘蛛絲
+desc	$3539	블랙엔트 썩은가지	黑暗安特的枯樹枝
+desc	$3540	딜로 발톱	犰狳之爪
+desc	$3541	켈베로스 털	地獄犬之皮
+desc	$3542	대공동의 수정	大洞穴水晶
+desc	$3543	정령 조각	原石碎片
+desc	$3544	대공동 주문서 조각	大洞穴卷軸碎片
+desc	$3545	대공동 이동주문서	大洞穴移動卷軸
+desc	$3546	저항군 마을 귀환 주문서	抵抗軍村莊指定傳送卷軸
+desc	$3547	은둔자 마을 귀환 주문서	隱遁者村莊指定傳送卷軸
+desc	$3548	콘술	領事
+desc	$3549	연금술사	鍊金術師
+desc	$3550	대공동 공간이동사	大洞穴空間移動師
+desc	$3551	정령의 오브	精靈墓穴看守者
+desc	$3552	래리의 말	萊利的馬
+desc	$3553	디아드 주문서 조각	狄亞得卷軸碎片
+desc	$3554	디아드 이동주문서	狄亞得移動卷軸
+desc	$3555	시미즈	希米哲
+desc	$3556	도일	多益
+desc	$3557	도일의 개	多益的狗
+desc	$3558	루케인	路卡音
+desc	$3559	카드무스	卡得穆斯
+desc	$3560	레스타	萊斯塔
+desc	$3561	루디안	陸地安
+desc	$3562	케니스	凱尼斯
+desc	$3563	티구스	提古斯
+desc	$3564	지다르	吉塔勒
+desc	$3565	알리	艾利
+desc	$3566	레너드	雷納德
+desc	$3567	작은 상자	小箱子
+desc	$3568	작은 주머니	小袋子
+desc	$3569	할아버지의 보물	爺爺的寶物
+desc	$3570	해적의 망령	海賊的亡靈
+desc	$3571	해적의 망령	海賊的亡靈
+desc	$3572	해적의 망령	海賊的亡靈
+desc	$3573	해적의 망령	海賊的亡靈
+desc	$3574	약탈하라!	去搶奪吧!
+desc	$3575	아직 멈출 수 없다!	現在還無法停止!
+desc	$3576	채워지지 않는 우리의 갈증을!	無法填滿的渴望!
+desc	$3577	저들의 보물로 채워라!	以寶物去填滿吧!
+desc	$3578	끼잉끼잉~	吭哼吭哼~
+desc	$3579	캬오~ 키잉~	喀啊~ 哼哼~
+desc	$3580	큐잉~ 큐잉~	咕嚶~ 咕嚶~
+desc	$3581	뀨잉~ 지금 갑니다~	咕嚶~ 現在過去了~
+desc	$3582	끼잉~ 끼잉끼잉~	吭哼~ 吭哼吭哼~
+desc	$3583	캬잉~ 갈까 말까~	喀哼~ 去不去呢~
+desc	$3584	캬잉~ 왜요오~?	喀哼~ 為什麼~?
+desc	$3585	큐잉~ 뭘 할까요?	咕嚶~ 做什麼好呢?
+desc	$3586	뀨잉~ 주인님 넘 좋아~	咕嚶~ 主人太好了~
+desc	$3587	끼잉~ 끼잉끼잉~	吭哼~ 吭哼吭哼~
+desc	$3588	은제 플룻	銀笛
+desc	$3589	친구의 가방	朋友的袋子
+desc	$3590	아덴 정보원	亞丁情報員
+desc	$3591	페스코	佩斯克
+desc	$3592	루보	露寶
+desc	$3593	리앤	里恩
+desc	$3594	루니	路尼
+desc	$3595	로베르토	羅伯多
+desc	$3596	루푸스	魯普斯
+desc	$3597	카루	卡魯
+desc	$3598	레스타의 반지	萊斯塔的戒指
+desc	$3599	로헨	羅亨
+desc	$3600	카스티	卡士提
+desc	$3601	자일즈	賈馳
+desc	$3602	나의 보물을 노리는 자가 누구냐!	是誰貪圖我的寶物!
+desc	$3603	내 보물! 보물은 내 것이다! 누구도 손댈 수 없...다.....	寶物都是我的! 任何人不准動手.....
+desc	$3604	정령들의 주인인 나를 누가 감히 거스르는가!!	誰敢掌控我這精靈的主人!!
+desc	$3605	커헉....이로써 나도 영원한 심연의 늪에서 해방되는가....	喀....至此我也能夠永遠從深淵中解放嗎....
+desc	$3606	퀘스트초기화관리자	任務初始化管理者
+desc	$3607	전설의 투구	傳說的頭盔
+desc	$3608	전설의 갑옷	傳說的盔甲
+desc	$3609	전설의 장갑	傳說的手套
+desc	$3610	전설의 부츠	傳說的長靴
+desc	$3611	전설의 방패	傳說的盾牌
+desc	$3612	전설의 검	傳說的匕首
+desc	$3613	한국정장(남성)	韓服(男性)
+desc	$3614	일본정장(남성)	和服(男性)
+desc	$3615	중국정장(남성)	阿大裝 
+desc	$3616	지도:해적섬	地圖:海賊島
+desc	$3617	더블릿	上衣
+desc	$3618	더블릿 캄	上衣 康
+desc	$3619	더블릿 롬	上衣 隆
+desc	$3620	더블릿 슈	上衣 修
+desc	$3621	더블릿 지츠	上衣 吉特
+desc	$3622	더블릿 캄지츠	上衣 康吉特
+desc	$3623	더블릿 롬지츠	上衣 隆吉特
+desc	$3624	더블릿 슈지츠	上衣 修吉特
+desc	$3625	더블릿 체츠	上衣 奇特
+desc	$3626	더블릿 캄체츠	上衣 康奇特
+desc	$3627	더블릿 롬체츠	上衣 隆奇特
+desc	$3628	더블릿 슈체츠	上衣 修奇特
+desc	$3629	더블릿 뷔츠	上衣 貝特
+desc	$3630	더블릿 캄뷔츠	上衣 康貝特
+desc	$3631	더블릿 롬뷔츠	上衣 隆貝特
+desc	$3632	더블릿 슈뷔츠	上衣 修貝特
+desc	$3633	디 본 더블릿	迪 本 上衣
+desc	$3634	디 샤 더블릿 캄	迪 莎 上衣 康
+desc	$3635	디 레 더블릿 롬	迪 雷 上衣 隆
+desc	$3636	디 폰 더블릿 슈	迪 龐 上衣 修
+desc	$3637	디 본 더블릿 지츠	迪 本 上衣 吉特
+desc	$3638	디 샤 더블릿 캄지츠	迪 莎 上衣 康吉特
+desc	$3639	디 레 더블릿 롬지츠	迪 雷 上衣 隆吉特
+desc	$3640	디 폰 더블릿 슈지츠	迪 龐 上衣 修吉特
+desc	$3641	디 본 더블릿 체츠	迪 本 上衣 奇特
+desc	$3642	디 샤 더블릿 캄체츠	迪 莎 上衣 康奇特
+desc	$3643	디 레 더블릿 롬체츠	迪 雷 上衣 隆奇特
+desc	$3644	디 폰 더블릿 슈체츠	迪 龐 上衣 修奇特
+desc	$3645	디 본 더블릿 뷔츠	迪 本 上衣 貝特
+desc	$3646	디 샤 더블릿 캄뷔츠	迪 莎 上衣 康貝特
+desc	$3647	디 레 더블릿 롬뷔츠	迪 雷 上衣 隆貝特
+desc	$3648	디 폰 더블릿 슈뷔츠	迪 龐 上衣 修貝特
+desc	$3649	블랙 미스릴 가루	黑色米索莉粉
+desc	$3650	라스타바드 스카프	拉斯塔巴德圍巾
+desc	$3651	그랑카인의 룬	格蘭肯之記號
+desc	$3652	약과	油蜜餅
+desc	$3653	카놉스 기념 주화	加諾普斯紀念貨幣
+desc	$3654	베가 기념 주화	維迦紀念貨幣
+desc	$3655	아크톨즈 기념 주화	亞克拓紀念貨幣
+desc	$3656	리겔 기념 주화	立杰奧紀念貨幣
+desc	$3657	알타일 기념 주화	雅特爾紀念貨幣
+desc	$3658	알 보관소 열쇠	蛋蛋保管所的鑰匙
+desc	$3659	시간표	照顧時間表
+desc	$3660	썩은 메즈	腐爛的蛋
+desc	$3661	탁한 누즈	等級0的蛋
+desc	$3662	변색된 누즈	等級1的蛋
+desc	$3663	분화된 누즈	等級2的蛋
+desc	$3664	조화의 누즈	等級3的蛋
+desc	$3665	영롱한 비즈	等級4的蛋
+desc	$3666	축복의 비즈	等級5的蛋
+desc	$3667	기적의 비즈	等級6的蛋
+desc	$3668	분노의 마즈	等級7的蛋
+desc	$3669	폭주의 마즈	等級8的蛋
+desc	$3670	영양 만점 마즈	等級9的蛋
+desc	$3671	영양 만점 목걸이	營養滿分金項鍊
+desc	$3672	영양 만점 반지	營養滿分金戒指
+desc	$3673	영양 만점 허리끈	營養滿分金腰帶
+desc	$3674	일기장	日記
+desc	$3675	영양사	營養師
+desc	$3676	부화사	孵化師
+desc	$3677	1차	第1次
+desc	$3678	2차	第2次
+desc	$3679	3차	第3次
+desc	$3680	4차	第4次
+desc	$3681	5차	第5次
+desc	$3682	6차	第6次
+desc	$3683	7차	第7次
+desc	$3684	8차	第8次
+desc	$3685	9차	第9次
+desc	$3686	10차	第10次
+desc	$3687	11차	第11次
+desc	$3688	12차	第12次
+desc	$3689	13차	第13次
+desc	$3690	14차	第14次
+desc	$3691	15차	第15次
+desc	$3692	16차	第16次
+desc	$3693	17차	第17次
+desc	$3694	18차	第18次
+desc	$3695	19차	第19次
+desc	$3696	20차	第20次
+desc	$3697	1단계	第1階段
+desc	$3698	2단계	第2階段
+desc	$3699	3단계	第3階段
+desc	$3700	4단계	第4階段
+desc	$3701	5단계	第5階段
+desc	$3702	6단계	第6階段
+desc	$3703	7단계	第7階段
+desc	$3704	8단계	第8階段
+desc	$3705	9단계	第9階段
+desc	$3706	영양 만점 펫 목걸이	營養滿分寵物項鍊
+desc	$3707	신비한 펫 목걸이	神秘的寵物項鍊
+desc	$3708	변색된 펫 목걸이	變色的寵物項鍊
+desc	$3709	잃어버린 양말	遺失的襪子
+desc	$3710	PlayNC 동전	NC紀念幣
+desc	$3711	PlayNC 상품권	NC紀念卷
+desc	$3712	개구쟁이 포포	NC助理
+desc	$3713	토끼 모자	曼波兔帽
+desc	$3714	토끼 반지	曼波兔戒指
+desc	$3715	토끼 주머니	曼波兔的袋子
+desc	$3716	에스트	戴波羅哲
+desc	$3717	이제 너에게 안식을 주마.	給你安息
+desc	$3718	데이브	戴夫
+desc	$3719	트루디	特魯迪
+desc	$3720	사랑의 결정체	心靈水晶
+desc	$3721	마법사 베네딕트	魔法師•貝奈迪特
+desc	$3722	연합군 지원자	聯合軍志願者
+desc	$3723	다크엘프 자객	黑暗妖精刺客
+desc	$3724	하이콜리 목걸이	柯利的項鍊
+desc	$3725	하이라쿤 목걸이	浣熊的項鍊
+desc	$3726	쿠만	庫曼
+desc	$3727	디에고	迪哥
+desc	$3728	호세	豪勢
+desc	$3729	거대쥐	巨鼠
+desc	$3730	라버본 나이프	海賊骷髏刀手
+desc	$3731	프랑코	福朗克
+desc	$3732	카밀라의 영혼	卡蜜拉的靈魂
+desc	$3733	리자드맨 장로	蜥蜴人長老
+desc	$3734	리자드맨 청년전사	蜥蜴人青年戰士
+desc	$3735	천상의 망치	天父之怒
+desc	$3736	살천의 활	弒神者之弓
+desc	$3737	혼돈의 손톱	混沌之刺
+desc	$3738	혼돈의 문장	混沌法袍
+desc	$3739	혼돈의 손길	混沌手套
+desc	$3740	혼돈의 망토	混沌斗篷
+desc	$3741	혼돈의 투구	混沌頭盔
+desc	$3742	죽음의 갑옷	死亡盔甲
+desc	$3743	죽음의 비늘	死亡手套
+desc	$3744	죽음의 망토	死亡斗篷
+desc	$3745	죽음의 보호구 조각	死亡之盾
+desc	$3746	야히의 투구	火焰之影頭盔
+desc	$3747	야히의 셔츠	火焰之影襯衫
+desc	$3748	야히의 갑옷	火焰之影盔甲
+desc	$3749	야히의 망토	火焰之影斗篷
+desc	$3750	야히의 부츠	火焰之影長靴
+desc	$3751	야히의 장갑	火焰之影手套
+desc	$3752	야히의 반지	火焰之影戒指
+desc	$3753	야히의 목걸이	火焰之影項鍊
+desc	$3754	야히의 귀걸이	火焰之影耳環
+desc	$3755	춤추는 귀걸이	舞動耳環
+desc	$3756	쌍둥이의 귀걸이	雙子耳環
+desc	$3757	축제의 귀걸이	慶典耳環
+desc	$3758	절정의 귀걸이	絕頂耳環
+desc	$3759	폭주의 귀걸이	暴走耳環
+desc	$3760	환마의 귀걸이	幻魔耳環
+desc	$3761	일족의 귀걸이	族群耳環
+desc	$3762	노예의 귀걸이	奴隸耳環
+desc	$3763	혼돈의 머리카락	混沌首級
+desc	$3764	죽음의 머리카락	死亡首級
+desc	$3765	죽음의 망치	死亡戰鎚
+desc	$3766	죽음의 도끼	死亡巨斧
+desc	$3767	죽음의 창	死亡長矛
+desc	$3768	죽음의 칼	死亡之劍
+desc	$3769	죽음의 의지	死亡尾骨
+desc	$3770	야히의 가면	火焰之影首級
+desc	$3771	야히의 겉옷	火焰之影肋骨
+desc	$3772	야히의 손톱	火焰之影指甲
+desc	$3773	야히의 꼬리	火焰之影尾巴
+desc	$3774	야히의 날개	火焰之影骨翼
+desc	$3775	야히의 의지	火焰之影脊椎
+desc	$3776	영혼석 파편	靈魂石碎片
+desc	$3777	야히	火焰之影
+desc	$3778	혼돈	混沌
+desc	$3779	죽음	死亡
+desc	$3780	혼돈의 사제	混沌的司祭
+desc	$3781	죽음의 사제	死亡的司祭
+desc	$3782	혼돈의 신도	混沌的信徒
+desc	$3783	죽음의 신도	死亡的信徒
+desc	$3784	오리하루콘 도금 뼈화살	奧里哈魯根鍍金骨箭
+desc	$3785	야히의 근위병	火焰之影親衛兵
+desc	$3786	디에고의 낡은 다이어리	迪哥的舊日記
+desc	$3787	해어지고 구겨진 러브레터	弄縐的情書
+desc	$3788	리자드맨의 보고서	蜥蜴人的報告
+desc	$3789	리자드맨의 보물	蜥蜴人的寶物
+desc	$3790	명예의 검	榮耀之劍
+desc	$3791	심연의 이도류	深淵雙刀
+desc	$3792	침묵의 크로스보우	寂靜十字弓
+desc	$3793	칠흑의 수정구	漆黑水晶球
+desc	$3794	신의의 방패	信念之盾
+desc	$3795	붉은 욕망의 검	血紅慾望短劍
+desc	$3796	리자드맨 용사의 검	蜥蜴王勇士之劍
+desc	$3797	리자드맨 영웅의 장갑	蜥蜴王手套
+desc	$3798	암살군왕 슬레이브	暗殺軍王•史雷佛
+desc	$3799	암살단장 블레이즈	暗殺團長•布雷哲
+desc	$3800	친위대장 카이트	親衛隊長•凱特
+desc	$3801	피의 암살자	血刺客
+desc	$3802	어둠의 도적	黑暗盜賊
+desc	$3803	라스타바드 친위대	拉斯塔巴德親衛隊
+desc	$3804	마수군왕 바란카	魔獸軍王•巴蘭卡
+desc	$3805	마수단장 카이바르	魔獸團長•凱巴勒
+desc	$3806	사단장 싱클레어	魔獸師長•辛克萊
+desc	$3807	여단장 다크펜서	突擊旅長•闇黑劍士
+desc	$3808	라스타바드 조련사	拉斯塔巴德調教師
+desc	$3809	울프 라이더	拉斯塔巴德馴獸師
+desc	$3810	블랙 티거	黑虎
+desc	$3811	헬 바운드	地獄束縛犬
+desc	$3812	헬 크리처	地獄奴隸
+desc	$3813	크림슨 드레이크	深紅飛龍
+desc	$3814	팬텀 나이트	魂騎士
+desc	$3815	마령군왕 라이아	法令軍王•蕾雅
+desc	$3816	신관장 바운티	神官長•邦妮
+desc	$3817	마법단장 카르미엘	魔法團長•卡勒米爾
+desc	$3818	물의정령 수호자	水元素守護者
+desc	$3819	불의정령 수호자	火元素守護者
+desc	$3820	땅의정령 수호자	地元素守護者
+desc	$3821	바람정령 수호자	風元素守護者
+desc	$3822	어둠정령 수호자	闇元素守護者
+desc	$3823	어둠 숲지기	闇黑棲林者
+desc	$3824	암흑 마법사	闇黑法師
+desc	$3825	명법군왕 헬바인	冥法軍王•海露拜
+desc	$3826	명법단장 크리퍼스	冥法團長•可利波斯
+desc	$3827	용병대장 메파이스토	傭兵隊長•麥帕斯托
+desc	$3828	어둠의 복수자	黑暗復仇者
+desc	$3829	핏빛 기사	血騎士
+desc	$3830	오움 전사	歐姆戰士
+desc	$3831	헤비오움 전사	重裝歐姆戰士
+desc	$3832	피의 강령술사	血色術師
+desc	$3833	어둠의 군주	闇黑君王
+desc	$3834	진명황의 집행검	真•冥皇執行劍
+desc	$3835	바람칼날의 단검	風刃短劍
+desc	$3836	붉은그림자의 이도류	紅影雙刀
+desc	$3837	야수왕의 크로우	獸王鋼爪
+desc	$3838	수정결정체 지팡이	聖晶魔杖
+desc	$3839	무관의 양손검	武官雙手劍
+desc	$3840	무관의 장검	武官之刃
+desc	$3841	무관의 갑옷	武官護鎧
+desc	$3842	무관의 투구	武官頭盔
+desc	$3843	무관의 망토	武官斗篷
+desc	$3844	무관의 장갑	武官手套
+desc	$3845	무관의 부츠	武官長靴
+desc	$3846	무관의 방패	武官之盾
+desc	$3847	신관의 지팡이	神官魔杖
+desc	$3848	신관의 로브	神官法袍
+desc	$3849	신관의 투구	神官頭飾
+desc	$3850	신관의 망토	神官斗篷
+desc	$3851	신관의 장갑	神官手套
+desc	$3852	신관의 부츠	神官長靴
+desc	$3853	신관의 마력서	神官魔法書
+desc	$3854	명법군왕의 망토	冥法軍王斗篷
+desc	$3855	마령군왕의 로브	法令軍王長袍
+desc	$3856	마수군왕의 부츠	魔獸軍王長靴
+desc	$3857	암살군왕의 장갑	暗殺軍王手套
+desc	$3858	명법군왕의 반지	冥法軍王之戒
+desc	$3859	마령군왕의 목걸이	法令軍王之鍊
+desc	$3860	암살군왕의 암살도	暗殺軍王之痕
+desc	$3861	마수군왕의 크로우	魔獸軍王之爪
+desc	$3862	어둠의 벨트	黑暗腰帶
+desc	$3863	어둠의 칼날	黑暗之劍
+desc	$3864	피의 대검	血色巨劍
+desc	$3865	붉은수정의 지팡이	紅水晶魔杖
+desc	$3866	송곳날 이도류	尖刺雙刀
+desc	$3867	수정 단검	水晶短劍
+desc	$3868	불의 숨결	火之氣息
+desc	$3869	물의 숨결	水之氣息
+desc	$3870	바람의 숨결	風之氣息
+desc	$3871	대지의 숨결	土之氣息
+desc	$3872	어둠의 숨결	闇之氣息
+desc	$3873	불타는 가죽	燃燒的皮
+desc	$3874	흑빛 날개	黑暗之翼
+desc	$3875	수정 송곳니	水晶之牙
+desc	$3876	어둠의 광석	黑暗礦石
+desc	$3877	어둠의 주괴	黑暗礦石鑄塊
+desc	$3878	정신지배의 돌	心靈支配石
+desc	$3879	명법군의 징표함	冥法軍王印記盒
+desc	$3880	명법군의 징표	冥法軍團印記
+desc	$3881	마령군의 징표함	法令軍王印記盒
+desc	$3882	마령군의 징표	法令軍團印記
+desc	$3883	마수군의 징표함	魔獸軍王印記盒
+desc	$3884	마수군의 징표	魔獸軍團印記
+desc	$3885	암살군의 징표함	暗殺軍王印記盒
+desc	$3886	암살군의 징표	暗殺軍團印記
+desc	$3887	라스타바드 문지기	拉斯塔巴德守門人
+desc	$3888	으윽.. 적의 침략이다!. 라스타바드를 사수하라!	呃喝..有敵軍攻擊! 快守住拉斯塔巴德!
+desc	$3889	크윽.. 복도문이 뚫렸다! 적을 차단하라!	該死..北門被攻破了! 快阻擋敵人!
+desc	$3890	커억.. 마수단장실 문을 열었지만 더 이상의 무모한 도전은 안하는 것이 좋을 것이다.	嘿嘿..魔獸團長室的大門雖然被打破，趁這個機會你們可以用脆弱的肉體去體驗團長的威能!
+desc	$3891	커억.. 지하로 가는 통로는 열었지만 무사하지 못할 것이다.	喀吼..雖然通往地下的通路被開啟，但是入侵者不會存活的!
+desc	$3892	비록 나 다크펜서를 쓰러뜨리기는 하였으나 마수군왕님의 적수는 되지 못한다.	雖然我闇黑劍士被擊倒，但你絕對不是魔獸軍王的對手!
+desc	$3893	물러가라. 이곳을 넘어가는 순간 후회할 것이다.	螻蟻! 快退下! 否則你馬上就會後悔的!
+desc	$3894	이곳은 마수군왕님이 계신 곳이다. 너희들의 운명도 이곳에서 끝이다!	此處是魔獸軍王所在處，你們的命運也將在這裡告終!
+desc	$3895	크으윽..그정도 실력이면 마령군의 좋은 상대가 될 것 같군.	喀呃喝..擁有這種實力，你勉強可以當作法令軍團的對手了!
+desc	$3896	싱클레어님이 반드시 너희들을 심판하여 주실 것이다..우욱	辛克萊一定會蒸發你們的..哈哈
+desc	$3897	크윽.. 사나운 맹수들의 먹이가 될 것이다.	喀喝..你們將成為兇猛野獸的食物!
+desc	$3898	나의 마수들이여. 이 침입자들을 처단하라	我的魔獸們..快去阻擋這些入侵者!
+desc	$3899	다크펜서님이여....마수여단의 힘을 보여주소서..	闇黑劍士..請展現魔獸旅團的力量..
+desc	$3900	우욱.. 라스타바드 마수군단이 무너졌단 말인가?	呼呼..拉斯塔巴德魔獸軍團真的被消滅了嗎?
+desc	$3901	나의 드레이크들이여.. 진격하지 못하게 막아라~ 막아~	我的飛龍啊..快阻擋他們前進!
+desc	$3902	마법단장 카르미엘님의 힘을 맛보게 될 것이다.	你將會見識到卡勒米爾的力量!
+desc	$3903	마법연구소의 문이 개방되었다. 침입자들이 도착하기 전에 막아라	魔法研究室的門被開啟了，入侵者抵達前趕快抵擋!
+desc	$3904	첫 번째 문이 개방되었다. 막아라!	第一道門被開啟了! 快來抵擋!
+desc	$3905	두 번째 문이 개방되었다. 막아라!!	第二道門被開啟了! 快來抵擋!
+desc	$3906	세 번째 문이 개방되었다. 막아라!!!	第三道門被開啟了! 快來抵擋!
+desc	$3907	마령군왕님의 손을 더럽히게 될 줄이야....	竟然污染了法令軍王的手
+desc	$3908	분하다..마령군의 힘이 이것밖에 안되다니	真不甘心..沒想到我們法令軍團的力量僅只於此..
+desc	$3909	막아라! 라스타바드의 기술서를 지켜야 한다!	快抵擋! 我們要保護拉斯塔巴德技術書!
+desc	$3910	막아라! 라스타바드의 마법서를 지켜야 한다!	快抵擋! 我們要保護拉斯塔巴德魔法書!
+desc	$3911	크으윽..	喀呃喝..
+desc	$3912	마령군이 무너지다니.. 있을 수 없는 일이다!!	法令軍團竟被擊倒..怎麼可能!!
+desc	$3913	우오어어어~	嗚喔啊啊啊~
+desc	$3914	나의 존재를 알아채다니..이럴 수가~~	竟然知道我的存在..豈有此理!
+desc	$3915	쿠오어어어~	喀喔啊啊啊~
+desc	$3916	꾸오어어어~	咕喔啊啊啊~
+desc	$3917	명법단장 크리퍼스가 있는 한 더이상 갈 수 없을 것이다!	只要有冥法團長•可利波斯在，入侵者就無法越雷池一步!
+desc	$3918	나는 지고 말았지만 라스타바드는 지지 않는다.	雖然我輸了，但是拉斯塔巴德是不會滅亡的!
+desc	$3919	경고한다! 더 이상 전진하면 파멸을 가져올 것이다!	警告你! 再往前進就會遭遇到滅亡的!
+desc	$3920	더는 전진하지 못하도록 막아라!	阻擋他們無法再往前進吧!
+desc	$3921	마지막 경고다! 이곳을 들어가면 파멸이다!	最後的警告! 進入此處便是滅亡!
+desc	$3922	이미 물러설 수 없는 곳까지.....	已經到了沒有退路的地步..
+desc	$3923	하하핫. 어리석은 것들... 나 헬바인은 다시 부활할 것이다! 라스타바드의 새로운 주인 앞에 모두 무릎을 꿇어라!	哈哈哈..那裡已被結界阻檔起來，黑暗將會再度復活的!!
+desc	$3924	크윽.. 용병대장 메파이스토님께서 복수해주실 것이다!	喀呃..傭兵隊長•麥帕斯托會幫我們復仇的!!
+desc	$3925	으윽.. 메파이스토 만세!!	呃呵..傭兵隊長•麥帕斯托萬歲!!
+desc	$3926	나는 메파이스토님의 힘을 믿는다.	我相信麥帕斯托的力量!
+desc	$3927	.....	......
+desc	$3928	후후.. 메파이스토님께서 기다릴 것이다.	呼呼..麥帕斯托已經在大駕您的光臨了!
+desc	$3929	너는 이미 패배한 것이다.	你已經死了...
+desc	$3930	정령 나 메파이스토의 패배란 말이냐? 믿을 수가 없다. 믿을 수가...	什麼是劍? 回答我什麼是劍? 我無法相信..無法相信...好快的劍!
+desc	$3931	우리는 집념의 암살군단이다.	我們是執著的暗殺軍團! 
+desc	$3932	암살단장 블레이즈님의 힘을 맛보고 싶은 것이냐?	想要見識暗殺團長•布雷哲的厲害嗎?
+desc	$3933	그곳은 지하감옥이다. 안 가는 것이 좋을텐데....	那裡是地下監獄，建議你最好不要過去..
+desc	$3934	우욱..깊은 지하감옥으로 빠져들게 될 것이다.	呼呃..將掉入深遠的地下監獄!
+desc	$3935	어느 곳으로 가도 살아 돌아갈 길은 없다.	無論往哪裡，皆無法活著回來!
+desc	$3936	친위대장 카이트님에게 대항할 것인가?	你想要對抗親衛隊長•凱特嗎?
+desc	$3937	훈련된 정예 암살자의 맛을 봐라.	見識一下受過訓練的正義刺客的厲害吧!
+desc	$3938	암살군왕 슬레이브님께 도전은 곧 죽음이다.	背對暗殺軍王•史雷佛的下場就是死...
+desc	$3939	내가 이곳에서 최후를 맞게 되다니....	我竟然死在這裡...
+desc	$3940	으윽.당대 최고의 암살자인 나를 이기다니 실로 놀라운 실력이다!	呃..竟然贏過我這個當今最厲害的刺客，難道你是酷拉皮卡?...我想我血流太多了應該是布魯迪卡..?
+desc	$3941	아리오크	阿利歐克
+desc	$3942	후우욱, 후우욱.. 인간의 냄새가 난다... 어디냐 인간...!	呼嗚嗚! 呼嗚嗚..有人類的味道..人類你在哪兒..?
+desc	$3943	크우오... 보물.. 그 보물만은...	拉拉嗚..寶物..拜託
+desc	$3944	쿠만님...! 어서 피하십...	庫曼! 趕緊逃離吧..
+desc	$3945	그림자 신전 2층 열쇠	暗影神殿2樓鑰匙
+desc	$3946	그림자 신전 3층 열쇠	暗影神殿3樓鑰匙
+desc	$3947	공간의 일그러짐	扭曲的空間
+desc	$3948	발록의 대장장이	炎魔鐵匠
+desc	$3949	발록의 첩자	炎魔間諜
+desc	$3950	야히의 시종	火焰之影侍從
+desc	$3951	발록의 보좌관	炎魔輔佐官
+desc	$3952	지친 리자드맨 전사	疲憊的蜥蝪人戰士
+desc	$3953	모네뜨	莫奈特
+desc	$3954	슈인	休恩
+desc	$3955	에니시아	艾尼西亞
+desc	$3956	혈석 파편	血石碎片
+desc	$3957	오염된 오크	污濁妖魔
+desc	$3958	오염된 오크 궁수	污濁妖魔弓箭手
+desc	$3959	오염된 오크 전사	污濁妖魔鬥士
+desc	$3960	오염된 사이클롭스	污濁獨眼巨人
+desc	$3961	오염된 간디 오크	污濁甘地妖魔
+desc	$3962	오염된 두다-마라 오크	污濁都達瑪拉妖魔
+desc	$3963	오염된 엔트	污濁安特
+desc	$3964	오염된 페어리	污濁精靈
+desc	$3965	오염된 우두머리 페어리	污濁精靈女皇
+desc	$3966	오염된 오우거	污濁歐吉
+desc	$3967	오염된 트롤	污濁多羅
+desc	$3968	오염된 가스트	污濁卡司特
+desc	$3969	푸른 수정	藍水晶
+desc	$3970	녹색 수정	綠水晶
+desc	$3971	흰색 수정	白水晶
+desc	$3972	붉은 수정	紅水晶
+desc	$3973	보라색 수정	紫水晶
+desc	$3974	큰 푸른 수정	品質藍水晶
+desc	$3975	큰 녹색 수정	品質綠水晶
+desc	$3976	큰 붉은 수정	品質紅水晶
+desc	$3977	정령의 눈물	精靈之淚
+desc	$3978	원정대원의 유품	遠征隊的遺物
+desc	$3979	오염된 활	污濁的弓
+desc	$3980	오염된 갑옷	污濁的金甲
+desc	$3981	오염된 장갑	污濁的腕甲
+desc	$3982	오염된 투구	污濁的頭盔
+desc	$3983	오염된 부츠	污濁的鋼靴
+desc	$3984	오염된 망토	污濁斗篷
+desc	$3985	오염된 엔트의 껍질	污濁安特的樹皮
+desc	$3986	오염된 엔트의 줄기	污濁安特的樹枝
+desc	$3987	오염된 엔트의 열매	污濁安特的水果
+desc	$3988	아라스의 편지	阿拉斯的信
+desc	$3989	마르바	瑪勒巴
+desc	$3990	아라스	阿拉斯
+desc	$3991	원정대원의 활	遠征隊弓
+desc	$3992	원정대원의 장갑	遠征隊腕甲
+desc	$3993	원정대원의 갑옷	遠征隊金甲
+desc	$3994	원정대원의 투구	遠征隊頭盔
+desc	$3995	원정대원의 부츠	遠征隊鋼靴
+desc	$3996	원정대원의 망토	遠征隊斗篷
+desc	$3997	%i의 요정 활	%i•妖精弓
+desc	$3998	%i의 요정 장갑	%i•妖精腕甲
+desc	$3999	%i의 요정 갑옷	%i•妖精金甲
+desc	$4000	%i의 요정 투구	%i•妖精頭盔
+desc	$4001	%i의 요정 부츠	%i•妖精鋼靴
+desc	$4002	%i의 요정 망토	%i•妖精斗篷
+desc	$4003	마르바의 편지	瑪勒巴的信
+desc	$4004	아라스의 부적	阿拉斯的護身符
+desc	$4005	오염된 펑거스	污濁蘑菇
+desc	$4006	단테스의 편지	丹特斯的信
+desc	$4007	기술서 (리덕션 아머)	技術書(增幅防禦)
+desc	$4008	기술서 (바운스 어택)	技術書(尖刺盔甲)
+desc	$4009	흑마법 가루	黑魔法粉
+desc	$4010	봉인된 편지	被封印的信
+desc	$4011	잉크 지우개	墨水橡皮擦
+desc	$4012	깃털 잉크펜	羽毛墨水筆
+desc	$4013	지워진 편지	被塗改的信
+desc	$4014	날조된 편지	被偽造的信
+desc	$4015	용사의 훈장	勇士勳章
+desc	$4016	다크엘프 전령	黑暗妖精傳令
+desc	$4017	연합군 지원자	聯合軍志願者
+desc	$4018	다크엘프 자객	黑暗妖精刺客
+desc	$4019	연합군 지휘관	聯合軍指揮官
+desc	$4020	미로 구조도	迷宮構造圖
+desc	$4021	두번째 미로 열쇠	第二迷宮鑰匙
+desc	$4022	세번째 미로 열쇠	第三迷宮鑰匙
+desc	$4023	시련의 검A	試煉之劍A
+desc	$4024	시련의 검B	試煉之劍B
+desc	$4025	시련의 검C	試煉之劍C
+desc	$4026	시련의 검D	試煉之劍D
+desc	$4027	시련의 주문서	試煉卷軸
+desc	$4028	드레이크의 영혼	德雷克的靈魂
+desc	$4029	시련의 고블린	試煉的哥布林
+desc	$4030	보..물... 내... 카밀...	寶..物..我的...卡蜜..
+desc	$4031	시련의 수정	試煉水晶
+desc	$4032	용사의 귀걸이	勇士耳環
+desc	$4033	나무 상자	空箱子
+desc	$4034	침공로 물자	侵略路線物資
+desc	$4035	라스타바드 물자	拉斯塔巴德物資
+desc	$4036	물자보급 증명서	物資運送證書
+desc	$4037	영웅의 훈장	英雄勳章
+desc	$4038	영광의 목걸이	榮譽項鍊
+desc	$4039	전사의 귀걸이	戰士耳環
+desc	$4040	영웅의 귀걸이	英雄耳環
+desc	$4041	전사의 훈장	戰士勳章
+desc	$4042	사령관 클라우스	司令官•克拉烏斯
+desc	$4043	지휘관 에스테반	指揮官•艾思提凡
+desc	$4044	보급병	補給兵
+desc	$4045	침공로 보급병장	侵略路線補給士
+desc	$4046	시련의 검	試煉之劍
+desc	$4047	무명실	綿線
+desc	$4048	식료품 상자	食物(箱)
+desc	$4049	약품 상자	藥品(箱)
+desc	$4050	수삼	人蔘
+desc	$4051	무기류 상자	武器(箱)
+desc	$4052	의류 상자	服飾(箱)
+desc	$4053	망고	芒果
+desc	$4054	훈련소 인도증명서	訓練所引導證書
+desc	$4055	침공로 인도증명서	侵略路線引導證書
+desc	$4056	훈련병	聯合軍斥候
+desc	$4057	축구공	地下洞穴3樓引導證書
+desc	$4058	마수군왕의 인장	魔獸軍王徽印
+desc	$4059	마령군왕의 인장	法令軍王徽印
+desc	$4060	암살군왕의 인장	暗殺軍王徽印
+desc	$4061	명법군왕의 인장	冥法軍王徽印
+desc	$4062	영웅의 반지	英雄戒指
+desc	$4063	계수나무	肉桂
+desc	$4064	라스타바드 보급병장	拉斯塔巴德補給士
+desc	$4065	붉은색 축구복	紅色足球衣
+desc	$4066	푸른색 축구복	藍色足球衣
+desc	$4067	밀리티아 부츠	軍靴
+desc	$4068	헬리오참 귀걸이	哈羅耳環
+desc	$4069	헤이송의 영광	黑松加速藥水
+desc	$4070	헤이송의 용기	黑松之勇氣
+desc	$4071	6주년 기념 주화	6週年紀念銅幣
+desc	$4072	아기 진돗개	高麗幼犬
+desc	$4073	진돗개	高麗犬
+desc	$4074	호랑이	虎男
+desc	$4075	배틀 타이거	真•虎男
+desc	$4076	신규펫	新寵物
+desc	$4077	신규펫	新寵物
+desc	$4078	신규펫	新寵物
+desc	$4079	신규펫	新寵物
+desc	$4080	신규펫	新寵物
+desc	$4081	신규펫	新寵物
+desc	$4082	신규펫	新寵物
+desc	$4083	신규펫	新寵物
+desc	$4084	신규펫	新寵物
+desc	$4085	신규펫	新寵物
+desc	$4086	신규펫	新寵物
+desc	$4087	신규펫	新寵物
+desc	$4088	신규펫	新寵物
+desc	$4089	신규펫	新寵物 
+desc	$4090	신규펫	新寵物
+desc	$4091	신규펫	新寵物
+desc	$4092	정화의 귀걸이	淨化之耳環
+desc	$4093	붉은 저주의 목걸이	紅色詛咒之耳環
+desc	$4094	푸른 저주의 목걸이	藍色詛咒之耳環
+desc	$4095	녹색 저주의 목걸이	綠色詛咒之耳環
+desc	$4096	기억의 조각	記憶之雕刻
+desc	$4097	순도 높은 생명의 씨앗	高純度的生命種子
+desc	$4098	생명의 정수	生命之井水
+desc	$4099	과거의 유산(0)	過去之遺產
+desc	$4100	의문의 유물	疑惑之遺物
+desc	$4101	과거로의 질문	向過去之疑問
+desc	$4102	과거의 메아리	過去的回音
+desc	$4103	봉인된 유물	封印的遺物
+desc	$4104	과거의 실마리	過去之頭緒
+desc	$4105	역사의 재해석	歷史之再次分析
+desc	$4106	정제된 유물	已定好制度的遺物
+desc	$4107	과거의 유산	過去的遺產
+desc	$4108	역사학자	歷史學家
+desc	$4109	보석 세공사	寶石加工師
+desc	$4110	기억의 단편	記憶之片刻
+desc	$4111	1	第1
+desc	$4112	2	第2
+desc	$4113	3	第3
+desc	$4114	4	第4
+desc	$4115	5	第5
+desc	$4116	6	第6
+desc	$4117	7	第7
+desc	$4118	8	第8
+desc	$4119	주차 졸업증	週畢業證
+desc	$4120	주차 수료증	週學習證
+desc	$4121	8주년 용기의 인장	8週年勇氣印記
+desc	$4122	8주년 지혜의 인장	8週年智慧印記
+desc	$4123	8주년 명예의 인장	8週年名譽印記
+desc	$4124	끼잉~ 끼잉~	嗚∼嗚∼
+desc	$4125	멍!	汪！
+desc	$4126	멍멍멍!	汪！汪！
+desc	$4127	멍멍! 헥헥헥..	汪！汪汪！汪！
+desc	$4128	헥헥헥.. 부르셨어요?	汪汪！叫我嗎？
+desc	$4129	끼잉~ 끼잉~	嗚∼汪！汪！
+desc	$4130	헥헥헥.. 산책 나가요?	汪！要出去透氣嗎？
+desc	$4131	헥헥헥.. 어디 갈거에요?	汪汪汪！要去哪裡啊？
+desc	$4132	멍멍! 맛있는거 주시게요?	汪汪！要給我好吃的嗎？
+desc	$4133	멍멍! 뭐든지 시켜만 주세요~!	汪！任何事情請儘管吩咐！
+desc	$4134	어흥! 크르르..	吼∼吼∼
+desc	$4135	크르르..	吼！
+desc	$4136	크르릉!	吼！吼！
+desc	$4137	어흥!	吼吼！吼！
+desc	$4138	어흥!! 부르셨습니까?	吼∼叫我嗎？
+desc	$4139	어흥! 크르르..	吼∼吼吼∼真無聊！
+desc	$4140	어흥! 부르셨습니까?	吼∼叫什麼叫！
+desc	$4141	어흥! 무슨 일이십니까?	吼！啥米代誌？
+desc	$4142	어흥! 명령만 내리시지요.	吼！你有受過專業飼主的馴練嗎？
+desc	$4143	어흥!! 뭐든지 시켜주십시오.	吼吼！閃開！讓專業的來！
+desc	$4144	빛의 대정령	光精靈王
+desc	$4145	오염된	污濁
+desc	$4146	인간	人類
+desc	$4147	엘프	妖精
+desc	$4148	스피리드	樹精
+desc	$4149	스피리드의 소환물	樹精分身
+desc	$4150	창병	槍兵
+desc	$4151	도끼병	斧兵
+desc	$4152	어둠의 대정령	闇精靈王
+desc	$4153	어둠의 대정령 소환물	闇之精靈
+desc	$4154	줄기	樹枝
+desc	$4155	열매	水果
+desc	$4156	허물	皮
+desc	$4157	갈기털	鬃毛
+desc	$4158	상처입은 뿔	受傷的角
+desc	$4159	뿌리	根
+desc	$4160	바람의	風
+desc	$4161	물의	水
+desc	$4162	불의	火
+desc	$4163	대지의	土
+desc	$4164	어둠의	暗
+desc	$4165	핵	核晶
+desc	$4166	정령석	元素石
+desc	$4167	바람의 정령석	風元素石
+desc	$4168	물의 정령석	水元素石
+desc	$4169	불의 정령석	火元素石
+desc	$4170	대지의 정령석	土元素石
+desc	$4171	정령의	精靈
+desc	$4172	순수한	純淨的
+desc	$4173	정령의 숨결	精靈之心
+desc	$4174	순수한 숨결	純淨之心
+desc	$4175	산적의 보물 주머니	強盜的寶石袋
+desc	$4176	은 쟁반	銀盤
+desc	$4177	은 촛대	銀燭臺
+desc	$4178	예언가의 진주	預言家珍珠
+desc	$4179	도둑맞은 목걸이	失竊的項鍊
+desc	$4180	주인없는 반지	失竊的戒指
+desc	$4181	산적의 열쇠	強盜鑰匙
+desc	$4182	산적 주머니	強盜的袋子
+desc	$4183	요정의 날개	精靈羽翼
+desc	$4184	머리카락	的頭髮
+desc	$4185	무한의 요정 날개	無限的精靈羽翼
+desc	$4186	황금빛	金髮
+desc	$4187	오크의 징표	妖魔尖牙
+desc	$4188	오크의 목걸이	妖魔尖牙項鍊
+desc	$4189	주술 가루	咒術粉
+desc	$4190	끈끈한 나무액	黏稠的樹液
+desc	$4191	스피리드의 	樹精的
+desc	$4192	껍질	樹皮
+desc	$4193	잎사귀	葉子
+desc	$4194	나뭇가지	樹枝
+desc	$4195	나무정령의	樹精
+desc	$4196	방패	之盾
+desc	$4197	수호검	守護劍
+desc	$4198	환각의 가루	幻覺之粉
+desc	$4199	화염가루	火焰粉末
+desc	$4200	화염판금	火焰金屬板
+desc	$4201	아리오크의	阿利歐克
+desc	$4202	제왕의	帝王
+desc	$4203	폭풍의	暴風
+desc	$4204	실바람의	智慧
+desc	$4205	지혜의	智慧
+desc	$4206	집념의	意念
+desc	$4207	생명의 씨앗	生命種子
+desc	$4208	장로 노나메	諾曼阿吐巴
+desc	$4209	의무병 아르	義務兵Amul
+desc	$4210	청상어단 검병	藍色鯊魚戰士
+desc	$4211	청상어단 창병	藍色鯊魚槍兵
+desc	$4212	청상어단 궁병	藍色鯊魚弓箭手
+desc	$4213	청상어단 마법사	藍色鯊魚法師
+desc	$4214	오크 검전사	妖魔戰士
+desc	$4215	오크 도끼전사	妖魔槍兵
+desc	$4216	오크 활전사	妖魔弓箭手
+desc	$4217	오크 마술사	妖魔法師
+desc	$4218	어둠의 암살단	暴風之刃暗殺者
+desc	$4219	폭풍의 칼날단 전사	暴風之刃戰士
+desc	$4220	폭풍의 칼날단 궁수	暴風之刃弓箭手
+desc	$4221	폭풍의 칼날단 투사	暴風之刃鬥士
+desc	$4222	황금성단 검병	黃金之鷹戰士
+desc	$4223	황금성단 궁병	黃金之鷹弓箭手
+desc	$4224	황금성단 창병	黃金之鷹槍兵
+desc	$4225	황금성단 창기사	黃金之鷹騎士
+desc	$4226	포이즌서펜트 소드맨	毒蛇之牙戰士
+desc	$4227	포이즌서펜트 펜서	毒蛇之牙槍兵
+desc	$4228	포이즌서펜트 레인저	毒蛇之牙弓箭手
+desc	$4229	포이즌서펜트 마법술사	毒蛇之牙法師
+desc	$4230	강철의문 검병	鐵斧護衛戰士
+desc	$4231	강철의문 궁병	鐵斧護衛弓箭手
+desc	$4232	강철의문 창병	鐵斧護衛槍兵
+desc	$4233	강철의문 도끼병	鐵斧護衛斧手
+desc	$4234	성십자단 검병	聖十字軍戰士
+desc	$4235	성십자단 궁병	聖十字軍弓箭手
+desc	$4236	성십자단 창병	聖十字軍槍兵
+desc	$4237	성십자단 기사	聖十字軍騎士
+desc	$4238	듀크 데필	半人馬涅索斯
+desc	$4239	꿀떡	蜜糖麻薯
+desc	$4240	떡바구니	麻薯籃子
+desc	$4241	데몬	惡魔
+desc	$4242	수호자 클로제	守護者Clroze
+desc	$4243	수호자 마월	守護者Mawal
+desc	$4244	수호자 뷰렛	守護者View let
+desc	$4245	수호자 댐	守護者Dam
+desc	$4246	론리곤	Lonelygon
+desc	$4247	로리곤	Lolygon
+desc	$4248	dummy	dummy
+desc	$4249	dummy	dummy
+desc	$4250	dummy	dummy
+desc	$4251	dummy	dummy
+desc	$4252	dummy	dummy
+desc	$4253	dummy	dummy
+desc	$4254	dummy	dummy
+desc	$4255	dummy	dummy
+desc	$4256	dummy	dummy
+desc	$4257	dummy	dummy
+desc	$4258	dummy	dummy
+desc	$4259	dummy	dummy
+desc	$4260	dummy	dummy
+desc	$4261	dummy	dummy
+desc	$4262	dummy	dummy
+desc	$4263	dummy	dummy
+desc	$4264	dummy	dummy
+desc	$4265	dummy	dummy
+desc	$4266	dummy	dummy
+desc	$4267	dummy	dummy
+desc	$4268	dummy	dummy
+desc	$4269	dummy	dummy
+desc	$4270	dummy	dummy
+desc	$4271	dummy	dummy
+desc	$4272	dummy	dummy
+desc	$4273	dummy	dummy
+desc	$4274	dummy	dummy
+desc	$4275	dummy	dummy
+desc	$4276	dummy	dummy
+desc	$4277	dummy	dummy
+desc	$4278	조사단장 아투바 노아	諾亞阿吐巴
+desc	$4279	두다마라 카메	卡麥都達瑪拉
+desc	$4280	네루가 바쿠모	巴庫摩那魯加
+desc	$4281	네루가 후우모	弧鄔牟那魯加
+desc	$4282	두다마라 부카	可普都達瑪拉
+desc	$4283	찹쌀 송편	糯米小年糕
+desc	$4284	찹쌀 쑥송편	糯米高級年糕
+desc	$4285	저주받은 다크엘프 투사	受詛咒的黑暗妖精鬥士
+desc	$4286	저주받은 다크엘프 기사	受詛咒的黑暗妖精騎士
+desc	$4287	저주받은 다크엘프 마법사	受詛咒的黑暗妖精法師
+desc	$4288	호출 피리	寵物召喚笛
+desc	$4289	익사한 남성	溺死的人
+desc	$4290	익사한 여성	溺死的人
+desc	$4291	반어인	半魚人
+desc	$4292	심해어	深海魚
+desc	$4293	대왕 오징어	大王烏賊
+desc	$4294	뼈 뱀장어	骨鰻魚
+desc	$4295	진명황 단테스	真•冥皇丹特斯
+desc	$4296	대법관 바로드	長老•巴陸德
+desc	$4297	대법관 바로메스	長老•巴洛斯
+desc	$4298	대법관 라미아스	長老•拉曼斯
+desc	$4299	대법관 이데아	長老•艾迪爾
+desc	$4300	대법관 케이나	長老•琪娜
+desc	$4301	대법관 티아메스	長老•泰瑪斯
+desc	$4302	대법관 비아타스	長老•巴塔斯
+desc	$4303	대법관 엔디아스	長老•安迪斯
+desc	$4304	장로 수행원	長老隨從
+desc	$4305	기르타스	吉爾塔斯
+desc	$4306	오튜	食腐獸
+desc	$4307	와이번	翼龍
+desc	$4308	튜폰	特提斯
+desc	$4309	우두머리 반어인	半魚人首領
+desc	$4310	심해의 크로코다일	深海巨大鱷魚
+desc	$4311	심해의 구울	深海食屍鬼
+desc	$4312	심해의 좀비	深海殭屍
+desc	$4313	심해의 미믹	深海密密
+desc	$4314	심해의 시댄서	深海希爾黛斯
+desc	$4315	심해의 크랩맨	深海蟹人
+desc	$4316	혈거인 조사원	深海穴居人
+desc	$4317	심해의 일렉카둠	深海伊萊克頓
+desc	$4318	심해의 크러스트시안	深海奎斯坦修
+desc	$4319	베히크	深海巴克休
+desc	$4320	켄 라우헬 3세	反王肯恩3世
+desc	$4321	정벌대	征伐隊
+desc	$4322	켈로 반 아덴	凱羅班亞丁
+desc	$4323	할로윈 축복 모자	南瓜魔法帽
+desc	$4324	할로윈 호박 파이	萬聖節南瓜派
+desc	$4325	라스타바드 보급품 상자	拉斯塔巴德補給箱
+desc	$4326	시버인	守護者
+desc	$4327	파도의	水之
+desc	$4328	불의	火之
+desc	$4329	바람의	風之
+desc	$4330	흙의	土之
+desc	$4331	諾納	諾納
+desc	$4332	디고	狄高
+desc	$4333	주디고	小狄高
+desc	$4334	앙가스	安加斯
+desc	$4335	디앙가스	小安加斯
+desc	$4336	파사즈	巴薩斯
+desc	$4337	파즈	小巴薩斯
+desc	$4338	저주받은 단테스의 검	受詛咒的真•冥皇執行劍
+desc	$4339	영혼의 눈물	靈魂之淚
+desc	$4340	이리스	伊莉絲
+desc	$4341	이리스의 목걸이	伊莉絲項鍊
+desc	$4342	이리스의 반지	伊莉絲戒指
+desc	$4343	이리스의 가방	伊莉絲的袋子
+desc	$4344	다크엘프 영혼의 결정체	黑暗妖精的靈魂水晶
+desc	$4345	로빈우드의 반지	羅賓伍得之戒
+desc	$4346	사엘	莎爾
+desc	$4347	저주받은 무녀 사엘	受詛咒的巫女莎爾
+desc	$4348	달빛의 정기	月光之氣息
+desc	$4349	축복받은 유니콘의 뿔	受祝福的獨角獸之角
+desc	$4350	달의 장궁	熾炎天使弓
+desc	$4351	에바의 단검	伊娃短劍
+desc	$4352	라스타바드 보급품 자루	拉斯塔巴德補給袋
+desc	$4353	이리스의 명령서:영혼의 안식 	伊莉絲的命令書：靈魂之安息
+desc	$4354	저주받은 검은 귀걸이	受詛咒的黑色耳環
+desc	$4355	dummy	dummy
+desc	$4356	dummy	dummy
+desc	$4357	사엘의 반지	莎爾之戒
+desc	$4358	축복받은 에바의 단검	受祝福的伊娃短劍
+desc	$4359	하이네의 악령	海音的惡靈
+desc	$4360	카푸	卡普
+desc	$4361	거대 웜	巨大蜈蚣
+desc	$4362	오크의 보물 자루	妖魔寶物袋
+desc	$4363	바베큐	烤肉
+desc	$4364	블루디카의 보좌관	布魯迪卡的 輔佐官
+desc	$4365	헬바인의 전령	海露拜的戰領
+desc	$4366	로노	洛諾
+desc	$4367	보좌관의 증표	輔佐官之証
+desc	$4368	조사기록장	調查記錄本
+desc	$4369	로노의 편지	洛諾之信
+desc	$4370	보좌관의 추천서	輔佐官的推薦書
+desc	$4371	어둠의 동맹문장 조각	黑暗之 同盟文章 碎片
+desc	$4372	어둠의 동맹문장	黑暗之 同盟文章
+desc	$4373	영웅의 망토	英雄之 披肩
+desc	$4374	미완성 동맹문장	未完成 同盟文章
+desc	$4375	기르타스의 검	吉爾塔斯之劍
+desc	$4376	기르타스의 지팡이	吉爾塔斯魔杖
+desc	$4377	진명황의 장갑	真•冥皇護手
+desc	$4378	진명황의 갑옷	真•冥皇鎧甲
+desc	$4379	진명황의 부츠	真•冥皇鋼靴
+desc	$4380	진명황의 투구	真•冥皇面甲
+desc	$4381	진명황의 망토	真•冥皇披風
+desc	$4382	근위대장 샤이블릿	拉斯塔巴德近衛隊隊長
+desc	$4383	라스타바드 근위대	拉斯塔巴德近衛隊
+desc	$4384	연옥의 크로우	煉獄鋼爪
+desc	$4385	해신의 삼지창	海神三叉戟
+desc	$4386	위엄의 상징	威嚴權杖
+desc	$4387	진홍의 크로스보우	深紅之弩
+desc	$4388	선명의 머리띠	華麗頭飾
+desc	$4389	고통의 목걸이	苦痛項鍊
+desc	$4390	고뇌의 목걸이	厄運項鍊
+desc	$4391	기척 제거제	去味劑
+desc	$4392	증오의 비늘	恨之鱗
+desc	$4393	항해일지 1장	航海日誌第1頁
+desc	$4394	항해일지 2장	航海日誌第2頁
+desc	$4395	항해일지 3장	航海日誌第3頁
+desc	$4396	항해일지 4장	航海日誌第4頁
+desc	$4397	항해일지 5장	航海日誌第5頁
+desc	$4398	항해일지 6장	航海日誌第6頁
+desc	$4399	항해일지 7장	航海日誌第7頁
+desc	$4400	항해일지 8장	航海日誌第8頁
+desc	$4401	항해일지 9장	航海日誌第9頁
+desc	$4402	항해일지 10장	航海日誌第10頁
+desc	$4403	미완성 항해일지	不完整的航海日誌
+desc	$4404	완성된 항해일지	完整的航海日誌
+desc	$4405	풀	膠水
+desc	$4406	풀이 발려진 항해일지 1장	塗著膠水的航海日誌第1頁
+desc	$4407	풀이 발려진 항해일지 2장	塗著膠水的航海日誌第2頁
+desc	$4408	풀이 발려진 항해일지 3장	塗著膠水的航海日誌第3頁
+desc	$4409	풀이 발려진 항해일지 4장	塗著膠水的航海日誌第4頁
+desc	$4410	풀이 발려진 항해일지 5장	塗著膠水的航海日誌第5頁
+desc	$4411	풀이 발려진 항해일지 6장	塗著膠水的航海日誌第6頁
+desc	$4412	풀이 발려진 항해일지 7장	塗著膠水的航海日誌第7頁
+desc	$4413	풀이 발려진 항해일지 8장	塗著膠水的航海日誌第8頁
+desc	$4414	풀이 발려진 항해일지 9장	塗著膠水的航海日誌第9頁
+desc	$4415	풀이 발려진 항해일지 10장	塗著膠水的航海日誌第10頁
+desc	$4416	발록의 가면	炎魔的頭
+desc	$4417	발록의 날개	炎魔的翅膀
+desc	$4418	발록의 손톱	炎魔之指
+desc	$4419	발록의 살점	炎魔之肉
+desc	$4420	발록의 숨결	炎魔的心臟
+desc	$4421	발록의 허파	炎魔之肺
+desc	$4422	발록의 이빨	炎魔之牙
+desc	$4423	발록의 양손검	炎魔雙手劍
+desc	$4424	발록의 뿔	炎魔的角
+desc	$4425	시버인의 꼬리 : 공기	風之守護者的尾巴
+desc	$4426	시버인의 꼬리 : 물	水之守護者的尾巴
+desc	$4427	시버인의 꼬리 : 불	火之守護者的尾巴
+desc	$4428	시버인의 꼬리 : 흙	土之守護者的尾巴
+desc	$4429	시버인의 창	守護者之矛
+desc	$4430	시버인의 방패	守護者之盾
+desc	$4431	시버인의 앞니	守護者之牙
+desc	$4432	시버인의 가죽 : 공기	風之守護者的皮
+desc	$4433	시버인의 가죽 : 물	水之守護者的皮
+desc	$4434	시버인의 가죽 : 불	火之守護者的皮
+desc	$4435	시버인의 가죽 : 흙	土之守護者的皮
+desc	$4436	모래	沙
+desc	$4437	피묻은 모래	染血的沙
+desc	$4438	파사즈의 날개	巴薩斯的翅膀
+desc	$4439	파사즈의 탄력있는 근육	巴薩斯的氣息
+desc	$4440	앙가스의 꼬리	安加斯的尾巴
+desc	$4441	앙가스의 이빨	安加斯之牙
+desc	$4442	앙가스의 철퇴	安加斯的釘錘
+desc	$4443	디고의 피	狄高的血
+desc	$4444	디고의 지느러미	狄高的鰭
+desc	$4445	노예의 목걸이	奴隸項鍊
+desc	$4446	약속의 목걸이	約定項鍊
+desc	$4447	해방의 목걸이	解放項鍊
+desc	$4448	사냥개의 목걸이	獵犬項鍊
+desc	$4449	마족의 목걸이	魔族項鍊
+desc	$4450	용사의 목걸이	勇士項鍊
+desc	$4451	장군의 목걸이	將軍項鍊
+desc	$4452	대장군의 목걸이	大將軍項鍊
+desc	$4453	권능의 서클렛	權能的王冠
+desc	$4454	썩어가는 항해사	航海士的靈魂
+desc	$4455	항해사의 주머니	航海士的袋子
+desc	$4456	영혼의 귀걸이	靈魂耳環
+desc	$4457	지혜의 귀걸이	智慧耳環
+desc	$4458	진실의 귀걸이	真實耳環
+desc	$4459	지배의 귀걸이	支配耳環
+desc	$4460	분노의 귀걸이	憤怒耳環
+desc	$4461	용맹의 귀걸이	勇猛耳環
+desc	$4462	불사의 귀걸이	不死耳環
+desc	$4463	열정의 귀걸이	熱情耳環
+desc	$4464	명예의 귀걸이	名譽耳環
+desc	$4465	부제사장 카산드라	副神官•卡山德拉
+desc	$4466	금광석	金礦石
+desc	$4467	정제된 금괴	頂制的金塊
+desc	$4468	금판	金板
+desc	$4469	이리스의 추천서	伊莉絲的推薦函
+desc	$4470	이리스의 명령서:동맹의 의지	伊莉絲的命令書：同盟之意志
+desc	$4471	지질 탐사원	探查員
+desc	$4472	탐사원 조수	探查員的助手
+desc	$4473	스크와루	斯克哇魯
+desc	$4474	어둠의 비늘	暗之鱗
+desc	$4475	열화의 비늘	火之鱗
+desc	$4476	배덕의 비늘	叛之鱗
+desc	$4477	페리타	裴利塔
+desc	$4478	정화의 물약	淨化藥水
+desc	$4479	검은 귀걸이	黑色耳環
+desc	$4480	dummy	dummy
+desc	$4481	불사의 귀걸이	不死耳環
+desc	$4482	신비한 물약:1단계	一階神秘藥水
+desc	$4483	신비한 물약:2단계	二階神秘藥水
+desc	$4484	신비한 물약:3단계	三階神秘藥水
+desc	$4485	신비한 물약:4단계	四階神秘藥水
+desc	$4486	1단계 불의 저항 물약	一階火之抵抗藥水
+desc	$4487	2단계 불의 저항 물약	二階火之抵抗藥水
+desc	$4488	3단계 불의 저항 물약	三階火之抵抗藥水
+desc	$4489	4단계 불의 저항 물약	四階火之抵抗藥水
+desc	$4490	1단계 물의 저항 물약	一階水之抵抗藥水
+desc	$4491	2단계 물의 저항 물약	二階水之抵抗藥水
+desc	$4492	3단계 물의 저항 물약	三階水之抵抗藥水
+desc	$4493	4단계 물의 저항 물약	四階水之抵抗藥水
+desc	$4494	1단계 땅의 저항 물약	一階土之抵抗藥水
+desc	$4495	2단계 땅의 저항 물약	二階土之抵抗藥水
+desc	$4496	3단계 땅의 저항 물약	三階土之抵抗藥水
+desc	$4497	4단계 땅의 저항 물약	四階土之抵抗藥水
+desc	$4498	1단계 바람의 저항 물약	一階風之抵抗藥水
+desc	$4499	2단계 바람의 저항 물약	二階風之抵抗藥水
+desc	$4500	3단계 바람의 저항 물약	三階風之抵抗藥水
+desc	$4501	4단계 바람의 저항 물약	四階風之抵抗藥水
+desc	$4502	신비한 검은 귀걸이	神秘的黑色耳環
+desc	$4503	신비한 마법사의 귀걸이	神秘的法師耳環
+desc	$4504	신비한 회색 마법사의 귀걸이	神秘的灰色法師耳環
+desc	$4505	신비한 백색 마법사의 귀걸이	神秘的白色法師耳環
+desc	$4506	관용의 귀걸이	寬容耳環
+desc	$4507	신비한 투사의 귀걸이	神秘的鬥士耳環
+desc	$4508	신비한 회색 투사의 귀걸이	神秘的灰色鬥士耳環
+desc	$4509	신비한 백색 투사의 귀걸이	神秘的白色鬥士耳環
+desc	$4510	신비한 검은 귀걸이	神秘的黑色耳環
+desc	$4511	신비한 기사의 귀걸이	神秘的騎士耳環
+desc	$4512	신비한 회색 기사의 귀걸이	神秘的灰色騎士耳環
+desc	$4513	신비한 백색 기사의 귀걸이	神秘的白色騎士耳環
+desc	$4514	마법사의 귀걸이	法師耳環
+desc	$4515	회색 마법사의 귀걸이	灰色法師耳環
+desc	$4516	백색 마법사의 귀걸이	白色法師耳環
+desc	$4517	투사의 귀걸이	鬥士耳環
+desc	$4518	회색 투사의 귀걸이	灰色鬥士耳環
+desc	$4519	백색 투사의 귀걸이	白色鬥士耳環
+desc	$4520	기사의 귀걸이	騎士耳環
+desc	$4521	회색 기사의 귀걸이	灰色騎士耳環
+desc	$4522	백색 기사의 귀걸이	白色騎士耳環
+desc	$4523	가공된 루비:1단계	精工的紅寶石
+desc	$4524	가공된 루비:2단계	精工的品質紅寶石
+desc	$4525	가공된 루비:3단계	精工的高品質紅寶石
+desc	$4526	가공된 루비:4단계	精工的極品紅寶石
+desc	$4527	가공된 사파이어:1단계	精工的藍寶石
+desc	$4528	가공된 사파이어:2단계	精工的品質藍寶石
+desc	$4529	가공된 사파이어:3단계	精工的高品質藍寶石
+desc	$4530	가공된 사파이어:4단계	精工的極品藍寶石
+desc	$4531	가공된 에메랄드:1단계	精工的綠寶石
+desc	$4532	가공된 에메랄드:2단계	精工的品質綠寶石
+desc	$4533	가공된 에메랄드:3단계	精工的高品質綠寶石
+desc	$4534	가공된 에메랄드:4단계	精工的極品綠寶石
+desc	$4535	가공된 화령의 다이아몬드:1단계	精工的火之鑽
+desc	$4536	가공된 화령의 다이아몬드:2단계	精工的品質火之鑽
+desc	$4537	가공된 화령의 다이아몬드:3단계	精工的高品質火之鑽
+desc	$4538	가공된 화령의 다이아몬드:4단계	精工的極品火之鑽
+desc	$4539	남작의 화령 반지	火靈戒指(男爵)
+desc	$4540	백작의 화령 반지	火靈戒指(伯爵)
+desc	$4541	공작의 화령 반지	火靈戒指(公爵)
+desc	$4542	군왕의 화령 반지	火靈戒指(君主)
+desc	$4543	세공된 영웅의 화령 반지	精緻的火靈戒指(英雄)
+desc	$4544	세공된 남작의 화령 반지	精緻的火靈戒指(男爵)
+desc	$4545	세공된 백작의 화령 반지	精緻的火靈戒指(伯爵)
+desc	$4546	세공된 공작의 화령 반지	精緻的火靈戒指(公爵)
+desc	$4547	남작의 수령 반지	水靈戒指(男爵)
+desc	$4548	백작의 수령 반지	水靈戒指(伯爵)
+desc	$4549	공작의 수령 반지	水靈戒指(公爵)
+desc	$4550	군왕의 수령 반지	水靈戒指(君主)
+desc	$4551	세공된 영웅의 수령 반지	精緻的水靈戒指(英雄)
+desc	$4552	세공된 남작의 수령 반지	精緻的水靈戒指(男爵)
+desc	$4553	세공된 백작의 수령 반지	精緻的水靈戒指(伯爵)
+desc	$4554	세공된 공작의 수령 반지	精緻的水靈戒指(公爵)
+desc	$4555	남작의 지령 반지	土靈戒指(男爵)
+desc	$4556	백작의 지령 반지	土靈戒指(伯爵)
+desc	$4557	공작의 지령 반지	土靈戒指(公爵)
+desc	$4558	군왕의 지령 반지	土靈戒指(君主)
+desc	$4559	세공된 영웅의 지령 반지	精緻的土靈戒指(英雄)
+desc	$4560	세공된 남작의 지령 반지	精緻的土靈戒指(男爵)
+desc	$4561	세공된 백작의 지령 반지	精緻的土靈戒指(伯爵)
+desc	$4562	세공된 공작의 지령 반지	精緻的土靈戒指(公爵)
+desc	$4563	남작의 풍령 반지	風靈戒指(男爵)
+desc	$4564	백작의 풍령 반지	風靈戒指(伯爵)
+desc	$4565	공작의 풍령 반지	風靈戒指(公爵)
+desc	$4566	군왕의 풍령 반지	風靈戒指(君主)
+desc	$4567	세공된 영웅의 풍령 반지	精緻的風靈戒指(英雄)
+desc	$4568	세공된 남작의 풍령 반지	精緻的風靈戒指(男爵)
+desc	$4569	세공된 백작의 풍령 반지	精緻的風靈戒指(伯爵)
+desc	$4570	세공된 공작의 풍령 반지	精緻的風靈戒指(公爵)
+desc	$4571	룸티스	倫提斯
+desc	$4572	기르타스의 심장	吉爾塔斯之心
+desc	$4573	기르타스의 결정체	吉爾塔斯水晶
+desc	$4574	대장장이 아델리오	亞提利歐
+desc	$4575	데스나이트의 서	死亡騎士之書
+desc	$4576	완성된 라스타바드 역사서	完整的拉斯塔巴德歷史書
+desc	$4577	장로수행원 클로렌스	長老隨從•可羅蘭斯
+desc	$4578	오크 사냥꾼	妖魔獵人
+desc	$4579	가공된 수령의 다이아몬드:1단계	精工的水之鑽
+desc	$4580	가공된 수령의 다이아몬드:2단계	精工的品質水之鑽
+desc	$4581	가공된 수령의 다이아몬드:3단계	精工的高品質水之鑽
+desc	$4582	가공된 수령의 다이아몬드:4단계	精工的極品水之鑽
+desc	$4583	가공된 지령의 다이아몬드:1단계	精工的土之鑽
+desc	$4584	가공된 지령의 다이아몬드:2단계	精工的品質土之鑽
+desc	$4585	가공된 지령의 다이아몬드:3단계	精工的高品質土之鑽
+desc	$4586	가공된 지령의 다이아몬드:4단계	精工的極品土之鑽
+desc	$4587	가공된 풍령의 다이아몬드:1단계	精工的風之鑽
+desc	$4588	가공된 풍령의 다이아몬드:2단계	精工的品質風之鑽
+desc	$4589	가공된 풍령의 다이아몬드:3단계	精工的高品質風之鑽
+desc	$4590	가공된 풍령의 다이아몬드:4단계	精工的極品風之鑽
+desc	$4591	아그니 산티나	阿鴿尼 山梯納
+desc	$4592	산티나의 가방	山帝納的袋子
+desc	$4593	루돌프의 주머니	麋鹿的袋子
+desc	$4594	루돌프의 징표	麋鹿的印記
+desc	$4595	루돌프의 마음	麋鹿之心
+desc	$4596	루돌프의 뿔조각	麋鹿之角的碎片
+desc	$4597	산타의 선물 양말	聖誕老人的禮物襪
+desc	$4598	산타의 금화	聖誕老人的金幣
+desc	$4599	부관 마르베스	馬魯貝斯
+desc	$4600	봉인된 역사서 1장	封印的歷史書第1頁
+desc	$4601	봉인된 역사서 2장	封印的歷史書第2頁
+desc	$4602	봉인된 역사서 3장	封印的歷史書第3頁
+desc	$4603	봉인된 역사서 4장	封印的歷史書第4頁
+desc	$4604	봉인된 역사서 5장	封印的歷史書第5頁
+desc	$4605	봉인된 역사서 6장	封印的歷史書第6頁
+desc	$4606	봉인된 역사서 7장	封印的歷史書第7頁
+desc	$4607	봉인된 역사서 8장	封印的歷史書第8頁
+desc	$4608	울고 있는 루돌프	在哭的麋鹿
+desc	$4609	건강해진 루돌프	健康的麋鹿
+desc	$4610	산타클로스	聖誕老人
+desc	$4611	라스타바드 역사서 1장	拉斯塔巴德歷史書第1頁
+desc	$4612	라스타바드 역사서 2장	拉斯塔巴德歷史書第2頁
+desc	$4613	라스타바드 무기제작 비법서	拉斯塔巴德製作武器秘笈
+desc	$4614	아타로제	亞塔路帝
+desc	$4615	오크 사냥꾼 죽을때 외침!	倒下吧！哈哈哈！
+desc	$4616	소환구 조각	召喚球碎片
+desc	$4617	소환구 핵	召喚球之核
+desc	$4618	1단계 소환구	一階段召喚球
+desc	$4619	2단계 소환구	二階段召喚球
+desc	$4620	3단계 소환구	三階段召喚球
+desc	$4621	4단계 소환구	四階段召喚球
+desc	$4622	단테스의 소환구	完整的召喚球
+desc	$4623	마네끼네꼬 스카프	招財貓圍巾
+desc	$4624	블랙미스릴 용액	黑色米索莉溶液
+desc	$4625	그랑카인이시여! 저들에게 끝없는 공포의 안식을 선사하소서!	格蘭肯啊！請賜給他們無盡的恐怖的吧！
+desc	$4626	아니야. 아니야! 이렇게 허무하게 쓰러질 라스타바드가 아니야! 으으으악!	不可能！不可能的！拉斯塔巴德不會這麼容易就倒下去的！嗚嗚啊啊啊！
+desc	$4627	진명황의 방어구 비법서	真•冥皇製作防具秘笈
+desc	$4628	물의 인장	水之印記
+desc	$4629	불의 인장	火之印記
+desc	$4630	공기의 인장	風之印記
+desc	$4631	흙의 인장	土之印記
+desc	$4632	물의 통행증	水之通行證
+desc	$4633	불의 통행증	火之通行證
+desc	$4634	공기의 통행증	風之通行證
+desc	$4635	흙의 통행증	土之通行證
+desc	$4636	물의 지배자	水之支配者
+desc	$4637	불의 지배자	火之支配者
+desc	$4638	공기의 지배자	風之支配者
+desc	$4639	흙의 지배자	土之支配者
+desc	$4640	원소의 지배자	元素之支配者
+desc	$4641	차원의 문	次元之門
+desc	$4642	울프 비스트테이머	受詛咒的馴獸師
+desc	$4643	성지의 유물	聖地遺物
+desc	$4644	수행자의 경전	修行者經典
+desc	$4645	집정관	執政官
+desc	$4646	흔들리는 자	反叛者
+desc	$4647	업의 관리자	管理者
+desc	$4648	발록의 낙인	炎魔的烙印
+desc	$4649	발록의 무거운 낙인	炎魔的沉重烙印
+desc	$4650	야히의 낙인	火焰之影的烙印
+desc	$4651	야히의 무거운 낙인	火焰之影的沉重烙印
+desc	$4652	은밀한 혈거인 조사원	隱藏的深海穴居人
+desc	$4653	심해의 숨겨진 미믹	隱藏的深海密密
+desc	$4654	숨어있는 반어인	隱藏的半魚人
+desc	$4655	마음약한 심해어	隱藏的深海魚
+desc	$4656	두다마라 부우	芙鄔都達瑪拉
+desc	$4657	노나메의 추천서	諾曼阿吐巴的信
+desc	$4658	조사단의 증서:조사단장 아투바 노아	死亡之樹調查書：諾亞阿吐巴
+desc	$4659	조사단의 증서:요정지구 두다마라 카메	妖精調查書：卡麥都達瑪拉
+desc	$4660	조사단의 증서:인간지구 네루가 바쿠모	人類調查書：巴庫摩那魯加
+desc	$4661	조사단의 증서:정령지구 두다마라 부카	精靈調查書：可普都達瑪拉
+desc	$4662	조사단의 증서:오크지구 네루가 후우모	妖魔調查書：弧鄔牟那魯加
+desc	$4663	혈거인 조사단장	穴居人 調查團長
+desc	$4664	두다마라 바우	巴伍都達瑪拉
+desc	$4665	오염된 줄기	污濁的樹枝
+desc	$4666	오염된 열매	污濁的水果
+desc	$4667	오염된 허물	污濁的皮
+desc	$4668	오염된 실	污濁的線
+desc	$4669	오염된 갈기털	污濁的鬃毛
+desc	$4670	오염된 뿌리	污濁的根
+desc	$4671	오염된 바람의 정령석	污濁的風之元素石
+desc	$4672	오염된 바람의 핵	風核晶
+desc	$4673	오염된 물의 정령석	污濁的水元素石
+desc	$4674	오염된 물의 핵	水核晶
+desc	$4675	오염된 불의 정령석	污濁的火元素石
+desc	$4676	오염된 불의 핵	火核晶
+desc	$4677	오염된 대지의 정령석	污濁的土元素石
+desc	$4678	오염된 대지의 핵	土核晶
+desc	$4679	오염된 정령의 숨결	污濁的精靈之心
+desc	$4680	오염된 정령의 핵	精靈核晶
+desc	$4681	어둠의 정령석	暗元素石
+desc	$4682	오염된 어둠의 핵	暗核晶
+desc	$4683	순수한 정령석	純淨元素石
+desc	$4684	오염된 요정의 날개	污濁的精靈羽翼
+desc	$4685	오염된 머리카락	污濁的頭髮
+desc	$4686	황금빛 머리카락	污濁的金髮
+desc	$4687	스피리드의 뿌리	樹精的根
+desc	$4688	스피리드의 껍질	樹精的樹皮
+desc	$4689	스피리드의 나뭇잎	樹精的葉子
+desc	$4690	스피리드의 나뭇가지	樹精的樹枝
+desc	$4691	야히의 대장장이	火焰之影鐵匠
+desc	$4692	야히의 보좌관	火焰之影輔佐官
+desc	$4693	연구원	研究員
+desc	$4694	실험체	敗殘兵
+desc	$4695	라스타바드 역사서 3장	拉斯塔巴德歷史書第3頁
+desc	$4696	라스타바드 역사서 4장	拉斯塔巴德歷史書第4頁
+desc	$4697	라스타바드 역사서 5장	拉斯塔巴德歷史書第5頁
+desc	$4698	라스타바드 역사서 6장	拉斯塔巴德歷史書第6頁
+desc	$4699	라스타바드 역사서 7장	拉斯塔巴德歷史書第7頁
+desc	$4700	라스타바드 역사서 8장	拉斯塔巴德歷史書第8頁
+desc	$4701	흠... 이런 방법도 있었나...	嗯... 也有這方法喔...
+desc	$4702	이건 어떤 방법을 사용해야 될까...	那這要使用哪種方法呢...
+desc	$4703	그렇지! 이걸 응용하면 되겠어!	對了! 應用這個就行了!
+desc	$4704	좋아 이건 꼭 기억해 두어야 겠는걸!	好吧這個我一定要記住!
+desc	$4705	고대인의 고서	古代的武器強化書
+desc	$4706	무기 강화 고서	武器強化 古書
+desc	$4707	고대의 무기 강화 고서	古代之 武器強化 古書
+desc	$4708	가래떡	年糕條
+desc	$4709	떡국용 떡	年糕片
+desc	$4710	사골 국물	肉骨湯
+desc	$4711	떡국	年糕湯
+desc	$4712	기술서 (솔리드 캐리지)	技術書(堅固防護)
+desc	$4713	기술서 (카운터 배리어)	技術書(反擊屏障)
+desc	$4714	정령의 수정 (소울 오브 프레임)	精靈水晶(烈焰之魂)
+desc	$4715	정령의 수정 (어디셔널 파이어)	精靈水晶(能量激發)
+desc	$4716	정령의 수정 (아쿠아 프로텍트)	精靈水晶(水之防護)
+desc	$4717	정령의 수정 (폴루트 워터)	精靈水晶(污濁之水)
+desc	$4718	정령의 수정 (스트라이커 게일)	精靈水晶(精準射擊)
+desc	$4719	캬루루루..!!!	卡嚕嚕．．．！
+desc	$4720	고블린의 보물상자	哥布林的寶箱
+desc	$4721	트롤의 보물상자	多羅的寶箱
+desc	$4722	라미아의 보물상자	蛇女的寶箱
+desc	$4723	피닉스의 보물상자	不死鳥的寶箱
+desc	$4724	물약 바구니	藥水籃子
+desc	$4725	EP6 이벤트 보물상자	活動寶箱
+desc	$4726	복 주머니	福袋
+desc	$4727	굳어버린 장로 수행원	長老隨從
+desc	$4728	굳어버린 다크엘프 마법사	黑暗妖精法師
+desc	$4729	굳어버린 레서 데몬	小惡魔
+desc	$4730	굳어버린 익사한 남성	溺死的人
+desc	$4731	리니지 기념 주화	天堂紀念幣
+desc	$4732	온 세상이 죽음으로 물들리라! 축복의 나무를 되살리려는 자 누구인가!	全世界都去死吧！
+desc	$4733	須曼	須曼
+desc	$4734	騎士哈達	騎士哈達
+desc	$4735	經驗值支付團	經驗值支付團
+desc	$4736	Edoshipe	Edoshipe
+desc	$4737	EP6結束證	EP6結束證
+desc	$4738	茶杯	茶杯
+desc	$4739	龍井茶葉	龍井茶葉
+desc	$4740	普洱茶葉	普洱茶葉
+desc	$4741	莫莉花茶葉	莫莉花茶葉
+desc	$4742	西湖龍井茶	西湖龍井茶
+desc	$4743	雲南普洱茶	雲南普洱茶
+desc	$4744	蘇州莫莉花茶	蘇州莫莉花茶
+desc	$4745	巴倫	巴倫
+desc	$4746	卡利斯	卡利斯
+desc	$4747	御便當	御便當
+desc	$4748	飯糰	飯糰
+desc	$4749	三色丸子	三色丸子
+desc	$4750	雞肉串燒	雞肉串燒
+desc	$4751	烤番薯	烤番薯
+desc	$4752	三明治	三明治
+desc	$4753	御便當袋子	御便當袋子
+desc	$4754	太陽神阿波羅4世	太陽神阿波羅4世
+desc	$4755	伊娃的出生地	伊娃的出生地
+desc	$4756	伊娃王冠	伊娃王冠
+desc	$4757	傑羅	傑羅
+desc	$4758	勇氣	勇氣
+desc	$4759	芝芝	芝芝
+desc	$4760	崁多拉	崁多拉
+desc	$4761	卡利奧	卡利奧
+desc	$4762	珍珠	珍珠
+desc	$4763	黑色風暴	黑色風暴
+desc	$4764	凱恩	凱恩
+desc	$4765	凱哈特的信	凱哈特的信
+desc	$4766	絲莉安	絲莉安
+desc	$4767	拉斯塔巴德戒指(鑽石)	拉斯塔巴德戒指(鑽石)
+desc	$4768	拉斯塔巴德戒指(金)	拉斯塔巴德戒指(金)
+desc	$4769	拉斯塔巴德戒指(銀)	拉斯塔巴德戒指(銀)
+desc	$4770	凱哈特	凱哈特
+desc	$4771	純潔的血痕之血	純潔的血痕之血
+desc	$4772	貝爾頓	貝爾頓
+desc	$4773	黑妖	黑妖
+desc	$4774	法師	法師
+desc	$4775	圖柏	圖柏
+desc	$4776	英雄的象徵(守護)	英雄的象徵(守護)
+desc	$4777	英雄的象徵(懲罰)	英雄的象徵(懲罰)
+desc	$4778	英雄的象徵(亞丁)	英雄的象徵(亞丁)
+desc	$4779	亞丁聯合軍補給箱	亞丁聯合軍補給箱
+desc	$4780	太陽神阿波羅二世	太陽神阿波羅二世
+desc	$4781	朱利厄斯	朱利厄斯
+desc	$4782	拉美哈勒	拉美哈勒
+desc	$4783	凱德夏	凱德夏
+desc	$4784	卡洛斯	卡洛斯
+desc	$4785	拉斯塔巴德騎士軍團	拉斯塔巴德騎士軍團
+desc	$4786	拉斯塔巴德弓箭軍團	拉斯塔巴德弓箭軍團
+desc	$4787	拉斯塔巴德暗殺軍團	拉斯塔巴德暗殺軍團
+desc	$4788	拉斯塔巴德魔法軍團	拉斯塔巴德魔法軍團
+desc	$4789	修德利斯	修德利斯
+desc	$4790	受詛咒的黑魔石	受詛咒的黑魔石
+desc	$4791	精鍊的黑魔石	精鍊的黑魔石
+desc	$4792	品茶的角色	品茶的角色
+desc	$4793	腐敗的	腐敗的
+desc	$4794	殭屍將軍	殭屍將軍
+desc	$4795	殭屍法師	殭屍法師
+desc	$4796	殭屍槍兵	殭屍槍兵
+desc	$4797	骷髏騎士	骷髏騎士
+desc	$4798	黑法師麻雅	黑法師麻雅
+desc	$4799	普若亞	普若亞
+desc	$4800	卡拉	卡拉
+desc	$4801	貪慾的士兵	貪慾的士兵
+desc	$4802	貪慾的戰士	貪慾的戰士
+desc	$4803	貪慾的弓箭手	貪慾的弓箭手
+desc	$4804	貪慾的法師	貪慾的法師
+desc	$4805	貪慾的祭司	貪慾的祭司
+desc	$4806	警犬	警犬
+desc	$4807	伯爵的親衛隊	伯爵的親衛隊
+desc	$4808	塔落斯	塔落斯
+desc	$4809	漫孟	漫孟
+desc	$4810	冥法軍團的寶箱	冥法軍團的寶箱
+desc	$4811	冥法軍王的寶箱	冥法軍王的寶箱
+desc	$4812	法令軍團的寶箱	法令軍團的寶箱
+desc	$4813	法令軍王的寶箱	法令軍王的寶箱
+desc	$4814	魔獸軍團的寶箱	魔獸軍團的寶箱
+desc	$4815	魔獸軍王的寶箱	魔獸軍王的寶箱
+desc	$4816	暗殺軍團的寶箱	暗殺軍團的寶箱
+desc	$4817	暗殺軍王的寶箱	暗殺軍王的寶箱
+desc	$4818	侍從長 漫孟	侍從長 漫孟
+desc	$4819	trick	trick
+desc	$4820	傑夫	傑夫
+desc	$4821	愛瑪伊	愛瑪伊
+desc	$4822	錄武基	錄武基
+desc	$4823	迪藹詞	迪藹詞
+desc	$4824	古老金幣	古老金幣
+desc	$4825	暗鬱的古老商人	暗鬱的古老商人
+desc	$4826	做夢的熊娃娃	做夢的熊娃娃
+desc	$4827	誘惑的香水	誘惑的香水
+desc	$4828	心愛的洋裝	心愛的洋裝
+desc	$4829	華麗的戒指	華麗的戒指
+desc	$4830	愛瑪伊的心	愛瑪伊的心
+desc	$4831	愛瑪伊的肖像畫	愛瑪伊的肖像畫
+desc	$4832	塔落斯的紅寶石	塔落斯的紅寶石
+desc	$4833	塔落斯的綠寶石	塔落斯的綠寶石
+desc	$4834	塔落斯的藍寶石	塔落斯的藍寶石
+desc	$4835	塔落斯的鑽石	塔落斯的鑽石
+desc	$4836	不起眼的古老項鍊	不起眼的古老項鍊
+desc	$4837	復原的古老項鍊	復原的古老項鍊
+desc	$4838	發光的古老項鍊	發光的古老項鍊
+desc	$4839	寶石粉	寶石粉
+desc	$4840	漫孟的之証	漫孟的之証
+desc	$4841	Esem	Esem
+desc	$4842	英雄的偉人傳	英雄的偉人傳
+desc	$4843	時髦的帽子	時髦的帽子
+desc	$4844	最高級紅酒	最高級紅酒
+desc	$4845	不能了解的鑰匙	不能了解的鑰匙
+desc	$4846	Esem之心	Esem之心
+desc	$4847	Esem之肖像畫	Esem之肖像畫
+desc	$4848	突變子	突變子
+desc	$4849	百巴道士	百巴道士
+desc	$4850	治安團長阿迷數	治安團長阿迷數
+desc	$4851	麻雅的召換物	麻雅的召換物
+desc	$4852	遺物袋	遺物袋
+desc	$4853	破(老)舊遺物袋	破(老)舊遺物袋
+desc	$4854	舊遺物袋	舊遺物袋
+desc	$4855	褪色戒指	褪色戒指
+desc	$4856	染血的手帕	染血的手帕
+desc	$4857	染血的文件	染血的文件
+desc	$4858	褪色項鍊	褪色項鍊
+desc	$4859	破(老)舊錢包	破(老)舊錢包
+desc	$4860	染血的匕首	染血的匕首
+desc	$4861	遺失的鑰匙	遺失的鑰匙
+desc	$4862	麻雅的魔杖	麻雅的魔杖
+desc	$4863	麻雅的影子	麻雅的影子
+desc	$4864	麻雅的水晶球	麻雅的水晶球
+desc	$4865	不怕死的傢伙! 你離不開這裡的. 我讓你變成死也死不了的殭屍!!	不怕死的傢伙! 你離不開這裡的. 我讓你變成死也死不了的殭屍!!
+desc	$4866	好香(好好吃)的味道.. 好香(好好吃)的味道阿.. 	好香(好好吃)的味道.. 好香(好好吃)的味道阿.. 
+desc	$4867	瑪依奴夏門	瑪依奴夏門
+desc	$4868	瑪依奴	瑪依奴
+desc	$4869	瑪依奴夏門的高崙石頭怪	瑪依奴夏門的高崙石頭怪
+desc	$4870	瑪依奴夏門的鑽石高崙	瑪依奴夏門的鑽石高崙
+desc	$4871	瑪依奴夏門的高崙熔岩怪	瑪依奴夏門的高崙熔岩怪
+desc	$4872	瑪依奴夏門的高崙鋼鐵怪	瑪依奴夏門的高崙鋼鐵怪
+desc	$4873	瑪依奴夏門的活鎧甲	瑪依奴夏門的活鎧甲
+desc	$4874	瑪依奴夏門的尾巴毛	瑪依奴夏門的尾巴毛
+desc	$4875	瑪依奴的尾巴毛	瑪依奴的尾巴毛
+desc	$4876	石頭塊	石頭塊
+desc	$4877	鑽石原石	鑽石原石
+desc	$4878	火山巖	火山巖
+desc	$4879	鐵礦石	鐵礦石
+desc	$4880	窺甲片	窺甲片
+desc	$4881	普哇魯	普哇魯
+desc	$4882	獨籃	獨籃
+desc	$4883	夏依藍	夏依藍
+desc	$4884	烏烏烏... 混蛋! 你已為已結束了嗎! 聽好了. 拉斯塔巴德永遠不會它塌的! 烏阿阿... 氣憤又冤屈! 你們的傲慢卡山德拉會懲罰的!	烏烏烏... 混蛋! 你已為已結束了嗎! 聽好了. 拉斯塔巴德永遠不會它塌的! 烏阿阿... 氣憤又冤屈! 你們的傲慢卡山德拉會懲罰的!
+desc	$4885	安戴	安戴
+desc	$4886	測試NPC_01	測試NPC_01
+desc	$4887	測試NPC_02	測試NPC_02
+desc	$4888	測試NPC_03	測試NPC_03
+desc	$4889	測試NPC_04	測試NPC_04
+desc	$4890	測試NPC_05	測試NPC_05
+desc	$4891	測試NPC_06	測試NPC_06
+desc	$4892	測試NPC_07	測試NPC_07
+desc	$4893	測試NPC_08	測試NPC_08
+desc	$4894	測試NPC_09	測試NPC_09
+desc	$4895	測試NPC_10	測試NPC_10
+desc	$4896	測試NPC_11	測試NPC_11
+desc	$4897	測試NPC_12	測試NPC_12
+desc	$4898	測試NPC_13	測試NPC_13
+desc	$4899	測試NPC_14	測試NPC_14
+desc	$4900	測試NPC_15	測試NPC_15
+desc	$4901	測試NPC_16	測試NPC_16
+desc	$4902	測試NPC_17	測試NPC_17
+desc	$4903	測試NPC_18	測試NPC_18
+desc	$4904	測試NPC_19	測試NPC_19
+desc	$4905	測試NPC_20	測試NPC_20
+desc	$4906	測試NPC_21	測試NPC_21
+desc	$4907	測試NPC_22	測試NPC_22
+desc	$4908	測試NPC_23	測試NPC_23
+desc	$4909	測試NPC_24	測試NPC_24
+desc	$4910	測試NPC_25	測試NPC_25
+desc	$4911	古老的藍色藥水	古老的藍色藥水
+desc	$4912	強化勇氣的藥水	強化勇氣的藥水
+desc	$4913	神秘的白色藥水	神秘的白色藥水
+desc	$4914	妖魔戰士	妖魔戰士
+desc	$4915	綜合烤肉醬	綜合烤肉醬
+desc	$4916	綜合烤肉醬料粉	綜合烤肉醬料粉
+desc	$4917	蜂蜜	蜂蜜
+desc	$4918	麵粉	麵粉
+desc	$4919	起士	起士
+desc	$4920	蕃茄	蕃茄
+desc	$4921	柴火	柴火
+desc	$4922	料理書 : 1階段	料理書 : 1階段
+desc	$4923	料理書 : 2階段	料理書 : 2階段
+desc	$4924	料理書 : 3階段	料理書 : 3階段
+desc	$4925	料理書 : 4階段	料理書 : 4階段
+desc	$4926	料理書 : 5階段	料理書 : 5階段
+desc	$4927	特別的	特別的
+desc	$4928	煎餅	煎餅
+desc	$4929	水果沙拉	水果沙拉
+desc	$4930	水果炸肉	水果炸肉
+desc	$4931	怪物眼睛牛排	怪物眼睛牛排
+desc	$4932	爆米花	爆米花
+desc	$4933	烤玉米	烤玉米
+desc	$4934	甜不拉	甜不拉
+desc	$4935	鬆餅	鬆餅
+desc	$4936	雞肉串	雞肉串
+desc	$4937	飯團	飯團
+desc	$4938	雅德蘭	雅德蘭
+desc	$4939	縮小的靈魂	縮小的靈魂
+desc	$4940	船員的遺體	船員的遺體
+desc	$4941	火焰之影的軍事	火焰之影的軍事
+desc	$4942	炎魔的軍事	炎魔的軍事
+desc	$4943	靈魂的觀察者	靈魂的觀察者
+desc	$4944	高等熊項鍊	高等熊項鍊
+desc	$4945		
+desc	$4946	紅色面具	紅色面具
+desc	$4947	深海的鯊魚	深海的鯊魚
+desc	$4948	混亂的藥水	混亂的藥水
+desc	$4949	鼓勵的藥水	鼓勵的藥水
+desc	$4950	技術的藥水	技術的藥水
+desc	$4951	寶羅拉的藥水	寶羅拉的藥水
+desc	$4952	寶羅拉的耳環	寶羅拉的耳環
+desc	$4953	寶羅拉的戶籍地	寶羅拉的戶籍地
+desc	$4954	寶羅拉的項鍊	寶羅拉的項鍊
+desc	$4955	寶羅拉的吻	寶羅拉的吻
+desc	$4956	妹(may)	妹(may)
+desc	$4957	托 思克巴	托 思克巴
+desc	$4958	托 女軍主	托 女軍主
+desc	$4959	托 思克巴娃娃	托 思克巴娃娃
+desc	$4960	托 女軍主娃娃	托 女軍主娃娃
+desc	$4961	異界新的的鼎	異界新的的鼎
+desc	$4962	幸福的小鎚	幸福的小鎚
+desc	$4963	光之項鍊	光之項鍊
+desc	$4964	料理書 : 6階段	料理書 : 6階段
+desc	$4965	料理書 : 7階段	料理書 : 7階段
+desc	$4966	料理書 : 8階段	料理書 : 8階段
+desc	$4967	料理書 : 9階段	料理書 : 9階段
+desc	$4968	料理書 : 10階段	料理書 : 10階段
+desc	$4969	太陽花籽	太陽花籽
+desc	$4970	古老的加速魔力回復藥水	古老的加速魔力回復藥水
+desc	$4971	神秘的終極治癒藥水	神秘的終極治癒藥水
+desc	$4972	船舶的惡靈	船舶的惡靈
+desc	$4973	船舶的惡靈召喚物	船舶的惡靈召喚物
+desc	$4974	亞丁城的寶箱	亞丁城的寶箱
+desc	$4975	亞丁王的下士品	亞丁王的下士品
+desc	$4976	元氣恢復之耳環	元氣恢復之耳環
+desc	$4977	元氣之水晶	元氣之水晶
+desc	$4978	爾利浦	爾利浦
+
+# 魔法技能名稱 (skill id \t 中文名)，客戶端介面顯示用
+skill	1	初級治癒術
+skill	2	日光術
+skill	3	保護罩
+skill	4	光箭
+skill	5	指定傳送
+skill	6	解毒術
+skill	7	寒冷戰慄
+skill	8	毒咒
+skill	9	擬似魔法武器
+skill	10	無所遁形術
+skill	11	極光雷電
+skill	12	起死回生術
+skill	13	中級治癒術
+skill	14	闇盲咒術
+skill	15	鎧甲護持
+skill	16	燃燒的火球
+skill	17	通暢氣脈術
+skill	18	壞物術
+skill	19	吸血鬼之吻
+skill	20	緩速術
+skill	21	木乃伊的詛咒
+skill	22	極道落雷
+skill	23	高級治癒術
+skill	24	迷魅術
+skill	25	聖潔之光
+skill	26	造屍術
+skill	27	體魄強健術
+skill	28	加速術
+skill	29	魔法相消術
+skill	30	地裂術
+skill	31	體力回復術
+skill	32	冰矛圍籬
+skill	33	召喚術
+skill	34	神聖的圓
+skill	35	龍捲風
+skill	36	全部治癒術
+skill	37	火牢
+skill	38	冰雪暴
+skill	39	隱身術
+skill	40	返生術
+skill	41	力場
+skill	42	沉睡之霧
+skill	43	變形術
+skill	44	聖結界
+skill	45	集體傳送術
+skill	46	創造魔法武器
+skill	47	流星雨
+skill	48	反射之池
+skill	49	瞬間停止
+skill	50	究極光裂術
+skill	129	魔法防御
+skill	130	心靈轉換
+skill	131	世界樹的呼喚
+skill	137	淨化精神
+skill	138	屬性防禦
+skill	146	魂體轉換
+skill	148	火焰武器
+skill	149	風之神射
+skill	151	大地防護
+
+# --- Item table (corrected database, $id = name_id) ---
+desc	$0	长剑	长剑
+desc	$1	斧	斧
+desc	$2	灯	灯
+desc	$3	双手剑	双手剑
+desc	$4	金币	金币
+desc	$12	精灵匕首	精灵匕首
+desc	$13	欧西斯匕首	欧西斯匕首
+desc	$14	亚连	亚连
+desc	$16	武士刀	武士刀
+desc	$17	瑟鲁基之剑	瑟鲁基之剑
+desc	$20	钉锤	钉锤
+desc	$23	肉	肉
+desc	$24	弓	弓
+desc	$25	矛	矛
+desc	$27	枫木魔杖	枫木魔杖
+desc	$28	松木魔杖	松木魔杖
+desc	$55	鉴定卷轴	鉴定卷轴
+desc	$60	战斧	战斧
+desc	$61	箭	箭
+desc	$62	巴迪须	巴迪须
+desc	$63	柴刀	柴刀
+desc	$64	精灵弓	精灵弓
+desc	$65	欧西斯弓	欧西斯弓
+desc	$66	阔剑	阔剑
+desc	$67	蜡烛	蜡烛
+desc	$68	胡萝卜	胡萝卜
+desc	$69	木棒	木棒
+desc	$70	匕首	匕首
+desc	$71	贝卡合金	贝卡合金
+desc	$72	蛋	蛋
+desc	$93	银箭	银箭
+desc	$1014	水晶球	水晶球
+desc	$73	法丘	法丘
+desc	$74	弗莱尔	弗莱尔
+desc	$75	阔矛	阔矛
+desc	$76	吉萨	吉萨
+desc	$77	戟	戟
+desc	$80	钥匙	钥匙
+desc	$81	枪	枪
+desc	$82	柠檬	柠檬
+desc	$83	露西錘	露西錘
+desc	$84	流星锤	流星锤
+desc	$85	橘子	橘子
+desc	$87	帕提森	帕提森
+desc	$92	弯刀	弯刀
+desc	$94	侏儒铁斧	侏儒铁斧
+desc	$95	精灵之矛	精灵之矛
+desc	$96	欧西斯之矛	欧西斯之矛
+desc	$97	小侏儒短剑	小侏儒短剑
+desc	$98	精灵短剑	精灵短剑
+desc	$99	欧西斯短剑	欧西斯短剑
+desc	$100	短剑	短剑
+desc	$102	三叉戟	三叉戟
+desc	$105	尤米弓	尤米弓
+desc	$106	苹果	苹果
+desc	$107	香蕉	香蕉
+desc	$110	精灵饼乾	精灵饼乾
+desc	$111	战锤	战锤
+desc	$118	精灵皮盔	精灵皮盔
+desc	$120	欧西斯头盔	欧西斯头盔
+desc	$122	侏儒铁盔	侏儒铁盔
+desc	$128	钢盔	钢盔
+desc	$137	火龙鳞盔甲	火龙鳞盔甲
+desc	$138	风龙鳞盔甲	风龙鳞盔甲
+desc	$141	水龙鳞盔甲	水龙鳞盔甲
+desc	$142	地龙鳞盔甲	地龙鳞盔甲
+desc	$145	火龙鳞	火龙鳞
+desc	$146	风龙鳞	风龙鳞
+desc	$149	水龙鳞	水龙鳞
+desc	$150	地龙鳞	地龙鳞
+desc	$152	金属盔甲	金属盔甲
+desc	$153	水晶盔甲	水晶盔甲
+desc	$154	青铜盔甲	青铜盔甲
+desc	$155	藤甲	藤甲
+desc	$156	皮甲	皮甲
+desc	$159	链甲	链甲
+desc	$160	欧西斯链甲	欧西斯链甲
+desc	$162	鳞甲	鳞甲
+desc	$163	银钉皮甲	银钉皮甲
+desc	$164	环甲	环甲
+desc	$165	欧西斯环甲	欧西斯环甲
+desc	$167	皮夹克	皮夹克
+desc	$168	T恤	T恤
+desc	$170	精灵斗篷	精灵斗篷
+desc	$172	欧西斯斗篷	欧西斯斗篷
+desc	$174	侏儒斗篷	侏儒斗篷
+desc	$176	油布斗篷	油布斗篷
+desc	$178	保护者斗篷	保护者斗篷
+desc	$180	隐身斗篷	隐身斗篷
+desc	$182	抗魔法斗篷	抗魔法斗篷
+desc	$184	位移斗篷	位移斗篷
+desc	$186	小盾牌	小盾牌
+desc	$187	精灵盾牌	精灵盾牌
+desc	$189	阿克海盾牌	阿克海盾牌
+desc	$193	大盾牌	大盾牌
+desc	$194	侏儒圆盾	侏儒圆盾
+desc	$196	反射之盾	反射之盾
+desc	$198	皮手套	皮手套
+desc	$206	短统靴	短统靴
+desc	$230	瞬间移动卷轴	瞬间移动卷轴
+desc	$232	蓝色药水	蓝色药水
+desc	$233	翡翠药水	翡翠药水
+desc	$234	绿色药水	绿色药水
+desc	$235	橙色药水	橙色药水
+desc	$237	红色药水	红色药水
+desc	$238	白色药水	白色药水
+desc	$239	黑色药水	黑色药水
+desc	$241	传送控制戒指	传送控制戒指
+desc	$243	解除咀咒的卷轴	解除咀咒的卷轴
+desc	$244	对武器施法的卷轴	对武器施法的卷轴
+desc	$249	对盔甲施法的卷轴	对盔甲施法的卷轴
+desc	$254	毁灭盔甲的卷轴	毁灭盔甲的卷轴
+desc	$257	复活卷轴	复活卷轴
+desc	$261	变形控制戒指	变形控制戒指
+desc	$263	乌木魔杖	乌木魔杖
+desc	$307	黄金钥匙	黄金钥匙
+desc	$308	银钥匙	银钥匙
+desc	$311	夏洛伯之爪	夏洛伯之爪
+desc	$312	红骑士之斗篷	红骑士之斗篷
+desc	$313	红骑士之剑	红骑士之剑
+desc	$314	往古鲁丁的船票	往古鲁丁的船票
+desc	$315	往说话之岛的船票	往说话之岛的船票
+desc	$326	灯笼	灯笼
+desc	$327	灯油	灯油
+desc	$329	长靴	长靴
+desc	$330	手套	手套
+desc	$412	巨斧	巨斧
+desc	$413	王冠	王冠
+desc	$414	骑士面甲	骑士面甲
+desc	$415	侵略者之剑	侵略者之剑
+desc	$416	骰子匕首	骰子匕首
+desc	$418	狂战士斧	狂战士斧
+desc	$419	伊娃之盾	伊娃之盾
+desc	$429	塔盾	塔盾
+desc	$499	阿吐巴图腾	阿吐巴图腾
+desc	$500	那鲁加图腾	那鲁加图腾
+desc	$501	甘地图腾	甘地图腾
+desc	$502	罗孚图腾	罗孚图腾
+desc	$503	都达玛拉图腾	都达玛拉图腾
+desc	$505	传送回家的卷轴	传送回家的卷轴
+desc	$508	魔法宝石	魔法宝石
+desc	$512	钻石	钻石
+desc	$513	红宝石	红宝石
+desc	$514	蓝宝石	蓝宝石
+desc	$515	绿宝石	绿宝石
+desc	$516	抗魔法链甲	抗魔法链甲
+desc	$517	魔法书 (初级治愈术)	魔法书 (初级治愈术)
+desc	$518	魔法书 (日光术)	魔法书 (日光术)
+desc	$519	魔法书 (保护罩)	魔法书 (保护罩)
+desc	$520	魔法书 (光箭)	魔法书 (光箭)
+desc	$521	魔法书 (指定传送)	魔法书 (指定传送)
+desc	$522	魔法书 (解毒术)	魔法书 (解毒术)
+desc	$523	魔法书 (寒冷战栗)	魔法书 (寒冷战栗)
+desc	$524	魔法书 (毒咒)	魔法书 (毒咒)
+desc	$525	魔法书 (拟似魔法武器)	魔法书 (拟似魔法武器)
+desc	$526	魔法书 (无所遁形术)	魔法书 (无所遁形术)
+desc	$527	魔法书 (极光雷电)	魔法书 (极光雷电)
+desc	$528	魔法书 (起死回生术)	魔法书 (起死回生术)
+desc	$529	魔法书 (中级治愈术)	魔法书 (中级治愈术)
+desc	$530	魔法书 (闇盲咒术)	魔法书 (闇盲咒术)
+desc	$531	魔法书 (铠甲护持)	魔法书 (铠甲护持)
+desc	$532	魔法书 (燃烧的火球)	魔法书 (燃烧的火球)
+desc	$533	魔法书 (通畅气脉术)	魔法书 (通畅气脉术)
+desc	$534	魔法书 (坏物术)	魔法书 (坏物术)
+desc	$535	魔法书 (吸血鬼之吻)	魔法书 (吸血鬼之吻)
+desc	$536	魔法书 (缓速术)	魔法书 (缓速术)
+desc	$537	魔法书 (木乃伊的诅咒)	魔法书 (木乃伊的诅咒)
+desc	$538	魔法书 (极道落雷)	魔法书 (极道落雷)
+desc	$539	魔法书 (高级治愈术)	魔法书 (高级治愈术)
+desc	$540	魔法书 (迷魅术)	魔法书 (迷魅术)
+desc	$541	魔法书 (圣洁之光)	魔法书 (圣洁之光)
+desc	$542	魔法书 (造尸术)	魔法书 (造尸术)
+desc	$543	魔法书 (体魄强健术)	魔法书 (体魄强健术)
+desc	$544	魔法书 (加速术)	魔法书 (加速术)
+desc	$545	魔法书 (魔法相消术)	魔法书 (魔法相消术)
+desc	$546	魔法书 (地裂术)	魔法书 (地裂术)
+desc	$547	魔法书 (体力回复术)	魔法书 (体力回复术)
+desc	$548	魔法书 (冰矛围篱)	魔法书 (冰矛围篱)
+desc	$549	魔法书 (召唤术)	魔法书 (召唤术)
+desc	$550	魔法书 (神圣的圆)	魔法书 (神圣的圆)
+desc	$551	魔法书 (龙卷风)	魔法书 (龙卷风)
+desc	$552	魔法书 (全部治愈术)	魔法书 (全部治愈术)
+desc	$553	魔法书 (火牢)	魔法书 (火牢)
+desc	$554	魔法书 (冰雪暴)	魔法书 (冰雪暴)
+desc	$555	魔法书 (隐身术)	魔法书 (隐身术)
+desc	$556	魔法书 (返生术)	魔法书 (返生术)
+desc	$557	魔法书 (力场)	魔法书 (力场)
+desc	$558	魔法书 (沉睡之雾)	魔法书 (沉睡之雾)
+desc	$559	魔法书 (变形术)	魔法书 (变形术)
+desc	$560	魔法书 (圣结界)	魔法书 (圣结界)
+desc	$561	魔法书 (集体传送术)	魔法书 (集体传送术)
+desc	$562	魔法书 (创造魔法武器)	魔法书 (创造魔法武器)
+desc	$563	魔法书 (流星雨)	魔法书 (流星雨)
+desc	$564	魔法书 (反射之池)	魔法书 (反射之池)
+desc	$565	魔法书 (瞬间停止)	魔法书 (瞬间停止)
+desc	$566	魔法书 (究极光裂术)	魔法书 (究极光裂术)
+desc	$569	抗魔法头盔	抗魔法头盔
+desc	$570	橡木魔法杖	橡木魔法杖
+desc	$571	美基魔法杖	美基魔法杖
+desc	$572	巫术魔法杖	巫术魔法杖
+desc	$573	力量魔法杖	力量魔法杖
+desc	$580	绵质长袍	绵质长袍
+desc	$598	大马士革刀	大马士革刀
+desc	$618	全体传送术的卷轴	全体传送术的卷轴
+desc	$759	短弓	短弓
+desc	$760	潘的鬃毛	潘的鬃毛
+desc	$761	粗糙的米索莉块	粗糙的米索莉块
+desc	$762	元素石	元素石
+desc	$763	安特之树枝	安特之树枝
+desc	$764	蘑菇汁	蘑菇汁
+desc	$765	食人巨魔的血	食人巨魔的血
+desc	$766	线	线
+desc	$767	纯粹的米索莉块	纯粹的米索莉块
+desc	$768	精灵粉末	精灵粉末
+desc	$769	芮克妮的网	芮克妮的网
+desc	$770	安特之树皮	安特之树皮
+desc	$771	奥里哈鲁根	奥里哈鲁根
+desc	$772	米索莉线	米索莉线
+desc	$773	米索莉箭	米索莉箭
+desc	$774	芮克妮的蜕皮	芮克妮的蜕皮
+desc	$775	腕甲	腕甲
+desc	$776	精灵羽翼	精灵羽翼
+desc	$777	魔法笛子	魔法笛子
+desc	$778	木盾	木盾
+desc	$779	米索莉金属板	米索莉金属板
+desc	$780	奥里哈鲁根金属板	奥里哈鲁根金属板
+desc	$781	木甲	木甲
+desc	$782	精灵护胸金属板	精灵护胸金属板
+desc	$783	潘的角	潘的角
+desc	$784	十字弓	十字弓
+desc	$785	短剑的剑身	短剑的剑身
+desc	$786	长剑的剑身	长剑的剑身
+desc	$787	奥里哈鲁根的剑身	奥里哈鲁根的剑身
+desc	$788	精灵金属盔甲	精灵金属盔甲
+desc	$789	细剑	细剑
+desc	$790	艾尔穆的祝福	艾尔穆的祝福
+desc	$791	覆上米索莉的角	覆上米索莉的角
+desc	$792	覆上奥里哈鲁根的角	覆上奥里哈鲁根的角
+desc	$793	锁子甲破坏者	锁子甲破坏者
+desc	$794	安特的水果	安特的水果
+desc	$795	力量手套	力量手套
+desc	$796	精灵链甲	精灵链甲
+desc	$797	都佩杰诺的项链	都佩杰诺的项链
+desc	$798	木制的夹克	木制的夹克
+desc	$801	抗魔精灵短剑	抗魔精灵短剑
+desc	$802	敏捷精灵短剑	敏捷精灵短剑
+desc	$803	魔法精灵短剑	魔法精灵短剑
+desc	$922	银骑士之盾	银骑士之盾
+desc	$923	狼人的尖牙	狼人的尖牙
+desc	$938	治愈魔法头盔	治愈魔法头盔
+desc	$939	敏捷魔法头盔	敏捷魔法头盔
+desc	$940	力量魔法头盔	力量魔法头盔
+desc	$942	狼人之屋的钥匙	狼人之屋的钥匙
+desc	$943	勇敢药水	勇敢药水
+desc	$944	慎重药水	慎重药水
+desc	$954	旅馆钥匙	旅馆钥匙
+desc	$971	变形卷轴	变形卷轴
+desc	$1002	力量项链	力量项链
+desc	$1003	敏捷项链	敏捷项链
+desc	$1004	体质项链	体质项链
+desc	$1005	智力项链	智力项链
+desc	$1006	精神项链	精神项链
+desc	$1007	魅力项链	魅力项链
+desc	$1008	夜视头盔	夜视头盔
+desc	$1011	蜥蜴的角	蜥蜴的角
+desc	$1012	飞龙的爪子	飞龙的爪子
+desc	$1013	妖魔战士护身符	妖魔战士护身符
+desc	$1020	屠龙剑	屠龙剑
+desc	$1021	皮帽子	皮帽子
+desc	$1022	银钉皮帽	银钉皮帽
+desc	$1023	皮头盔	皮头盔
+desc	$1024	骷髅头盔	骷髅头盔
+desc	$1025	皮凉鞋	皮凉鞋
+desc	$1026	银钉皮凉鞋	银钉皮凉鞋
+desc	$1027	皮长靴	皮长靴
+desc	$1028	皮盾牌	皮盾牌
+desc	$1029	银钉皮盾	银钉皮盾
+desc	$1030	骷髅盾牌	骷髅盾牌
+desc	$1031	皮背心	皮背心
+desc	$1032	皮盔甲	皮盔甲
+desc	$1033	银钉皮背心	银钉皮背心
+desc	$1034	硬皮背心	硬皮背心
+desc	$1035	骷髅盔甲	骷髅盔甲
+desc	$1036	皮革	皮革
+desc	$1037	金属块	金属块
+desc	$1038	皮带	皮带
+desc	$1039	高级皮革	高级皮革
+desc	$1040	骨头碎片	骨头碎片
+desc	$1048	巨剑	巨剑
+desc	$1063	玛那魔杖	玛那魔杖
+desc	$1086	哨子	哨子
+desc	$1097	史巴托的骨头	史巴托的骨头
+desc	$1098	体质精灵短剑	体质精灵短剑
+desc	$1099	敏捷精灵弓	敏捷精灵弓
+desc	$1100	磨刀石	磨刀石
+desc	$1102	地图:说话之岛	地图:说话之岛
+desc	$1103	地图:古鲁丁	地图:古鲁丁
+desc	$1104	地图:肯特城	地图:肯特城
+desc	$1105	地图:妖魔城堡	地图:妖魔城堡
+desc	$1106	地图:妖精森林	地图:妖精森林
+desc	$1107	地图:风木之城	地图:风木之城
+desc	$1108	地图:银骑士村庄	地图:银骑士村庄
+desc	$1109	地图:龙之谷	地图:龙之谷
+desc	$1146	血盟的信纸	血盟的信纸
+desc	$1147	银长剑	银长剑
+desc	$1148	银剑	银剑
+desc	$1149	银斧	银斧
+desc	$1173	项圈	项圈
+desc	$1188	地图:奇岩	地图:奇岩
+desc	$1197	蓝色布料	蓝色布料
+desc	$1199	红色布料	红色布料
+desc	$1200	白色布料	白色布料
+desc	$1206	法师之帽	法师之帽
+desc	$1207	法师长袍	法师长袍
+desc	$1208	钢铁手套	钢铁手套
+desc	$1209	钢铁头盔	钢铁头盔
+desc	$1210	钢铁盾牌	钢铁盾牌
+desc	$1211	钢铁长靴	钢铁长靴
+desc	$1212	钢铁金属盔甲	钢铁金属盔甲
+desc	$1244	猎人之弓	猎人之弓
+desc	$1251	浓缩体力恢复剂	浓缩体力恢复剂
+desc	$1252	浓缩强力体力恢复剂	浓缩强力体力恢复剂
+desc	$1253	浓缩终极体力恢复剂	浓缩终极体力恢复剂
+desc	$1507	伊娃的祝福	伊娃的祝福
+desc	$1508	人鱼之鳞	人鱼之鳞
+desc	$1533	地图:歌唱之岛	地图:歌唱之岛
+desc	$1534	地图:隐藏之谷	地图:隐藏之谷
+desc	$1535	地图:海音	地图:海音
+desc	$1607	地图:火龙窟	地图:火龙窟
+desc	$1608	阿西塔基奥的灰烬	阿西塔基奥的灰烬
+desc	$343	史莱姆竞赛门票	史莱姆竞赛门票

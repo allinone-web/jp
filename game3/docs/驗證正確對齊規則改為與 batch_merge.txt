@@ -1,0 +1,24 @@
+對齊規則改為與 batch_merge 一致
+batch_merge 的約定（你已驗證正確）：
+檔案裡的 (dx, dy) = 該幀圖像左上角在「共同座標系」的位置（不是紋理內的錨點）。
+拼圖時：canvas.paste(b_img, (b_dx - min_x, b_dy - min_y)) → 身體左上在 (b_dx, b_dy)。
+之前錯誤：把 (dx, dy) 當成「紋理內錨點」，用 Offset = (w/2 - dx, h/2 - dy)，與 batch_merge 語意不符，導致主體偏到右下方。
+現在作法（與 batch_merge 一致）：
+主體
+檔案中主體左上在 (bodyDx, bodyDy)，主體中心在 (bodyDx + bodyW/2, bodyDy + bodyH/2)。
+把主體中心放在畫面中心 (0,0) → body.Offset = (0, 0)（Godot 的 Centered=true 時，Offset=0 表示紋理中心在節點位置）。
+陰影 / 服裝
+共同座標系下：陰影左上在 (sDx, sDy)，服裝左上在 (cDx, cDy)。
+以主體中心為原點時，陰影左上應在：
+(sDx - bodyDx - bodyW/2, sDy - bodyDy - bodyH/2)
+對 Centered=true 的 AnimatedSprite2D，紋理左上 = (Offset - w/2, Offset - h/2)，反推得：
+shadow.Offset = (sDx - bodyDx - bodyW/2 + sW/2, sDy - bodyDy - bodyH/2 + sH/2)
+clothes.Offset = (cDx - bodyDx - bodyW/2 + cW/2, cDy - bodyDy - bodyH/2 + cH/2)
+仍只用首幀 (frame 0) 的 (dx, dy) 與 (w, h) 來算上述 Offset，避免每幀漂移。
+程式變更摘要
+項目	變更
+主體	_bodySprite.Offset = Vector2.Zero，主體中心固定在預覽中心。
+陰影	Offset = (sDx - bodyDx - bodyW/2 + sW/2, sDy - bodyDy - bodyH/2 + sH/2)，依 batch_merge 的「左上角共同座標」相對主體放置。
+服裝	同上，用 (cDx, cDy, cW, cH)。
+註解	註解改為寫明 (dx, dy) = 圖像左上角在共同座標系，與 batch_merge 一致。
+這樣主體會維持在預覽中心，魔法球與其他效果也會依同一套 (dx, dy) 語意對齊，不再往右下漂移。若實際預覽仍有偏差，再檢查 sprite_offsets 裡該 GfxId 的 (dx, dy) 是否與 batch_merge 讀到的一致即可。

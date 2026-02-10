@@ -1,0 +1,736 @@
+NOTICE
+
+ NC INTERACTIVE IS CURRENTLY
+TESTING ITS MULTIPLAYER ONLINE
+COMPUTER GAME "LINEAGE" AT THIS
+SITE.  ON A TEMPORARY BASIS ONLY,
+YOU ARE PERMITTED TO PLAY
+LINEAGE AT THIS SITE WITHOUT
+CHARGE, BUT SUBJECT TO ALL OF
+THE OTHER TERMS AND CONDITIONS
+SET FORTH IN THE USER AGREEMENT
+AND SOFTWARE LICENSE WHICH
+APPEARS BELOW.
+ NC INTERACTIVE RESERVES THE
+RIGHT AT ANY TIME TO REVOKE
+PERMISSION TO PLAY LINEAGE AT
+THIS SITE WITHOUT CHARGE, AND TO
+COMMENCE COMMERCIAL SERVICE
+AT THIS SITE ON A PAY-FOR-USE
+BASIS ONLY, IN STRICT ACCORDANCE
+WITH ALL OF THE TERMS, INCLUDING
+PAYMENT TERMS, OF THE USER
+AGREEMENT AND SOFTWARE LICENSE
+WHICH APPEARS BELOW.
+
+
+    USER AGREEMENT AND
+             SOFTWARE LICENSE
+
+   Last Modified September 5, 2000
+
+
+1. TERMS OF AGREEMENT
+
+(a) Terms of Agreement.
+  NC Interactive offers to allow
+ you to play its multi-player
+ online computer game "Lineage"
+ on a pay-for-use basis conditioned
+ on your agreement to all of the
+ terms and conditions contained in
+ this Agreement and your compliance
+ with the Rules of Conduct posted
+ at this site from time to time.
+  Your use of Lineage constitutes
+ your agreement to all such terms
+ and conditions and your agreement
+ to comply with the Rules of
+ Conduct.
+  To confirm your agreement, you
+ should click on the "OK" button.
+
+  If you do not so agree, you
+ should click on the "CANCEL"
+ button, in which case you reject
+ the offered terms of use and will
+ not be permitted to play Lineage.
+  If you have any questions
+ regarding these terms and
+ conditions or the Rules of
+ Conduct, please contact an
+ NC Interactive customer service
+ representative at
+ [support@ncinteractive.com].
+
+(b) Amendments.
+  NC Interactive may amend this
+ Agreement or modify the Rules of
+ Conduct at any time in its sole
+ discretion by posting the amended
+ Agreement or modified Rules of
+ Conduct at this site.
+  Amendments to the Agreement will
+ be effective seven (7) days after
+ the amended Agreement is posted.
+  Modifications to the Rules of
+ Conduct will be effective
+ immediately upon posting.
+  Your use of Lineage after the
+ effective date of any amendments
+ to this Agreement constitutes your
+ agreement to the amendments.
+  You agree to check this Agreement
+ and the Rules of Content
+ periodically so you will be
+ familiar with their content as
+ amended or modified from time to
+ time.
+
+2. DESCRIPTION OF SERVICE
+
+ NC Interactive offers Lineage as
+ a fee-based online fantasy role-
+ playing game service accessible
+ (the "Service") through the
+ internet at
+ www.ncinteractive.com/lineage
+ (the "Web Site").
+  NC Interactive reserves the
+ right to change the URL address
+ of the Web Site at any time and
+ from time to time.
+  To use the Service, you will
+ need to download software which
+ NC Interactive makes available
+ at the Web Site (the "Software").
+  Anyone desiring to use the
+ Service is required to establish
+ an account with NC Interactive
+ (the "Account").
+  NC Interactive does not provide
+ internet access, and you are
+ responsible for all fees
+ associated with your internet
+ connection.
+
+3. LICENSE TO USE
+
+  Subject to the terms of this
+ Agreement, NC Interactive grants
+ to you a non- exclusive license
+ to use the Service, and a non-
+ exclusive license to use the
+ Software in connection with the
+ Service, for a 3-day trial period
+ without charge and thereafter on
+ a pay-for-use basis for so long
+ as you maintain an authorized and
+ fully-paid Account.
+  You may not sublicense, rent,
+ lease, loan or otherwise transfer
+ the Software, modify, adapt,
+ reverse engineer or decompile the
+ Software, or create any derivative
+ works in respect of the Software
+ or the Service, or otherwise use
+ the Software except as expressly
+ provided in this Agreement. 
+
+4. ACCOUNT
+
+(a) Eligibility.
+  Accounts are available only to
+ adult individuals 18 years of age
+ or older.
+  If you are less than 18 years of
+ age and wish to use the Service,
+ your parent(s) or guardian(s) must
+ complete the registration process,
+ open an Account in their name(s)
+ and accept full responsibility for
+ all obligations under this
+ Agreement.
+  Those who have completed these
+ steps and who maintain their
+ Account in good standing are
+ sometimes referred to in this
+ Agreement as "Members."
+  By clicking the "I Accept" button
+ and providing us with a credit
+ card number, you represent that
+ you are an adult 18 years of age
+ or older.
+  Only one person may use an
+ Account.
+  The registered user of an Account
+ may use the Account or may choose
+ instead to permit a minor child of
+ the registered user to use the
+ Account.
+  You are liable for all activities
+ conducted through your Account,
+ and parents or guardians are
+ liable for all activities of
+ their minor child conducted
+ through the Account. 
+
+(b) Account ID.
+  At the time your Account is
+ opened, you must choose a name
+ to identify yourself to other
+ Members and NC Interactive staff
+ (your "Account ID").
+  You may not select as your
+ Account ID the name of another
+ person, or a name which violates
+ any third party's trademark right,
+ copyright, or other proprietary
+ right, or which NC Interactive
+ deems in its discretion to be
+ vulgar or otherwise offensive.
+  NC Interactive reserves the
+ right to delete, or require you
+ to change, any vulgar or otherwise
+ offensive Account ID.
+  You have sole liability for all
+ activities conducted through your
+ Account or under your Account ID. 
+
+(c) Character Name.
+  At the time your Account is
+ opened, you must create a
+ character and choose a name
+ for your character to identify
+ your character to other Members
+ (your "Character Name").
+  You may not select as your
+ Character Name the name of another
+ person, or a name which violates
+ any third party's trademark right,
+ copyright, or other proprietary
+ right, or which may mislead other
+ Members to believe you to be an
+ employee of NC Interactive, or
+ which NC Interactive deems in
+ its discretion to be vulgar or
+ otherwise offensive.
+  NC Interactive reserves the
+ right to delete, or require you
+ to change, any vulgar or
+ otherwise offensive Character
+ Name.
+
+(d) Passwords.
+  At the time your Account is
+ opened, you must select a
+ password.
+  You are responsible for
+ maintaining the confidentiality
+ of your password and you are
+ responsible for any harm
+ resulting from your disclosure
+ or allowing the disclosure of
+ your password or from use by any
+ person of your password to gain
+ access to your Account and
+ Account ID.
+  At no time should you respond
+ to an online request for a
+ password.
+  NC Interactive will never ask
+ for your password offline or
+ online, except that you will be
+ required to enter your password
+ as part of the log-on process..
+
+(e) Registration Obligations.
+  You agree to provide true,
+ accurate, current and complete
+ information about yourself as
+ prompted by the Service's
+ registration form ("Registration
+ Data") and maintain and promptly
+ update the Registration Data to
+ keep it true, accurate, current
+ and complete.
+  If you provide any information
+ that is untrue, inaccurate, not
+ current or incomplete, or NC
+ Interactive has reasonable
+ grounds to suspect that such
+ information is untrue, inaccurate,
+ not current or incomplete, NC
+ Interactive has the right to
+ suspend or terminate your
+ Account and refuse any and all
+ current or future use of the
+ Service.  
+
+5. SERVICE FEE
+
+  Our fees and billing procedures
+ are published in the registration
+ section of the Web Site, which
+ are incorporated herein by this
+ reference.
+  All fees are stated in U.S.
+ Dollars.
+  YOUR MEMBERSHIP FEES ARE
+ PAYABLE IN ADVANCE AND ARE
+ NOT REFUNDABLE IN WHOLE OR
+ IN PART.
+  We will automatically charge
+ your credit card on a monthly
+ basis for applicable Account fees,
+ plus any applicable taxes we are
+ required to collect, and you
+ authorize us to do so.
+  All monthly Account fees are
+ payable in advance.
+  YOU ARE FULLY LIABLE FOR ALL
+ CHARGES TO YOUR ACCOUNT.
+  The first three (3) days after
+ the opening of your Account is a
+ free trial period.
+  You will not be charged any
+ Account fees if you cancel your
+ account within the three (3) day
+ trial period.
+  Any person who has been a Member
+ is not eligible for any subsequent
+ free trial period.
+  By paying by credit card, you
+ represent to NC Interactive that
+ you are the authorized user of
+ the credit card used to pay the
+ Account fee.
+  You agree to promptly notify NC
+ Interactive of any changes to
+ your credit card account number,
+ its expiration date and/or your
+ billing address, and you agree
+ to promptly notify NC Interactive
+ if your credit card expires or
+ is cancelled for any reason. 
+
+6. CONTENT AND MEMBER CONDUCT
+
+(a) Content.
+ You acknowledge that:
+ (i) by using the Software and the
+  Service you will have access to
+  graphics, sound effects, music,
+  animation-style video and text
+  (collectively, "Content"), and
+ (ii) Content may be provided under
+  license by independent content
+  providers, including text
+  contributions from other Members
+  (all such independent content
+  providers, "Content Providers").
+   NC Interactive does not pre-
+  screen Content as a matter of
+  policy.
+   NC Interactive has the right,
+  but not the obligation, to
+  remove Content at any time which
+  it deems to be harmful, offensive,
+  or otherwise in violation of this
+  Agreement.
+
+(b) Rights in Content.
+  You acknowledge that NC
+ Interactive and Content Providers
+ have rights in their respective
+ Content under copyright and other
+ applicable laws, and that you
+ accept full responsibility and
+ liability for your use of any
+ Content in violation of any such
+ rights.
+  You agree that you will not
+ use any Content other than in
+ connection with playing Lineage
+ at the Web Site.
+
+(c) Member Content.
+  Members can upload Content to
+ our servers in various forms,
+ such as in selections you make
+ for Lineage and in bulletin boards
+ and similar user-to-user areas.
+  Unless specified otherwise in
+ your transmission, by submitting
+ your Content to any area on the
+ Service, you automatically grant
+ (or you warrant that the owner
+ of such Content has expressly
+ granted) to NC Interactive
+ the royalty-free, perpetual,
+ irrevocable, non-exclusive right
+ and license to use, reproduce,
+ modify, adapt, publish, translate,
+ create derivative works from,
+ distribute, perform and display
+ such Content worldwide and/or to
+ incorporate it in other works in
+ any form, media, or technology
+ now known or later developed.
+
+(d) Member Conduct.
+  You agree not to use the Service
+ to:
+ (i) upload, post, e-mail or
+  otherwise transmit Content that
+  infringes any third party rights;
+ (ii) impersonate any person or
+  entity, including, but not
+  limited to, an NC Interactive
+  employee, or falsely state or
+  otherwise misrepresent your
+  affiliation with a person or
+  entity;
+ (iii) upload, post, e-mail or
+  otherwise transmit Content that
+  violates any law or regulation;
+ (iv) upload, post, e-mail or
+  otherwise transmit Content that
+  is harmful, threatening, abusive,
+  harassing, tortious, defamatory,
+  vulgar, obscene, libelous,
+  invasive of another's privacy,
+  hateful, or racially, ethnically
+  or otherwise objectionable;
+  or contains any viruses, trojan
+  horses, worms, time bombs,
+  cancelbots or other computer
+  programming routines that are
+  intended to damage, detrimentally
+  interfere with, surreptitiously
+  intercept or expropriate any
+  system, data or personal
+  information;
+ (v) upload, post, email or
+  otherwise transmit any Content
+  that you do not have a right to
+  transmit under any law or under
+  contractual or fiduciary
+  relationships (such as inside
+  information, proprietary and
+  confidential information
+  learned  or disclosed as part
+  of employment relationships or
+  under nondisclosure agreements);
+ (vi) upload, post, email or
+  otherwise transmit any
+  unsolicited or unauthorized
+  advertising, promotional
+  materials, "junk mail,"
+  "spam," "chain letters,"
+  "pyramid schemes," or any
+  other form of solicitation;
+ (vii) interfere with or disrupt
+  the Service or servers or
+  networks connected to the
+  Service, or disobey any
+  requirements, procedures,
+  policies or regulations of
+  networks connected to the
+  Service; or
+ (viii) "stalk" or otherwise harass
+  another member.
+
+7. OFFICIAL SERVICE
+
+  NC Interactive has designed
+ Lineage for play only as offered
+ by NC Interactive at the Web Site.
+  You agree to play Lineage only
+ as offered by NC Interactive at
+ the Web Site and not through any
+ other means.
+  You further agree not to create
+ or provide any other means through
+ which Lineage may be played by
+ others, as through server
+ emulators.
+  You acknowledge that you do not
+ have the right to create, publish,
+ distribute, create derivative
+ works from or use any software
+ programs, utilities, applications,
+ emulators or tools derived from or
+ created for Lineage, except that
+ you may use the Software to the
+ extent expressly permitted by
+ this Agreement.
+  You may not take any action
+ which imposes an unreasonable
+ or disproportionately large load
+ on our infrastructure. You may
+ not sell or auction any Lineage
+ accounts, characters, items,
+ coin or copyrighted material.
+
+
+8. PRIVACY
+
+  The personal information you
+ provide us during registration
+ is used for our internal purposes
+ only.
+  We use the information we
+ collect to learn what you like
+ and to improve the Service.
+  Except as otherwise expressly
+ permitted by this Agreement or
+ as otherwise authorized by you,
+ we will not give any of your
+ personal information to any third
+ party without your express
+ approval.
+  You authorize us to provide your
+ name and e-mail address to third
+ parties unless you instruct us to
+ the contrary by e-mail notice to
+ NC Interactive customer service.
+  We do not guarantee the security
+ of any of your private
+ transmissions against
+ unauthorized or unlawful
+ interception or access by
+ third parties.
+  We can (and you authorize us to)
+ disclose any information about
+ you to private entities, law
+ enforcement agencies or government
+ officials, as we, in our sole
+ discretion, believe necessary or
+ appropriate to investigate or
+ resolve possible problems or
+ inquiries, or as otherwise
+ required by law.
+  If you request any technical
+ support, you consent to our remote
+ accessing and review of the
+ computer you load the Software
+ onto for purposes of support and
+ debugging. You agree that we may
+ communicate with you via email
+ and any similar technology for
+ any purpose relating to the
+ Service, the Software and any
+ services or software which may
+ in the future be provided by us
+ or on our behalf. 
+
+9. PARENTAL GUIDANCE
+
+  While NC Interactive may choose
+ to monitor and take action upon
+ inappropriate game play, chat or
+ links to the Service, it is
+ possible that at any time there
+ may be language or other material
+ accessible on or through the
+ Service that may be inappropriate
+ for children or offensive to some
+ users of any age.
+  NC Interactive cannot ensure
+ that other players will not
+ provide Content or access to
+ Content that parents or guardians
+ may find inappropriate or that
+ any user may find objectionable.
+  NC Interactive does not as a
+ matter of policy pre-screen the
+ content of the materials or
+ communications transmitted
+ by each player. 
+
+10. INTERRUPTION OF SERVICE
+
+(a) NC Interactive reserves the
+ right to interrupt the Service
+ from time to time on a regularly
+ scheduled basis or otherwise with
+ or without prior notice in order
+ to perform preventative
+ maintenance.
+
+(b) You acknowledge that the
+ Service may be interrupted
+ for reasons beyond the control
+ of NC Interactive, and NC
+ Interactive cannot guarantee
+ that you will be able to access
+ the Service or your Account
+ whenever you may wish to do so.
+  NC Interactive shall not be
+ liable for any interruption of
+ the Service, delay or failure
+ to perform resulting from any
+ causes beyond its reasonable
+ control. 
+
+(c) NC Interactive shall not be
+ obligated to refund all or any
+ portion of any Account fee by
+ reason of any interruption of 
+ the Service by reason of any of
+ the circumstances described in
+ paragraph (a) or (b).
+
+11. DISCLAIMER OF WARRANTY
+
+  NC INTERACTIVE PROVIDES THE
+ SERVICE, THE SOFTWARE, THE
+ ACCOUNT, THE LINEAGE GAME
+ AND ALL OTHER SERVICES ON AN
+ "AS IS" BASIS, AND HEREBY
+ EXPRESSLY DISCLAIMS ALL
+ WARRANTIES OR CONDITIONS
+ OF ANY KIND, WRITTEN OR ORAL,
+ EXPRESS, IMPLIED OR STATUTORY,
+ INCLUDING WITHOUT LIMITATION
+ ANY IMPLIED WARRANTY OF TITLE,
+ NONINFRINGEMENT,
+ MERCHANTABILITY OR FITNESS
+ FOR A PARTICULAR PURPOSE.
+  Without limiting the foregoing,
+ we do not ensure continuous,
+ error-free, secure or virus-free
+ operation of the Service,
+ the Software, your Account or
+ Lineage.
+  Some states do not allow the
+ disclaimer of implied warranties,
+ so the foregoing disclaimer may
+ not apply to you.
+  This warranty gives you specific
+ legal rights and you may also
+ have other legal rights that vary
+ from state to state.
+
+12. LIMITATION OF LIABILITY
+
+  THE MAXIMUM AMOUNT OF NC
+ INTERACTIVE'S LIABILITY TO YOU
+ UNDER THIS AGREEMENT SHALL
+ NOT EXCEED THE AMOUNT OF
+ ACCOUNT FEES PAID BY YOU TO
+ NC INTERACTIVE, AND IN NO EVENT
+ SHALL NC INTERACTIVE, OR ANY
+ OF ITS SHAREHOLDERS, PARTNERS,
+ AFFILIATES, DIRECTORS, OFFICERS,
+ EMPLOYEES, AGENTS OR SUPPLIERS,
+ BE LIABLE TO YOU OR TO ANY
+ THIRD PARTY FOR ANY SPECIAL,
+ INCIDENTAL, CONSEQUENTIAL,
+ PUNITIVE OR EXEMPLARY DAMAGES,
+ INCLUDING WITHOUT LIMITATION
+ ANY DAMAGES FOR LOST PROFITS,
+ ARISING (WHETHER OR IN CONTRACT,
+ TORT, STRICT LIABILITY OR
+ OTHERWISE) OUT OF OR IN
+ CONNECTION WITH THE SERVICE,
+ THE SOFTWARE, YOUR ACCOUNT
+ OR THIS AGREEMENT, WHETHER OR
+ NOT NC INTERACTIVE MAY HAVE
+ BEEN ADVISED THAT ANY SUCH
+ DAMAGES MIGHT OR COULD OCCUR.
+  Some states do not allow the
+ foregoing limitations of
+ liability, so they may not
+ apply to you.
+
+
+13. INDEMNIFICATION
+
+  At NC Interactive's request,
+ you agree to defend, indemnify
+ and hold harmless NC Interactive,
+ its shareholders, partners,
+ affiliates, directors, officers,
+ employees, agents or suppliers,
+ its licensees, distributors,
+ Content Providers, and other
+ Members of the Service, from all
+ damages, liabilities, claims and
+ expenses, including attorneys'
+ fees and costs, arising from
+ any breach of this Agreement
+ by you. 
+
+14. TERMINATION
+
+  We may terminate this Agreement
+ (including your Software license
+ and your Account) immediately
+ and without notice if you breach
+ this Agreement or willfully
+ infringe any third party
+ intellectual property rights,
+ or if we are unable to verify
+ or authenticate any information
+ you provide to us, or upon game
+ play, chat or any player activity
+ whatsoever which is, in our
+ sole discretion, inappropriate
+ and/or in violation of the spirit
+ of Lineage as set forth in the
+ Rules of Conduct. If we terminate
+ this Agreement under these
+ circumstances, you will lose
+ access to your Account for the
+ balance of any prepaid period
+ without any refund.
+
+15. GENERAL PROVISIONS
+
+  This Agreement is governed by
+ and shall be construed and
+ enforced under the laws of
+ California, without applying any
+ conflicts of law principles which
+ would require application of the
+ law of any other jurisdiction.
+  If any provision of this
+ Agreement is held to be invalid
+ or unenforceable, such provision
+ shall be struck and the remaining
+ provisions shall be enforced.
+  The UN Convention on Contracts
+ for the International Sale of
+ Goods is expressly disclaimed.
+  Our failure to act with respect
+ to a breach by you or others
+ does not waive our right to act
+ with respect to subsequent or
+ similar breaches.
+  You may not assign or transfer
+ this Agreement or your rights
+ hereunder, and any attempt to the
+ contrary is void.
+  This Agreement sets forth the
+ entire understanding and agreement
+ between us and you with respect to
+ the subject matter hereof.
+  Notwithstanding anything else in
+ this Agreement, no default, delay
+ or failure to perform on the part
+ of NC Interactive shall be
+ considered a breach of this
+ Agreement if such default, delay
+ or failure to perform is shown
+ to be due to causes beyond the
+ reasonable control of NC
+ Interactive.
+  All notices given by you or
+ required under this Agreement
+ shall be faxed to
+ [(208) 567- 0871].
+  Attn.: [Customer Support]
+ or emailed to
+ [support@ncinteractive.com].

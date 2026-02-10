@@ -1,0 +1,49 @@
+1. 已加入的魔法日誌（方便你對照日誌排查）
+封包層 (PacketHandler.cs)
+[Magic][Packet57] — Opcode 57 魔法攻擊：Attacker、GfxId、ActionId、Grid(x,y)、Heading、Range(單體/AOE)、TargetCount、EtcId。
+[Magic][Packet57] Target[i] — 每個目標 Id、Damage，以及 Emit 的參數。
+[Magic][Packet57] 無目標地面魔法 — targetCount=0 時一次信號。
+[Magic][Packet35] — Opcode 35 遠程魔法：Attacker、Target、GfxId、Damage、GridStart、GridEnd（註明信號目前傳的是起點 sx,sy）。
+視覺層 (GameWorld.SkillEffect.cs)
+[Magic][Op57] Received — 收到 Op57：Attacker、Target、GfxId、Damage、TargetGrid。
+[Magic][Op57] 落點=... — 落點來源（目標實體 / 網格 / 攻擊者）。
+[Magic][Op57] List.spr GfxId:... — 該 GfxId 的 Attr(104)、Type(102)、SpriteId、Actions（含 Name、DirFlag）、EffectChain。
+[Magic][Op57] 有方向魔法 / 無方向魔法 — DirectionFlag 判定與計算出的 Heading。
+[Magic][Op57] SpawnEffect — 最終傳給 SpawnEffect 的 GfxId、WorldPos、Heading、FollowTargetId。
+[Magic][Range] — 遠程/飛行魔法：GfxId、起終點網格與世界座標、Heading。
+[Magic][Op83] — 地面落點特效 Op83：GfxId、Grid、WorldPos。
+[Magic][SpawnEffect] — 每次創建 SkillEffect 的 GfxId、WorldPos、Heading、FollowTargetId。
+[Magic][Chain] — 109 連貫魔法下一段：NextGfxId、Pos、Heading。
+特效實例 (SkillEffect.cs)
+[Magic][SkillEffect.Init] — GfxId、Heading、WorldPos、HasBridge/Audio、FollowTarget、ChainCallback。
+[Magic][SkillEffect.TryLoad] — 請求幀前：List.spr 的 Attr、SpriteId、Action0/Action3 名稱、Heading、GetBodyFrames 參數。
+[Magic][SkillEffect.TryLoad] 幀為空 進入輪詢 — 拿不到幀時（可能缺圖或 list.spr）。
+[Magic][SkillEffect.TryLoad] 無有效動畫名 — 需要的動畫名（如 heading 對應）與實際動畫列表。
+[Magic][SkillEffect.Play] — 實際播放：GfxId、Anim 名、Frames、Dur、WorldPos、首幀紋理。
+[Magic][SkillEffect.Chain] — 109 連貫觸發下一段。
+[Magic][SkillEffect.Finish] — 動畫播畢、無連貫、銷毀。
+資源層 (CustomCharacterProvider.cs)
+[Magic][Provider] — Attr=8 魔法：GfxId、SpriteId、使用的 ActionId、Name、DirFlag、Heading、FileOffset、首幀檔名（如 SpriteId-{fileAct}-000.png）、幀數。
+無 Action0/Action3 時會打 [Magic][Provider] GfxId:... Attr=8 魔法 無 Action0/Action3 返回 null。
+List.spr 載入 (ListSprLoader.cs)
+[Magic][ListSpr] GfxId:... 104.attr(8) 魔法定義 — 解析到 104.attr(8) 時，印出該 GfxId、SpriteId（啟動時載入 list.spr 會看到）。
+
+2. 日誌怎麼用來對應你列的問題
+問題	可對照的日誌
+部分魔法動畫不播	[Magic][SkillEffect.TryLoad] 看 Attr、Action0/Action3、[Magic][Provider] 看首幀檔名、幀為空 進入輪詢 / 無有效動畫名
+有/無方向、8 方向	[Magic][Op57] List.spr ... Actions:... DirFlag、有方向魔法 DirFlag=1 ... Heading、[Magic][Provider] DirFlag FileOffset
+連貫魔法 109	[Magic][Op57] ... EffectChain:、[Magic][SkillEffect.Chain]、[Magic][Chain]
+方向性魔法 8 方向對應	Heading 與 [Magic][Provider] FileOffset、[Magic][SkillEffect.Play] 的 Anim 名（應為 0~7）
+扣圖/黑底透明	日誌不直接管 shader，但可確認播的是哪個 GfxId/幀，方便對圖
+動畫播放規則復用	日誌中有 DirFlag、FileOffset、Anim 名，可對照角色 8 方向邏輯
+ActionId=0.fire / 3 / Name=fire	[Magic][Provider] ActionId Name、List.spr 中 104.attr(8) 的動作定義
+3. 魔法攻擊範圍與距離（你提的 8、9）— 參數從哪來
+魔法攻擊範圍（群體/個體）
+已在 Op57 裡解析：type（0=單體, 8=AOE）。日誌已打 [Magic][Packet57] ... Range:單體/AOE/群體。
+若伺服器用別的值表示範圍，可對照日誌裡的 type 再對應到 list.spr 或技能表。
+魔法距離
+目前封包裡沒有「施法距離」欄位；通常由 伺服器 在施法時判定（例如 L1Skill 的 range、skill 表）。
+若要讓客戶端用於表現（例如射程圈、是否可選中）：
+需要伺服器在 技能列表/技能詳情 封包裡帶上「最大距離」或「範圍半徑」，或
+在客戶端維護一份 SkillId → 距離/範圍 的靜態表（與 server 的 skill 定義對齊）。
+之後你跑遊戲把一段完整魔法流程的日誌貼出來（從 Packet57/Packet35 到 SkillEffect.Finish/Chain），我可以根據實際輸出幫你逐條對應：動畫檔、座標、方向、有無方向、連貫、以及範圍/距離該從哪個欄位或表取。

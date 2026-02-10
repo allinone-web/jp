@@ -1,0 +1,2114 @@
+================================================================================
+list.spr 與 SprDataTable.cs 速度數據對比報告
+================================================================================
+
+生成時間: 2026-02-03 01:29:40
+
+說明:
+  - list.spr: 從 list.spr 文件解析的動作總時長（所有幀 DurationUnit * 40ms 的總和）
+  - SprDataTable: 從 SprDataTable.cs 或 SQL 文件中定義的間隔時間（毫秒）
+  - 差異: 兩者的差值（毫秒）
+  - ⚠️ 標記: 特別關注的角色（如 gfx=240 死亡騎士）
+
+## GfxId 0: 王子
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk Spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 160+160+200+80+240ms = 840ms)
+    SprDataTable: 840ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     1000ms (幀: 160+160+280+160+240ms = 1000ms)
+    SprDataTable: 1000ms ✓ 一致
+
+  Action 12.attack axe:
+    list.spr:     880ms (幀: 160+160+160+160+240ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     1600ms (幀: 160+240+680+200+160+160ms = 1600ms)
+    SprDataTable: 1600ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     880ms (幀: 160+160+160+160+240ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell direction:
+    list.spr:     1600ms (幀: 160+200+560+160+520ms = 1600ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+  Action 19.spell no direction:
+    list.spr:     1600ms (幀: 160+200+560+160+520ms = 1600ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+
+## GfxId 1: 公主
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 160+160+200+120+240ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     960ms (幀: 160+160+240+160+240ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+  Action 12.attack axe:
+    list.spr:     1000ms (幀: 160+160+240+160+280ms = 1000ms)
+    SprDataTable: 1000ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     1520ms (幀: 160+240+680+160+120+160ms = 1520ms)
+    SprDataTable: 1520ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     1000ms (幀: 160+160+240+160+280ms = 1000ms)
+    SprDataTable: 1000ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell direction:
+    list.spr:     1520ms (幀: 160+200+560+160+440ms = 1520ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+  Action 19.spell no direction:
+    list.spr:     1600ms (幀: 160+200+560+160+520ms = 1600ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+
+## GfxId 29: 漂浮之眼
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.move:
+    list.spr:     960ms (幀: 200+240+280+240ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1720ms (幀: 160+160+360+80+80+120+120+160+160+160+160ms = 1720ms)
+    SprDataTable: 1720ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 19.spell no dir:
+    list.spr:     1720ms (幀: 160+160+360+80+80+120+120+160+160+160+160ms = 1720ms)
+    SprDataTable: 1720ms ✓ 一致
+
+
+## GfxId 30: 骷髅
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     920ms (幀: 200+200+120+240+160ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+  Action 30.rise:
+    list.spr:     1280ms (幀: 160+120+120+120+160+200+240+160ms = 1280ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1440ms (幀: 320+320+200+360+240ms = 1440ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 560ms)
+    說明: list.spr 比 SprDataTable 多 560ms
+
+  Action 19.spellnd:
+    list.spr:     1440ms (幀: 320+320+200+360+240ms = 1440ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+
+## GfxId 32: 长者
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.move:
+    list.spr:     960ms (幀: 240+240+240+240ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1800ms (幀: 160+360+160+160+160+160+160+160+160+160ms = 1800ms)
+    SprDataTable: 1800ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     840ms (幀: 160+120+200+240+120ms = 840ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1800ms (幀: 160+360+160+160+160+160+160+160+160+160ms = 1800ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 920ms)
+    說明: list.spr 比 SprDataTable 多 920ms
+
+  Action 19.spellnd:
+    list.spr:     1800ms (幀: 160+360+160+160+160+160+160+160+160+160ms = 1800ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 1000ms)
+    說明: list.spr 比 SprDataTable 多 1000ms
+
+
+## GfxId 37: 女妖精
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     800ms (幀: 120+120+160+120+160+120ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     760ms (幀: 120+160+200+120+160ms = 760ms)
+    SprDataTable: 760ms ✓ 一致
+
+  Action 12.attack axe:
+    list.spr:     1120ms (幀: 120+280+200+160+80+280ms = 1120ms)
+    SprDataTable: 1120ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     960ms (幀: 120+120+400+120+120+80ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     920ms (幀: 120+200+160+160+80+200ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell dir:
+    list.spr:     1520ms (幀: 160+240+560+160+400ms = 1520ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+  Action 19.spell nodir:
+    list.spr:     1680ms (幀: 160+280+680+120+440ms = 1680ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+
+## GfxId 48: 女骑士
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1000ms (幀: 160+160+200+280+200ms = 1000ms)
+    SprDataTable: 1000ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     920ms (幀: 160+120+280+120+240ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+  Action 12.attack axe:
+    list.spr:     920ms (幀: 160+200+200+160+200ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     1840ms (幀: 160+280+840+240+160+160ms = 1840ms)
+    SprDataTable: 1840ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     920ms (幀: 160+200+200+160+200ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell dir:
+    list.spr:     800ms (幀: 160+160+160+160+160ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+  Action 19.spell nodir:
+    list.spr:     1440ms (幀: 160+200+480+240+360ms = 1440ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+
+## GfxId 49: 高仑石头怪
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     1280ms (幀: 320+320+320+320ms = 1280ms)
+    SprDataTable: 1280ms ✓ 一致
+
+  Action 4.morph:
+    list.spr:     1440ms (幀: 320+160+320+320+320ms = 1440ms)
+    SprDataTable: [缺失]
+
+  Action 11.morph:
+    list.spr:     1600ms (幀: 320+320+320+320+320ms = 1600ms)
+    SprDataTable: [缺失]
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     2640ms (幀: 320+160+240+440+320+200+440+320+200ms = 2640ms)
+    SprDataTable: 1920ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     2640ms (幀: 320+160+240+440+320+200+440+320+200ms = 2640ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 1760ms)
+    說明: list.spr 比 SprDataTable 多 1760ms
+
+  Action 19.spellnd:
+    list.spr:     2640ms (幀: 320+160+240+440+320+200+440+320+200ms = 2640ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 1840ms)
+    說明: list.spr 比 SprDataTable 多 1840ms
+
+
+## GfxId 52: 人形僵尸
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     2000ms (幀: 320+320+320+400+320+320ms = 2000ms)
+    SprDataTable: 1640ms ✗ 不一致 (差異: 360ms)
+    說明: list.spr 比 SprDataTable 多 360ms
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1040ms (幀: 240+200+280+160+160ms = 1040ms)
+    SprDataTable: 1040ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1600ms (幀: 360+320+440+240+240ms = 1600ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+  Action 19.spellnd:
+    list.spr:     1600ms (幀: 360+320+440+240+240ms = 1600ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+
+## GfxId 53: 巴风特
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 160+120+200+120+240ms = 840ms)
+    SprDataTable: 840ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     800ms (幀: 160+80+160+160+120+120ms = 800ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell direction:
+    list.spr:     1360ms (幀: 40+200+120+160+120+160+40+160+120+160+80ms = 1360ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 480ms)
+    說明: list.spr 比 SprDataTable 多 480ms
+
+
+## GfxId 54: 侏儒
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     560ms (幀: 120+160+120+160ms = 560ms)
+    SprDataTable: 560ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1480ms (幀: 320+240+440+160+320ms = 1480ms)
+    SprDataTable: 1480ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1480ms (幀: 320+240+440+160+320ms = 1480ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 600ms)
+    說明: list.spr 比 SprDataTable 多 600ms
+
+  Action 19.spellnd:
+    list.spr:     1480ms (幀: 320+240+440+160+320ms = 1480ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 680ms)
+    說明: list.spr 比 SprDataTable 多 680ms
+
+
+## GfxId 56: 妖魔
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     800ms (幀: 200+200+200+200ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1320ms (幀: 360+160+160+200+280+160ms = 1320ms)
+    SprDataTable: 1320ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1440ms (幀: 280+200+200+240+320+200ms = 1440ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 560ms)
+    說明: list.spr 比 SprDataTable 多 560ms
+
+  Action 19.spellnd:
+    list.spr:     1440ms (幀: 280+200+200+240+320+200ms = 1440ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+
+## GfxId 57: 妖魔弓箭手
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 20.walk bow:
+    list.spr:     800ms (幀: 200+200+200+200ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 30.alt attack:
+    list.spr:     720ms (幀: 160+120+200+240ms = 720ms)
+    SprDataTable: [缺失]
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     1880ms (幀: 440+160+400+320+320+240ms = 1880ms)
+    SprDataTable: 1160ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1440ms (幀: 320+240+400+480ms = 1440ms)
+    SprDataTable: 720ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+  Action 19.spellnd:
+    list.spr:     1760ms (幀: 400+320+480+560ms = 1760ms)
+    SprDataTable: 680ms ✗ 不一致 (差異: 1080ms)
+    說明: list.spr 比 SprDataTable 多 1080ms
+
+
+## GfxId 61: 男骑士
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 160+320+160+240ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     880ms (幀: 160+120+280+80+240ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+  Action 12.attack axe:
+    list.spr:     880ms (幀: 120+200+200+160+200ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     1920ms (幀: 120+1000+280+200+160+160ms = 1920ms)
+    SprDataTable: 1920ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     880ms (幀: 120+200+200+160+200ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell dir:
+    list.spr:     1400ms (幀: 280+280+280+280+280ms = 1400ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 520ms)
+    說明: list.spr 比 SprDataTable 多 520ms
+
+  Action 19.spell nodir:
+    list.spr:     1360ms (幀: 160+200+480+160+360ms = 1360ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 560ms)
+    說明: list.spr 比 SprDataTable 多 560ms
+
+
+## GfxId 94: 妖魔斗士
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 4.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 5.attack sword:
+    list.spr:     920ms (幀: 160+240+160+120+240ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     760ms (幀: 160+120+160+80+240ms = 760ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1400ms (幀: 240+360+240+200+360ms = 1400ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 520ms)
+    說明: list.spr 比 SprDataTable 多 520ms
+
+  Action 19.spellnd:
+    list.spr:     1400ms (幀: 240+360+240+200+360ms = 1400ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 600ms)
+    說明: list.spr 比 SprDataTable 多 600ms
+
+
+## GfxId 95: 夏洛伯
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 160+360+120+240ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1680ms (幀: 320+720+160+480ms = 1680ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+  Action 19.spellnd:
+    list.spr:     1680ms (幀: 320+720+160+480ms = 1680ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+
+## GfxId 96: 狼
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 40+80+40+80+40+80+40+80ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1320ms (幀: 120+120+240+160+240+160+160+120ms = 1320ms)
+    SprDataTable: 1320ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     720ms (幀: 120+160+80+40+80+80+80+40+40ms = 720ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1480ms (幀: 160+160+280+160+240+160+160+160ms = 1480ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 600ms)
+    說明: list.spr 比 SprDataTable 多 600ms
+
+  Action 19.spellnd:
+    list.spr:     1480ms (幀: 160+160+280+160+240+160+160+160ms = 1480ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 680ms)
+    說明: list.spr 比 SprDataTable 多 680ms
+
+
+## GfxId 138: 男妖精
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk Sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk Axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk Bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk Spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     760ms (幀: 160+160+160+80+200ms = 760ms)
+    SprDataTable: 760ms ✓ 一致
+
+  Action 5.attack Sword:
+    list.spr:     800ms (幀: 160+160+160+160+160ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+  Action 12.attack Axe:
+    list.spr:     1040ms (幀: 160+200+280+160+240ms = 1040ms)
+    SprDataTable: 1040ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     960ms (幀: 120+120+400+120+120+80ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     920ms (幀: 160+160+200+160+240ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.Spell Direction:
+    list.spr:     1560ms (幀: 160+120+200+560+80+120+320ms = 1560ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 680ms)
+    說明: list.spr 比 SprDataTable 多 680ms
+
+  Action 19.Spell No Direction:
+    list.spr:     1840ms (幀: 160+160+200+600+160+560ms = 1840ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 1040ms)
+    說明: list.spr 比 SprDataTable 多 1040ms
+
+
+## GfxId 145: 史巴托
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: -320ms)
+    說明: list.spr 比 SprDataTable 少 320ms
+
+  Action 4.rise:
+    list.spr:     1280ms (幀: 160+120+120+120+160+200+240+160ms = 1280ms)
+    SprDataTable: [缺失]
+
+  Action 11.hide:
+    list.spr:     1280ms (幀: 160+120+120+120+160+200+240+160ms = 1280ms)
+    SprDataTable: [缺失]
+
+  Action 24.walk spear:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: [缺失]
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 120+120+200+200+200ms = 840ms)
+    SprDataTable: 920ms ✗ 不一致 (差異: -80ms)
+    說明: list.spr 比 SprDataTable 少 80ms
+
+  Action 30.alt attack:
+    list.spr:     520ms (幀: 120+40+120+40+200ms = 520ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1680ms (幀: 320+720+160+480ms = 1680ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+  Action 19.spellnd:
+    list.spr:     1680ms (幀: 320+720+160+480ms = 1680ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+
+## GfxId 152: 食人妖精
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 120+120+200+80+80+240ms = 840ms)
+    SprDataTable: 840ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     720ms (幀: 160+120+200+40+200ms = 720ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell direction:
+    list.spr:     1640ms (幀: 200+160+160+200+200+160+120+200+240ms = 1640ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 760ms)
+    說明: list.spr 比 SprDataTable 多 760ms
+
+  Action 19.spellnd:
+    list.spr:     1640ms (幀: 200+160+160+200+200+160+120+200+240ms = 1640ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 840ms)
+    說明: list.spr 比 SprDataTable 多 840ms
+
+
+## GfxId 173: 卡士伯
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1480ms (幀: 160+240+40+120+120+160+160+160+160+160ms = 1480ms)
+    SprDataTable: 1480ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     800ms (幀: 160+40+80+200+40+40+240ms = 800ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 183: 黑长者(西玛)
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1480ms (幀: 160+240+40+120+120+160+160+160+160+160ms = 1480ms)
+    SprDataTable: 1480ms ✓ 一致
+
+  Action 30.Alt attack:
+    list.spr:     800ms (幀: 160+40+80+200+40+40+240ms = 800ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1480ms (幀: 160+240+40+120+120+160+160+160+160+160ms = 1480ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 600ms)
+    說明: list.spr 比 SprDataTable 多 600ms
+
+
+## GfxId 185: 巴士瑟
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1480ms (幀: 160+240+40+120+120+160+160+160+160+160ms = 1480ms)
+    SprDataTable: 1480ms ✓ 一致
+
+  Action 30.Alt attack:
+    list.spr:     800ms (幀: 160+40+80+200+40+40+240ms = 800ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 187: 马库尔
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1480ms (幀: 160+240+40+120+120+160+160+160+160+160ms = 1480ms)
+    SprDataTable: 1480ms ✓ 一致
+
+  Action 30.Alt attack:
+    list.spr:     800ms (幀: 160+40+80+200+40+40+240ms = 800ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 240: 死亡骑士 ⚠️
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     600ms (幀: 80+80+160+40+40+200ms = 600ms)
+    SprDataTable: 600ms ✓ 一致
+
+  Action 30.Alt attack:
+    list.spr:     760ms (幀: 160+80+80+160+40+40+200ms = 760ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.Spell Direction:
+    list.spr:     880ms (幀: 80+80+120+160+40+240+160ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+  Action 19.Spell No Direction:
+    list.spr:     800ms (幀: 120+240+80+240+120ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+
+## GfxId 255: 卡司特
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.Walk:
+    list.spr:     1080ms (幀: 120+120+120+120+120+120+120+120+120ms = 1080ms)
+    SprDataTable: 1080ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.Aattak:
+    list.spr:     640ms (幀: 80+200+40+40+160+120ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 30.Alt Attack:
+    list.spr:     760ms (幀: 160+120+200+40+40+200ms = 760ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     760ms (幀: 160+120+200+40+40+200ms = 760ms)
+    SprDataTable: 760ms ✓ 一致
+
+  Action 19.spellnd:
+    list.spr:     760ms (幀: 160+120+200+40+40+200ms = 760ms)
+    SprDataTable: 760ms ✓ 一致
+
+
+## GfxId 734: 男法师
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk Axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk Bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk Spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     960ms (幀: 160+160+280+120+240ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     1120ms (幀: 160+120+120+320+160+240ms = 1120ms)
+    SprDataTable: 1120ms ✓ 一致
+
+  Action 12.attack Axe:
+    list.spr:     1040ms (幀: 160+120+160+240+120+240ms = 1040ms)
+    SprDataTable: 1040ms ✓ 一致
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     2280ms (幀: 160+480+200+440+280+400+320ms = 2280ms)
+    SprDataTable: 2280ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     1200ms (幀: 160+160+320+160+160+240ms = 1200ms)
+    SprDataTable: 1200ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.Spell Direction:
+    list.spr:     1640ms (幀: 160+160+240+440+120+120+120+280ms = 1640ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 760ms)
+    說明: list.spr 比 SprDataTable 多 760ms
+
+  Action 19.Spell No Direction:
+    list.spr:     1920ms (幀: 160+160+240+480+120+120+360+280ms = 1920ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 1120ms)
+    說明: list.spr 比 SprDataTable 多 1120ms
+
+
+## GfxId 784: 甘地妖魔(罗浮)
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1040ms (幀: 200+200+280+120+240ms = 1040ms)
+    SprDataTable: 1040ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1040ms (幀: 200+200+280+120+240ms = 1040ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 160ms)
+    說明: list.spr 比 SprDataTable 多 160ms
+
+  Action 19.spellnd:
+    list.spr:     1040ms (幀: 200+200+280+120+240ms = 1040ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 240ms)
+    說明: list.spr 比 SprDataTable 多 240ms
+
+
+## GfxId 786: 阿吐巴妖魔
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1040ms (幀: 120+120+120+280+120+280ms = 1040ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1040ms (幀: 120+120+120+280+120+280ms = 1040ms)
+    SprDataTable: [缺失]
+
+  Action 19.spellnd:
+    list.spr:     1040ms (幀: 120+120+120+280+120+280ms = 1040ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 788: 都达玛拉妖魔(那鲁加)
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1160ms (幀: 160+160+280+120+120+120+200ms = 1160ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1160ms (幀: 160+160+280+120+120+120+200ms = 1160ms)
+    SprDataTable: [缺失]
+
+  Action 19.spellnd:
+    list.spr:     1160ms (幀: 160+160+280+120+120+120+200ms = 1160ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 894: 食人妖精王
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 80+40+80+40+80+40+80+40ms = 480ms)
+    SprDataTable: 640ms ✗ 不一致 (差異: -160ms)
+    說明: list.spr 比 SprDataTable 少 160ms
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1360ms (幀: 160+160+160+160+160+240+80+240ms = 1360ms)
+    SprDataTable: 840ms ✗ 不一致 (差異: 520ms)
+    說明: list.spr 比 SprDataTable 多 520ms
+
+  Action 30.alt attack:
+    list.spr:     1400ms (幀: 160+160+160+240+120+120+280+160ms = 1400ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1360ms (幀: 160+160+160+160+160+240+80+240ms = 1360ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 480ms)
+    說明: list.spr 比 SprDataTable 多 480ms
+
+  Action 19.spellnd:
+    list.spr:     1360ms (幀: 160+160+160+160+160+240+80+240ms = 1360ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 560ms)
+    說明: list.spr 比 SprDataTable 多 560ms
+
+
+## GfxId 929: 圣伯纳犬
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1440ms (幀: 160+160+280+160+80+160+80+360ms = 1440ms)
+    SprDataTable: 1440ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1480ms (幀: 160+160+320+200+360+280ms = 1480ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 931: 杜宾狗
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 40+80+40+80+40+80+40+80ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 80+80+160+160+120+160+120ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+## GfxId 934: 柯利
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     720ms (幀: 80+80+120+160+120+160ms = 720ms)
+    SprDataTable: 720ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     640ms (幀: 80+80+160+120+80+120ms = 640ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 936: 牧羊犬
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 40+80+40+80+40+80+40+80ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     960ms (幀: 160+80+120+120+160+120+200ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     920ms (幀: 160+80+160+160+80+80+120+80ms = 920ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 938: 小猎犬
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     800ms (幀: 160+80+160+80+120+80+120ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1320ms (幀: 160+280+120+280+200+120+160ms = 1320ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 945: 奶牛
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     1920ms (幀: 240+240+240+240+240+240+240+240ms = 1920ms)
+    SprDataTable: 1920ms ✓ 一致
+
+
+## GfxId 947: 鹿
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     1280ms (幀: 160+160+160+160+160+160+160+160ms = 1280ms)
+    SprDataTable: 1280ms ✓ 一致
+
+
+## GfxId 951: 地狱犬
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1040ms (幀: 80+160+160+160+160+160+160ms = 1040ms)
+    SprDataTable: 1040ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1840ms (幀: 80+200+280+160+160+160+160+160+160+160+160ms = 1840ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 979: 野猪
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     800ms (幀: 160+160+160+160+160ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+
+## GfxId 1011: 巴列斯
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 160+120+200+120+240ms = 840ms)
+    SprDataTable: 840ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     800ms (幀: 160+80+160+160+120+120ms = 800ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell direction:
+    list.spr:     1360ms (幀: 40+200+120+160+120+160+40+160+120+160+80ms = 1360ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 480ms)
+    說明: list.spr 比 SprDataTable 多 480ms
+
+
+## GfxId 1020: 欧吉
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     960ms (幀: 120+120+120+120+120+120+120+120ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1320ms (幀: 160+160+160+280+160+240+160ms = 1320ms)
+    SprDataTable: 1320ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1400ms (幀: 160+160+160+240+120+240+160+160ms = 1400ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1400ms (幀: 160+160+160+240+120+240+160+160ms = 1400ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 520ms)
+    說明: list.spr 比 SprDataTable 多 520ms
+
+  Action 19.spellnd:
+    list.spr:     1400ms (幀: 160+160+160+240+120+240+160+160ms = 1400ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 600ms)
+    說明: list.spr 比 SprDataTable 多 600ms
+
+
+## GfxId 1022: 哥布林
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     760ms (幀: 120+120+160+120+120+120ms = 760ms)
+    SprDataTable: 760ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     920ms (幀: 240+160+120+160+240ms = 920ms)
+    SprDataTable: 920ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1000ms (幀: 280+240+80+240+160ms = 1000ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1000ms (幀: 280+240+80+240+160ms = 1000ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 120ms)
+    說明: list.spr 比 SprDataTable 多 120ms
+
+  Action 19.spellnd:
+    list.spr:     1000ms (幀: 280+240+80+240+160ms = 1000ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 200ms)
+    說明: list.spr 比 SprDataTable 多 200ms
+
+
+## GfxId 1037: 巨蚁
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 80+160+160+160+160+160ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+
+## GfxId 1039: 巨大兵蚁
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     760ms (幀: 40+120+120+160+160+160ms = 760ms)
+    SprDataTable: 760ms ✓ 一致
+
+
+## GfxId 1047: 毒蝎
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     800ms (幀: 160+240+160+240ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     960ms (幀: 160+160+240+240+160ms = 960ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 1052: 亚力安
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1040ms (幀: 160+160+160+80+120+120+160+80ms = 1040ms)
+    SprDataTable: 1040ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1760ms (幀: 160+160+160+160+160+160+160+160+160+160+160ms = 1760ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+
+## GfxId 1059: 地灵
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     1280ms (幀: 160+160+160+160+160+160+160+160ms = 1280ms)
+    SprDataTable: 1280ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1080ms (幀: 280+160+160+160+160+160ms = 1080ms)
+    SprDataTable: 1080ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1080ms (幀: 280+160+160+160+160+160ms = 1080ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 200ms)
+    說明: list.spr 比 SprDataTable 多 200ms
+
+  Action 19.spellnd:
+    list.spr:     1080ms (幀: 280+160+160+160+160+160ms = 1080ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 280ms)
+    說明: list.spr 比 SprDataTable 多 280ms
+
+
+## GfxId 1096: 骷髅弓箭手
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk bow:
+    list.spr:     800ms (幀: 200+200+200+200ms = 800ms)
+    SprDataTable: 800ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack bow:
+    list.spr:     1120ms (幀: 160+160+160+160+160+160+160ms = 1120ms)
+    SprDataTable: 1120ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     920ms (幀: 160+160+160+280+160ms = 920ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1840ms (幀: 320+320+320+560+320ms = 1840ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 960ms)
+    說明: list.spr 比 SprDataTable 多 960ms
+
+  Action 19.spellnd:
+    list.spr:     1840ms (幀: 320+320+320+560+320ms = 1840ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 1040ms)
+    說明: list.spr 比 SprDataTable 多 1040ms
+
+
+## GfxId 1098: 多罗
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     960ms (幀: 120+120+120+120+120+120+120+120ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1280ms (幀: 120+120+120+120+120+200+80+80+240+80ms = 1280ms)
+    SprDataTable: 1280ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1040ms (幀: 160+160+240+80+240+160ms = 1040ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1520ms (幀: 240+240+320+160+320+240ms = 1520ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+  Action 19.spellnd:
+    list.spr:     1520ms (幀: 240+240+320+160+320+240ms = 1520ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+
+## GfxId 1104: 骷髅斧手
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     480ms (幀: 120+120+120+120ms = 480ms)
+    SprDataTable: 480ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 160+120+160+80+200+120ms = 840ms)
+    SprDataTable: 840ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     840ms (幀: 160+200+80+240+160ms = 840ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1680ms (幀: 320+400+160+480+320ms = 1680ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+  Action 19.spellnd:
+    list.spr:     1680ms (幀: 320+400+160+480+320ms = 1680ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+
+## GfxId 1106: 骷髅枪兵
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 160+80+80+160+80+200+120ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     840ms (幀: 160+200+80+240+160ms = 840ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1680ms (幀: 320+400+160+480+320ms = 1680ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 800ms)
+    說明: list.spr 比 SprDataTable 多 800ms
+
+  Action 19.spellnd:
+    list.spr:     1680ms (幀: 320+400+160+480+320ms = 1680ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+
+## GfxId 1108: 莱肯
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     880ms (幀: 160+120+200+80+200+120ms = 880ms)
+    SprDataTable: 880ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     720ms (幀: 160+120+120+200+120ms = 720ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1440ms (幀: 320+240+240+400+240ms = 1440ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 560ms)
+    說明: list.spr 比 SprDataTable 多 560ms
+
+  Action 19.spellnd:
+    list.spr:     1440ms (幀: 320+240+240+400+240ms = 1440ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 640ms)
+    說明: list.spr 比 SprDataTable 多 640ms
+
+
+## GfxId 1110: 狼人
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     840ms (幀: 160+120+160+80+200+120ms = 840ms)
+    SprDataTable: 840ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     880ms (幀: 160+80+80+160+120+160+120ms = 880ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     1760ms (幀: 320+160+160+320+240+320+240ms = 1760ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 880ms)
+    說明: list.spr 比 SprDataTable 多 880ms
+
+  Action 19.spellnd:
+    list.spr:     1760ms (幀: 320+160+160+320+240+320+240ms = 1760ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 960ms)
+    說明: list.spr 比 SprDataTable 多 960ms
+
+
+## GfxId 1125: 黑暗精灵
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1920ms (幀: 160+120+240+160+480+280+160+160+160ms = 1920ms)
+    SprDataTable: 1000ms ✗ 不一致 (差異: 920ms)
+    說明: list.spr 比 SprDataTable 多 920ms
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     2280ms (幀: 160+160+160+160+160+160+160+160+200+160+160+160+160+160ms = 2280ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 1400ms)
+    說明: list.spr 比 SprDataTable 多 1400ms
+
+
+## GfxId 1128: 阿鲁巴
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1160ms (幀: 160+160+160+200+80+240+160ms = 1160ms)
+    SprDataTable: 1160ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     1240ms (幀: 160+160+160+200+80+80+240+160ms = 1240ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 1180: 恶魔
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     960ms (幀: 160+120+200+80+80+160+160ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+  Action 30.alt attack:
+    list.spr:     1760ms (幀: 160+160+160+160+160+160+160+160+160+160+160ms = 1760ms)
+    SprDataTable: [缺失]
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.spell:
+    list.spr:     960ms (幀: 160+120+200+80+80+160+160ms = 960ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 80ms)
+    說明: list.spr 比 SprDataTable 多 80ms
+
+
+## GfxId 1186: 女法师
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walk sword:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 11.walk Axe:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 20.walk Bow:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 24.walk Spear:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 40.walk staff:
+    list.spr:     640ms (幀: 160+160+160+160ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1000ms (幀: 160+160+200+80+240+160ms = 1000ms)
+    SprDataTable: 1000ms ✓ 一致
+
+  Action 5.attack sword:
+    list.spr:     1120ms (幀: 160+160+160+200+120+80+240ms = 1120ms)
+    SprDataTable: 1120ms ✓ 一致
+
+  Action 12.attack Axe:
+    list.spr:     800ms (幀: 160+120+160+240+80+40ms = 800ms)
+    SprDataTable: 1080ms ✗ 不一致 (差異: -280ms)
+    說明: list.spr 比 SprDataTable 少 280ms
+
+
+### 遠程攻擊 (Ranged Attack - Bow)
+
+  Action 21.attack bow:
+    list.spr:     2240ms (幀: 160+280+200+600+280+160+280+280ms = 2240ms)
+    SprDataTable: 2240ms ✓ 一致
+
+
+### 長距離近戰 (Long Range Melee - Spear/Staff)
+
+  Action 41.attack staff:
+    list.spr:     1160ms (幀: 160+160+160+240+120+80+240ms = 1160ms)
+    SprDataTable: 1160ms ✓ 一致
+
+
+### 魔法遠程 (Magic Ranged)
+
+  Action 18.Spell Direction:
+    list.spr:     1600ms (幀: 160+200+160+240+120+120+240+160+200ms = 1600ms)
+    SprDataTable: 880ms ✗ 不一致 (差異: 720ms)
+    說明: list.spr 比 SprDataTable 多 720ms
+
+  Action 19.Spell No Direction:
+    list.spr:     1880ms (幀: 160+200+160+240+200+160+120+280+160+200ms = 1880ms)
+    SprDataTable: 800ms ✗ 不一致 (差異: 1080ms)
+    說明: list.spr 比 SprDataTable 多 1080ms
+
+
+## GfxId 1202: 独眼巨人
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     960ms (幀: 120+120+120+120+120+120+120+120ms = 960ms)
+    SprDataTable: 960ms ✓ 一致
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1160ms (幀: 160+160+120+200+120+240+160ms = 1160ms)
+    SprDataTable: 1160ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     1120ms (幀: 160+160+120+200+120+200+160ms = 1120ms)
+    SprDataTable: [缺失]
+
+
+## GfxId 1204: 格利芬
+--------------------------------------------------------------------------------
+
+### 行走 (Walk)
+
+  Action 0.walk:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: 640ms ✓ 一致
+
+  Action 4.walksky:
+    list.spr:     640ms (幀: 80+80+80+80+80+80+80+80ms = 640ms)
+    SprDataTable: [缺失]
+
+
+### 近戰攻擊 (Melee Attack)
+
+  Action 1.attack:
+    list.spr:     1280ms (幀: 160+160+160+160+160+160+160+160ms = 1280ms)
+    SprDataTable: 1280ms ✓ 一致
+
+  Action 30.altattack:
+    list.spr:     1480ms (幀: 160+160+160+160+200+120+240+120+160ms = 1480ms)
+    SprDataTable: [缺失]
+
+
+================================================================================
+統計摘要
+================================================================================
+
+總動作數: 307
+一致: 185 (60.3%)
+不一致: 76 (24.8%)
+缺失: 46 (15.0%)
+
+不一致詳情:
+--------------------------------------------------------------------------------
+  GfxId 0 (王子) Action 18.spell direction: list.spr=1600ms, SprDataTable=880ms, 差異=720ms
+  GfxId 0 (王子) Action 19.spell no direction: list.spr=1600ms, SprDataTable=800ms, 差異=800ms
+  GfxId 1 (公主) Action 18.spell direction: list.spr=1520ms, SprDataTable=880ms, 差異=640ms
+  GfxId 1 (公主) Action 19.spell no direction: list.spr=1600ms, SprDataTable=800ms, 差異=800ms
+  GfxId 30 (骷髅) Action 19.spellnd: list.spr=1440ms, SprDataTable=800ms, 差異=640ms
+  GfxId 30 (骷髅) Action 18.spell: list.spr=1440ms, SprDataTable=880ms, 差異=560ms
+  GfxId 32 (长者) Action 18.spell: list.spr=1800ms, SprDataTable=880ms, 差異=920ms
+  GfxId 32 (长者) Action 19.spellnd: list.spr=1800ms, SprDataTable=800ms, 差異=1000ms
+  GfxId 37 (女妖精) Action 18.spell dir: list.spr=1520ms, SprDataTable=880ms, 差異=640ms
+  GfxId 37 (女妖精) Action 19.spell nodir: list.spr=1680ms, SprDataTable=800ms, 差異=880ms
+  GfxId 48 (女骑士) Action 19.spell nodir: list.spr=1440ms, SprDataTable=800ms, 差異=640ms
+  GfxId 49 (高仑石头怪) Action 1.attack: list.spr=2640ms, SprDataTable=1920ms, 差異=720ms
+  GfxId 49 (高仑石头怪) Action 19.spellnd: list.spr=2640ms, SprDataTable=800ms, 差異=1840ms
+  GfxId 49 (高仑石头怪) Action 18.spell: list.spr=2640ms, SprDataTable=880ms, 差異=1760ms
+  GfxId 52 (人形僵尸) Action 0.walk: list.spr=2000ms, SprDataTable=1640ms, 差異=360ms
+  GfxId 52 (人形僵尸) Action 19.spellnd: list.spr=1600ms, SprDataTable=800ms, 差異=800ms
+  GfxId 52 (人形僵尸) Action 18.spell: list.spr=1600ms, SprDataTable=880ms, 差異=720ms
+  GfxId 53 (巴风特) Action 18.spell direction: list.spr=1360ms, SprDataTable=880ms, 差異=480ms
+  GfxId 54 (侏儒) Action 19.spellnd: list.spr=1480ms, SprDataTable=800ms, 差異=680ms
+  GfxId 54 (侏儒) Action 18.spell: list.spr=1480ms, SprDataTable=880ms, 差異=600ms
+  GfxId 56 (妖魔) Action 19.spellnd: list.spr=1440ms, SprDataTable=800ms, 差異=640ms
+  GfxId 56 (妖魔) Action 18.spell: list.spr=1440ms, SprDataTable=880ms, 差異=560ms
+  GfxId 57 (妖魔弓箭手) Action 21.attack bow: list.spr=1880ms, SprDataTable=1160ms, 差異=720ms
+  GfxId 57 (妖魔弓箭手) Action 19.spellnd: list.spr=1760ms, SprDataTable=680ms, 差異=1080ms
+  GfxId 57 (妖魔弓箭手) Action 18.spell: list.spr=1440ms, SprDataTable=720ms, 差異=720ms
+  GfxId 61 (男骑士) Action 18.spell dir: list.spr=1400ms, SprDataTable=880ms, 差異=520ms
+  GfxId 61 (男骑士) Action 19.spell nodir: list.spr=1360ms, SprDataTable=800ms, 差異=560ms
+  GfxId 94 (妖魔斗士) Action 18.spell: list.spr=1400ms, SprDataTable=880ms, 差異=520ms
+  GfxId 94 (妖魔斗士) Action 19.spellnd: list.spr=1400ms, SprDataTable=800ms, 差異=600ms
+  GfxId 95 (夏洛伯) Action 19.spellnd: list.spr=1680ms, SprDataTable=800ms, 差異=880ms
+  GfxId 95 (夏洛伯) Action 18.spell: list.spr=1680ms, SprDataTable=880ms, 差異=800ms
+  GfxId 96 (狼) Action 19.spellnd: list.spr=1480ms, SprDataTable=800ms, 差異=680ms
+  GfxId 96 (狼) Action 18.spell: list.spr=1480ms, SprDataTable=880ms, 差異=600ms
+  GfxId 138 (男妖精) Action 18.Spell Direction: list.spr=1560ms, SprDataTable=880ms, 差異=680ms
+  GfxId 138 (男妖精) Action 19.Spell No Direction: list.spr=1840ms, SprDataTable=800ms, 差異=1040ms
+  GfxId 145 (史巴托) Action 0.walk: list.spr=480ms, SprDataTable=800ms, 差異=-320ms
+  GfxId 145 (史巴托) Action 1.attack: list.spr=840ms, SprDataTable=920ms, 差異=-80ms
+  GfxId 145 (史巴托) Action 19.spellnd: list.spr=1680ms, SprDataTable=800ms, 差異=880ms
+  GfxId 145 (史巴托) Action 18.spell: list.spr=1680ms, SprDataTable=880ms, 差異=800ms
+  GfxId 152 (食人妖精) Action 18.spell direction: list.spr=1640ms, SprDataTable=880ms, 差異=760ms
+  GfxId 152 (食人妖精) Action 19.spellnd: list.spr=1640ms, SprDataTable=800ms, 差異=840ms
+  GfxId 183 (黑长者(西玛)) Action 18.spell: list.spr=1480ms, SprDataTable=880ms, 差異=600ms
+  GfxId 734 (男法师) Action 18.Spell Direction: list.spr=1640ms, SprDataTable=880ms, 差異=760ms
+  GfxId 734 (男法师) Action 19.Spell No Direction: list.spr=1920ms, SprDataTable=800ms, 差異=1120ms
+  GfxId 784 (甘地妖魔(罗浮)) Action 19.spellnd: list.spr=1040ms, SprDataTable=800ms, 差異=240ms
+  GfxId 784 (甘地妖魔(罗浮)) Action 18.spell: list.spr=1040ms, SprDataTable=880ms, 差異=160ms
+  GfxId 894 (食人妖精王) Action 0.walk: list.spr=480ms, SprDataTable=640ms, 差異=-160ms
+  GfxId 894 (食人妖精王) Action 1.attack: list.spr=1360ms, SprDataTable=840ms, 差異=520ms
+  GfxId 894 (食人妖精王) Action 18.spell: list.spr=1360ms, SprDataTable=880ms, 差異=480ms
+  GfxId 894 (食人妖精王) Action 19.spellnd: list.spr=1360ms, SprDataTable=800ms, 差異=560ms
+  GfxId 1011 (巴列斯) Action 18.spell direction: list.spr=1360ms, SprDataTable=880ms, 差異=480ms
+  GfxId 1020 (欧吉) Action 18.spell: list.spr=1400ms, SprDataTable=880ms, 差異=520ms
+  GfxId 1020 (欧吉) Action 19.spellnd: list.spr=1400ms, SprDataTable=800ms, 差異=600ms
+  GfxId 1022 (哥布林) Action 18.spell: list.spr=1000ms, SprDataTable=880ms, 差異=120ms
+  GfxId 1022 (哥布林) Action 19.spellnd: list.spr=1000ms, SprDataTable=800ms, 差異=200ms
+  GfxId 1052 (亚力安) Action 18.spell: list.spr=1760ms, SprDataTable=880ms, 差異=880ms
+  GfxId 1059 (地灵) Action 18.spell: list.spr=1080ms, SprDataTable=880ms, 差異=200ms
+  GfxId 1059 (地灵) Action 19.spellnd: list.spr=1080ms, SprDataTable=800ms, 差異=280ms
+  GfxId 1096 (骷髅弓箭手) Action 19.spellnd: list.spr=1840ms, SprDataTable=800ms, 差異=1040ms
+  GfxId 1096 (骷髅弓箭手) Action 18.spell: list.spr=1840ms, SprDataTable=880ms, 差異=960ms
+  GfxId 1098 (多罗) Action 18.spell: list.spr=1520ms, SprDataTable=880ms, 差異=640ms
+  GfxId 1098 (多罗) Action 19.spellnd: list.spr=1520ms, SprDataTable=800ms, 差異=720ms
+  GfxId 1104 (骷髅斧手) Action 18.spell: list.spr=1680ms, SprDataTable=880ms, 差異=800ms
+  GfxId 1104 (骷髅斧手) Action 19.spellnd: list.spr=1680ms, SprDataTable=800ms, 差異=880ms
+  GfxId 1106 (骷髅枪兵) Action 18.spell: list.spr=1680ms, SprDataTable=880ms, 差異=800ms
+  GfxId 1106 (骷髅枪兵) Action 19.spellnd: list.spr=1680ms, SprDataTable=800ms, 差異=880ms
+  GfxId 1108 (莱肯) Action 18.spell: list.spr=1440ms, SprDataTable=880ms, 差異=560ms
+  GfxId 1108 (莱肯) Action 19.spellnd: list.spr=1440ms, SprDataTable=800ms, 差異=640ms
+  GfxId 1110 (狼人) Action 18.spell: list.spr=1760ms, SprDataTable=880ms, 差異=880ms
+  GfxId 1110 (狼人) Action 19.spellnd: list.spr=1760ms, SprDataTable=800ms, 差異=960ms
+  GfxId 1125 (黑暗精灵) Action 1.attack: list.spr=1920ms, SprDataTable=1000ms, 差異=920ms
+  GfxId 1125 (黑暗精灵) Action 18.spell: list.spr=2280ms, SprDataTable=880ms, 差異=1400ms
+  GfxId 1180 (恶魔) Action 18.spell: list.spr=960ms, SprDataTable=880ms, 差異=80ms
+  GfxId 1186 (女法师) Action 12.attack Axe: list.spr=800ms, SprDataTable=1080ms, 差異=-280ms
+  GfxId 1186 (女法师) Action 18.Spell Direction: list.spr=1600ms, SprDataTable=880ms, 差異=720ms
+  GfxId 1186 (女法师) Action 19.Spell No Direction: list.spr=1880ms, SprDataTable=800ms, 差異=1080ms

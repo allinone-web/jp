@@ -1,0 +1,12 @@
+<Project Sdk="Godot.NET.Sdk/4.3.0">
+  <ItemGroup>
+    <!-- -main-branch 為參考備份，不參與編譯，避免與同名 cs 重複定義 -->
+    <Compile Remove="**/*-main-branch.cs" />
+  </ItemGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'android' ">net7.0</TargetFramework>
+    <TargetFramework Condition=" '$(GodotTargetPlatform)' == 'ios' ">net8.0</TargetFramework>
+    <EnableDynamicLoading>true</EnableDynamicLoading>
+  </PropertyGroup>
+</Project>

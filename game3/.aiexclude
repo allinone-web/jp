@@ -1,0 +1,11 @@
+# 排除大型資源，讓 AI 專注於代碼邏輯
+*.png
+*.bmp
+*.spr
+*.pak
+*.import
+*.wav
+*.mp3
+.godot/
+bin/
+obj/

@@ -1,0 +1,88 @@
+
+任務目標： 請閱讀並分析提供的伺服器源碼  與客戶端源碼 。以伺服器的邏輯為絕對依據，全面修復客戶端在戰鬥頻率、座標同步及魔法渲染方面的核心故障。
+
+1. 伺服器規約分析 (Server-Side Rules Audit)
+
+分析任務：請深度閱讀 server。分析伺服器對不同職業（Role）的攻擊速度（Attack Speed）、施法速度（Magic Speed）、射擊速度及移動速度的限制邏輯。
+
+數據導出：整理出伺服器端驗證這些頻率的具體參數、冷卻時間（Cooldown）算法及間隔設置。
+
+客戶端比對：比對客戶端 list.spr 的播放幀率與伺服器驗證間隔的差異，找出導致「攻擊過快」或「封包狂發」的斷裂點。
+
+2. 全局速度控制系統重構
+
+系統定義：根據第一步的分析結果，在客戶端建立一套統一定義的全局速度控制器。
+
+功能要求：確保客戶端的攻擊動作（Attack）、魔法播放（Magic Animation）與封包發送（Packet Sending）嚴格鎖定在伺服器允許的頻率內。
+
+實施目標：消除目前點擊怪物後「攻擊速度極快」而導致被伺服器斷開連接的故障。
+
+3. 座標錯亂診斷與修復（含驗證日誌）
+
+故障描述：角色攻擊怪物後，怪物反擊時移動到的位置偏離角色 100-200px，而非角色站立座標。
+
+排除範圍：已確認此故障與 GameEntity.Visuals.cs 的 BodyOffset 無關（該故障在修改前已存在）。
+
+診斷重點：檢查 GameWorld 系統中的座標轉換（Grid to Pixel）、路徑尋找（Pathfinding）及 PacketHandler 接收到的伺服器位置封包解析。
+
+日誌要求：修復後必須在關鍵轉換點加入日誌，輸出：[Pos-Sync] Server_Pos | Client_Pos | Screen_Offset，用以驗證修復正確性。
+
+4. 魔法特效渲染鏈檢查
+
+故障描述：角色釋放魔法後，部分 PNG 動畫特效不顯示或顯示不穩定。
+
+檢查鏈條：
+
+檢查 ListSprLoader.cs 是否正確加載了魔法對應的動畫定義。
+
+檢查 CustomCharacterProvider.cs 及其相關的特效掛載邏輯。
+
+根源追蹤：確保 GameWorld 系統在觸發魔法封包時，正確調用了對應的 PNG 序列圖並正確設置了 Z-Index（渲染層級）。
+
+日誌要求：在魔法動畫加載失敗處增加具體日誌，輸出：[Magic-Error] SkillID | SprID | FilePathStatus。
+
+輸出要求 (Deliverables)
+
+故障清單：列出所有發現故障的文件路徑及具體邏輯缺陷（以代碼行或邏輯段落為依據）。
+
+修復方案：提供完整的 C# 修復代碼，重點關注 GameWorld 系列類別。
+
+速度參數表：一份基於伺服器代碼整理出的各動作頻率參數表，用於全局配置。
+
+驗證代碼：包含上述要求的日誌監控代碼，確保修復後的穩定性。
+
+
+
+
+
+
+
+
+
+根據您提供的伺服器源碼（特別是 CheckSpeed.java, SprTable.java, S_ObjectMoving.java）與客戶端代碼，我已完成深度分析。
+
+目前客戶端的主要問題在於：動作頻率未與伺服器 sprite_frame 表同步、座標轉換未考慮斜 45 度角偏移 以及 魔法特效加載時的異步狀態競爭。
+
+以下是針對核心故障的完整修復方案。
+
+1. 伺服器規約分析 (Server-Side Rules Audit)
+根據伺服器 CheckSpeed.java 與 SprTable.java：
+
+驗證機制：伺服器通過 checkInterval 檢查兩次動作的時間差。
+基礎間隔：從資料庫 sprite_frame 讀取，若無則默認 1000ms。
+加速倍率：
+isSpeed (綠水/加速術): interval * 0.75
+isBrave (勇水): interval * 0.75
+isSlow (中毒/緩速): interval / 0.75
+處罰閾值：Config.CHECK_STRICTNESS (通常為 115%)。如果 實際間隔 < 理論間隔 * 0.95，則判定為加速。
+
+
+
+
+速度參數表 (基於伺服器 CheckSpeed.java 整理)
+動作類型	基礎間隔 (ms)	加速後 (ms)	伺服器對應代碼
+物理攻擊 (Attack)	600	450	ACT_TYPE.ATTACK
+遠程攻擊 (Bow)	800	600	ACT_TYPE.ATTACK
+移動 (Move)	270	202	ACT_TYPE.MOVE
+有向魔法 (Spell Dir)	800	600	ACT_TYPE.SPELL_DIR
+無向魔法 (Spell NoDir)	600	450	ACT_TYPE.SPELL_NODIR

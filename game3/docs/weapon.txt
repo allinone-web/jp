@@ -1,0 +1,105 @@
+1) 故障是什么
+
+弓箭装备后外观不切换（剑↔空手能切，弓不能）。
+
+2) 为什么会发生（根因链路，按真实数据流还原）
+2.1 服务器“换武器外观”的权威数据不是 Inventory 的 Type，而是 GfxMode
+
+你上传的服务器代码里，“装备武器”时会做两件关键事：
+
+把角色的 GfxMode 设置为武器对应的 gfxmode
+
+ItemWeaponInstance.Equipped() 里：cha.setGfxMode(getItem().getGfxmode()); 
+
+ItemWeaponInstance
+
+立刻给客户端发一个 S_ObjectMode（Opcode=29），把 GfxMode 发出去
+
+同一段代码：cha.SendPacket(new S_ObjectMode(cha), true); 
+
+ItemWeaponInstance
+
+S_ObjectMode 的包格式非常明确：writeC(29); writeD(objId); writeC(obj.getGfxMode()); ... 
+
+S_ObjectMode
+
+另外，服务器还会在 S_ObjectAction（Opcode=32）里，把当前 cha.getGfxMode() 当作 action id 发出（有多种构造） 
+
+S_ObjectAction
+
+因此：服务器用于“外观动作组切换”的权威字段就是 GfxMode（值域：0/4/11/20/24/40…）
+这与你客户端 GameEntity.SetVisualMode(baseAction) 的设计完全一致：它明确写了 0=空手, 4=剑, 11=斧, 20=弓, 24=矛, 40=杖 
+
+GameEntity.Visuals
+
+2.2 服务器是如何把 “bow -> 20” 定义出来的（再次印证不是猜）
+
+ItemsTable 里存在 _Gfxmodes 映射表：
+
+bow 类型映射到 20
+
+spear 映射 24
+
+wand 映射 40
+
+sword/dagger/twohand 等映射到 4 或 11
+
+
+ItemsTable
+
+也就是：服务器会把“武器子类型”最终折算成 gfxmode（=动作组 baseAction）发给客户端。
+
+3) 客户端是哪一段代码导致的（精确到文件/方法）
+
+你的客户端目前是这样切外观的：
+
+3.1 你把“换外观”绑定在 Inventory 的装备状态变化（Opcode 24）上
+
+GameWorld.Inventory.cs -> OnItemEquipStatusChanged：
+
+当检测到装备/卸下，并且 IsWeapon(item.Type) 时
+
+装备：_myPlayer.SetWeaponType(item.Type)
+
+卸下：_myPlayer.SetWeaponType(0)
+
+
+GameWorld.Inventory
+
+3.2 但你这个 item.Type 并不是服务器的武器子类型（bow=4等），很可能是“主类型=weapon=1”
+
+这点你之前自己也已经定位到：Inventory/道具包里很多实现只会给 Type1=1（weapon 大类），不会给子类型。这会导致：
+
+剑/空手之所以能切，是因为某些情况下 item.Type 恰好落在你映射范围内
+
+弓不能切，是因为弓在你这里得到的 item.Type 仍然是 1（weapon 大类），于是你调用了：
+
+SetWeaponType(1) -> 被当成 “Sword” -> baseAction=4
+结果：弓装备后仍然是剑动作组/或维持旧外观（取决于原状态）
+
+GameEntity.SetWeaponType() 的映射也写死了：只有 type==4 才会切到 baseAction=20（弓） 
+
+GameEntity.WeaponType
+
+4) 最佳修复方案（不依赖数据库，不靠猜，严格对齐服务器）
+
+不要再从 Inventory 里“推断”武器子类型。
+直接以服务器发来的 GfxMode（Opcode 29 / 或 Opcode 32 中的 id）作为外观切换依据。
+
+4.1 修复策略（最小改动范围，且可埋点还原现场）
+
+在客户端网络包处理层（处理 Opcode=29 的地方）增加埋点日志：
+
+记录：opcode=29, objectId, mode(byte), 当前_myPlayer.ObjectId, 当前视觉_baseAction
+
+当 objectId == _myPlayer.ObjectId 时：
+
+调用 _myPlayer.SetVisualMode(mode)（注意：是 SetVisualMode，不是 SetWeaponType）
+
+同时可选：把 WeaponType 用一个小映射从 mode 反推（仅用于战斗逻辑 IsUsingBow/IsUsingSpear），但外观本身不需要这一步。
+
+临时保留 Inventory.OnItemEquipStatusChanged 逻辑，但把它降级为：
+
+只做 UI/背包状态刷新
+
+外观切换以 Opcode 29 为准（防止不同步/抖动）

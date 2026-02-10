@@ -1,0 +1,149 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba0p7ucjidct0"]
+
+[ext_resource type="Script" path="res://Client/UI/Scripts/HUD.cs" id="1_17ebp"]
+[ext_resource type="PackedScene" uid="uid://cip7eixtedpwb" path="res://Client/UI/Scenes/BottomBar.tscn" id="2_5efpn"]
+[ext_resource type="Script" path="res://Client/UI/Scripts/SkillCooldownDisplay.cs" id="3_cooldown"]
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_17ebp")
+
+[node name="BuffIcons" type="HBoxContainer" parent="."]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 300.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/separation = 4
+
+[node name="Panel" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -168.0
+offset_bottom = 64.0
+grow_horizontal = 0
+mouse_filter = 1
+
+[node name="HPBar" type="ProgressBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 14.0
+offset_bottom = -40.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "HP"
+show_percentage = false
+
+[node name="Label" type="Label" parent="Panel/HPBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 9
+text = "100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MPBar" type="ProgressBar" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 28.0
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "MP"
+rounded = true
+show_percentage = false
+
+[node name="Label" type="Label" parent="Panel/MPBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -3.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 9
+text = "100/100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="chat" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -176.0
+offset_right = -784.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ChatBox" type="RichTextLabel" parent="chat"]
+modulate = Color(1, 1, 1, 0.827451)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -128.0
+offset_right = 241.0
+offset_bottom = -36.0
+grow_vertical = 0
+mouse_filter = 1
+theme_override_font_sizes/normal_font_size = 11
+bbcode_enabled = true
+scroll_following = true
+autowrap_mode = 2
+
+[node name="ChatInput" type="LineEdit" parent="chat"]
+modulate = Color(1, 1, 1, 0.792157)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = -32.0
+offset_right = 241.0
+offset_bottom = -3.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 10
+text = "Send"
+
+[node name="BottomBar" parent="." instance=ExtResource("2_5efpn")]
+anchors_preset = 3
+anchor_left = 1.0
+offset_left = -454.0
+offset_top = -58.0
+offset_right = -9.0
+offset_bottom = -15.0
+grow_horizontal = 0
+mouse_filter = 1
+
+[node name="SkillCooldownDisplay" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 941.0
+offset_top = -115.0
+offset_right = -15.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+mouse_filter = 2
+script = ExtResource("3_cooldown")

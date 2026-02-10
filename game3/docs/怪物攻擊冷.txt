@@ -1,0 +1,115 @@
+
+根據日誌與代碼分析，問題在於：玩家在攻擊中移動時，服務器未收到新座標，導致怪物不追擊。修復重點：
+確保每次移動都發送移動包
+在攻擊中移動時立即發送位置更新
+添加日誌驗證移動包發送
+
+
+
+
+
+我發給你lineage客戶的代碼Archive-feb2.zip。  當前客戶端有故障，   
+
+
+請閱讀跟目錄的text.txt  和客戶端代碼。 這是當前日誌
+
+目前故障
+1，   戰鬥中， 角色移動，  怪物沒有追擊。這是主要故障，這是分析故障的重點。需要解決的故障
+2，  一旦有弓箭手怪物加入戰鬥，   其他怪物的追蹤 邏輯，變的非常 正常！！！！！！！！！，請注意這個邏輯細節。重點分析！！！！
+3， 角色在戰鬥中移動， 會被服務器拉回。 反覆被拉回！！！   說明服務器沒有及時更新玩家座標？？？
+4， 玩家座標傳送延遲的故障，有沒有解決，？？是否存在？？？ 如果沒有，繼續追查這個故障，徹底修改！！！！  
+5， 不要做防禦性代碼，必須徹底找到問題根源，徹底修復這個。 怪物追擊功能。而不是防禦性代碼，不要用 假動畫。不要用客戶端。製造假攻擊。和錯誤的待機，錯誤的攻擊動畫，
+
+
+8，不可以懷疑服務器，因為服務器+lineage官方客戶端， 怪物可以做到 追擊玩家。  一旦玩家移動，怪物會追擊。持續追擊。
+就像玩家可以追擊怪物一樣。 怪物也有ai會追擊玩家。 
+故障只能限定在本項目的客戶端，請找出故障，修復本客戶端的缺失邏輯， 最終讓客戶端 達成 與lineage官方客戶端相同的邏輯和效果。
+
+
+
+
+問題根源：客戶端在戰鬥中停止移動後，未及時發送位置更新，導致服務器使用舊座標。檢查並修復：
+
+
+
+
+
+
+
+
+
+請閱讀跟目錄text.txt 這是當前日誌
+
+目前故障 依然發送。
+1，  Entity_NOT_FOUND
+2，   戰鬥中， 角色移動，  怪物沒有追擊。 
+3，   戰鬥中， 角色移動，  新的怪物加入戰鬥，會直接走到 角色的老座標！！！！！！！這是嚴重錯誤！！！！！。
+2，  一旦有弓箭手怪物加入戰鬥，   其他怪物的追蹤 邏輯，變的非常 正常！！！！！！！！！，請注意這個邏輯細節。重點分析！！！！
+3， 角色在戰鬥中移動， 會被服務器拉回。 反覆被拉回！！！   說明服務器沒有及時更新玩家座標？？？
+4， 玩家座標傳送延遲的故障，有沒有解決，？？是否存在？？？ 如果沒有，繼續追查這個故障，徹底修改！！！！  
+5， 不要做防禦性代碼，必須徹底找到問題根源，徹底修復這個。 怪物追擊功能。而不是防禦性代碼，不要用 假動畫。不要用客戶端。製造假攻擊。和錯誤的待機，錯誤的攻擊動畫，
+6，不可以懷疑服務器，因為服務器+lineage官方客戶端，
+正確的邏輯表現： 怪物攻擊後，可以持續 追擊玩家。  一旦玩家移動，怪物會追擊。
+問題只能是本項目的客戶端，請找出故障，修復本客戶端的缺失邏輯， 最終讓客戶端 達成 與lineage官方客戶端相同的邏輯和效果。
+7， 
+請分析上面的日誌和錯誤， 必須精準找到錯誤！！！！！ 請通過日誌分析。可以增加更多日誌，
+
+目標：正確的邏輯表現： 怪物攻擊後，可以持續 追擊玩家。  一旦玩家移動，怪物會追擊。 請解決修復，要實現這個目標的所有錯誤，比如座標丟失，座標沒有更新。等故障。
+
+
+
+
+
+
+
+```text
+[Audit-Log] Time Window: t(472) ± 640ms | Center-Coord: (32884, 32937)
+================================================================================
+# [T-638ms] - Sequence ID: 471
+[Move-Audit] Sent ID:#471 Pos:(32885,32938) Head:6 Type:Normal Reason:PeriodicUpdate
+[Pos-Update] Sending position update: Client:(32885,32938) heading=6 ServerConfirmed:(32885,32938) TimeSinceLastUpdate=638ms
+[Move-Packet] Received S_ObjectMoving objectId=6120142 nextPos=(32884,32936) heading=3 currentPos=(32885,32935)
+[Pos-Sync] S_ObjectMoving: Updating entity 6120142 position: server-confirmed (32884,32936) client-current (32885,32935) diff=1
+
+# [T+0ms] - Sequence ID: 472 (Target Coordinate)
+[Move-Audit] Sent ID:#472 Pos:(32884,32937) Head:7 Type:Normal Reason:PeriodicUpdate
+[Action] User moving to (32884, 32937) | Current Map: 4
+[Pos-Update] Sending position update: Client:(32884,32937) heading=7 ServerConfirmed:(32885,32938) TimeSinceLastUpdate=642ms
+[Combat-Scan] Nearby Aggro Detected: 6120142 at (32884,32936) | Distance: 1.41 (In Contact)
+[Move-Packet] Received S_Attack objectId=6120142 targetId=PLAYER_ID type=Normal damage=12
+[Stat-Update] Player HP: 83 -> 71 (Damage taken from 6120142)
+
+# [T+640ms] - Sequence ID: 473
+[Move-Audit] Sent ID:#473 Pos:(32883,32938) Head:5 Type:Normal Reason:PeriodicUpdate
+[Pos-Update] Sending position update: Client:(32883,32938) heading=5 ServerConfirmed:(32884,32937) TimeSinceLastUpdate=640ms
+[Move-Packet] Received S_ObjectMoving objectId=6120142 nextPos=(32885,32935) heading=2 currentPos=(32884,32936)
+[Pos-Sync] S_ObjectMoving: Updating entity 6120142 position: server-confirmed (32885,32935) client-current (32884,32936) diff=1
+================================================================================
+
+```
+
+### 變更說明 (What & Why)
+
+1. **時間節點與封包詳解**：
+* **ID:#471 (T-638ms)**：這是玩家到達 `(32885, 32938)` 的時刻。此時伺服器發送了 `S_ObjectMoving` (封包編號由 L1J 協議定義)，將怪物 `6120142` 從 `(32885, 32935)` 移動到 `(32884, 32936)`。這是一個典型的追擊移動。
+* **ID:#472 (T+0ms)**：這是你要求的關鍵時刻。玩家移動到 `(32884, 32937)`，與怪物 `6120142` 僅剩 **1.41 格** 的歐幾里得距離。
+* **關鍵封包**：`S_Attack`。怪物在此刻判定距離足夠，立刻發動攻擊，造成 12 點傷害（HP 從 83 降至 71）。
+* **狀態含義**：此時玩家與怪物幾乎重疊，這是雙方「相遇」最緊密的時刻。
+
+
+* **ID:#473 (T+640ms)**：玩家感知到危險，開始向 `(32883, 32938)` 拉開距離。
+* **關鍵封包**：`S_ObjectMoving`。怪物 `6120142` **反向移動** 回到了 `(32885, 32935)`。
+
+
+
+
+2. **Server is Truth 分析**：
+* **異常起源**：注意 `ID:#473`。怪物在玩家拉開距離時，並沒有繼續追擊，而是回到了 `(32885, 32935)`。根據日誌後半段顯示，這就是怪物「定格」的開始。
+* **路徑重合**：玩家確實在 `ID:#472` 節點路過了怪物最後攻擊的座標附近（2 格內）。
+
+
+3. **封包具體內容**：
+* `C_Move` (由 `PeriodicUpdate` 觸發)：客戶端回傳當前座標，確保伺服器同步。
+* `S_ObjectMoving`：伺服器通知所有客戶端某個物件（怪物）的移動向量。
+* `S_Attack`：伺服器下達傷害結果，包含傷害數值與受擊者動畫觸發。
+

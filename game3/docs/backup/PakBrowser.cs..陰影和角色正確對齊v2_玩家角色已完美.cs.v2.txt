@@ -1,0 +1,523 @@
+using Godot;
+using System;
+using System.Collections.Generic;
+using Skins.CustomFantasy;
+using Client.Utility;
+using System.Threading.Tasks; // 引入异步库
+
+namespace Client.Utility
+{
+	public partial class PakBrowser : Control
+	{
+		// ================================================================
+		// 配置路径
+		// ================================================================
+		private const string LIST_SPR_PATH = "res://Assets/list.spr";
+		private static readonly string[] PAK_OPTIONS = new[] { "res://Assets/sprites-138.pak", "res://Assets/sprites-138-new2.pak" };
+		// ================================================================
+		// 核心组件
+		// ================================================================
+		private CustomCharacterProvider _provider;
+		private AnimatedSprite2D _bodySprite;
+		private AnimatedSprite2D _shadowSprite;
+		private Label _infoLabel;
+		private Label _loadingLabel; // 加载提示
+		private ItemList _gfxList;
+		private GridContainer _actionGrid;
+		private TextEdit _listSprText;
+		
+		// 状态数据
+		private int _currentGfxId = -1;
+		private int _currentActionId = 0; // 默认 Walk
+		private int _currentHeading = 4;  // 默认 左下
+		private bool _isPlaying = true;
+		private int _currentPakIndex = 0;   // 0 或 1 對應 PAK_OPTIONS
+		private int _currentParamFilter = 0; // 0=all, 101,102,104,105,106,109 篩選角色列表
+
+		// ================================================================
+		// [核心修改] 使用 async void _Ready 实现异步启动
+		// ================================================================
+		public override async void _Ready()
+		{
+			GD.Print(">>> [PakBrowser] 1. 启动程序...");
+
+			// 1. 先构建基础 UI (全屏背景 + 加载提示)
+			// 这一步非常快，保证窗口瞬间有内容
+			SetupBaseUI();
+
+			// 2. 【关键】强制等待 0.1 秒，让 Godot 渲染出一帧画面
+			// 这样你就不会只看到 Logo 了，而是看到深红色的背景和文字
+			await ToSignal(GetTree().CreateTimer(0.1f), "timeout");
+
+			GD.Print(">>> [PakBrowser] 2. 开始加载重型资源...");
+
+			// 3. 执行耗时的加载任务
+			bool success = InitializeSystems();
+
+			if (!success)
+			{
+				_loadingLabel.Text = "❌ 启动失败！\n请检查 res://Assets/ 下是否有 list.spr 和 sprites.pak\n查看 Output 控制台获取详情。";
+				_loadingLabel.Modulate = Colors.Red;
+				return; // 终止
+			}
+
+			// 4. 资源加载成功，构建完整功能 UI
+			_loadingLabel.QueueFree(); // 删除加载提示
+			BuildMainUI();             // 构建主界面
+			RefreshGfxList();          // 刷新数据
+
+			GD.Print(">>> [PakBrowser] 3. 就绪！");
+		}
+
+		private void SetupBaseUI()
+		{
+			// 强制全屏
+			this.SetAnchorsPreset(LayoutPreset.FullRect);
+			this.Size = GetViewportRect().Size;
+
+			// 深红色背景 (调试用，证明代码运行了)
+			var bg = new ColorRect();
+			bg.Color = new Color(0.3f, 0.0f, 0.0f); 
+			bg.SetAnchorsPreset(LayoutPreset.FullRect);
+			AddChild(bg);
+
+			// 加载文字
+			_loadingLabel = new Label();
+			_loadingLabel.Text = "正在读取 PAK 和 SPR 文件...\n请稍候...";
+			_loadingLabel.Position = new Vector2(50, 50);
+			_loadingLabel.Scale = new Vector2(2, 2);
+			AddChild(_loadingLabel);
+		}
+
+		private bool InitializeSystems()
+		{
+			try
+			{
+				string listPath = ProjectSettings.GlobalizePath(LIST_SPR_PATH);
+				string pakPath = ProjectSettings.GlobalizePath(PAK_OPTIONS[_currentPakIndex]);
+
+				if (!System.IO.File.Exists(listPath))
+				{
+					GD.PrintErr($"[缺失] List: {listPath}");
+					return false;
+				}
+				if (!System.IO.File.Exists(pakPath))
+				{
+					GD.PrintErr($"[缺失] Pak:  {pakPath}");
+					return false;
+				}
+
+				ListSprLoader.Load(listPath);
+				_provider = new CustomCharacterProvider(pakPath);
+				return true;
+			}
+			catch (Exception e)
+			{
+				GD.PrintErr($"[崩溃] 初始化失败: {e}");
+				return false;
+			}
+		}
+
+		// ================================================================
+		// UI 构建
+		// ================================================================
+		// 【修复】函数名从 BuildUI 改为 BuildMainUI，以匹配调用
+		private void BuildMainUI()
+		{
+			// 背景板
+			var bg = new Panel();
+			bg.SetAnchorsPreset(LayoutPreset.FullRect);
+			AddChild(bg);
+
+			// 主分割容器
+			var mainSplit = new HSplitContainer();
+			mainSplit.SetAnchorsPreset(LayoutPreset.FullRect);
+			mainSplit.SplitOffset = 250; 
+			AddChild(mainSplit);
+
+			// --- 左侧：角色列表 ---
+			var leftPanel = new VBoxContainer();
+			// 左侧加点边距
+			var marginContainer = new MarginContainer();
+			marginContainer.AddThemeConstantOverride("margin_top", 10);
+			marginContainer.AddThemeConstantOverride("margin_left", 10);
+			marginContainer.AddThemeConstantOverride("margin_bottom", 10);
+			marginContainer.SizeFlagsVertical = SizeFlags.ExpandFill;
+			
+			var leftVBox = new VBoxContainer();
+			leftVBox.AddChild(new Label { Text = " 角色列表 (SprDefinition)" });
+			
+			_gfxList = new ItemList();
+			_gfxList.SizeFlagsVertical = SizeFlags.ExpandFill;
+			_gfxList.ItemSelected += OnGfxSelected;
+			leftVBox.AddChild(_gfxList);
+			
+			marginContainer.AddChild(leftVBox);
+			leftPanel.AddChild(marginContainer);
+			leftPanel.SizeFlagsVertical = SizeFlags.ExpandFill; // 确保撑开
+			
+			mainSplit.AddChild(leftPanel);
+
+			// --- 右側：預覽+控制+動作 | list.spr 定義 ---
+			var rightSplit = new HSplitContainer();
+			rightSplit.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+			rightSplit.SplitOffset = 600;
+			mainSplit.AddChild(rightSplit);
+
+			var rightPanel = new VBoxContainer();
+			rightPanel.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+			rightSplit.AddChild(rightPanel);
+
+			// 1. 顶部：预览窗口
+			var previewContainer = new Control();
+			previewContainer.SizeFlagsVertical = SizeFlags.ExpandFill;
+			previewContainer.SizeFlagsStretchRatio = 0.6f;
+			previewContainer.CustomMinimumSize = new Vector2(0, 300);
+			
+			var previewBg = new ColorRect { Color = new Color(0.2f, 0.2f, 0.2f) };
+			previewBg.SetAnchorsPreset(LayoutPreset.FullRect);
+			previewContainer.AddChild(previewBg);
+			
+			// 取消十字線，避免動畫圖像上疊一層白色
+			var centerNode = new Control();
+			centerNode.SetAnchorsPreset(LayoutPreset.Center);
+			previewContainer.AddChild(centerNode);
+			
+			var charRoot = new Node2D { Scale = new Vector2(2, 2) }; 
+			centerNode.AddChild(charRoot);
+
+			_shadowSprite = new AnimatedSprite2D { Modulate = new Color(1, 1, 1, 0.5f) }; 
+			charRoot.AddChild(_shadowSprite);
+			
+			_bodySprite = new AnimatedSprite2D();
+			_bodySprite.FrameChanged += OnFrameChanged;
+			charRoot.AddChild(_bodySprite);
+
+			// 信息标签 (放到左上角)
+			_infoLabel = new Label();
+			_infoLabel.Position = new Vector2(10, 10);
+			previewContainer.AddChild(_infoLabel);
+
+			rightPanel.AddChild(previewContainer);
+
+			// 2. 控制栏
+			var controlBar = new HBoxContainer();
+			controlBar.Alignment = BoxContainer.AlignmentMode.Center;
+			controlBar.AddChild(CreateBtn("⏮", () => { _bodySprite.Frame = 0; }));
+			controlBar.AddChild(CreateBtn("⏯ 播放/暂停", TogglePlay));
+			controlBar.AddChild(CreateBtn("⏭ 单帧", NextFrame));
+			controlBar.AddChild(new VSeparator());
+			for(int i=0; i<8; i++) {
+				int h = i;
+				controlBar.AddChild(CreateBtn(h.ToString(), () => ChangeHeading(h)));
+			}
+			rightPanel.AddChild(controlBar);
+
+			// 3. 底部：角色動作區 (SprActionSequence)
+			var actionLabel = new Label { Text = " 角色動作區 (SprActionSequence) — 選動作後播放" };
+			rightPanel.AddChild(actionLabel);
+			var scrollAction = new ScrollContainer();
+			scrollAction.SizeFlagsVertical = SizeFlags.ExpandFill;
+			scrollAction.SizeFlagsStretchRatio = 0.4f;
+			
+			_actionGrid = new GridContainer();
+			_actionGrid.Columns = 8;
+			_actionGrid.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+			scrollAction.AddChild(_actionGrid);
+			
+			rightPanel.AddChild(scrollAction);
+
+			// 4. 右邊第 4 區：list.spr 定義（對應角色的 list.spr 內容）
+			var listSprPanel = new VBoxContainer();
+			listSprPanel.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+			listSprPanel.CustomMinimumSize = new Vector2(280, 0);
+			listSprPanel.AddChild(new Label { Text = " list.spr 定義 (對應角色)" });
+			var listSprScroll = new ScrollContainer();
+			listSprScroll.SizeFlagsVertical = SizeFlags.ExpandFill;
+			_listSprText = new TextEdit();
+			_listSprText.Editable = false;
+			_listSprText.WrapMode = TextEdit.LineWrappingMode.Boundary;
+			_listSprText.SizeFlagsHorizontal = SizeFlags.ExpandFill;
+			_listSprText.SizeFlagsVertical = SizeFlags.ExpandFill;
+			listSprScroll.AddChild(_listSprText);
+			listSprPanel.AddChild(listSprScroll);
+
+			// 4. PAK 選擇區（內置 2 個邏輯）
+			listSprPanel.AddChild(new Label { Text = " 4. PAK 選擇區" });
+			var pakRow = new HBoxContainer();
+			for (int i = 0; i < PAK_OPTIONS.Length; i++)
+			{
+				string name = System.IO.Path.GetFileName(PAK_OPTIONS[i]);
+				var btn = new Button { Text = name };
+				int idx = i;
+				btn.Pressed += () => OnPakSelected(idx);
+				if (i == _currentPakIndex) btn.Modulate = new Color(0.6f, 1f, 0.6f);
+				pakRow.AddChild(btn);
+			}
+			listSprPanel.AddChild(pakRow);
+
+			// 5. 特別參數選擇區（all + 101,102,104,105,106,109）關聯角色列表篩選
+			listSprPanel.AddChild(new Label { Text = " 5. 特別參數選擇區（篩選角色列表）" });
+			var paramRow = new HBoxContainer();
+			var paramIds = new[] { 0, 101, 102, 104, 105, 106, 109 }; // 0 = all
+			foreach (int pid in paramIds)
+			{
+				string label = pid == 0 ? "all" : pid.ToString();
+				var btn = new Button { Text = label };
+				int p = pid;
+				btn.Pressed += () => OnParamFilterSelected(p);
+				if (p == _currentParamFilter) btn.Modulate = new Color(0.6f, 1f, 0.6f);
+				paramRow.AddChild(btn);
+			}
+			listSprPanel.AddChild(paramRow);
+
+			rightSplit.AddChild(listSprPanel);
+		}
+
+		// ================================================================
+		// 逻辑控制
+		// ================================================================
+		private void RefreshGfxList()
+		{
+			_gfxList.Clear();
+			var ids = ListSprLoader.GetAllGfxIds();
+			ids.Sort();
+			foreach (var id in ids)
+			{
+				var def = ListSprLoader.Get(id);
+				if (def == null) continue;
+				// 特別參數篩選：0=all，否則只顯示有該元數據 ID 的 SprDefinition
+				if (_currentParamFilter != 0 && !def.ParsedMetadataIds.Contains(_currentParamFilter))
+					continue;
+				string name = def.Name ?? "Unknown";
+				_gfxList.AddItem($"#{id} - {name}");
+				_gfxList.SetItemMetadata(_gfxList.ItemCount - 1, id);
+			}
+			GD.Print($"[PakBrowser] 角色列表 (SprDefinition) 共 {_gfxList.ItemCount} 個 (篩選={_currentParamFilter})");
+		}
+
+		private void OnPakSelected(int index)
+		{
+			if (index == _currentPakIndex) return;
+			_currentPakIndex = index;
+			string pakPath = ProjectSettings.GlobalizePath(PAK_OPTIONS[_currentPakIndex]);
+			if (!System.IO.File.Exists(pakPath))
+			{
+				GD.PrintErr($"[PakBrowser] 找不到 PAK: {pakPath}");
+				return;
+			}
+			_provider = new CustomCharacterProvider(pakPath);
+			RefreshGfxList();
+			RefreshActionButtons();
+			RefreshListSprContent();
+			PlayAnimation();
+		}
+
+		private void OnParamFilterSelected(int paramId)
+		{
+			if (paramId == _currentParamFilter) return;
+			_currentParamFilter = paramId;
+			RefreshGfxList();
+		}
+
+		private void OnGfxSelected(long index)
+		{
+			_currentGfxId = (int)_gfxList.GetItemMetadata((int)index);
+			RefreshActionButtons();
+			RefreshListSprContent();
+			PlayAnimation();
+		}
+
+		private void RefreshListSprContent()
+		{
+			if (_listSprText == null) return;
+			string path = ProjectSettings.GlobalizePath(LIST_SPR_PATH);
+			_listSprText.Text = GetListSprBlock(path, _currentGfxId);
+		}
+
+		/// <summary>從 list.spr 讀取對應 GfxId 的定義區塊（#id 開頭到下一 # 或檔案結尾）</summary>
+		private static string GetListSprBlock(string listSprPath, int gfxId)
+		{
+			if (gfxId < 0 || !System.IO.File.Exists(listSprPath)) return "";
+			string prefix = "#" + gfxId.ToString();
+			var lines = new List<string>();
+			bool inBlock = false;
+			foreach (string line in System.IO.File.ReadAllLines(listSprPath))
+			{
+				string trimmed = line.Trim();
+				if (string.IsNullOrEmpty(trimmed) || trimmed.StartsWith("//")) continue;
+				if (trimmed.StartsWith("#"))
+				{
+					if (trimmed.StartsWith(prefix) && (trimmed.Length == prefix.Length || trimmed[prefix.Length] == ' ' || trimmed[prefix.Length] == '\t'))
+					{
+						inBlock = true;
+						lines.Add(line);
+					}
+					else
+						inBlock = false;
+					continue;
+				}
+				if (inBlock) lines.Add(line);
+			}
+			return string.Join("\n", lines);
+		}
+
+		private void RefreshActionButtons()
+		{
+			foreach (var c in _actionGrid.GetChildren()) c.QueueFree();
+
+			var def = ListSprLoader.Get(_currentGfxId);
+			if (def == null) return;
+
+			// 根據 SprActionSequence 列出該角色所有動作 (def.Actions)
+			var actionIds = new List<int>(def.Actions.Keys);
+			actionIds.Sort();
+			foreach (int actId in actionIds)
+			{
+				var seq = def.Actions[actId];
+				string btnName = $"{actId}.{seq?.Name ?? ""}";
+				var btn = new Button { Text = btnName };
+				btn.Modulate = new Color(0.5f, 1f, 0.5f);
+				int a = actId;
+				btn.Pressed += () => ChangeAction(a);
+				_actionGrid.AddChild(btn);
+			}
+		}
+
+		private void ChangeAction(int actionId)
+		{
+			_currentActionId = actionId;
+			PlayAnimation();
+		}
+
+		private void ChangeHeading(int h)
+		{
+			_currentHeading = h;
+			PlayAnimation();
+		}
+
+		private void PlayAnimation()
+		{
+			if (_currentGfxId < 0 || _provider == null) return;
+
+			try 
+			{
+				var def = ListSprLoader.Get(_currentGfxId);
+				var bodyFrames = _provider.GetBodyFrames(_currentGfxId, _currentActionId, _currentHeading);
+				
+				if (bodyFrames != null)
+				{
+					_bodySprite.SpriteFrames = bodyFrames;
+					// 動畫名：依 SprActionSequence.DirectionFlag，無向用 "0"，有向用 heading
+					var seq = ListSprLoader.GetActionSequence(def, _currentActionId);
+					string animName = (seq != null && seq.DirectionFlag == 0) ? "0" : _currentHeading.ToString();
+					if (bodyFrames.HasAnimation(animName))
+						_bodySprite.Play(animName);
+					else
+					{
+						var names = bodyFrames.GetAnimationNames();
+						if (names != null && names.Length > 0)
+							_bodySprite.Play(names[0]);
+					}
+					_bodySprite.SpeedScale = _isPlaying ? 1.0f : 0.0f;
+				}
+				else
+				{
+					_bodySprite.SpriteFrames = null;
+				}
+
+				// 陰影
+				if (def != null && def.ShadowId > 0)
+				{
+					var shadowFrames = _provider.GetBodyFrames(def.ShadowId, 0, _currentHeading);
+					if (shadowFrames != null)
+					{
+						_shadowSprite.SpriteFrames = shadowFrames;
+						_shadowSprite.Play(_currentHeading.ToString());
+						_shadowSprite.SpeedScale = _isPlaying ? 1.0f : 0.0f;
+						_shadowSprite.Visible = true;
+					}
+					else _shadowSprite.Visible = false;
+				}
+				else _shadowSprite.Visible = false;
+
+				UpdateInfoLabel();
+			}
+			catch(Exception e)
+			{
+				GD.PrintErr($"播放动画出错: {e.Message}");
+			}
+		}
+
+		private void UpdateInfoLabel()
+		{
+			var def = ListSprLoader.Get(_currentGfxId);
+			var seq = ListSprLoader.GetActionSequence(def, _currentActionId);
+			string actName = seq?.Name ?? "-";
+			int frameCount = seq?.Frames?.Count ?? 0;
+			_infoLabel.Text = $" Gfx: {_currentGfxId}\n Act: {_currentActionId} ({actName})\n Dir: {_currentHeading}\n 幀數 (SprFrame): {frameCount}";
+		}
+
+		private void TogglePlay()
+		{
+			_isPlaying = !_isPlaying;
+			if (_bodySprite.SpriteFrames != null) _bodySprite.SpeedScale = _isPlaying ? 1.0f : 0.0f;
+			if (_shadowSprite.SpriteFrames != null) _shadowSprite.SpeedScale = _isPlaying ? 1.0f : 0.0f;
+		}
+
+		private void NextFrame()
+		{
+			_isPlaying = false;
+			if (_bodySprite.SpriteFrames != null)
+			{
+				_bodySprite.SpeedScale = 0;
+				int f = _bodySprite.Frame;
+				int count = _bodySprite.SpriteFrames.GetFrameCount(_bodySprite.Animation);
+				if (count > 0) _bodySprite.Frame = (f + 1) % count;
+			}
+			if (_shadowSprite.SpriteFrames != null)
+			{
+				_shadowSprite.SpeedScale = 0;
+				if (_shadowSprite.SpriteFrames.HasAnimation(_shadowSprite.Animation))
+				{
+					int f = _bodySprite.Frame;
+					int count = _shadowSprite.SpriteFrames.GetFrameCount(_shadowSprite.Animation);
+					if (count > 0) _shadowSprite.Frame = f % count;
+				}
+			}
+		}
+
+		private void OnFrameChanged()
+		{
+			if (_bodySprite.SpriteFrames == null) return;
+
+			// 阴影同步
+			if (_shadowSprite.Visible && _shadowSprite.SpriteFrames != null)
+			{
+				 if (_shadowSprite.SpriteFrames.HasAnimation(_shadowSprite.Animation))
+				 {
+					int count = _shadowSprite.SpriteFrames.GetFrameCount(_shadowSprite.Animation);
+					if (count > 0) _shadowSprite.Frame = _bodySprite.Frame % count;
+				 }
+			}
+
+			// 声音调试
+			var tex = _bodySprite.SpriteFrames.GetFrameTexture(_bodySprite.Animation, _bodySprite.Frame);
+			if (tex != null && tex.HasMeta("spr_sound_ids"))
+			{
+				var sounds = (Godot.Collections.Array<int>)tex.GetMeta("spr_sound_ids");
+				foreach(int sid in sounds)
+				{
+					GD.Print($"[Audio] 🔊 播放音效 ID: {sid}");
+				}
+			}
+		}
+
+		private Button CreateBtn(string text, Action onPress)
+		{
+			var b = new Button { Text = text };
+			b.Pressed += onPress;
+			return b;
+		}
+	}
+}

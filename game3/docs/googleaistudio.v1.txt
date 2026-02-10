@@ -1,0 +1,125 @@
+你好！我是你的逆向工程专家助手。我已经对你提供的《Lineage》服务端（Java）源码和客户端（C#/Godot 4）项目文件进行了深入的架构审计。
+
+以下是针对该项目的**协议对齐与架构审计报告**。
+
+---
+
+### 一、 架构审计：网络层实现对比
+
+#### 1. 加密算法对齐 (Lineage Cryptor)
+*   **服务端 (`LineagePacketDecoder/Encoder.java`)**: 采用的是 Lineage 经典的滚动 XOR 加密，基于流量累积量 (`packet_C_total_size` / `packet_S_total_size`)。
+*   **客户端 (`LineageCryptor.cs`)**: 算法实现完全吻合。它通过 `ReadTotalSize` 和 `WriteTotalSize` 追踪流量并实时更新 XOR 密钥对。
+*   **风险点**: 握手包（Opcode 0）在服务端通常是明文发送，客户端 `ProcessData` 中必须确保在收到第一个包后才开始正确的流式解密，目前的 `_cryptor` 初始化逻辑基本正确。
+
+#### 2. 字节序与数据对齐
+*   **服务端**: 使用大端序/小端序混合（`writeH` 是 2 字节，`writeD` 是 4 字节）。
+*   **客户端**: `PacketReader.cs` 和 `PacketWriter.cs` 的 `ReadUShort` (H) 和 `ReadInt` (D) 严格遵循了服务端的字节长度定义。
+
+---
+
+### 二、 协议清单对比表 (Server vs Client)
+
+基于 `Opcodes.java` 与 `PacketHandler.cs` 的深度对比：
+
+| Opcode (Hex) | 服务端协议名 (S -> C) | 客户端实现状态 | 关键参数/风险点 |
+| :--- | :--- | :--- | :--- |
+| `0x00` | `S_OPCODE_SERVERVERSION` | ✅ 已实现 | 检查语言代码是否匹配 `Config.java` |
+| `0x02` | `S_OPCODE_LOGINFAILS` | ✅ 已实现 | 匹配错误码翻译 (8, 10, 26) |
+| `0x03` | `S_OPCODE_CHARAMOUNT` | ✅ 已实现 | 关键：用于角色列表接收的计数器 |
+| `0x04` | `S_OPCODE_CHARINFO` | ✅ 已实现 | 登录时读取单个角色数据的核心包 |
+| `0x0B` | `S_OPCODE_CHARPACK` | ✅ 已实现 | 对应 `ParseObjectAdd`，参数顺序目前对齐 |
+| `0x0C` | `S_OPCODE_OWNCHARSTATUS` | ✅ 已实现 | `ParseCharacterStat` 更新六围属性 |
+| `0x0D` | `S_OPCODE_HPUPDATE` | ✅ 已实现 | 血量即时更新 |
+| `0x10` | `S_OPCODE_BlindPotion` | ⚠️ 部分实现 | 客户端映射至 `HandleBuffBlind`，需检查 UI 遮罩效果 |
+| `0x12` | `S_OPCODE_MOVEOBJECT` | ✅ 已实现 | 坐标确认包 |
+| `0x15` | `S_OPCODE_GLOBALCHAT` | ✅ 已实现 | 公告/世界频道 |
+| `0x23` | `S_OPCODE_ITEMDELETE` | ✅ 已实现 | 物品消失指令 |
+| `0x27` | `S_OPCODE_OBJLIGHT` | ✅ 已实现 | 光照范围同步 |
+| `0x29` | `S_OPCODE_OBJECTMODE` | ⚠️ 关键不匹配 | **服务端 writeD(id), writeC(mode), writeC(255), writeC(255)**。客户端需确认是否读取了两个 255 |
+| `0x39` | `S_OPCODE_POLY` | ✅ 已实现 | 变身状态同步 |
+| `0x4F` | `S_OPCODE_SUMMON_OWN_CHANGE`| ❌ **缺失** | 宠物/召唤兽状态切换，客户端无法识别宠物归属 |
+| `0x51` | `S_OPCODE_EXP` | ❌ **缺失** | 经验值即时变动包，客户端目前只在 Op 12 更新 |
+| `0x68` | `S_OPCODE_Agit_List` | ✅ 已实现 | 小屋拍卖列表 |
+| `0x7B` | `S_OPCODE_PACKETBOX` | ⚠️ 严重缺失 | **这是个容器协议**，处理无限箭、属性加成、变身计时等，客户端仅处理了 subcode 15 |
+
+---
+
+### 三、 缺失协议识别与风险
+
+#### 1. 战斗系统空洞 (Combat/Summon)
+*   **缺失 `S_OPCODE_SUMMON_OWN_CHANGE` (Op 79/0x4F)**: 服务端 `S_ObjectPet.java` 使用此协议通知客户端宠物的状态（休息、攻击、跟随）。由于客户端缺失此 Handler，玩家将无法看到宠物的状态切换，甚至可能导致宠物渲染成普通怪物。
+*   **`S_OPCODE_AttackPacket` (Op 35) 参数精度**: 服务端在处理远程攻击（弓箭）时，会额外 `writeH(tx), writeH(ty)`。如果客户端 `ParseObjectAttack` 只读取了 ID 而没消耗掉坐标字节，会导致**封包偏移污染**，造成后续收包全部乱码。
+
+#### 2. 角色状态 (Character Stats)
+*   **缺失 `S_OPCODE_ABILITY` (Op 38)**: 用于同步特殊能力，如传送戒指、变身戒指的开关状态。缺失此协议会导致客户端 UI 无法显示玩家当前是否具有某些特殊权限。
+*   **缺失 `S_OPCODE_SUMMON_OWN_CHANGE` (Op 79)**: 无法显示宠物血条。
+
+---
+
+### 四、 自主补全建议：C# 处理模板
+
+针对上述缺失最严重的“宠物/召唤状态”和“经验变动”，我为你生成了对应的 C# 补全模板。
+
+#### 1. 补全宠物状态同步 (Opcode 79)
+在 `PacketHandler.cs` 的 `switch` 中添加：
+
+```csharp
+case 79: // S_OPCODE_SUMMON_OWN_CHANGE
+    ParseSummonStatus(reader);
+    break;
+
+// 具体解析方法
+private void ParseSummonStatus(PacketReader reader)
+{
+    int objId = reader.ReadInt();
+    int status = reader.ReadByte(); // 0=Wait, 1=Walk, 2=Attack...
+    bool isMine = reader.ReadByte() == 1;
+    
+    GD.Print($"[Pet] ObjID:{objId} StatusChange:{status} IsMine:{isMine}");
+    // 建议发送信号给 GameEntity 更新其 AI 状态图标
+    EmitSignal(SignalName.ObjectAction, objId, status);
+}
+```
+
+#### 2. 补全经验值变动 (Opcode 81)
+这是提升用户体验的关键：
+
+```csharp
+case 81: // S_OPCODE_EXP
+    long currentExp = reader.ReadInt(); // 早期版本可能是 D
+    // 注意：如果是高版本 Lineage，Exp 可能是 Long (8字节)
+    GD.Print($"[Stats] Exp Updated: {currentExp}");
+    // 通知 HUD 更新经验条
+    // EmitSignal(SignalName.ExpUpdated, currentExp);
+    break;
+```
+
+#### 3. 增强型 PacketBox 处理 (Opcode 123)
+服务端源码显示 `S_PacketBox` 承载了大量逻辑，建议重构为子分发器：
+
+```csharp
+private void ParsePacketBox(PacketReader reader)
+{
+    int subCode = reader.ReadByte();
+    switch (subCode)
+    {
+        case 15: // MSG_ELF
+            int value = reader.ReadByte();
+            GD.Print($"[ElfSystem] Status: {value}");
+            break;
+        case 35: // 变身剩余时间
+            int time = reader.ReadUShort();
+            GD.Print($"[Visual] Poly Time Left: {time}s");
+            break;
+        default:
+            GD.Print($"[PacketBox] Unhandled SubCode: {subCode}");
+            break;
+    }
+}
+```
+
+### 五、 专家建议
+1.  **修复 Op 29 (ObjectMode)**: 务必检查服务端 `S_ObjectLock.java` 里的 `writeC` 逻辑，它有时会发送特定的字节流来检测“非法客户端”。如果客户端不读完这些字节，下一条消息的 Opcode 就会错位。
+2.  **坐标转换**: 服务端 `DungeonTable.java` 中有大量的坐标跳转逻辑，请确保客户端 `AssetMapProvider` 的坐标计算与服务端的 `locX/locY` 网格坐标 1:1 映射，不要做任何像素偏移缩放。
+
+请上传你的 `client.zip`，我将为你进行具体的 C# 代码注入与修复建议。

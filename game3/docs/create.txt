@@ -1,0 +1,496 @@
+using Godot;
+using System;
+using System.Collections.Generic;
+using Client;
+using Core;
+using Skins.CustomFantasy;
+
+namespace UI
+{
+	public partial class CharacterCreate : Control
+	{
+		// --- 本地数据暂存区 ---
+		private int _remainingPoints = 0;
+		private Dictionary<string, int> _currentStats = new();
+		private Dictionary<string, int> _baseStats = new();
+		private readonly string[] _statKeys = { "str", "dex", "con", "wis", "cha", "int" };
+		
+		// 职业基础属性表 (王族, 骑士, 妖精, 法师)
+		private readonly int[][] _classBaseStats = new int[][] {
+			new int[] { 13, 10, 10, 11, 13, 10 }, // Royal
+			new int[] { 16, 12, 14, 9, 12, 8 },   // Knight
+			new int[] { 11, 12, 12, 12, 9, 12 },  // Elf
+			new int[] { 8, 7, 12, 12, 8, 12 }     // Mage
+		};
+		// 职业额外奖励点数
+		private readonly int[] _classBonusPoints = new int[] { 8, 4, 7, 16 };
+
+		private TextureButton[] _classBtns = new TextureButton[4];
+		private TextureButton[] _sexBtns = new TextureButton[2];
+		
+		private int _curClassIdx = 1; // 默认骑士
+		private int _curSexIdx = 0;   // 默认男
+		private AnimatedSprite2D _charPreview = null!;
+		private Label _lblRemaining = null!; 
+		private TextureButton _btnConfirm = null!;
+
+		public override void _Ready()
+		{
+			GD.Print(">>> [UI] CharacterCreate 进入离线编辑模式 (不触发 Op 67)");
+
+			if (Boot.Instance != null)
+			{
+				Boot.Instance.IsInCreateCharScene = true;
+				// 监听信号
+				Boot.Instance.LoginFailed += OnErrorFeedback;
+				Boot.Instance.CreateCharFailed += OnErrorFeedback;
+				Boot.Instance.CharacterInfoReceived += OnSuccessWithInfo;
+
+				Boot.Instance.PlayBgm(0);
+			}
+
+			InitVisuals();
+			
+			// 初始化本地显示，但不发包
+			UpdateSelectionVisuals();
+			RefreshLocalClassStats(_curClassIdx); 
+		}
+
+		public override void _ExitTree()
+		{
+			if (Boot.Instance != null)
+			{
+				Boot.Instance.IsInCreateCharScene = false;
+				Boot.Instance.LoginFailed -= OnErrorFeedback;
+				Boot.Instance.CreateCharFailed -= OnErrorFeedback;
+				Boot.Instance.CharacterInfoReceived -= OnSuccessWithInfo;
+			}
+		}
+
+		// ================================================================
+		// 核心逻辑：OK 按钮点击后的【事务序列】
+		// ================================================================
+		private async void OnConfirmPressed() 
+		{
+			var input = GetNodeOrNull<LineEdit>("MainLayout/RightPanel/VBoxContainer/FooterArea/NameInput");
+			string charName = input != null ? input.Text : "";
+			
+			// 1. 本地校验
+			if (string.IsNullOrEmpty(charName) || _remainingPoints > 0) return;
+
+			// 2. 锁定 UI
+			if (_btnConfirm != null) { 
+				_btnConfirm.Disabled = true; 
+				_btnConfirm.Modulate = new Color(0.5f, 0.5f, 0.5f, 1); 
+			}
+
+			// --- 执行你的新办法：完美模拟测试代码步骤 ---
+			
+			// 步骤 1: 点击 OK 后才发起同步请求 Op 67 (不带延迟)
+			GD.Print($"[UI] 执行事务 Step 1: 同步 Op 67 (Class: {_curClassIdx})");
+			Boot.Instance.Action_RequestNewChar(_curClassIdx);
+
+			// 步骤 2: 严格等待 0.5 秒 (重现测试代码效果)
+			GD.Print("[UI] 执行事务 Step 2: 等待 0.5s...");
+			await ToSignal(GetTree().CreateTimer(0.5f), "timeout");
+
+			// 步骤 3: 发送创角协议 Op 12 (将本地暂存的数据发出)
+			GD.Print($"[UI] 执行事务 Step 3: 发送提交协议 Op 12 (Name: {charName})");
+			Boot.Instance.Action_CreateChar(
+				charName, 
+				_curClassIdx, 
+				_curSexIdx, 
+				_currentStats["str"], 
+				_currentStats["dex"], 
+				_currentStats["con"], 
+				_currentStats["wis"], 
+				_currentStats["cha"], 
+				_currentStats["int"]
+			);
+
+			// 超时保护
+			await ToSignal(GetTree().CreateTimer(5.0f), "timeout");
+			if (IsInstanceValid(this) && _btnConfirm != null && _btnConfirm.Disabled)
+			{
+				DeferredShowError("服务器响应超时");
+			}
+		}
+
+		// ================================================================
+		// UI 更新逻辑 (纯离线，不发包)
+		// ================================================================
+		private void RefreshLocalClassStats(int type) {
+			// 仅更新音乐
+			switch(type) {
+				case 0: Boot.Instance.PlayBgm(9); break;  
+				case 1: Boot.Instance.PlayBgm(2); break;  
+				case 2: Boot.Instance.PlayBgm(3); break;  
+				case 3: Boot.Instance.PlayBgm(37); break; 
+			}
+
+			// 更新本地属性暂存
+			int[] baseVals = _classBaseStats[type];
+			int i = 0;
+			_baseStats.Clear();
+			foreach(var k in _statKeys) _baseStats[k] = baseVals[i++];
+			
+			_remainingPoints = _classBonusPoints[type];
+			_currentStats.Clear();
+			foreach(var k in _baseStats.Keys) _currentStats[k] = _baseStats[k];
+			
+			UpdateUI();
+			UpdatePreviewAnimation();
+		}
+
+		private void OnSuccessWithInfo(Client.Data.CharacterInfo info)
+		{
+			GD.PrintRich($"[b][color=green]>>> [UI] 创角成功反馈已收到！角色: {info?.Name}[/color][/b]");
+			CallDeferred(nameof(DeferredToSelectScene));
+		}
+
+		private void DeferredToSelectScene()
+		{
+			if (Boot.Instance != null) Boot.Instance.ToCharacterSelectScene();
+		}
+
+		private void OnErrorFeedback(string reason)
+		{
+			CallDeferred(nameof(DeferredShowError), reason);
+		}
+
+		private void DeferredShowError(string reason)
+		{
+			if (_btnConfirm != null) { _btnConfirm.Disabled = false; _btnConfirm.Modulate = Colors.White; }
+			var input = GetNodeOrNull<LineEdit>("MainLayout/RightPanel/VBoxContainer/FooterArea/NameInput");
+			if (input != null)
+			{
+				input.Text = ""; 
+				input.PlaceholderText = $"创角反馈: {reason}";
+			}
+		}
+
+		// --- UI 初始化部分 ---
+
+		private void InitVisuals()
+		{
+			var bg = GetNodeOrNull<TextureRect>("PaperBackground");
+			if (bg != null) {
+				bg.Texture = AssetManager.Instance.GetUITexture("310.img");
+				bg.MouseFilter = MouseFilterEnum.Ignore; 
+			}
+
+			var rightPanel = GetNode<Control>("MainLayout/RightPanel");
+			_charPreview = rightPanel.GetNode<AnimatedSprite2D>("CharPreview");
+			
+			var statBgContainer = rightPanel.GetNodeOrNull<Control>("VBoxContainer/StatBg");
+			if (statBgContainer != null) {
+				var statImg = statBgContainer.GetNodeOrNull<TextureRect>("StatArea/statbackground");
+				if (statImg != null) statImg.Texture = AssetManager.Instance.GetUITexture("106.img");
+				
+				var statArea = statBgContainer.GetNodeOrNull<Control>("StatArea");
+				if (statArea != null) _lblRemaining = statArea.GetNodeOrNull<Label>("LabelRemaining");
+				if (_lblRemaining == null) _lblRemaining = statBgContainer.GetNodeOrNull<Label>("LabelRemaining");
+			}
+
+			string selPath = "MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea";
+			SetupSelectionBtn(ref _classBtns[0], $"{selPath}/ClassContainer/BtnRoyal", 0, true);
+			SetupSelectionBtn(ref _classBtns[1], $"{selPath}/ClassContainer/BtnKnight", 1, true);
+			SetupSelectionBtn(ref _classBtns[2], $"{selPath}/ClassContainer/BtnElf", 2, true);
+			SetupSelectionBtn(ref _classBtns[3], $"{selPath}/ClassContainer/BtnMage", 3, true);
+
+			SetupSelectionBtn(ref _sexBtns[0], $"{selPath}/SexContainer/BtnMale", 0, false);
+			SetupSelectionBtn(ref _sexBtns[1], $"{selPath}/SexContainer/BtnFemale", 1, false);
+
+			SetupStatGroups();
+
+			var footer = rightPanel.GetNodeOrNull<Control>("VBoxContainer/FooterArea");
+			if (footer != null)
+			{
+				_btnConfirm = footer.GetNodeOrNull<TextureButton>("BtnConfirm");
+				if (_btnConfirm != null) {
+					SetupBtn(_btnConfirm, "61.img", "62.img");
+					if (_btnConfirm.IsConnected(BaseButton.SignalName.Pressed, Callable.From(OnConfirmPressed)))
+						_btnConfirm.Disconnect(BaseButton.SignalName.Pressed, Callable.From(OnConfirmPressed));
+					_btnConfirm.Pressed += OnConfirmPressed;
+				}
+
+				var btnBack = footer.GetNodeOrNull<TextureButton>("BtnBack");
+				if (btnBack != null) {
+					SetupBtn(btnBack, "63.img", "64.img");
+					btnBack.Pressed += () => Boot.Instance.ToCharacterSelectScene();
+				}
+			}
+		}
+
+		private void SetupBtn(TextureButton btn, string normal, string hover) {
+			if(btn==null) return;
+			btn.TextureNormal = AssetManager.Instance.GetUITexture(normal);
+			btn.TexturePressed = AssetManager.Instance.GetUITexture(hover);
+			btn.TextureHover = AssetManager.Instance.GetUITexture(hover);
+		}
+
+		private void SetupSelectionBtn(ref TextureButton btnRef, string path, int idx, bool isClass) {
+			var btn = GetNodeOrNull<TextureButton>(path);
+			if (btn != null) {
+				btnRef = btn;
+				string normalImg = "", activeImg = "";
+				if (isClass) {
+					switch(idx) {
+						case 0: normalImg="107.img"; activeImg="108.img"; break;
+						case 1: normalImg="111.img"; activeImg="112.img"; break;
+						case 2: normalImg="109.img"; activeImg="110.img"; break;
+						case 3: normalImg="113.img"; activeImg="114.img"; break;
+					}
+				} else {
+					switch(idx) {
+						case 0: normalImg="304.img"; activeImg="305.img"; break;
+						case 1: normalImg="306.img"; activeImg="307.img"; break;
+					}
+				}
+				btn.SetMeta("normal", normalImg);
+				btn.SetMeta("active", activeImg);
+				
+				btn.Pressed += () => {
+					if (isClass) { 
+						_curClassIdx = idx; 
+						RefreshLocalClassStats(idx); // 修复：这里改为调用 RefreshLocalClassStats
+					} 
+					else { 
+						_curSexIdx = idx; 
+					}
+					UpdateSelectionVisuals();
+					UpdatePreviewAnimation();
+				};
+			}
+		}
+
+		private void UpdateSelectionVisuals() {
+			for(int i=0; i<4; i++) if(_classBtns[i]!=null) SetBtnState(_classBtns[i], i==_curClassIdx);
+			for(int i=0; i<2; i++) if(_sexBtns[i]!=null) SetBtnState(_sexBtns[i], i==_curSexIdx);
+		}
+
+		private void SetBtnState(TextureButton btn, bool active) {
+			string key = active ? "active" : "normal";
+			if(btn.HasMeta(key)) {
+				string imgName = (string)btn.GetMeta(key);
+				btn.TextureNormal = AssetManager.Instance.GetUITexture(imgName);
+			}
+		}
+
+		private void UpdatePreviewAnimation() {
+			if (_charPreview == null) return;
+			SpriteFrames sf = null;
+			if (_curClassIdx == 0) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(138, 151, 162) : AssetManager.Instance.CreateCharacterFrames(163, 176, 187);
+			else if (_curClassIdx == 1) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(213, 226, 237) : AssetManager.Instance.CreateCharacterFrames(238, 251, 264);
+			else if (_curClassIdx == 2) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(332, 345, 356) : AssetManager.Instance.CreateCharacterFrames(188, 201, 212);
+			else if (_curClassIdx == 3) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(362, 375, 386) : AssetManager.Instance.CreateCharacterFrames(621, 634, 645);
+			if (sf != null) { _charPreview.SpriteFrames = sf; _charPreview.Play("walk"); }
+		}
+
+		private void SetupStatGroups() {
+			var statArea = GetNodeOrNull<Control>("MainLayout/RightPanel/VBoxContainer/StatBg/StatArea");
+			if (statArea == null) return;
+			foreach (var key in _statKeys) {
+				var hbox = statArea.GetNodeOrNull<HBoxContainer>($"HBox_{key}");
+				if (hbox != null) {
+					var btnAdd = hbox.GetNodeOrNull<BaseButton>("Buttonadd");
+					var btnLess = hbox.GetNodeOrNull<BaseButton>("Buttonless");
+					if (btnAdd != null) btnAdd.Pressed += () => OnAdjustStat(key, 1);
+					if (btnLess != null) btnLess.Pressed += () => OnAdjustStat(key, -1);
+				}
+			}
+		}
+
+		private void OnAdjustStat(string key, int val) {
+			if (val > 0 && _remainingPoints > 0) { _currentStats[key]++; _remainingPoints--; }
+			else if (val < 0 && _currentStats[key] > _baseStats[key]) { _currentStats[key]--; _remainingPoints++; }
+			UpdateUI();
+		}
+
+		private void UpdateUI() {
+			var statArea = GetNodeOrNull<Control>("MainLayout/RightPanel/VBoxContainer/StatBg/StatArea");
+			if (statArea == null) return;
+			foreach (var key in _statKeys) {
+				var lbl = statArea.GetNodeOrNull<Label>($"HBox_{key}/LabelValue");
+				if(lbl != null) lbl.Text = _currentStats[key].ToString();
+			}
+			if (_lblRemaining != null) _lblRemaining.Text = $"Remaining: {_remainingPoints}";
+		}
+	}
+}
+
+
+
+
+
+
+// --- 以下是基础 UI 初始化，保持变量名不变 ---
+
+		private void InitVisuals()
+		{
+			var bg = GetNodeOrNull<TextureRect>("PaperBackground");
+			if (bg != null) {
+				bg.Texture = AssetManager.Instance.GetUITexture("310.img");
+				bg.MouseFilter = MouseFilterEnum.Ignore; 
+			}
+
+			var rightPanel = GetNode<Control>("MainLayout/RightPanel");
+			_charPreview = rightPanel.GetNode<AnimatedSprite2D>("CharPreview");
+			
+			var statBgContainer = rightPanel.GetNodeOrNull<Control>("VBoxContainer/StatBg");
+			if (statBgContainer != null) {
+				var statImg = statBgContainer.GetNodeOrNull<TextureRect>("StatArea/statbackground");
+				if (statImg != null) {
+					statImg.Texture = AssetManager.Instance.GetUITexture("106.img");
+				}
+				
+				var statArea = statBgContainer.GetNodeOrNull<Control>("StatArea");
+				if (statArea != null) _lblRemaining = statArea.GetNodeOrNull<Label>("LabelRemaining");
+				if (_lblRemaining == null) _lblRemaining = statBgContainer.GetNodeOrNull<Label>("LabelRemaining");
+			}
+
+			string selPath = "MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea";
+			SetupSelectionBtn(ref _classBtns[0], $"{selPath}/ClassContainer/BtnRoyal", 0, true);
+			SetupSelectionBtn(ref _classBtns[1], $"{selPath}/ClassContainer/BtnKnight", 1, true);
+			SetupSelectionBtn(ref _classBtns[2], $"{selPath}/ClassContainer/BtnElf", 2, true);
+			SetupSelectionBtn(ref _classBtns[3], $"{selPath}/ClassContainer/BtnMage", 3, true);
+
+			SetupSelectionBtn(ref _sexBtns[0], $"{selPath}/SexContainer/BtnMale", 0, false);
+			SetupSelectionBtn(ref _sexBtns[1], $"{selPath}/SexContainer/BtnFemale", 1, false);
+
+			SetupStatGroups();
+
+			var footer = rightPanel.GetNodeOrNull<Control>("VBoxContainer/FooterArea");
+			if (footer != null)
+			{
+				_btnConfirm = footer.GetNodeOrNull<TextureButton>("BtnConfirm");
+				if (_btnConfirm != null) {
+					SetupBtn(_btnConfirm, "61.img", "62.img");
+					if (_btnConfirm.IsConnected(BaseButton.SignalName.Pressed, Callable.From(OnConfirmPressed)))
+						_btnConfirm.Disconnect(BaseButton.SignalName.Pressed, Callable.From(OnConfirmPressed));
+					_btnConfirm.Pressed += OnConfirmPressed;
+				}
+
+				var btnBack = footer.GetNodeOrNull<TextureButton>("BtnBack");
+				if (btnBack != null) {
+					SetupBtn(btnBack, "63.img", "64.img");
+					btnBack.Pressed += () => Boot.Instance.ToCharacterSelectScene(); // [新架构] 返回
+				}
+			}
+		}
+
+		private void SetupBtn(TextureButton btn, string normal, string hover) {
+			if(btn==null) return;
+			btn.TextureNormal = AssetManager.Instance.GetUITexture(normal);
+			btn.TexturePressed = AssetManager.Instance.GetUITexture(hover);
+			btn.TextureHover = AssetManager.Instance.GetUITexture(hover);
+		}
+
+		private void SetupSelectionBtn(ref TextureButton btnRef, string path, int idx, bool isClass) {
+			var btn = GetNodeOrNull<TextureButton>(path);
+			if (btn != null) {
+				btnRef = btn;
+				string normalImg = "", activeImg = "";
+				if (isClass) {
+					switch(idx) {
+						case 0: normalImg="107.img"; activeImg="108.img"; break;
+						case 1: normalImg="111.img"; activeImg="112.img"; break;
+						case 2: normalImg="109.img"; activeImg="110.img"; break;
+						case 3: normalImg="113.img"; activeImg="114.img"; break;
+					}
+				} else {
+					switch(idx) {
+						case 0: normalImg="304.img"; activeImg="305.img"; break;
+						case 1: normalImg="306.img"; activeImg="307.img"; break;
+					}
+				}
+				btn.SetMeta("normal", normalImg);
+				btn.SetMeta("active", activeImg);
+				
+				Action clickAction = () => {
+					if (isClass) { 
+						_curClassIdx = idx; 
+						RefreshLocalClassStats(idx); // 修复：这里改为调用 RefreshLocalClassStats
+					} 
+					else { 
+						_curSexIdx = idx; 
+					}
+					UpdateSelectionVisuals();
+					UpdatePreviewAnimation();
+				};
+
+				var signal = BaseButton.SignalName.Pressed;
+				foreach(var c in btn.GetSignalConnectionList(signal)) btn.Disconnect(signal, c["callable"].AsCallable());
+				btn.Pressed += clickAction;
+			}
+		}
+
+		private void UpdateSelectionVisuals() {
+			for(int i=0; i<4; i++) if(_classBtns[i]!=null) SetBtnState(_classBtns[i], i==_curClassIdx);
+			for(int i=0; i<2; i++) if(_sexBtns[i]!=null) SetBtnState(_sexBtns[i], i==_curSexIdx);
+		}
+
+		private void SetBtnState(TextureButton btn, bool active) {
+			string key = active ? "active" : "normal";
+			if(btn.HasMeta(key)) {
+				string imgName = (string)btn.GetMeta(key);
+				btn.TextureNormal = AssetManager.Instance.GetUITexture(imgName);
+			}
+		}
+
+		private void UpdatePreviewAnimation() {
+			if (_charPreview == null) return;
+			SpriteFrames sf = null;
+			if (_curClassIdx == 0) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(138, 151, 162) : AssetManager.Instance.CreateCharacterFrames(163, 176, 187);
+			else if (_curClassIdx == 1) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(213, 226, 237) : AssetManager.Instance.CreateCharacterFrames(238, 251, 264);
+			else if (_curClassIdx == 2) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(332, 345, 356) : AssetManager.Instance.CreateCharacterFrames(188, 201, 212);
+			else if (_curClassIdx == 3) sf = (_curSexIdx==0) ? AssetManager.Instance.CreateCharacterFrames(362, 375, 386) : AssetManager.Instance.CreateCharacterFrames(621, 634, 645);
+
+			if (sf != null) {
+				_charPreview.SpriteFrames = sf;
+				_charPreview.Play("walk");
+			}
+		}
+
+		private void SetupStatGroups() {
+			var statArea = GetNodeOrNull<Control>("MainLayout/RightPanel/VBoxContainer/StatBg/StatArea");
+			if (statArea == null) return;
+			
+			foreach (var key in _statKeys) {
+				var hbox = statArea.GetNodeOrNull<HBoxContainer>($"HBox_{key}");
+				if (hbox != null) {
+					var btnAdd = hbox.GetNodeOrNull<BaseButton>("Buttonadd");
+					var btnLess = hbox.GetNodeOrNull<BaseButton>("Buttonless");
+
+					if (btnAdd != null) {
+						var signal = BaseButton.SignalName.Pressed;
+						foreach(var c in btnAdd.GetSignalConnectionList(signal)) btnAdd.Disconnect(signal, c["callable"].AsCallable());
+						btnAdd.Pressed += () => OnAdjustStat(key, 1);
+					}
+					if (btnLess != null) {
+						var signal = BaseButton.SignalName.Pressed;
+						foreach(var c in btnLess.GetSignalConnectionList(signal)) btnLess.Disconnect(signal, c["callable"].AsCallable());
+						btnLess.Pressed += () => OnAdjustStat(key, -1);
+					}
+				}
+			}
+		}
+
+		private void OnAdjustStat(string key, int val) {
+			if (val > 0 && _remainingPoints > 0) { _currentStats[key]++; _remainingPoints--; }
+			else if (val < 0 && _currentStats[key] > _baseStats[key]) { _currentStats[key]--; _remainingPoints++; }
+			UpdateUI();
+		}
+
+		private void UpdateUI() {
+			var statArea = GetNodeOrNull<Control>("MainLayout/RightPanel/VBoxContainer/StatBg/StatArea");
+			if (statArea == null) return;
+			foreach (var key in _statKeys) {
+				var lbl = statArea.GetNodeOrNull<Label>($"HBox_{key}/LabelValue");
+				if(lbl != null) lbl.Text = _currentStats[key].ToString();
+			}
+
+			if (_lblRemaining != null) _lblRemaining.Text = $"Remaining: {_remainingPoints}";
+		}
+	}
+}

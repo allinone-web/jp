@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://sl4lwxfgruo2"]
+
+[ext_resource type="Script" path="res://Client/Game/SkillEffect.cs" id="1_tt7v3"]
+
+[node name="SkillEffect" type="Node2D"]
+script = ExtResource("1_tt7v3")

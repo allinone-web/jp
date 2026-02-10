@@ -1,0 +1,9 @@
+关于 ignoreTransparency：
+
+我修改了 SprService.Load 和 AssetManager.GetUITexture，默认值是 false (保持透明)。
+
+如果你发现某个特定的背景图 (例如 105.img) 需要显示黑色背景而不是透明洞，你需要在调用 AssetManager.Instance.GetUITexture("105.img") 的地方，想办法传入这个参数，或者在 AssetManager 内部特殊处理。
+
+目前方案：为了不破坏其他 UI 的透明度，我没有把默认值设为 true。但 AssetManager 的代码里现在所有调用都传了 false。
+
+如何开启：如果你想测试“关闭透明过滤”，请去 AssetManager.cs 的 GetUITexture 方法，把 SprService.Load(name, false) 改成 SprService.Load(name, true)，看看背景是否正常了。如果背景正常了但按钮有黑框，我们就需要加判断逻辑（比如 if (name == "105.img") ignore = true;）

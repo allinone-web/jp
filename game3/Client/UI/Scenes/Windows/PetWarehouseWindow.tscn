@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://cwwjnk0i6032j"]
+
+[ext_resource type="PackedScene" uid="uid://dip4ct7bxn0np" path="res://Client/UI/Scenes/BaseWindow.tscn" id="1_jg447"]
+
+[node name="BaseWindow" instance=ExtResource("1_jg447")]
+
+[node name="PetList" type="ItemList" parent="ContentContainer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RetrieveButton" type="Button" parent="ContentContainer" index="1"]
+layout_mode = 0
+offset_left = 94.0
+offset_top = 374.0
+offset_right = 164.0
+offset_bottom = 399.0

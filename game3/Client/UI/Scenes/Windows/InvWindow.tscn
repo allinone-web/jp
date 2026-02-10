@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://dffvqjhds4pfs"]
+
+[ext_resource type="PackedScene" uid="uid://dip4ct7bxn0np" path="res://Client/UI/Scenes/BaseWindow.tscn" id="1_nrp3u"]
+[ext_resource type="Script" path="res://Client/UI/Scripts/InvWindow.cs" id="2_cmlgu"]
+
+[node name="InvWindow" instance=ExtResource("1_nrp3u")]
+script = ExtResource("2_cmlgu")
+
+[node name="CloseBtn" parent="." index="1"]
+offset_left = 291.0
+offset_top = 400.0
+offset_right = 322.0
+offset_bottom = 431.0
+
+[node name="TitleLabel" parent="." index="2"]
+text = "BAG"
+
+[node name="ContentContainer" parent="." index="3"]
+offset_bottom = -46.0
+
+[node name="Panel" type="VBoxContainer" parent="ContentContainer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Scroll" type="ScrollContainer" parent="ContentContainer/Panel" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Grid" type="GridContainer" parent="ContentContainer/Panel/Scroll" index="0"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 2
+columns = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ContentContainer" index="1"]
+layout_mode = 0
+offset_left = -9.0
+offset_top = 352.0
+offset_right = 255.0
+offset_bottom = 389.0
+
+[node name="check" type="Button" parent="ContentContainer/HBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "View"
+
+[node name="delete" type="Button" parent="ContentContainer/HBoxContainer" index="1"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Delete"

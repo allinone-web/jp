@@ -1,0 +1,1 @@
+在 CustomCharacterProvider.BuildLayer 中，若請求的是「待機/呼吸」動作（3, 7, 14, 23, 27, 43）且 list.spr 沒有對應序列，就改為使用對應行走動作的第一幀（3→0、7→4、14→11、23→20、27→24、43→40），只取一幀並循環，避免 [Visual-Missing]。

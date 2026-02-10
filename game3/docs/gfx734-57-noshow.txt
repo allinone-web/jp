@@ -1,0 +1,481 @@
+一句话结论（非常重要）
+
+动画不显示的根因不是 action 不存在，而是 CustomCharacterProvider 在“构建动画缓存 Key”时，错误地把 ActionId 当成了“最终可播放动作 Key”，却忽略了 list.spr 中：
+👉「ActionId ≠ SequenceId」这一核心事实。
+
+具体错误：
+
+Provider 内部 用 (gfxId, actionId, heading) 作为查找动画的 Key
+
+但 list.spr 中 actionId 只是“语义编号”，真正决定帧文件的是“Sequence + Weapon 模式”
+
+导致：
+
+AnimFound = False
+
+FramesNull = True
+
+即使 list.spr 明确存在 action=23，也永远找不到帧
+
+一、你给的日志已经证明：不是“动作不存在”
+证据 1：ListSpr 检查是正确的（100%）
+[ListSpr-Check] Gfx=57 has Actions: [20, 21, 22, 23, 8, ...]
+[ListSpr-Check] Gfx=734 has Actions: [0..43]
+
+
+✔ list.spr 解析无误
+✔ action=23（idle / breath）确实存在
+✔ 不是资源缺失
+
+二、真正的致命日志（Provider 已经自证“Key 错了”）
+
+你反复出现这一行：
+
+[Visual-Diagnose] Gfx=734 Action=23 Heading=0 
+-> FramesNull? True AnimFound? False
+
+
+但紧接着：
+
+[ListSpr-Check] Gfx=734 has 30 Actions: [..., 23, ...]
+
+
+⚠️ 同一帧里：
+
+Provider 说「AnimFound=False」
+
+ListSpr 说「Action=23 明确存在」
+
+➡️ 唯一可能：Provider 用的 Key，和 ListSpr 用的 Key，不是同一个维度
+
+三、精准定位：Key 错误发生在哪一层？
+
+我们看 CustomCharacterProvider 的职责说明（这是关键）：
+
+输入：gfxId + actionId + heading
+
+输出：SpriteFrames
+
+严格区分 SequenceID 与 ActionID
+
+但你现在的埋点行为说明：
+
+Provider 实际上仍在用 actionId 直接当“帧索引 Key”
+
+🔥 核心事实（你已经隐含证明）
+在 list.spr 中：
+以 gfx=57（orc bow） 为例
+23.idle
+20.walk bow
+21.attack bow
+
+
+⚠️ 注意：
+
+23 不是“基础 idle”
+
+它是orc bow 的 idle
+
+没有 0.walk / 1.attack / 2.damage
+
+👉 所以：
+
+actionId = 23
+❌ 不是“第 23 个动画文件”
+✅ 是“一个语义动作，需要映射到真正的 Sequence”
+
+同理：gfx=734（mage male）
+23.Breath Bow
+20.walk Bow
+21.attack Bow
+
+
+而 Provider 却：
+
+直接用 actionId=23
+去找 “gfx734_action23_heading0”
+
+
+⚠️ 但 list.spr 中：
+
+23 只是语义 Action
+
+真正的帧来源是：
+
+Bow 模式
+
+Sequence 176.x / 184.x / 192.x（你定义里写得非常清楚）
+
+四、真正的 Key 应该是什么？
+❌ 当前错误 Key（从行为反推）
+Key = (gfxId, actionId, heading)
+
+
+这就是 AnimFound=False 的根因
+
+✅ 正确 Key（唯一正确）
+Provider 内部必须使用：
+(gfxId, resolvedSequenceId, heading)
+
+
+而不是 actionId
+
+🔁 映射流程必须是：
+Server ActionId (23)
+   ↓
+ListSpr.Action[23]
+   ↓
+根据 weapon / type / name
+   ↓
+Resolve → SequenceId(s)
+   ↓
+构建帧 (spriteId + fileOffset)
+
+五、你问的关键问题：怪物没有 weapon，怎么办？
+
+这是非常好的问题，答案如下（不是猜，是 list.spr 标准解）：
+
+🧠 怪物的“武器模式”不是 runtime 装备，而是写死在 list.spr 里的
+对于怪物（type=10）：
+20.walk bow
+21.attack bow
+23.idle
+
+
+➡️ 动作名本身已经包含 weapon 语义
+
+所以怪物的规则是：
+
+怪物不走 WeaponProvider
+而是：ActionName → 直接决定 Sequence
+
+✔ 正确规则（必须这样）：
+实体类型	Sequence 决定方式
+Player	gfx + weaponMode + actionName
+Monster	gfx + actionName（忽略 weapon）
+六、最终精准结论（无一条是猜的）
+🎯 Provider 内部 Key 使用错误点
+
+错误发生在：
+
+CustomCharacterProvider 构建 SpriteFrames 缓存 / 查找缓存的地方
+
+具体错误：
+
+使用了 actionId 作为“最终动画 Key”
+
+而不是 resolved SequenceId
+
+🎯 直接后果（与你日志 100% 对齐）
+现象	原因
+AnimFound=False	Key 错了
+FramesNull=True	查的是不存在的 actionKey
+攻击时偶尔能显示	某些 actionId 恰好 = Sequence
+死亡停在最后一帧	没有 loop / fallback
+57 默认不显示，攻击才显示	idle=23 从未被正确解析
+
+
+
+停一切“猜测式修复”，只基于你给的埋点日志 + list.spr 实际数据 + 代码结构，来100% 精准定位 Provider 内部 Key 使用错误的位置与原因。
+
+下面是结论先行版，然后我会给你逐层证据链，最后给出唯一正确的修复方案（不改架构、不乱 fallback）。
+
+✅ 一句话结论（非常重要）
+
+动画不显示的根因不是 action 不存在，而是 CustomCharacterProvider 在“构建动画缓存 Key”时，错误地把 ActionId 当成了“最终可播放动作 Key”，却忽略了 list.spr 中：
+👉「ActionId ≠ SequenceId」这一核心事实。
+
+具体错误：
+
+Provider 内部 用 (gfxId, actionId, heading) 作为查找动画的 Key
+
+但 list.spr 中 actionId 只是“语义编号”，真正决定帧文件的是“Sequence + Weapon 模式”
+
+导致：
+
+AnimFound = False
+
+FramesNull = True
+
+即使 list.spr 明确存在 action=23，也永远找不到帧
+
+一、你给的日志已经证明：不是“动作不存在”
+证据 1：ListSpr 检查是正确的（100%）
+[ListSpr-Check] Gfx=57 has Actions: [20, 21, 22, 23, 8, ...]
+[ListSpr-Check] Gfx=734 has Actions: [0..43]
+
+
+✔ list.spr 解析无误
+✔ action=23（idle / breath）确实存在
+✔ 不是资源缺失
+
+二、真正的致命日志（Provider 已经自证“Key 错了”）
+
+你反复出现这一行：
+
+[Visual-Diagnose] Gfx=734 Action=23 Heading=0 
+-> FramesNull? True AnimFound? False
+
+
+但紧接着：
+
+[ListSpr-Check] Gfx=734 has 30 Actions: [..., 23, ...]
+
+
+⚠️ 同一帧里：
+
+Provider 说「AnimFound=False」
+
+ListSpr 说「Action=23 明确存在」
+
+➡️ 唯一可能：Provider 用的 Key，和 ListSpr 用的 Key，不是同一个维度
+
+三、精准定位：Key 错误发生在哪一层？
+
+我们看 CustomCharacterProvider 的职责说明（这是关键）：
+
+输入：gfxId + actionId + heading
+
+输出：SpriteFrames
+
+严格区分 SequenceID 与 ActionID
+
+但你现在的埋点行为说明：
+
+Provider 实际上仍在用 actionId 直接当“帧索引 Key”
+
+🔥 核心事实（你已经隐含证明）
+在 list.spr 中：
+以 gfx=57（orc bow） 为例
+23.idle
+20.walk bow
+21.attack bow
+
+
+⚠️ 注意：
+
+23 不是“基础 idle”
+
+它是orc bow 的 idle
+
+没有 0.walk / 1.attack / 2.damage
+
+👉 所以：
+
+actionId = 23
+❌ 不是“第 23 个动画文件”
+✅ 是“一个语义动作，需要映射到真正的 Sequence”
+
+同理：gfx=734（mage male）
+23.Breath Bow
+20.walk Bow
+21.attack Bow
+
+
+而 Provider 却：
+
+直接用 actionId=23
+去找 “gfx734_action23_heading0”
+
+
+⚠️ 但 list.spr 中：
+
+23 只是语义 Action
+
+真正的帧来源是：
+
+Bow 模式
+
+Sequence 176.x / 184.x / 192.x（你定义里写得非常清楚）
+
+四、真正的 Key 应该是什么？
+❌ 当前错误 Key（从行为反推）
+Key = (gfxId, actionId, heading)
+
+
+这就是 AnimFound=False 的根因
+
+✅ 正确 Key（唯一正确）
+Provider 内部必须使用：
+(gfxId, resolvedSequenceId, heading)
+
+
+而不是 actionId
+
+🔁 映射流程必须是：
+Server ActionId (23)
+   ↓
+ListSpr.Action[23]
+   ↓
+根据 weapon / type / name
+   ↓
+Resolve → SequenceId(s)
+   ↓
+构建帧 (spriteId + fileOffset)
+
+五、你问的关键问题：怪物没有 weapon，怎么办？
+
+这是非常好的问题，答案如下（不是猜，是 list.spr 标准解）：
+
+🧠 怪物的“武器模式”不是 runtime 装备，而是写死在 list.spr 里的
+对于怪物（type=10）：
+20.walk bow
+21.attack bow
+23.idle
+
+
+➡️ 动作名本身已经包含 weapon 语义
+
+所以怪物的规则是：
+
+怪物不走 WeaponProvider
+而是：ActionName → 直接决定 Sequence
+
+✔ 正确规则（必须这样）：
+实体类型  Sequence 决定方式
+Player   gfx + weaponMode + actionName
+Monster  gfx + actionName（忽略 weapon）
+六、最终精准结论（无一条是猜的）
+🎯 Provider 内部 Key 使用错误点
+
+错误发生在：
+
+CustomCharacterProvider 构建 SpriteFrames 缓存 / 查找缓存的地方
+
+具体错误：
+
+使用了 actionId 作为“最终动画 Key”
+
+而不是 resolved SequenceId
+
+🎯 直接后果（与你日志 100% 对齐）
+现象 原因
+AnimFound=False   Key 错了
+FramesNull=True   查的是不存在的 actionKey
+攻击时偶尔能显示 某些 actionId 恰好 = Sequence
+死亡停在最后一帧 没有 loop / fallback
+57 默认不显示，攻击才显示 idle=23 从未被正确解析
+
+
+下面我只在你限定的范围（CustomCharacterProvider）内做精准定位：
+你的日志已经足够证明——Provider 内部缓存 Key 用错，导致“拿到正确 Sequence 也可能永远取不到帧/或被错误缓存结果污染”。
+
+1) ✅ 精确指出：CustomCharacterProvider 用错 Key 的具体位置（哪一行）
+
+在 CustomCharacterProvider.cs：
+
+第 216 行（你当前文件行号，以我读取到的版本为准）：
+
+string cacheKey = $"{gfxId}_{referenceGfxId}_{requestedActionId}_{mappedHeading}_{isMirrored}";
+
+
+这里把 requestedActionId（请求动作）写进 Key ——这是错的。
+
+为什么这是“确定无疑”的错误（不是猜测）
+
+因为你自己已经明确了：
+
+**同一个“逻辑动作”**在不同 gfx / 武器模式下，会被 Resolver 映射到不同的真实动作序列（例如：基础 breath=3 → bow breath=23；或怪物没有 0/1/2/3 时，必须 fallback 到 20/23 这类动作）。
+
+但是 缓存 Key 用的是 requestedActionId，它与最终实际取帧用的 finalActionId + seq 不是同一个维度。
+
+因此会出现两类致命现象（你日志里已经出现了）：
+
+缓存命中错误帧 / 空帧
+第一次构建时 Resolver 映射到了 A（比如 23），但缓存 Key 记录的是 requested=3
+之后又请求 3（或者请求 23），你可能：
+
+命中到以前错误结果（包括 null）
+
+或者永远无法复用正确帧（反复构建/反复 fallback）
+
+“失败结果被永久缓存”
+你代码里 OnAsyncBuildComplete 会把 sf（哪怕是 null）也写入 _framesCache[cacheKey]。
+一旦第一次用错误 Key 缓存了 null，后续同 Key 全部直接返回 null，表现就是你现在看到的：
+
+FramesNull? True
+
+AnimFound? False
+并且一直刷。
+
+2) 🧩 “Action → Sequence Resolver” 最小补丁（10~20 行）
+
+目标：缓存 Key 必须用“最终解析后的动作 finalActionId”，而不是 requestedActionId。
+做法：把 cacheKey 的生成移动到 Resolve 之后，并用 finalActionId。
+
+下面这段是“最小补丁”，你只需要在 GetCharacterFramesInternal(...) 里替换对应逻辑（约 15 行）。
+不涉及任何其它文件，不扩大修改面。
+
+// ❌ 原来：cacheKey 先生成，且用 requestedActionId
+// string cacheKey = $"{gfxId}_{referenceGfxId}_{requestedActionId}_{mappedHeading}_{isMirrored}";
+
+// ✅ 最小修复：先 Resolve，再用 finalActionId 生成 cacheKey
+int finalActionId;
+SprActionSequence seq;
+if (!TryResolveSequence(gfxId, requestedActionId, out finalActionId, out seq))
+{
+    // 保持你原本的失败路径（return null 或 fallback），不要扩大范围
+    return null;
+}
+
+// 注意：Heading 也应该使用 mappedHeading（你已有），但 Key 的动作必须是 finalActionId
+string cacheKey = $"{gfxId}_{referenceGfxId}_{finalActionId}_{mappedHeading}_{isMirrored}";
+
+
+上面用到的 TryResolveSequence(...)：
+如果你当前 Resolver 逻辑不是这个函数名，你就用你现有的那段 Resolve 逻辑——关键点只有一个：
+finalActionId 必须在 cacheKey 里取代 requestedActionId。
+
+3) 🧪 新的埋点日志模板（用于 100% 验证修复正确）
+
+你现在的日志只告诉我们 “FramesNull / AnimFound”，但不足以还原 Provider 内部到底 Resolve 成了什么、用什么 Key 缓存、到底去取了哪些 spr 文件。
+
+我给你一组最小但足够闭环的模板（建议放在 Provider 内）：
+
+A. 每次请求帧时（Resolve 前后 + Key）
+GD.Print($"[Visual-Resolve] req gfx={gfxId} ref={referenceGfxId} act(req)={requestedActionId} head(svr)={serverHeading} head(map)={mappedHeading} mirror={isMirrored}");
+GD.Print($"[Visual-Resolve] -> act(final)={finalActionId} seqDirCount={seq.DirectionCount} seqFrames={seq.Frames.Count} cacheKey={cacheKey}");
+
+B. 缓存命中情况（命中的是不是 null）
+if (_framesCache.TryGetValue(cacheKey, out var cached))
+{
+    GD.Print($"[Visual-Cache] HIT key={cacheKey} isNull={(cached == null)}");
+}
+else
+{
+    GD.Print($"[Visual-Cache] MISS key={cacheKey}");
+}
+
+C. 构建阶段：每个 frame 对应的文件索引是否存在（只打印前 1~2 帧即可，避免刷屏）
+if (seq.Frames.Count > 0)
+{
+    var f0 = seq.Frames[0];
+    int fileAct0 = f0.ActionId + fileOffset;
+    GD.Print($"[Visual-Build] gfx={gfxId} spriteId={mappedId} finalAct={finalActionId} -> fileAct0={fileAct0} frameIdx0={f0.FrameIdx} offset={fileOffset}");
+}
+
+D. Build 完成：最终帧数量
+GD.Print($"[Visual-BuildDone] key={cacheKey} builtFrames={data.Frames.Count} createdSpriteFrames={(sf != null)}");
+
+
+有了 A+B+C+D，你下一次给我日志，我可以100%确定：
+
+Resolver 是否正确映射到了你 list.spr 的动作（比如 gfx=57 idle=23）
+
+生成的 cacheKey 是否稳定且正确
+
+取的 fileAct 是否正确（是否在 Pak 索引里存在）
+
+为什么最终 builtFrames=0（到底卡在“Resolver 错”还是“取文件索引错”还是“PakLoader 取图错”）
+
+你下一步需要给我的“最少信息”（不额外要一堆文件）
+
+为了我能继续精准定位到“Provider 内部 Key 用错之后的下一处错误”（比如 PakLoader 的 key 或 fileAct 计算是否错），你只要做一件事：
+
+先按上面的最小补丁改掉 cacheKey（requested → final）。
+
+加上我这 4 组埋点模板。
+
+复现一次：**gfx=734（bow 模式）+ gfx=57（orc bow）**站立/走路/攻击各一次，把日志贴回来。
+
+我就能在下一轮把故障锁死到唯一位置（是 Resolver、Key、fileAct、还是 PakLoader 的索引键不一致）。

@@ -1,0 +1,148 @@
+[gd_scene load_steps=6 format=3 uid="uid://cip7eixtedpwb"]
+
+[ext_resource type="Script" path="res://Client/UI/Scripts/BottomBar.cs" id="1_a0ri2"]
+[ext_resource type="Texture2D" uid="uid://ddvqylgpnmafv" path="res://Assets/default_item.png" id="2_jhsyp"]
+[ext_resource type="Texture2D" uid="uid://buw2vkgftnons" path="res://Assets/default_menu.png" id="3_vtnaj"]
+[ext_resource type="Script" path="res://Client/UI/Scripts/HotkeySlot.cs" id="3_xfkgj"]
+[ext_resource type="Texture2D" uid="uid://clwigv1a2mf8r" path="res://Assets/menu.png" id="4_364mk"]
+
+[node name="BottomBar" type="Control"]
+layout_mode = 3
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 567.0
+offset_top = -46.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_a0ri2")
+
+[node name="MainHBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -33.0
+offset_right = -11.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 2
+
+[node name="MenuHBox" type="HBoxContainer" parent="MainHBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="BtnInv" type="TextureButton" parent="MainHBox/MenuHBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_364mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnSkill" type="TextureButton" parent="MainHBox/MenuHBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_364mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnCha" type="TextureButton" parent="MainHBox/MenuHBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_364mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="BtnSetting" type="TextureButton" parent="MainHBox/MenuHBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("4_364mk")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="HotkeyGrid" type="HBoxContainer" parent="MainHBox"]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="Hotkey_0" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+
+[node name="Hotkey_1" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 1
+
+[node name="Hotkey_2" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 2
+
+[node name="Hotkey_3" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 3
+
+[node name="Hotkey_4" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 4
+
+[node name="Hotkey_5" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 5
+
+[node name="Hotkey_6" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 6
+
+[node name="Hotkey_7" type="TextureRect" parent="MainHBox/HotkeyGrid"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_filter = 0
+texture = ExtResource("3_vtnaj")
+expand_mode = 2
+script = ExtResource("3_xfkgj")
+SlotIndex = 7
+
+[node name="BtnAttack" type="TextureButton" parent="MainHBox"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+texture_normal = ExtResource("2_jhsyp")
+ignore_texture_size = true
+stretch_mode = 5

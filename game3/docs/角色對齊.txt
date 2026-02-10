@@ -1,0 +1,26 @@
+數據結論
+Body：fromCenter=(-23,-71)，dy/h=-0.65 → 錨點在紋理上方（約胸部/頭），不是腳底
+Shadow：fromCenter=(-34,-12)，dy/h=-0.04 → 錨點略高於中心
+Clothes：fromCenter=(0,-28)，dy/h=-0.43 → 錨點在上半
+三層的錨點都不是腳底；若只做「錨點重合」，腳底會錯位。
+
+
+腳底對齊公式
+紋理內「錨點到腳底」的距離（y 向下）：
+主體：body_anchor_to_feet = body_h - body_dy（你這次約 62−(−40)=102）
+Shadow：layer_anchor_to_feet = h - dy（約 23−(−1)=24）
+Clothes：同上（約 30−(−13)=43）
+要讓 Shadow/Clothes 的腳底和主體腳底重合，需在 Y 方向多移：
+feetAlignY = (body_h - body_dy) - (layer_h - layer_dy)
+也就是：主體錨點到腳底的距離，減去該層錨點到腳底的距離。
+
+
+程式改動（GameEntity.Visuals.cs）
+新增 ApplyLayerFeetAlignToBody(layer, useFirstFrame, bodyDy, bodyH)
+先算該層錨點 Offset：(w/2-dx, h/2-dy)
+再算腳底補償：feetAlignY = (bodyH - bodyDy) - (h - dy)
+最後：layer.Offset = BodyOffset + (anchorX, anchorY + feetAlignY)
+OnMasterFrameChanged
+主體、武器：仍用 ApplyLayerAnchorAtOrigin（錨點在 node+BodyOffset）
+先取主體當幀/首幀的 bodyDy, bodyH
+Shadow、Clothes：改為呼叫 ApplyLayerFeetAlignToBody(..., bodyDy, bodyH)，讓腳底與主體腳底對齊

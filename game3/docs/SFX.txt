@@ -1,0 +1,20 @@
+. 英文選單步驟（Godot 4.x）
+Project → Project Settings…
+左側選 Audio
+在 Audio Bus 區塊對 Master 點 Add 或右鍵 Add Bus Child
+新巴士命名為 SFX
+可調整 Volume Db、Solo、Mute 等
+2. 為什麼要增加 SFX？有什麼區別？
+為什麼要加：
+程式把攻擊／魔法等音效指定到名為 "SFX" 的巴士（SkillEffect.cs、GameEntity.Audio.cs 裡 Bus = "SFX"）。
+若專案裡沒有建立 "SFX" 巴士，Godot 會退回到 Master 播放，音效仍會響，但無法在 Godot 裡單獨控制「音效」這一軌。
+有 SFX 巴士的差別：
+有 SFX 巴士	沒有 SFX 巴士
+可單獨調「音效」音量（與音樂／主音量分開）	音效走 Master，只能一起調
+可只靜音音效、保留音樂（或反過來）	無法只關音效
+可對 SFX 單獨加效果或送不同輸出	無法單獨混音／效果
+之後做「音效音量」滑桿等設定時可直接綁 SFX	要做設定需先補建 SFX 或改程式
+不新增會怎樣：
+音效照樣會播（經 Master），遊戲可正常玩。
+差別在於：無法在 Godot Audio 面板裡單獨調「SFX」這一軌；若未來要做選項介面（例如「音效音量」），就需要有 SFX 巴士。
+以上已寫入 README 的 §6.1.1.3。

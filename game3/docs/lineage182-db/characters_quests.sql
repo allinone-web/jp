@@ -1,0 +1,16 @@
+SET FOREIGN_KEY_CHECKS=0;
+
+-- ----------------------------
+-- Table structure for `characters_quests`
+-- ----------------------------
+DROP TABLE IF EXISTS `characters_quests`;
+CREATE TABLE `characters_quests` (
+  `char_id` int(10) unsigned NOT NULL,
+  `quest_id` int(10) unsigned NOT NULL,
+  `quest_step` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`char_id`,`quest_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of characters_quests
+-- ----------------------------

@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://40qwo0n0uj68"]
+
+[ext_resource type="Script" path="res://Client/UI/Scripts/SkillTooltip.cs" id="1_skilltip"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_skill"]
+bg_color = Color(0.1, 0.1, 0.1, 0.96)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+
+[node name="SkillTooltip" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_skilltip")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 220.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_skill")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "魔法名稱"
+
+[node name="InfoLabel" type="RichTextLabel" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "ID: 0"
+fit_content = true

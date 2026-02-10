@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bll1mw25tevlc"]
+
+[ext_resource type="Script" path="res://Client/Utility/UnpackerTool.cs" id="1_unpack"]
+
+[node name="UnpackerTool" type="Node2D"]
+visible = false
+script = ExtResource("1_unpack")

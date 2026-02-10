@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://cvh216gece3kx"]
+
+[ext_resource type="PackedScene" uid="uid://dip4ct7bxn0np" path="res://Client/UI/Scenes/BaseWindow.tscn" id="1_xtdy0"]
+[ext_resource type="Script" path="res://Client/UI/Scripts/TalkWindow.cs" id="2_eiagx"]
+
+[node name="TalkWindow" instance=ExtResource("1_xtdy0")]
+script = ExtResource("2_eiagx")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="ContentContainer" index="0"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ContentContainer/ScrollContainer" index="0"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ContentLabel" type="RichTextLabel" parent="ContentContainer/ScrollContainer/VBoxContainer" index="0"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 12
+bbcode_enabled = true
+text = "wecome!"
+fit_content = true
+scroll_active = false

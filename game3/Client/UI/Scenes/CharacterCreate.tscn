@@ -1,0 +1,320 @@
+[gd_scene load_steps=3 format=3 uid="uid://c32fubh7y4ti6"]
+
+[ext_resource type="Script" path="res://Client/UI/Scripts/CharacterCreate.cs" id="1_47m54"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l2so5"]
+
+[node name="CharacterCreate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_47m54")
+
+[node name="PaperBackground" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ClassDesc" type="RichTextLabel" parent="PaperBackground"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 112.0
+offset_top = 124.0
+offset_right = -111.0
+offset_bottom = -76.0
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.235294, 0.180392, 0.121569, 1)
+text = "
+           choose your hero..."
+
+[node name="MainLayout" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="LeftPanel" type="CenterContainer" parent="MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ClassDesc" type="RichTextLabel" parent="MainLayout/LeftPanel"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="MainLayout/LeftPanel"]
+modulate = Color(0.264399, 0.00170656, 0.00169186, 1)
+layout_mode = 2
+text = "Lineage world"
+
+[node name="RightPanel" type="Control" parent="MainLayout"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.3
+
+[node name="CharPreview" type="AnimatedSprite2D" parent="MainLayout/RightPanel"]
+position = Vector2(248, 147)
+sprite_frames = SubResource("SpriteFrames_l2so5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainLayout/RightPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 231.0
+offset_right = -97.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="StatBg" type="VBoxContainer" parent="MainLayout/RightPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_constants/separation = 20
+
+[node name="SelectionArea" type="VBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SexContainer" type="Control" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="BtnMale" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea/SexContainer"]
+layout_mode = 2
+offset_left = 111.0
+offset_top = 15.0
+offset_right = 111.0
+offset_bottom = 65.0
+size_flags_horizontal = 2
+
+[node name="BtnFemale" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea/SexContainer"]
+layout_mode = 2
+offset_left = 350.0
+offset_top = 15.0
+offset_right = 350.0
+offset_bottom = 65.0
+size_flags_horizontal = 10
+
+[node name="ClassContainer" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="BtnRoyal" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea/ClassContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BtnKnight" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea/ClassContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BtnElf" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea/ClassContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="BtnMage" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/StatBg/SelectionArea/ClassContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LabelRemaining" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg"]
+layout_mode = 2
+text = "Remaining: 10"
+horizontal_alignment = 1
+
+[node name="StatArea" type="GridContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/h_separation = 30
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="statbackground" type="TextureRect" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+visible = false
+layout_mode = 2
+
+[node name="HBox_str" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="labeltitle" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_str"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Str"
+horizontal_alignment = 2
+
+[node name="LabelValue" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_str"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "13"
+horizontal_alignment = 1
+
+[node name="Buttonadd" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_str"]
+layout_mode = 2
+text = "+"
+
+[node name="Buttonless" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_str"]
+layout_mode = 2
+text = "-"
+
+[node name="HBox_int" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="labeltitle" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_int"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Int"
+horizontal_alignment = 2
+
+[node name="LabelValue" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_int"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "13"
+horizontal_alignment = 1
+
+[node name="Buttonadd" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_int"]
+layout_mode = 2
+text = "+"
+
+[node name="Buttonless" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_int"]
+layout_mode = 2
+text = "-"
+
+[node name="HBox_dex" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="labeltitle" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_dex"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Dex"
+horizontal_alignment = 2
+
+[node name="LabelValue" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_dex"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "13"
+horizontal_alignment = 1
+
+[node name="Buttonadd" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_dex"]
+layout_mode = 2
+text = "+"
+
+[node name="Buttonless" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_dex"]
+layout_mode = 2
+text = "-"
+
+[node name="HBox_wis" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="labeltitle" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_wis"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Wis"
+horizontal_alignment = 2
+
+[node name="LabelValue" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_wis"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "13"
+horizontal_alignment = 1
+
+[node name="Buttonadd" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_wis"]
+layout_mode = 2
+text = "+"
+
+[node name="Buttonless" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_wis"]
+layout_mode = 2
+text = "-"
+
+[node name="HBox_con" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="labeltitle" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_con"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Con"
+horizontal_alignment = 2
+
+[node name="LabelValue" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_con"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "13"
+horizontal_alignment = 1
+
+[node name="Buttonadd" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_con"]
+layout_mode = 2
+text = "+"
+
+[node name="Buttonless" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_con"]
+layout_mode = 2
+text = "-"
+
+[node name="HBox_cha" type="HBoxContainer" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="labeltitle" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_cha"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+text = "Cha"
+horizontal_alignment = 2
+
+[node name="LabelValue" type="Label" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_cha"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "13"
+horizontal_alignment = 1
+
+[node name="Buttonadd" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_cha"]
+layout_mode = 2
+text = "+"
+
+[node name="Buttonless" type="Button" parent="MainLayout/RightPanel/VBoxContainer/StatBg/StatArea/HBox_cha"]
+layout_mode = 2
+text = "-"
+
+[node name="FooterArea" type="VBoxContainer" parent="MainLayout/RightPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="NameInput" type="LineEdit" parent="MainLayout/RightPanel/VBoxContainer/FooterArea"]
+custom_minimum_size = Vector2(200, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "Enter Name..."
+alignment = 1
+
+[node name="BtnConfirm" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/FooterArea"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="BtnBack" type="TextureButton" parent="MainLayout/RightPanel/VBoxContainer/FooterArea"]
+custom_minimum_size = Vector2(100, 30)
+layout_mode = 2
+size_flags_horizontal = 4

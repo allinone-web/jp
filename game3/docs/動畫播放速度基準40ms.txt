@@ -1,0 +1,46 @@
+2）動畫總體「過快」：統一到 SprDataTable 的基準
+你給的王子例子：
+SprDataTable 裡：gfx=0, walk(0) = 640ms, attack(1) = 840ms
+list.spr 裡：
+
+
+
+walk: 多個 24.x:4，units 合計 ≈ 16 → 
+16
+×
+40
+m
+s
+=
+640
+m
+s
+16×40ms=640ms
+attack: units 合計 ≈ 21 → 
+21
+×
+40
+m
+s
+=
+840
+m
+s
+21×40ms=840ms
+也就是說：「單幀 DurationUnit × 40ms」這個設計本身就和 SprDataTable 完全對齊，我們要做的是：
+解析 DurationUnit → 「每幀真實秒數」要符合 40ms 單位（以及 110.framerate）
+然後 不要再額外把動畫加速一遍
+目前客戶端關鍵路徑是：
+ListSprLoader.ParseFrameToken 中：
+f.RealDuration = (f.DurationUnit * 40.0f / 1000.0f) * (24.0f / Math.Max(1, fps));
+CustomCharacterProvider.BuildLayer 中：
+sf.AddFrame(animName, tex, f.RealDuration);
+GameEntity.Visuals.UpdateAppearance 中原本又做一次：
+float speed = (def.Framerate / 24.0f) * AnimationSpeed;ApplyFramesToLayer(_mainSprite, bodyFrames, head.ToString(), speed);
+ApplyFramesToLayer 裡把 AnimatedSprite2D.SpeedScale = speed。
+
+
+這樣：
+總動畫時間 = 所有幀的 RealDuration 之和
+RealDuration 來自 DurationUnit×40ms，並按照 110.framerate 做了微調
+視覺上就會和 SprDataTable 的 640/840 等數值對齊（不再「急速快轉」）

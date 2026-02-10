@@ -1,2 +1,96 @@
-/build
+# ===========================
+# 1. 你要求的特定过滤 (资源 & 网页)
+# ===========================
+*.mp3
+*.wav
+*.html
+*.pak
+*.import
+*.png
+*.translation
+*.tbl
+*.bin
+*.bmp
+*.bak
+
+# ===========================
+# 2. Godot 核心 (本地缓存)
+# ===========================
+# 这是 Godot 4 的核心导入缓存，几千个文件的源头，必须忽略
+.godot/
+
+# 导出预设（可选：如果你不想上传 Android/iOS 的签名密钥路径，请保留这行）
+export_presets.cfg
+
+# ===========================
+# 3. C# / .NET 编译垃圾 (Godot C# 必备)
+# ===========================
+# 既然你用 C# 写 Godot，这几个文件夹是编译自动生成的，绝对不能传
+bin/
+obj/
+.vs/
+*.csproj.user
+*.sln.DotSettings.user
+
+# ===========================
+# 4. 系统生成文件 (Mac/Windows)
+# ===========================
 .DS_Store
+Thumbs.db
+
+# ===========================
+# 5. 你提供的基础配置 (C++/通用)
+# ===========================
+# Prerequisites
+*.d
+
+# Object files
+*.o
+*.ko
+*.obj
+*.elf
+
+# Linker output
+*.ilk
+*.map
+*.exp
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (inc. Windows DLLs)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Kernel Module Compile Results
+*.mod*
+*.cmd
+.tmp_versions/
+modules.order
+Module.symvers
+Mkfile.old
+dkms.conf
+.vscode/settings.json

@@ -1,0 +1,20 @@
+魔法邏輯裡 range 怎麼用
+讀取：GameWorld.Skill.cs 的 UseMagic 用 SkillListData.Get(skillId) 取 entry，再取 entry?.Range ?? 0。
+是否群體：aoeRange = entry?.Range ?? 0，isGroupMagic = aoeRange >= 2。
+效果：isGroupMagic == true 時，以主目標為中心、range 格內的實體都會被當成目標，每個頭上播動畫並參與後續邏輯。
+也就是說：改「本地魔法數據」裡的 range，就是改 skill_list.csv 的 range 欄位；客戶端只看這份表來決定是否群體與範圍。
+2. 把某一個魔法改成群體攻擊的做法
+你要做的只有一件事：在本地魔法數據裡把該技能的 range 改成 ≥ 2。
+改哪裡：Assets/Data/skill_list.csv
+改哪一欄：同一行裡的 第三欄 range
+規則：
+range = 0 或 1：單體。
+range >= 2：客戶端會當成群體魔法，範圍為該數字（格）。
+範例：把「光箭」(skill_id=4) 改成群體
+目前 CSV 裡是：
+4,167,0,attack
+若改成 2 格範圍群體，改為：
+4,167,2,attack
+若改成 3 格範圍群體，改為：
+4,167,3,attack
+存檔後重開遊戲／重新載入該表後，該技能就會依 SkillListData 被當成群體魔法，邏輯不需改程式

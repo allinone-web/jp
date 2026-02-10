@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cdaynight_overlay"]
+
+[ext_resource type="Script" path="res://Client/Game/DayNightOverlay.cs" id="1_daynight"]
+
+[node name="DayNightOverlay" type="Node"]
+script = ExtResource("1_daynight")
