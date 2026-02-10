@@ -1,55 +1,8 @@
-<<<<<<< Updated upstream
-=======
-Feb 10, 2026 6:27:35 PM jp.l1j.server.datatables.PolyTable loadPolymorphs
-SEVERE: error while creating polymorph table
-java.sql.SQLException: Column 'db_name' not found.
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:1078)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:989)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:975)
-	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:920)
-	at com.mysql.jdbc.ResultSetImpl.findColumn(ResultSetImpl.java:1167)
-	at com.mysql.jdbc.ResultSetImpl.getString(ResultSetImpl.java:5733)
-	at com.mchange.v2.c3p0.impl.NewProxyResultSet.getString(NewProxyResultSet.java:3326)
-	at jdk.internal.reflect.GeneratedMethodAccessor5.invoke(Unknown Source)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
-	at jp.l1j.server.utils.LeakCheckedConnection.send(LeakCheckedConnection.java:52)
-	at jp.l1j.server.utils.LeakCheckedConnection$Delegate.invoke(LeakCheckedConnection.java:136)
-	at jdk.proxy2/jdk.proxy2.$Proxy6.getString(Unknown Source)
-	at jp.l1j.server.datatables.PolyTable.loadPolymorphs(PolyTable.java:63)
-	at jp.l1j.server.datatables.PolyTable.<init>(PolyTable.java:47)
-	at jp.l1j.server.datatables.PolyTable.getInstance(PolyTable.java:41)
-	at jp.l1j.server.GameServer.initialize(GameServer.java:258)
+Feb 10, 2026 7:15:11 PM jp.l1j.Server main
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Castle.getWarTime()" because "this._l1castle[i]" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Castle.getWarTime()" because "this._l1castle[i]" is null
+	at jp.l1j.server.controller.timer.WarTimeController.<init>(WarTimeController.java:50)
+	at jp.l1j.server.controller.timer.WarTimeController.getInstance(WarTimeController.java:58)
+	at jp.l1j.server.GameServer.initialize(GameServer.java:240)
 	at jp.l1j.Server.main(Server.java:91)
 
-Feb 10, 2026 6:29:01 PM jp.l1j.server.ClientThread run
-SEVERE: Cannot invoke "jp.l1j.server.templates.L1DoorGfx.getGfxId()" because "gfx" is null
-java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1DoorGfx.getGfxId()" because "gfx" is null
-	at jp.l1j.server.model.instance.L1DoorInstance.<init>(L1DoorInstance.java:45)
-	at jp.l1j.server.datatables.DoorTable.createDoor(DoorTable.java:119)
-	at jp.l1j.server.datatables.DoorTable.createDoor(DoorTable.java:110)
-	at jp.l1j.server.model.L1DeathMatch.<init>(L1DeathMatch.java:77)
-	at jp.l1j.server.model.L1DeathMatch.getInstance(L1DeathMatch.java:63)
-	at jp.l1j.server.ClientThread.quitGame(ClientThread.java:592)
-	at jp.l1j.server.ClientThread.run(ClientThread.java:337)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
-	at java.base/java.lang.Thread.run(Thread.java:840)
-
-Feb 10, 2026 6:29:11 PM jp.l1j.server.utils.StreamUtil close
-SEVERE: Broken pipe
-java.net.SocketException: Broken pipe
-	at java.base/sun.nio.ch.NioSocketImpl.implWrite(NioSocketImpl.java:425)
-	at java.base/sun.nio.ch.NioSocketImpl.write(NioSocketImpl.java:445)
-	at java.base/sun.nio.ch.NioSocketImpl$2.write(NioSocketImpl.java:831)
-	at java.base/java.net.Socket$SocketOutputStream.write(Socket.java:1045)
-	at java.base/java.io.BufferedOutputStream.flushBuffer(BufferedOutputStream.java:81)
-	at java.base/java.io.BufferedOutputStream.flush(BufferedOutputStream.java:142)
-	at java.base/java.io.FilterOutputStream.close(FilterOutputStream.java:182)
-	at jp.l1j.server.utils.StreamUtil.close(StreamUtil.java:30)
-	at jp.l1j.server.ClientThread.kick(ClientThread.java:372)
-	at jp.l1j.server.GameServer.disconnectAllCharacters(GameServer.java:311)
-	at jp.l1j.server.controller.ShutdownController.saveData(ShutdownController.java:288)
-	at jp.l1j.server.controller.ShutdownController.run(ShutdownController.java:110)
-
->>>>>>> Stashed changes

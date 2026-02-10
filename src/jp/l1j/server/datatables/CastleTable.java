@@ -65,7 +65,12 @@ public final class CastleTable {
 			rs = pstm.executeQuery();
 			while (rs.next()) {
 				L1Castle castle = new L1Castle(rs.getInt(1), rs.getString(2));
-				castle.setWarTime(timestampToCalendar((Timestamp) rs.getObject(3)));
+				Timestamp warTimeTs = (Timestamp) rs.getObject(3);
+				if (warTimeTs != null) {
+					castle.setWarTime(timestampToCalendar(warTimeTs));
+				} else {
+					castle.setWarTime(Calendar.getInstance());
+				}
 				castle.setTaxRate(rs.getInt(4));
 				castle.setPublicMoney(rs.getInt(5));
 				_castles.put(castle.getId(), castle);

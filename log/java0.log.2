@@ -1,46 +1,12 @@
-<<<<<<< Updated upstream
-Feb 04, 2026 5:38:58 AM jp.l1j.configure.L1Properties notifyLoadingDefault
+Feb 10, 2026 7:15:06 PM jp.l1j.configure.L1Properties notifyLoadingDefault
 INFO: ShutdownDelay does not exists. Server use default value.
-Feb 04, 2026 5:38:59 AM jp.l1j.server.utils.IdFactory loadState
-INFO: 現在のオブジェクトID: 268653573
-Feb 04, 2026 5:41:28 AM jp.l1j.server.ClientThread run
-INFO: 127.0.0.1 has connected to the server.
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: === C_AuthLogin Debug ===
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: Decrypted packet length: 16
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: Decrypted packet data (hex):
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00 
+Feb 10, 2026 7:15:06 PM jp.l1j.server.utils.IdFactory loadState
+INFO: 現在のオブジェクトID: 268470264
+Feb 10, 2026 7:15:06 PM jp.l1j.Server main
+SEVERE: Cannot invoke "jp.l1j.server.templates.L1Castle.getWarTime()" because "this._l1castle[i]" is null
+java.lang.NullPointerException: Cannot invoke "jp.l1j.server.templates.L1Castle.getWarTime()" because "this._l1castle[i]" is null
+	at jp.l1j.server.controller.timer.WarTimeController.<init>(WarTimeController.java:50)
+	at jp.l1j.server.controller.timer.WarTimeController.getInstance(WarTimeController.java:58)
+	at jp.l1j.server.GameServer.initialize(GameServer.java:240)
+	at jp.l1j.Server.main(Server.java:91)
 
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: Full packet dump:
-0000: 39 74 65 73 74 30 30 31 00 31 31 31 31 31 31 00    9test001.111111.
-
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: About to read account name...
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: After readS() account - accountName='test001'
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: About to read password...
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: After readS() password - password='111111'
-Feb 04, 2026 5:41:35 AM jp.l1j.server.packets.client.C_AuthLogin <init>
-INFO: === End C_AuthLogin Debug ===
-Feb 04, 2026 5:41:38 AM jp.l1j.server.packets.client.C_LoginToServer <init>
-INFO: Logged character: char=hhhhh account=test001 host=127.0.0.1
-Feb 04, 2026 5:42:54 AM jp.l1j.server.command.GMCommands executeDatabaseCommand
-INFO: hhhhh has used .item 1
-Feb 04, 2026 5:43:00 AM jp.l1j.server.command.GMCommands executeDatabaseCommand
-INFO: hhhhh has used .item 5
-Feb 04, 2026 5:52:31 AM jp.l1j.server.ClientThread run
-INFO: Terminated the connection with 127.0.0.1
-=======
-Feb 06, 2026 6:52:09 PM jp.l1j.configure.L1Properties notifyLoadingDefault
-INFO: ShutdownDelay does not exists. Server use default value.
-Feb 06, 2026 6:52:09 PM jp.l1j.server.utils.IdFactory loadState
-INFO: 現在のオブジェクトID: 268452656
-Feb 06, 2026 9:04:42 PM jp.l1j.server.controller.timer.HomeTownTimeController dailyProc
-INFO: Home Town System: Daily proccessing
->>>>>>> Stashed changes

@@ -15,9 +15,11 @@
 
 package jp.l1j.server.controller.timer;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Comparator;
+import java.util.List;
 import java.util.TimeZone;
 import java.util.logging.Logger;
 import jp.l1j.configure.Config;
@@ -48,7 +50,21 @@ public final class WarTimeController implements Runnable {
 	private final boolean[] _is_now_war;
 
 	private WarTimeController() {
-		_l1castle = CastleTable.getInstance().getCastleTableList();
+		L1Castle[] rawList = CastleTable.getInstance().getCastleTableList();
+		List<L1Castle> list = new ArrayList<L1Castle>();
+		for (L1Castle c : rawList) {
+			if (c != null && c.getWarTime() != null) {
+				list.add(c);
+			}
+		}
+		_l1castle = list.toArray(new L1Castle[list.size()]);
+		if (_l1castle.length == 0) {
+			_castle_id = new int[0];
+			_war_start_time = new Calendar[0];
+			_war_end_time = new Calendar[0];
+			_is_now_war = new boolean[0];
+			return;
+		}
 		Arrays.sort(_l1castle, new Comparator<L1Castle>() {
 			@Override
 			public int compare(L1Castle a, L1Castle b) {
